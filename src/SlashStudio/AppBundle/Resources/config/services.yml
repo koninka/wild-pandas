@@ -1,0 +1,4 @@
+services:
+#    slash_studio_app.example:
+#        class: SlashStudio\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

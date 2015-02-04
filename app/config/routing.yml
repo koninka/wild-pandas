@@ -1,0 +1,3 @@
+slash_studio_app:
+    resource: "@SlashStudioAppBundle/Resources/config/routing.yml"
+    prefix:   /
