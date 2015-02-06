@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function getForMainPage()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM SlashStudioAppBundle:Product p WHERE p.isShowOnTheMain = true')
+            ->getArrayResult();
+    }
 }

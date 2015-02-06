@@ -10,6 +10,14 @@
                 <source>player.surname</source>
                 <target>Player's surname</target>
             </trans-unit>
+            <trans-unit id="3">
+                <source>product.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>product.price</source>
+                <target>Price</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

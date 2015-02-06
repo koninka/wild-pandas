@@ -3,12 +3,24 @@
 
 {% block body %}
   <h1>Wild Pandas Home Page!!</h1>
+
   <div>
+    <h2>Players!</h2>
   {% for player in players %}
     <div>
       {{ 'player.name' | trans }}: {{ player.getName() }}
       {{ 'player.surname' | trans }}: {{ player.getSurname() }}
     </div>
   {% endfor %}
+  </div>
+
+  <div>
+    <h2>Products</h2>
+    {% for product in products %}
+      <div>
+        {{ 'product.name' | trans }} : {{ product.name }}
+        {{ 'product.price' | trans }} : {{ product.price }}
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

@@ -8,8 +8,10 @@ class AppController extends Controller
 {
     public function indexAction()
     {
+        $manager = $this->getDoctrine()->getManager();
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
-            'players' => $this->getDoctrine()->getEntityManager()->getRepository('SlashStudioAppBundle:Player')->findAll()
+            'players' => $manager->getRepository('SlashStudioAppBundle:Player')->findAll(),
+            'products' => $manager->getRepository('SlashStudioAppBundle:Product')->getForMainPage(),
         ]);
     }
 }

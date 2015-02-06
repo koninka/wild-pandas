@@ -10,6 +10,14 @@
                 <source>player.surname</source>
                 <target>Фамилия игрока</target>
             </trans-unit>
+            <trans-unit id="3">
+                <source>product.name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>product.price</source>
+                <target>Цена</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
