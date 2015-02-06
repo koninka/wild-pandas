@@ -53,6 +53,12 @@ class Product
      */
     private $meta;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="is_show_on_the_main", type="boolean", options={"default"=false})
+     */
+    private $isShowOnTheMain = false;
 
     /**
      * Get id
@@ -154,5 +160,24 @@ class Product
     public function getMeta()
     {
         return $this->meta;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIsShowOnTheMain()
+    {
+        return $this->isShowOnTheMain;
+    }
+
+    /**
+     * @param bool $isShowOnTheMain
+     * @return Product
+     */
+    public function setIsShowOnTheMain($isShowOnTheMain)
+    {
+        $this->isShowOnTheMain = $isShowOnTheMain;
+
+        return $this;
     }
 }
