@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+  <h1>Wild Pandas Home Page!!</h1>
+  <div>
+  {% for player in players %}
+    <div>
+      {{ 'player.name' | trans }}: {{ player.getName() }}
+      {{ 'player.surname' | trans }}: {{ player.getSurname() }}
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

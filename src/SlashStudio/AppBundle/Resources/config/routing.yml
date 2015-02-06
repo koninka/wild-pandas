@@ -1,0 +1,5 @@
+slash_app_mainpage:
+    path:       /{_locale}
+    defaults: {_controller: SlashStudioAppBundle:App:index, _locale: ru}
+    requirements:
+        _locale: en|ru
