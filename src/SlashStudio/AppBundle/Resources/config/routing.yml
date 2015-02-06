@@ -9,3 +9,10 @@ slash_app_products_list:
     defaults:   {_controller: SlashStudioAppBundle:App:products, _locale: ru}
     requirements:
         _locale: en|ru
+
+slash_app_product_show:
+    path:       /product/{id}/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:App:productShow, _locale: ru}
+    requirements:
+        id: \d+
+        _locale: en|ru

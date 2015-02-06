@@ -5,7 +5,7 @@
   <h3>{{ 'product.description' | trans }}</h3>
   {% for product in products %}
     <div>
-      {{ 'product.name' | trans }} : {{ product.name }}
+      {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.name }}</a>
       {{ 'product.price' | trans }} : {{ product.price }}
     </div>
   {% endfor %}

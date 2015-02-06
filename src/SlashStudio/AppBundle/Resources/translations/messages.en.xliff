@@ -26,6 +26,10 @@
                 <source>product.description</source>
                 <target>Support the "Wild Pandas" purchase merchandise and show everyone on the field as you love your team</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>product.not_found</source>
+                <target>This product does not exist!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

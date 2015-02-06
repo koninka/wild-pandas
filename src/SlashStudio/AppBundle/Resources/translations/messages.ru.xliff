@@ -26,6 +26,10 @@
                 <source>product.description</source>
                 <target>Поддержи "Диких панд" покупкой атрибутики и покажи всем на поле, как любишь свою команду</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>product.not_found</source>
+                <target>Такого товара не существует!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

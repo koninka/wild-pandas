@@ -22,4 +22,16 @@ class AppController extends Controller
              'products' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product')->findBy([], ['name' => 'ASC']),
         ]);
     }
+
+    public function productShowAction($id)
+    {
+        $product = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product')->getProductInfo($id);
+        if (empty($product)) {
+            throw $this->createNotFoundException($this->get('translator')->trans('product.not_found'));
+        }
+
+        return $this->render('SlashStudioAppBundle:App:product_show.html.twig', [
+            'product' => $product,
+        ]);
+    }
 }
