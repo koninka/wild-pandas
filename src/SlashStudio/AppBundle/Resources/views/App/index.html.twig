@@ -15,7 +15,7 @@
   </div>
 
   <div>
-    <h2>Products</h2>
+    <h2><a href="{{ path('slash_app_products_list') }}">{{ 'product.title' | trans }}</a></h2>
     {% for product in products %}
       <div>
         {{ 'product.name' | trans }} : {{ product.name }}

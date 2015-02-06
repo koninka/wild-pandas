@@ -18,6 +18,14 @@
                 <source>product.price</source>
                 <target>Цена</target>
             </trans-unit>
+            <trans-unit id="5">
+                <source>product.title</source>
+                <target>Атрибутика</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>product.description</source>
+                <target>Поддержи "Диких панд" покупкой атрибутики и покажи всем на поле, как любишь свою команду</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

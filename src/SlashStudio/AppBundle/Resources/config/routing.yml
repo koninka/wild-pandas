@@ -3,3 +3,9 @@ slash_app_mainpage:
     defaults: {_controller: SlashStudioAppBundle:App:index, _locale: ru}
     requirements:
         _locale: en|ru
+
+slash_app_products_list:
+    path:       /products/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:App:products, _locale: ru}
+    requirements:
+        _locale: en|ru
