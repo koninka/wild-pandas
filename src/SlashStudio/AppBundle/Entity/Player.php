@@ -43,13 +43,6 @@ class Player
     private $number;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="position", type="integer")
-     */
-    private $position;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="birthday", type="datetime")
@@ -83,6 +76,14 @@ class Player
      * @ORM\Column(name="structure", type="structureEnumType")
      */
     private $structure;
+
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToOne(targetEntity="Position")
+     * @ORM\JoinColumn(name="position_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $position;
 
     /**
      * Get id

@@ -7,17 +7,6 @@ set_permissions() {
    fi
 }
 
-echo -n "Would you like to do 'git pull' (\"y\" or \"n\", default: \"n\"): "
-read answer
-if [ "$answer" = "y" ]; then
-   git stash
-   if ! git pull --rebase origin master; then
-      echo "Fix conflicts and then run this script again"
-      exit
-   fi
-   git stash apply
-fi
-
 echo -n "Would you like to istall dependencies from composer.json (\"y\" or \"n\", default: \"n\"): "
 read answer
 if [ "$answer" = "y" ]; then
