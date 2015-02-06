@@ -24,8 +24,10 @@ class LoadProductsData implements FixtureInterface
         foreach ($this->names as $name => $description) {
             $position = (new Product())
                 ->setName($name)
+                ->setPrice(rand(50, 500))
                 ->setDescription($description)
-                ->setPrice(rand(50, 500));
+                ->setIsShowOnTheMain(rand(0, count($this->names) - 1) % 2 == 0);
+
             $manager->persist($position);
         }
         $manager->flush();
