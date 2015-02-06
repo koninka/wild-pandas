@@ -15,7 +15,7 @@ class ProductRepository extends EntityRepository
     public function getForMainPage()
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p FROM SlashStudioAppBundle:Product p WHERE p.isShowOnTheMain = true')
+            ->createQuery('SELECT p FROM SlashStudioAppBundle:Product p WHERE p.isShowOnTheMain = true ORDER BY p.name ASC')
             ->getArrayResult();
     }
 }
