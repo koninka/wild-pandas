@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Player
  *
- * @ORM\Table()
+ * @ORM\Table(name="players")
  * @ORM\Entity
  */
 class Player
@@ -77,6 +77,12 @@ class Player
      */
     private $nationality;
 
+    /**
+     * @var structureEnumType
+     *
+     * @ORM\Column(name="structure", type="structureEnumType")
+     */
+    private $structure;
 
     /**
      * Get id
@@ -270,5 +276,28 @@ class Player
     public function getNationality()
     {
         return $this->nationality;
+    }
+
+    /**
+     * Set structure
+     *
+     * @param string $structure
+     * @return Player
+     */
+    public function setStructure($structure)
+    {
+        $this->structure = $structure;
+
+        return $this;
+    }
+
+    /**
+     * Get structure
+     *
+     * @return string
+     */
+    public function getStructure()
+    {
+        return $this->structure;
     }
 }
