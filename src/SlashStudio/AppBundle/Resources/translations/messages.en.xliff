@@ -38,6 +38,10 @@
                 <source>title.team.manager</source>
                 <target>Manager</target>
             </trans-unit>
+            <trans-unit id="10">
+                <source>title.official_blog</source>
+                <target>Official blog</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

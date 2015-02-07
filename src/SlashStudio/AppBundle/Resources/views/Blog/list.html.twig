@@ -1,12 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {%  block body %}
-  <h1>{{ 'navigation.blog' | trans({}, 'navigation') }}</h1>
+  <h1>{{ 'title.official_blog' | trans }}</h1>
   {% for post in posts %}
     <div>
-      {{ post.title }}
-      {{ post.description }}
-      {{ post.text }}
+      <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.title }}</b></a>
+      <p>{{ post.subtitle }}</p>
+      {{ post.createdAt.date }}
     </div>
   {% endfor %}
 {% endblock %}

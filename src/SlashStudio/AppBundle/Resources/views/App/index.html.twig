@@ -46,6 +46,17 @@
   </div>
 
   <div>
+    <h2><a href="{{ path('slash_app_blog_list') }}">{{ 'title.official_blog' | trans }}</a></h2>
+    {% for post in posts %}
+      <div>
+        <b><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.title }}</a></b>
+        <p>{{ post.subtitle }}</p>
+        {{ post.createdAt.date }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div>
     <h2><a href="#">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
   {% for player in players %}
     <div>

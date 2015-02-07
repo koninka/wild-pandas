@@ -9,19 +9,19 @@ class BlogController extends Controller
     public function listAction()
     {
         return $this->render('SlashStudioAppBundle:Blog:list.html.twig', [
-            'posts' => [],
+            'posts' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->findBy([], ['createdAt' => 'DESC']),
         ]);
     }
 
     public function showAction($id)
     {
-        $post = null;
+        $post = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostInfo($id);
         if (empty($post)) {
             throw $this->createNotFoundException();
         }
 
-        return $this->render('SlashStudioAppBundle:Product:show.html.twig', [
-            'post' => [],
+        return $this->render('SlashStudioAppBundle:Blog:show.html.twig', [
+            'post' => $post,
         ]);
     }
 }
