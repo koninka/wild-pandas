@@ -5,6 +5,16 @@
   <h1>Wild Pandas Home Page!!</h1>
 
   <div>
+    <h2>This is slider!</h2>
+    {% for slide in slides %}
+      <div>
+        {{ slide.title }}
+        {{ slide.subtitle }}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div>
     <h2><a href="#">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
   {% for player in players %}
     <div>
