@@ -2,12 +2,5 @@ slash_app_mainpage:
     path:       /{_locale}
     defaults: {_controller: SlashStudioAppBundle:App:index, _locale: ru}
 
-slash_app_products_list:
-    path:       /products/{_locale}
-    defaults:   {_controller: SlashStudioAppBundle:Product:list, _locale: ru}
-
-slash_app_product_show:
-    path:       /product/{id}/{_locale}
-    defaults:   {_controller: SlashStudioAppBundle:Product:show, _locale: ru}
-    requirements:
-        id: \d+
+slash_app_products:
+    resource: 'products_routing.yml'
