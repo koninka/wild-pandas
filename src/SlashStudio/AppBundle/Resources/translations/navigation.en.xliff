@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>navigation.team</source>
+                <target>Team</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>navigation.players</source>
+                <target>Players</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>navigation.training</source>
+                <target>Trainings</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>navigation.history</source>
+                <target>History</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>navigation.baby_team</source>
+                <target>Сhildren's team</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>navigation.join_team</source>
+                <target>Join the team</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>navigation.media</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>navigation.photo</source>
+                <target>Photo</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>navigation.video</source>
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>navigation.media_about</source>
+                <target>Media about us</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>navigation.cheerleader</source>
+                <target>Cheerleaders</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>navigation.products</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>navigation.partnership</source>
+                <target>Partnership</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>navigation.blog</source>
+                <target>Blog</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

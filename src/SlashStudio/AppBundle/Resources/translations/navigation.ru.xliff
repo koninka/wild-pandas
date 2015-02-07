@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>navigation.team</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>navigation.players</source>
+                <target>Игроки</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>navigation.training</source>
+                <target>Тренировки</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>navigation.history</source>
+                <target>История</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>navigation.baby_team</source>
+                <target>Детская команда</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>navigation.join_team</source>
+                <target>Вступить в команду</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>navigation.media</source>
+                <target>Медиа</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>navigation.photo</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>navigation.video</source>
+                <target>Видео</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>navigation.media_about</source>
+                <target>СМИ о нас</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>navigation.cheerleader</source>
+                <target>Черлидеры</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>navigation.products</source>
+                <target>Атрибутика</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>navigation.partnership</source>
+                <target>Сотрудничество</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>navigation.blog</source>
+                <target>Блог</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
