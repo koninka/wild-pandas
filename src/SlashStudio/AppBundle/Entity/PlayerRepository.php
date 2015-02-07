@@ -9,7 +9,7 @@ class PlayerRepository extends EntityRepository
     public function getPlayers()
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p, a FROM SlashStudioAppBundle:Player p JOIN p.position a')
+            ->createQuery('SELECT p, a FROM SlashStudioAppBundle:Player p JOIN p.position a ORDER BY p.name ASC')
             ->getArrayResult();
     }
 }

@@ -13,6 +13,19 @@
       <th>{{ 'player.birthday'  | trans({}, 'player') }}</th>
       <th>{{ 'player.nationality'  | trans({}, 'player') }}</th>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      {% for p in players %}
+        <tr>
+          <td></td>
+          <td>{{ p.name }} {{ p.surname }}</td>
+          <td>{{ p.number }}</td>
+          <td>{{ p.position.name }}</td>
+          <td>{{ p.weight }}</td>
+          <td>{{ p.height }}</td>
+          <td>{{ p.birthday.date }}</td>
+          <td>{{ p.nationality }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
   </table>
 {% endblock %}

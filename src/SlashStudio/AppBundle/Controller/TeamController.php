@@ -9,7 +9,7 @@ class TeamController extends Controller
     public function playersAction()
     {
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
-
+            'players' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:Player')->getPlayers(),
         ]);
     }
 
