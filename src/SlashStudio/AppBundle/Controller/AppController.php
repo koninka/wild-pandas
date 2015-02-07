@@ -11,6 +11,7 @@ class AppController extends Controller
         $manager = $this->getDoctrine()->getManager();
 
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
+            'team'     => $manager->getRepository('SlashStudioAppBundle:Team')->getInfo(),
             'slides'   => $manager->getRepository('SlashStudioAppBundle:Slide')->findBy([], ['displayOrder' => 'ASC']),
             'players'  => $manager->getRepository('SlashStudioAppBundle:Player')->findAll(),
             'products' => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),

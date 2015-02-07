@@ -15,6 +15,18 @@
   </div>
 
   <div>
+    <h2>This is a Team Section!</h2>
+    <h3>{{ 'title.team' | trans }}</h3>
+    <p>{{ team.description }}</p>
+    <b>Achievements</b>
+    <ul>
+      {% for achievement in team.achievements %}
+        <li>{{ achievement.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div>
     <h2><a href="#">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
   {% for player in players %}
     <div>

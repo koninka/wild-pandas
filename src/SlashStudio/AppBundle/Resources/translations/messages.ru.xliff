@@ -22,6 +22,10 @@
                 <source>product.not_found</source>
                 <target>Такого товара не существует!</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>title.team</source>
+                <target>Команда</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

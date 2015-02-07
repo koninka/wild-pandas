@@ -22,6 +22,10 @@
                 <source>product.not_found</source>
                 <target>This product does not exist!</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>title.team</source>
+                <target>Team</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
