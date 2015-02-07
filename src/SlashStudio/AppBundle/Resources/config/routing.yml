@@ -2,6 +2,10 @@ slash_app_mainpage:
     path:       /{_locale}
     defaults: {_controller: SlashStudioAppBundle:App:index, _locale: ru}
 
+slash_app_partnership:
+    path:       /partnership/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:App:partnership, _locale: ru}
+
 slash_app_products:
     resource: "@SlashStudioAppBundle/Resources/config/products_routing.yml"
 

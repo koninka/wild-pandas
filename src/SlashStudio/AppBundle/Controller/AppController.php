@@ -15,4 +15,10 @@ class AppController extends Controller
             'products' => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
         ]);
     }
+
+    public function partnershipAction()
+    {
+        return $this->render('SlashStudioAppBundle:App:partnership.html.twig', [
+        ]);
+    }
 }
