@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>player.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>player.surname</source>
+                <target>Surname</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>player.fullname</source>
+                <target>Fullname</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>player.number</source>
+                <target>Number</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>player.position</source>
+                <target>Position</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>player.weight</source>
+                <target>Weight</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>player.height</source>
+                <target>Height</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>player.birthday</source>
+                <target>Birthday</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>player.nationality</source>
+                <target>Nationality</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

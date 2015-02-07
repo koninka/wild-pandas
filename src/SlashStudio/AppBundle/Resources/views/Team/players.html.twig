@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+  <h1>{{ 'navigation.players' | trans({}, 'navigation') }}</h1>
+  <table>
+    <thead>
+      <th></th>
+      <th>{{ 'player.fullname'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.number'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.position'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.weight'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.height'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.birthday'  | trans({}, 'player') }}</th>
+      <th>{{ 'player.nationality'  | trans({}, 'player') }}</th>
+    </thead>
+    <tbody></tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+slash_app_team_players:
+    path:       /players/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Team:players, _locale: ru}
+
+slash_app_team_info:
+    path:       /{action}/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Team:info, _locale: ru}
+    requirements:
+        action: training|history|baby_team
+
+slash_app_team_join:
+    path:       /join/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Team:join, _locale: ru}

@@ -4,11 +4,11 @@
   <ul>
     <li>{{ 'navigation.team' | trans }}
       <ul>
-        <li><a href="">{{ 'navigation.players' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.training' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.history' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.baby_team' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.join_team' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_team_players') }}">{{ 'navigation.players' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_team_info', {action: 'training'}) }}">{{ 'navigation.training' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_team_info', {action: 'history'}) }}">{{ 'navigation.history' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_team_info', {action: 'baby_team'}) }}">{{ 'navigation.baby_team' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_team_join') }}">{{ 'navigation.join_team' | trans }}</a></li>
       </ul>
     </li>
     <li>{{ 'navigation.media' | trans }}

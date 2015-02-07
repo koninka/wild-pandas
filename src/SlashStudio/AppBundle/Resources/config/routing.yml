@@ -3,4 +3,8 @@ slash_app_mainpage:
     defaults: {_controller: SlashStudioAppBundle:App:index, _locale: ru}
 
 slash_app_products:
-    resource: 'products_routing.yml'
+    resource: "@SlashStudioAppBundle/Resources/config/products_routing.yml"
+
+slash_app_team:
+    prefix: /team
+    resource: "@SlashStudioAppBundle/Resources/config/team_routing.yml"

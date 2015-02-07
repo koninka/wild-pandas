@@ -3,30 +3,22 @@
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="1">
-                <source>player.name</source>
-                <target>Player's name</target>
-            </trans-unit>
-            <trans-unit id="2">
-                <source>player.surname</source>
-                <target>Player's surname</target>
-            </trans-unit>
-            <trans-unit id="3">
                 <source>product.name</source>
                 <target>Name</target>
             </trans-unit>
-            <trans-unit id="4">
+            <trans-unit id="2">
                 <source>product.price</source>
                 <target>Price</target>
             </trans-unit>
-            <trans-unit id="5">
+            <trans-unit id="3">
                 <source>product.title</source>
                 <target>Products</target>
             </trans-unit>
-            <trans-unit id="6">
+            <trans-unit id="4">
                 <source>product.description</source>
                 <target>Support the "Wild Pandas" purchase merchandise and show everyone on the field as you love your team</target>
             </trans-unit>
-            <trans-unit id="7">
+            <trans-unit id="5">
                 <source>product.not_found</source>
                 <target>This product does not exist!</target>
             </trans-unit>
