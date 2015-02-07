@@ -76,14 +76,29 @@ class Team
     }
 
     /**
-     * Set achievements
+     * Add achievement
      *
-     * @param integer $achievements
+     * @param Achievement $achievement
      * @return Team
      */
-    public function setAchievements($achievements)
+    public function addAchievement(Achievement $achievement)
     {
-        $this->achievements = $achievements;
+        $achievement->setTeam($this);
+        $this->achievements[] = $achievement;
+
+        return $this;
+    }
+
+    /**
+     * Remove achievement
+     *
+     * @param Achievement $achievement
+     * @return Team
+     */
+    public function removeAchievement(Achievement $achievement)
+    {
+        $achievement->setTeam(null);
+        $this->achievements->remove($achievement);
 
         return $this;
     }
