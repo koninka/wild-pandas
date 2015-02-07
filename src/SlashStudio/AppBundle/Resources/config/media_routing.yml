@@ -1,0 +1,11 @@
+slash_app_media_photo:
+    path:       /photo/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Media:photo, _locale: ru}
+
+slash_app_media_video:
+    path:       /video/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Media:video, _locale: ru}
+
+slash_app_media_about:
+    path:       /about/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Media:about, _locale: ru}

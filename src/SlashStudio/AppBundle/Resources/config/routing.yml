@@ -6,5 +6,9 @@ slash_app_products:
     resource: "@SlashStudioAppBundle/Resources/config/products_routing.yml"
 
 slash_app_team:
-    prefix: /team
-    resource: "@SlashStudioAppBundle/Resources/config/team_routing.yml"
+    prefix:     /team
+    resource:   "@SlashStudioAppBundle/Resources/config/team_routing.yml"
+
+slash_app_media:
+    prefix:     /media
+    resource:   "@SlashStudioAppBundle/Resources/config/media_routing.yml"

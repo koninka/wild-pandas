@@ -13,9 +13,9 @@
     </li>
     <li>{{ 'navigation.media' | trans }}
       <ul>
-        <li><a href="">{{ 'navigation.photo' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.video' | trans }}</a></li>
-        <li><a href="">{{ 'navigation.media_about' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_media_photo') }}">{{ 'navigation.photo' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_media_video') }}">{{ 'navigation.video' | trans }}</a></li>
+        <li><a href="{{ path('slash_app_media_about') }}">{{ 'navigation.media_about' | trans }}</a></li>
       </ul>
     </li>
     <li><a href="">{{ 'navigation.cheerleader' | trans }}</a></li>
