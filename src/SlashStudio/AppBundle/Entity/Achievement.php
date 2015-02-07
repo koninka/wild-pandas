@@ -28,6 +28,13 @@ class Achievement
      */
     private $name;
 
+    /**
+     * @var Team
+     *
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="achievements")
+     * @ORM\JoinColumn(name="team_id", referencedColumnName="id")
+     */
+    private $team;
 
     /**
      * Get id
@@ -61,4 +68,25 @@ class Achievement
     {
         return $this->name;
     }
+
+    /**
+     * @return Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+
+    /**
+     * @param Team $team
+     * @return Achievement
+     */
+    public function setTeam($team)
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+
 }
