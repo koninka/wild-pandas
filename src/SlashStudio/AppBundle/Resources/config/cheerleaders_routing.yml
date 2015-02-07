@@ -1,0 +1,3 @@
+slash_app_chearleaders:
+    path:       /{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Cheerleader:list, _locale: ru}
