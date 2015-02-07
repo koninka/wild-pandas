@@ -1,0 +1,9 @@
+slash_app_blog_list:
+    path:       /list/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Blog:list, _locale: ru}
+
+slash_app_blog_show:
+    path:       /show/{id}/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Blog:show, _locale: ru}
+    requirements:
+        id: \d+

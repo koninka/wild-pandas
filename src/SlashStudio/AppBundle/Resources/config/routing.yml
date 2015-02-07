@@ -20,3 +20,7 @@ slash_app_media:
 slash_app_cheerleaders:
     prefix:     /cheerleaders
     resource:   "@SlashStudioAppBundle/Resources/config/cheerleaders_routing.yml"
+
+slash_app_blog:
+    prefix:     /blog
+    resource:   "@SlashStudioAppBundle/Resources/config/blog_routing.yml"
