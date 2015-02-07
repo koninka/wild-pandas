@@ -24,6 +24,25 @@
         <li>{{ achievement.name }}</li>
       {% endfor %}
     </ul>
+    <div>
+      <h3>{{ 'title.contacts' | trans }}</h3>
+      <div>
+        {% if team.captain %}
+          <h4>{{ 'title.team.captain' | trans }}</h4>
+          {{ team.captain.name }} {{ team.captain.surname }}
+          {{ team.captain.phone }}
+          {{ team.captain.email }}
+        {% endif %}
+      </div>
+      <div>
+        {% if team.managerName %}
+          <h4>{{ 'title.team.manager' | trans }}</h4>
+          {{ team.managerName }}
+          {{ team.managerPhone }}
+          {{ team.managerEmail }}
+        {% endif %}
+      </div>
+    </div>
   </div>
 
   <div>

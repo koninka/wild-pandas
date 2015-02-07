@@ -26,6 +26,18 @@
                 <source>title.team</source>
                 <target>Команда</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>title.contacts</source>
+                <target>Контакты</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>title.team.captain</source>
+                <target>Капитан команды</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>title.team.manager</source>
+                <target>Менежер команды</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

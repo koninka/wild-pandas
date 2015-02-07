@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Player
@@ -69,6 +70,21 @@ class Player
      * @ORM\Column(name="nationality", type="string", length=150)
      */
     private $nationality;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=true)
+     * @Assert\Email()
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=30, nullable=true)
+     */
+    private $phone;
 
     /**
      * @var structureEnumType
@@ -300,5 +316,43 @@ class Player
     public function getStructure()
     {
         return $this->structure;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Player
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     * @return Player
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
     }
 }
