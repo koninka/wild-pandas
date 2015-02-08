@@ -60,6 +60,11 @@ class Post
     private $meta;
 
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
+
     /**
      * Get id
      *
