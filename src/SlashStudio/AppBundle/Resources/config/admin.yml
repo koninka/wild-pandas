@@ -1,0 +1,11 @@
+services:
+    sonata.admin.position:
+        class: SlashStudio\AppBundle\Admin\PositionAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Позиции игроков" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Position
+            - ~
+#        calls:
+#            - [ setTranslationDomain, [AcmeDemoBundle]]

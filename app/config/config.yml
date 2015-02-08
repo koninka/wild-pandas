@@ -3,6 +3,17 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
+sonata_admin:
+    title:      Wild Pandas Admin
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
@@ -72,9 +83,3 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        # Enable the SonataAdminBundle block
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
