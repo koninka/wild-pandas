@@ -15,7 +15,13 @@ class TeamController extends Controller
 
     public function infoAction($action)
     {
+        $page = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:SimplePage')->getPage($action);
+        if (empty($page)) {
+            $this->createNotFoundException();
+        }
+
         return $this->render('SlashStudioAppBundle:Team:info.html.twig', [
+            'page'   => $page,
             'header' => $this->get('translator')->trans('navigation.' . $action, [], 'navigation'),
         ]);
     }
