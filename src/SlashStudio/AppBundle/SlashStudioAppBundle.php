@@ -12,5 +12,8 @@ class SlashStudioAppBundle extends Bundle
         if (!Type::hasType('structureEnumType')) {
             Type::addType('structureEnumType', 'SlashStudio\AppBundle\DBAL\StructureEnumType');
         }
+        if (!Type::hasType('partnershipEnumType')) {
+            Type::addType('partnershipEnumType', 'SlashStudio\AppBundle\DBAL\PartnershipEnumType');
+        }
     }
 }

@@ -67,12 +67,33 @@
   </div>
 
   <div>
-    <h2><a href="{{ path('slash_app_products_list') }}">{{ 'product.title' | trans }}</a></h2>
+    <h2><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans({}, 'navigation') }}</a></h2>
     {% for product in products %}
       <div>
         {{ 'product.name' | trans }} : {{ product.name }}
         {{ 'product.price' | trans }} : {{ product.price }}
       </div>
     {% endfor %}
+  </div>
+
+  <div>
+    <h2><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans({}, 'navigation') }}</a></h2>
+  </div>
+
+  <div>
+    <h2><a href="{{ path('slash_app_partnership') }}">{{ 'navigation.partnership' | trans({}, 'navigation') }}</a></h2>
+    <div>
+      <h4>{{ 'title.sponsors' | trans }}</h4>
+      {% for s in partnership.sponsors %}
+        <img src="" alt="{{ s.name }}">
+      {% endfor %}
+    </div>
+    <div>
+      <h4>{{ 'title.partners' | trans }}</h4>
+      {% for p in partnership.partners %}
+        <img src="" alt="{{ p.name }}">
+      {% endfor %}
+    </div>
+    {{ 'partnership.description' | trans }}
   </div>
 {% endblock %}

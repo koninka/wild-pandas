@@ -42,6 +42,18 @@
                 <source>title.official_blog</source>
                 <target>Official blog</target>
             </trans-unit>
+            <trans-unit id="11">
+                <source>title.sponsors</source>
+                <target>Sponsors</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>title.partners</source>
+                <target>Partners</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>partnership.description</source>
+                <target>Cooperation proposals to the manager</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
