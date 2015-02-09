@@ -6,6 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use SlashStudio\AppBundle\Entity\Team;
 use SlashStudio\AppBundle\Entity\Player;
 use SlashStudio\AppBundle\Entity\Position;
+use SlashStudio\AppBundle\Entity\Nationality;
 use SlashStudio\AppBundle\Entity\Achievement;
 use SlashStudio\AppBundle\DBAL\StructureEnumType;
 
@@ -21,6 +22,9 @@ class LoadTeamData implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+        $nationality = new Nationality;
+        $nationality->setName('США');
+        $manager->persist($nationality);
         $position = new Position;
         $position->setName('Kicker');
         $manager->persist($position);
@@ -32,7 +36,7 @@ class LoadTeamData implements FixtureInterface
                ->setStructure(StructureEnumType::ST_BASIC)
                ->setWeight(100)
                ->setBirthday(new \DateTime('09.01.1992'))
-               ->setNationality('Русский')
+               ->setNationality($nationality)
                ->setHeight(195);
         $manager->persist($captain);
          $team = new Team();

@@ -67,7 +67,8 @@ class Player
     /**
      * @var string
      *
-     * @ORM\Column(name="nationality", type="string", length=150)
+     * @ORM\ManyToOne(targetEntity="Nationality")
+     * @ORM\JoinColumn(name="nationality_id", referencedColumnName="id", nullable=true)
      */
     private $nationality;
 
@@ -275,7 +276,7 @@ class Player
     /**
      * Set nationality
      *
-     * @param string $nationality
+     * @param Nationality $nationality
      * @return Player
      */
     public function setNationality($nationality)
@@ -288,7 +289,7 @@ class Player
     /**
      * Get nationality
      *
-     * @return string
+     * @return Nationality
      */
     public function getNationality()
     {
@@ -354,5 +355,14 @@ class Player
         $this->phone = $phone;
 
         return $this;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return sprintf('%s %s', $this->name, $this->surname);
     }
 }

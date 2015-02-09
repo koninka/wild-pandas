@@ -5,6 +5,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SlashStudio\AppBundle\Entity\Player;
 use SlashStudio\AppBundle\Entity\Position;
+use SlashStudio\AppBundle\Entity\Nationality;
 use SlashStudio\AppBundle\DBAL\StructureEnumType;
 
 class LoadPlayersData implements FixtureInterface
@@ -43,7 +44,9 @@ class LoadPlayersData implements FixtureInterface
             $manager->persist($position);
             $positions[] = $position;
         }
-        $manager->flush();
+        $nationality = new Nationality;
+        $nationality->setName('Россия');
+        $manager->persist($nationality);
         $number = 0;
         foreach ($this->names as $key => $name) {
             foreach ($this->surnames as $surname) {
@@ -55,7 +58,7 @@ class LoadPlayersData implements FixtureInterface
                        ->setStructure($key < 2 ? StructureEnumType::ST_BASIC : StructureEnumType::ST_ADDITIONAL)
                        ->setWeight(150)
                        ->setBirthday(new \DateTime('09.01.1993'))
-                       ->setNationality('Русский')
+                       ->setNationality($nationality)
                        ->setHeight(180);
                 $manager->persist($player);
             }

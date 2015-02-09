@@ -12,4 +12,12 @@ class StructureEnumType extends EnumType
         self::ST_BASIC,
         self::ST_ADDITIONAL,
     ];
+
+    public function getChoices()
+    {
+        return [
+            self::ST_BASIC => 'label.structure.basic',
+            self::ST_ADDITIONAL => 'label.structure.additional',
+        ];
+    }
 }

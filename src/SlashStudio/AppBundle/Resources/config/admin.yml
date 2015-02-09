@@ -2,10 +2,28 @@ services:
     sonata.admin.position:
         class: SlashStudio\AppBundle\Admin\PositionAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Позиции игроков" }
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Positions" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Position
             - ~
 #        calls:
 #            - [ setTranslationDomain, [AcmeDemoBundle]]
+
+    sonata.admin.player:
+        class: SlashStudio\AppBundle\Admin\PlayerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Players" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Player
+            - ~
+
+    sonata.admin.nationality:
+        class: SlashStudio\AppBundle\Admin\NationalityAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Nationalities" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Nationality
+            - ~

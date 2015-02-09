@@ -3,15 +3,14 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Position
+ * Nationality
  *
- * @ORM\Table(name="positions")
+ * @ORM\Table()
  * @ORM\Entity
  */
-class Position
+class Nationality
 {
     /**
      * @var integer
@@ -26,7 +25,6 @@ class Position
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
-     * @Assert\NotBlank()
      */
     private $name;
 
@@ -45,7 +43,7 @@ class Position
      * Set name
      *
      * @param string $name
-     * @return Position
+     * @return Nationality
      */
     public function setName($name)
     {
