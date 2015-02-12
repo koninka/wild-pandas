@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Nationality
  *
- * @ORM\Table()
+ * @ORM\Table(name="nationalities")
  * @ORM\Entity
  */
 class Nationality
