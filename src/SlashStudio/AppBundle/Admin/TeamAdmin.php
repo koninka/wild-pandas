@@ -56,13 +56,13 @@ class TeamAdmin extends BaseAdmin
         $collection->clearExcept(['show', 'list', 'edit']);
     }
 
-    // public function createQuery($context = 'list')
-    // {
-    //     $query = parent::createQuery($context);
-    //     $a = $query->getRootAlias();
-    //     $query->orderBy($query->getRootAlias() . '.displayOrder', 'ASC');
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $a = $query->getRootAlias();
+        $query->addSelect('p')->leftJoin("$a.captain", 'p');
 
-    //     return $query;
-    // }
+        return $query;
+    }
 
 }
