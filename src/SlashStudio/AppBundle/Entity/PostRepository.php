@@ -20,7 +20,7 @@ class PostRepository extends EntityRepository
     public function getPostsForMainPage()
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p FROM SlashStudioAppBundle:Post p ORDER BY p.createdAt DESC')
+            ->createQuery('SELECT p FROM SlashStudioAppBundle:Post p WHERE p.isShowOnMain = true ORDER BY p.createdAt DESC')
             ->setMaxResults(static::POSTS_ON_MAIN_PAGE)
             ->getArrayResult();
     }
