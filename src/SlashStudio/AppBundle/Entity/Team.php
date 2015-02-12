@@ -40,7 +40,7 @@ class Team
     /**
      * @var integer
      *
-     * @ORM\OneToMany(targetEntity="Achievement", mappedBy="team")
+     * @ORM\OneToMany(targetEntity="Achievement", mappedBy="team", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $achievements;
 
@@ -159,7 +159,7 @@ class Team
     public function removeAchievement(Achievement $achievement)
     {
         $achievement->setTeam(null);
-        $this->achievements->remove($achievement);
+        $this->achievements->removeElement($achievement);
 
         return $this;
     }
