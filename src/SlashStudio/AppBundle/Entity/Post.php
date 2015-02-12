@@ -33,6 +33,7 @@ class Post
      * @var string
      *
      * @ORM\Column(name="subtitle", type="string", length=150)
+     * @Assert\NotBlank()
      */
     private $subtitle;
 
@@ -50,6 +51,13 @@ class Post
      * @Assert\NotBlank()
      */
     private $createdAt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_show_on_main", type="boolean", options={"default"=false})
+     */
+    private $isShowOnMain = false;
 
     /**
      * @var integer
@@ -159,6 +167,25 @@ class Post
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsShowOnMain()
+    {
+        return $this->isShowOnMain;
+    }
+
+    /**
+     * @param boolean $isShowOnMain
+     * @return Post
+     */
+    public function setIsShowOnMain($isShowOnMain)
+    {
+        $this->isShowOnMain = $isShowOnMain;
 
         return $this;
     }

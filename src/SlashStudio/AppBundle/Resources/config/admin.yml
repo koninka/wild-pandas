@@ -72,3 +72,13 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Achievement
             - ~
+
+    sonata.admin.post:
+        class: SlashStudio\AppBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Posts" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Post
+            - ~
+
