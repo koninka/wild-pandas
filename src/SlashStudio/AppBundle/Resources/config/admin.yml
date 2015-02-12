@@ -36,3 +36,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Partnership
             - ~
+
+    sonata.admin.simple_page:
+        class: SlashStudio\AppBundle\Admin\SimplePageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Team pages" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\SimplePage
+            - ~
