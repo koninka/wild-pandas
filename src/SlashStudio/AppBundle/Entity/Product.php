@@ -58,7 +58,7 @@ class Product
      *
      * @ORM\Column(name="is_show_on_the_main", type="boolean", options={"default"=false})
      */
-    private $isShowOnTheMain = false;
+    private $showOnTheMain = false;
 
     /**
      * Get id
@@ -165,18 +165,18 @@ class Product
     /**
      * @return bool
      */
-    public function isIsShowOnTheMain()
+    public function isShowOnTheMain()
     {
-        return $this->isShowOnTheMain;
+        return $this->showOnTheMain;
     }
 
     /**
-     * @param bool $isShowOnTheMain
+     * @param bool $showOnTheMain
      * @return Product
      */
-    public function setIsShowOnTheMain($isShowOnTheMain)
+    public function setShowOnTheMain($showOnTheMain)
     {
-        $this->isShowOnTheMain = $isShowOnTheMain;
+        $this->showOnTheMain = $showOnTheMain;
 
         return $this;
     }

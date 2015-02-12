@@ -14,19 +14,19 @@ class PostAdmin extends BaseAdmin
         $formMapper->add('title')
                    ->add('subtitle')
                    ->add('text', 'textarea')
-                   ->add('isShowOnMain', null, ['required' => false]);
+                   ->add('showOnTheMain', null, ['required' => false]);
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', 'text')->add('subtitle')->add('isShowOnMain', 'boolean');
+        $listMapper->addIdentifier('title', 'text')->add('subtitle')->add('showOnTheMain', 'boolean');
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('title')->add('subtitle')->add('isShowOnMain', 'boolean');
+        $showMapper->add('title')->add('subtitle')->add('showOnTheMain', 'boolean');
     }
 
 }

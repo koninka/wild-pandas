@@ -55,9 +55,9 @@ class Post
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_show_on_main", type="boolean", options={"default"=false})
+     * @ORM\Column(name="is_show_on_the_main", type="boolean", options={"default"=false})
      */
-    private $isShowOnMain = false;
+    private $showOnTheMain = false;
 
     /**
      * @var integer
@@ -174,18 +174,18 @@ class Post
     /**
      * @return boolean
      */
-    public function isIsShowOnMain()
+    public function isShowOnTheMain()
     {
-        return $this->isShowOnMain;
+        return $this->showOnTheMain;
     }
 
     /**
-     * @param boolean $isShowOnMain
+     * @param boolean $showOnTheMain
      * @return Post
      */
-    public function setIsShowOnMain($isShowOnMain)
+    public function setShowOnTheMain($showOnTheMain)
     {
-        $this->isShowOnMain = $isShowOnMain;
+        $this->showOnTheMain = $showOnTheMain;
 
         return $this;
     }

@@ -26,7 +26,7 @@ class LoadProductsData implements FixtureInterface
                 ->setName($name)
                 ->setPrice(rand(50, 500))
                 ->setDescription($description)
-                ->setIsShowOnTheMain(rand(0, count($this->names) - 1) % 2 == 0);
+                ->setShowOnTheMain(rand(0, count($this->names) - 1) % 2 == 0);
 
             $manager->persist($position);
         }
