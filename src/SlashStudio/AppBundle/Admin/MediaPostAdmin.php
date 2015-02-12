@@ -7,7 +7,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class PostAdmin extends BaseAdmin
+class MediaPostAdmin extends BaseAdmin
 {
     protected $datagridValues = [
         '_page' => 1,
@@ -18,21 +18,19 @@ class PostAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('title')
-                   ->add('subtitle')
-                   ->add('text', 'textarea')
-                   ->add('showOnTheMain', null, ['required' => false]);
+                   ->add('subtitle');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', 'text')->add('subtitle')->add('showOnTheMain', 'boolean');
+        $listMapper->addIdentifier('title', 'text')->add('subtitle');
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('title')->add('subtitle')->add('showOnTheMain', 'boolean');
+        $showMapper->add('title')->add('subtitle');
     }
 
 }

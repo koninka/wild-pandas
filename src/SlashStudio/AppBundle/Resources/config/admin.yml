@@ -90,3 +90,13 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Product
             - ~
+
+    sonata.admin.mediapost:
+        class: SlashStudio\AppBundle\Admin\MediaPostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "MediaPosts" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\MediaPost
+            - ~
+
