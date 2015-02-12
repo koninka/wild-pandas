@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SlashStudio\AppBundle\Entity\Post;
+use SlashStudio\AppBundle\Entity\MediaPost;
 
 class LoadPostsData implements FixtureInterface
 {
@@ -27,7 +28,11 @@ EOT;
                 ->setSubtitle("Lorem ipsum dolor sit amet, consectetur adipisicing elit")
                 ->setText($this->loremIpsum)
                 ->setCreatedAt(new \DateTime());
+            $mediaPost = new MediaPost;
+            $mediaPost->setTitle("ЗаголокМедиа$i")
+                      ->setSubtitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
             $manager->persist($post);
+            $manager->persist($mediaPost);
         }
         $manager->flush();
     }

@@ -3,15 +3,14 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Post
+ * MediaPost
  *
- * @ORM\Table(name="posts")
- * @ORM\Entity(repositoryClass="PostRepository")
+ * @ORM\Table(name="media_posts")
+ * @ORM\Entity(repositoryClass="SlashStudio\AppBundle\Entity\MediaPostRepository")
  */
-class Post
+class MediaPost
 {
     /**
      * @var integer
@@ -32,32 +31,16 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="subtitle", type="string", length=150)
-     * @Assert\NotBlank()
+     * @ORM\Column(name="subtitle", type="string", length=100)
      */
     private $subtitle;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="text", type="text")
-     */
-    private $text;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
-     * @Assert\NotBlank()
      */
     private $createdAt;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="is_show_on_the_main", type="boolean", options={"default"=false})
-     */
-    private $showOnTheMain = false;
 
     /**
      * @var Meta
@@ -67,7 +50,6 @@ class Post
      */
     private $meta;
 
-
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
@@ -76,7 +58,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -87,7 +69,7 @@ class Post
      * Set title
      *
      * @param string $title
-     * @return Post
+     * @return MediaPost
      */
     public function setTitle($title)
     {
@@ -99,7 +81,7 @@ class Post
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -110,7 +92,7 @@ class Post
      * Set subtitle
      *
      * @param string $subtitle
-     * @return Post
+     * @return MediaPost
      */
     public function setSubtitle($subtitle)
     {
@@ -122,34 +104,11 @@ class Post
     /**
      * Get subtitle
      *
-     * @return string
+     * @return string 
      */
     public function getSubtitle()
     {
         return $this->subtitle;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     * @return Post
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
     }
 
     /**
@@ -170,31 +129,12 @@ class Post
 
         return $this;
     }
-
-    /**
-     * @return boolean
-     */
-    public function isShowOnTheMain()
-    {
-        return $this->showOnTheMain;
-    }
-
-    /**
-     * @param boolean $showOnTheMain
-     * @return Post
-     */
-    public function setShowOnTheMain($showOnTheMain)
-    {
-        $this->showOnTheMain = $showOnTheMain;
-
-        return $this;
-    }
-
+    
     /**
      * Set meta
      *
      * @param Meta $meta
-     * @return Post
+     * @return MediaPost
      */
     public function setMeta(Meta $meta = null)
     {
@@ -212,6 +152,4 @@ class Post
     {
         return $this->meta;
     }
-
-
 }
