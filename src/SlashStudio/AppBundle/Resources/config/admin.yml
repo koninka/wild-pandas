@@ -63,3 +63,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Team
             - ~
+
+    sonata.admin.achievement:
+        class: SlashStudio\AppBundle\Admin\AchievementAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Achievements" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Achievement
+            - ~
