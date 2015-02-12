@@ -14,7 +14,7 @@ class TeamAdmin extends BaseAdmin
         $formMapper->with('General')
                        ->add('name')
                        ->add('description', 'textarea')
-                       // ->add('achievements', 'sonata_type_model_list', ['required' => false])
+                       ->add('achievements', null, ['required' => false])
                    ->end()
                    ->with('Contacts')
                        ->add('captain', 'sonata_type_model_list', ['btn_add' => false, 'required' => false])
