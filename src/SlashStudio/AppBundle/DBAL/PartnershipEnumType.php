@@ -13,4 +13,12 @@ class PartnershipEnumType extends EnumType
         self::ST_PARTNER,
         self::ST_SPONSOR,
     ];
+
+    public function getChoices()
+    {
+        return [
+            self::ST_PARTNER => 'label.partnership.partner',
+            self::ST_SPONSOR => 'label.partnership.sponsor',
+        ];
+    }
 }

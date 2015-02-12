@@ -27,3 +27,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Nationality
             - ~
+
+    sonata.admin.partnership:
+        class: SlashStudio\AppBundle\Admin\PartnershipAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Partnership" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Partnership
+            - ~
