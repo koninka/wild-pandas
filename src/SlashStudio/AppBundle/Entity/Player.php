@@ -365,4 +365,9 @@ class Player
     {
         return sprintf('%s %s', $this->name, $this->surname);
     }
+
+    public function __toString()
+    {
+        return $this->getFullName();
+    }
 }

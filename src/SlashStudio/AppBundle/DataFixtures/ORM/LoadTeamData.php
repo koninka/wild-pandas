@@ -40,7 +40,8 @@ class LoadTeamData implements FixtureInterface
                ->setHeight(195);
         $manager->persist($captain);
          $team = new Team();
-         $team->setDescription('Команда по американскому футболу из Дальнего Востока')
+         $team->setName('Дикие панды')
+              ->setDescription('Команда по американскому футболу из Дальнего Востока')
               ->setCaptain($captain)
               ->setManagerName('Николай Стецко')
               ->setManagerPhone('2-666-666')

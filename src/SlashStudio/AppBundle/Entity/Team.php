@@ -26,6 +26,13 @@ class Team
     /**
      * @var string
      *
+     * @ORM\Column(name="name", type="string", length=120)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -41,10 +48,9 @@ class Team
      * @var Player
      *
      * @ORM\OneToOne(targetEntity="Player")
-     * @ORM\JoinColumn(name="captain_id", referencedColumnName="id"),
+     * @ORM\JoinColumn(name="captain_id", referencedColumnName="id", nullable=true),
      */
     private $captain;
-
 
     /**
      * @var string
@@ -82,6 +88,29 @@ class Team
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Team
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -157,7 +186,7 @@ class Team
      * @param Player $captain
      * @return Team
      */
-    public function setCaptain(Player $captain)
+    public function setCaptain(Player $captain = null)
     {
         $this->captain = $captain;
 

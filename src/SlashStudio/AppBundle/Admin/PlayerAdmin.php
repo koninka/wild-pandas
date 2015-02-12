@@ -64,7 +64,7 @@ class PlayerAdmin extends BaseAdmin
                 ->add('weight', 'number')
                 ->add('height', 'number')
                 ->add('number', 'number')
-                ->add('position')
+                ->add('position', null, ['route' => ['name' => 'show']])
                 ->add('structure', 'choice', ['choices' => Type::getType('structureEnumType')->getChoices()])
             ->end();
     }

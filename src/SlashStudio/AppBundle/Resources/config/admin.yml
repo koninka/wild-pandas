@@ -54,3 +54,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Slide
             - ~
+
+    sonata.admin.team:
+        class: SlashStudio\AppBundle\Admin\TeamAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Team information" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Team
+            - ~
