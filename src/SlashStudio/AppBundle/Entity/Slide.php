@@ -40,7 +40,7 @@ class Slide
      *
      * @ORM\Column(name="display_order", type="integer", options={"default" = 0})
      */
-    private $displayOrder;
+    private $position;
 
 
     /**
@@ -100,25 +100,25 @@ class Slide
     }
 
     /**
-     * Set displayOrder
+     * Set position
      *
-     * @param integer $displayOrder
+     * @param integer $position
      * @return Slide
      */
-    public function setDisplayOrder($displayOrder)
+    public function setPosition($position)
     {
-        $this->displayOrder = $displayOrder;
+        $this->position = $position;
 
         return $this;
     }
 
     /**
-     * Get displayOrder
+     * Get position
      *
      * @return integer
      */
-    public function getDisplayOrder()
+    public function getPosition()
     {
-        return $this->displayOrder;
+        return $this->position;
     }
 }

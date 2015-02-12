@@ -15,7 +15,7 @@ class LoadSlidesData implements FixtureInterface
         for ($i = 0; $i < 5; $i++) {
             $slide = (new Slide)->setTitle('Заголовок' . ($i + 1))
                 ->setSubtitle('Подзаголовок' . ($i + 1))
-                ->setDisplayOrder(rand(0, 100));
+                ->setPosition(rand(0, 100));
             $manager->persist($slide);
         }
         $manager->flush();

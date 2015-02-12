@@ -9,34 +9,30 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class SlideAdmin extends BaseAdmin
 {
+    protected $datagridValues = [
+        '_page' => 1,
+        '_sort_order' => 'ASC',
+        '_sort_by' => 'position',
+    ];
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('title', 'text')
                    ->add('subtitle', 'text', ['required' => false])
-                   ->add('displayOrder', 'number');
+                   ->add('position', 'number');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('title', 'text', ['route' => ['name' => 'show']])
                    ->add('subtitle')
-                   ->add('displayOrder', 'number');
+                   ->add('position', 'number');
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('title')->add('subtitle')->add('displayOrder', 'number');
+        $showMapper->add('title')->add('subtitle')->add('position', 'number');
     }
-
-    public function createQuery($context = 'list')
-    {
-        $query = parent::createQuery($context);
-        $a = $query->getRootAlias();
-        $query->orderBy($query->getRootAlias() . '.displayOrder', 'ASC');
-
-        return $query;
-    }
-
 }
