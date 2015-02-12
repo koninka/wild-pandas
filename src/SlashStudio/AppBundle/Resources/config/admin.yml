@@ -100,3 +100,11 @@ services:
             - SlashStudio\AppBundle\Entity\MediaPost
             - ~
 
+    sonata.admin.meta:
+        class: SlashStudio\AppBundle\Admin\MetaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Metas" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Meta
+            - ~

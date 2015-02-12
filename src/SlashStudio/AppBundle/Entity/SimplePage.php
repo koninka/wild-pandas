@@ -38,7 +38,7 @@ class SimplePage
     /**
      * @var Meta
      *
-     * @ORM\OneToOne(targetEntity="Meta")
+     * @ORM\OneToOne(targetEntity="Meta", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(name="meta_id", referencedColumnName="id", nullable=true)
      */
     private $meta;
@@ -47,7 +47,7 @@ class SimplePage
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -70,7 +70,7 @@ class SimplePage
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -93,7 +93,7 @@ class SimplePage
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {

@@ -20,7 +20,11 @@ class PostAdmin extends BaseAdmin
         $formMapper->add('title')
                    ->add('subtitle')
                    ->add('text', 'textarea')
-                   ->add('showOnTheMain', null, ['required' => false]);
+                   ->add('showOnTheMain', null, ['required' => false])
+                   ->end()
+                   ->with('Meta information')
+                       ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
+                   ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)

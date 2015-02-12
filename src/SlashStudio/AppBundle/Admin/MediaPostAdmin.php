@@ -18,7 +18,11 @@ class MediaPostAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('title')
-                   ->add('subtitle');
+                   ->add('subtitle')
+                   ->end()
+                   ->with('Meta information')
+                       ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
+                   ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)

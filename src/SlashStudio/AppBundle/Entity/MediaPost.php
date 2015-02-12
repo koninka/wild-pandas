@@ -45,7 +45,7 @@ class MediaPost
     /**
      * @var Meta
      *
-     * @ORM\OneToOne(targetEntity="Meta")
+     * @ORM\OneToOne(targetEntity="Meta", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(name="meta_id", referencedColumnName="id", nullable=true)
      */
     private $meta;

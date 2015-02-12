@@ -21,7 +21,11 @@ class ProductAdmin extends BaseAdmin
         $formMapper->add('name')
                    ->add('description', 'textarea')
                    ->add('price', 'integer')
-                   ->add('showOnTheMain', null, ['required' => false]);
+                   ->add('showOnTheMain', null, ['required' => false])
+                   ->end()
+                   ->with('Meta information')
+                       ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
+                   ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)
