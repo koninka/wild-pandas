@@ -15,7 +15,7 @@ class PositionAdmin extends BaseAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']]);
         parent::configureListFields($listMapper);
     }
 

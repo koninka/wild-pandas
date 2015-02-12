@@ -45,3 +45,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\SimplePage
             - ~
+
+    sonata.admin.slide:
+        class: SlashStudio\AppBundle\Admin\SlideAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Slides" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Slide
+            - ~

@@ -17,7 +17,8 @@ class PartnershipAdmin extends BaseAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name')->add('type', 'choice', ['choices' => Type::getType('partnershipEnumType')->getChoices()]);
+        $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']])
+                   ->add('type', 'choice', ['choices' => Type::getType('partnershipEnumType')->getChoices()]);
         parent::configureListFields($listMapper);
     }
 

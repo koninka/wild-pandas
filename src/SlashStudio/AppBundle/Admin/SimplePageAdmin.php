@@ -17,7 +17,7 @@ class SimplePageAdmin extends BaseAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']]);
         $listMapper->add('_action', 'actions', [
             'actions' => [
                 'show' => [],
@@ -25,7 +25,6 @@ class SimplePageAdmin extends BaseAdmin
             ]
         ]);
     }
-
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
