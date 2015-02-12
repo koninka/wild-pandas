@@ -35,6 +35,7 @@ class Achievement
      *
      * @ORM\ManyToOne(targetEntity="Team", inversedBy="achievements")
      * @ORM\JoinColumn(name="team_id", referencedColumnName="id")
+     * @Assert\NotBlank()
      */
     private $team;
 

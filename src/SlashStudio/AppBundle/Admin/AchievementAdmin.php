@@ -11,7 +11,7 @@ class AchievementAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text');
+        $formMapper->add('name', 'text')->add('team', null, ['disabled' => true]);
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -19,7 +19,6 @@ class AchievementAdmin extends BaseAdmin
         $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']]);
         parent::configureListFields($listMapper);
     }
-
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
