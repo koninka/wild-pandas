@@ -14,6 +14,7 @@ class TeamAdmin extends BaseAdmin
         $formMapper->with('General')
                        ->add('name')
                        ->add('description', 'textarea')
+                       ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
                     ->end()
                     ->with('Achievements')
                        ->add(

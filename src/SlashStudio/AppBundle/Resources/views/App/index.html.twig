@@ -19,6 +19,7 @@
     <h2>This is a Team Section!</h2>
     <h3>{{ 'title.team' | trans }}</h3>
     <p>{{ team.description }}</p>
+    <div>{% media team.image ? team.image.id : '', 'main' %}</div>
     <b>Achievements</b>
     <ul>
       {% for achievement in team.achievements %}
