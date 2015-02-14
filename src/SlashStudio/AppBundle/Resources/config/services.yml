@@ -1,4 +1,10 @@
 services:
+    sonata.block.service.team:
+        class: SlashStudio\AppBundle\Block\TeamBlockService
+        arguments: [ "sonata.block.service.team", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
+        tags:
+            - { name: sonata.block }
+
 #    slash_studio_app.example:
 #        class: SlashStudio\AppBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

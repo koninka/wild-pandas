@@ -5,6 +5,15 @@ imports:
 
 sonata_admin:
     title:      Wild Pandas Admin
+    dashboard:
+        blocks:
+            - { position: top, type: sonata.block.service.team }
+            - { position: center, type: sonata.admin.block.admin_list }
+#         groups:
+#             acme.admin.group.content:
+#                 label: pidor
+#                 items:
+#                     - sonata.admin.player
 
 sonata_block:
     default_contexts: [cms]
@@ -12,6 +21,7 @@ sonata_block:
         # Enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+        sonata.block.service.team: ~
 
 
 framework:

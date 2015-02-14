@@ -49,7 +49,7 @@ services:
     sonata.admin.team:
         class: SlashStudio\AppBundle\Admin\TeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Team", label: "Information" }
+            - { name: sonata.admin, manager_type: orm, group: "team", label: "admin.team.information" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Team
@@ -112,7 +112,7 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Team" }
+            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Information" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam

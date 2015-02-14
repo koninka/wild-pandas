@@ -61,7 +61,7 @@ class TeamAdmin extends BaseAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->clearExcept(['show', 'list', 'edit']);
+        $collection->clearExcept(['show', 'edit']);
     }
 
     public function createQuery($context = 'list')
