@@ -16,7 +16,7 @@ class AppController extends Controller
             'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPosts(true),
             'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
             'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
-            'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
+            'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProducts(true),
             'partnership' => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),
         ]);
     }

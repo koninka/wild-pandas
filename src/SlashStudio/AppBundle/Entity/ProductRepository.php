@@ -3,7 +3,6 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query;
 
 /**
  * ProductRepository
@@ -16,15 +15,23 @@ class ProductRepository extends EntityRepository
     public function getProductInfo($id)
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p, m FROM SlashStudioAppBundle:Product p LEFT JOIN p.meta m WHERE p.id = :id ')
+            ->createQuery('SELECT p, m, i FROM SlashStudioAppBundle:Product p LEFT JOIN p.meta m LEFT JOIN p.image i WHERE p.id = :id ')
             ->setParameter('id', $id)
-            ->getOneOrNullResult(Query::HYDRATE_ARRAY);
+            ->getOneOrNullResult();
     }
 
-    public function getProductsForMainPage()
+    public function getProducts($isMainPage = false)
     {
-        return $this->getEntityManager()
-            ->createQuery('SELECT p FROM SlashStudioAppBundle:Product p WHERE p.showOnTheMain = true ORDER BY p.name ASC')
-            ->getArrayResult();
+        $qb = $this->getEntityManager()
+                   ->createQueryBuilder()
+                   ->select(['p', 'i'])
+                   ->from('SlashStudioAppBundle:Product', 'p')
+                   ->leftJoin('p.image', 'i')
+                   ->orderBy('p.name', 'ASC');
+        if ($isMainPage) {
+            $qb->where('p.showOnTheMain = true');
+        }
+
+        return $qb->getQuery()->getResult();
     }
 }

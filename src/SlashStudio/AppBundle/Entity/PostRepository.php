@@ -26,7 +26,7 @@ class PostRepository extends EntityRepository
         if ($isMainPage) {
             $qb->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE);
         }
-        
+
         return $qb->getQuery()->getResult();
     }
 }

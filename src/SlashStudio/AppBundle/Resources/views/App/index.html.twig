@@ -74,8 +74,9 @@
     <h2><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans({}, 'navigation') }}</a></h2>
     {% for product in products %}
       <div>
-        {{ 'product.name' | trans }} : {{ product.name }}
+      <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.name }}</a>
         {{ 'product.price' | trans }} : {{ product.price }}
+        <div>{% media product.image, 'small' %}</div>
       </div>
     {% endfor %}
   </div>

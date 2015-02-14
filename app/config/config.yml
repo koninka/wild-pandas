@@ -135,6 +135,14 @@ sonata_media:
             formats:
                 main: { width: 300 , quality: 100 }
 
+        product:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 150 , quality: 70 }
+                big:   { width: 300 , quality: 100 }
+
     cdn:
         server:
             path: /uploads/media
