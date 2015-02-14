@@ -12,7 +12,8 @@ class PartnershipAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('name', 'text')
-                   ->add('type', 'choice', ['choices' => Type::getType('partnershipEnumType')->getChoices()]);
+                   ->add('type', 'choice', ['choices' => Type::getType('partnershipEnumType')->getChoices()])
+                   ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'partnership']]);
     }
 
     protected function configureListFields(ListMapper $listMapper)

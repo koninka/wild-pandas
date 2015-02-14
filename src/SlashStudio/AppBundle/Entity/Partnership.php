@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Logo
@@ -36,6 +37,13 @@ class Partnership
      * @ORM\Column(name="type", type="partnershipEnumType")
      */
     private $type;
+
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $image;
 
     /**
      * Get id
@@ -89,5 +97,22 @@ class Partnership
         return $this;
     }
 
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 
+    /**
+     * @param Media $image
+     * @return Team
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 }

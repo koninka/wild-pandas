@@ -150,6 +150,13 @@ sonata_media:
             formats:
                 logo: { width: 90 , quality: 100 }
 
+        partnership:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                logo: { width: 100 , quality: 100 }
+
     cdn:
         server:
             path: /uploads/media

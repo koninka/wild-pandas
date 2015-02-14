@@ -91,13 +91,13 @@
     <div>
       <h4>{{ 'title.sponsors' | trans }}</h4>
       {% for s in partnership.sponsors %}
-        <img src="" alt="{{ s.name }}">
+        {% media s.image, 'logo' with {alt: s.name} %}
       {% endfor %}
     </div>
     <div>
       <h4>{{ 'title.partners' | trans }}</h4>
       {% for p in partnership.partners %}
-        <img src="" alt="{{ p.name }}">
+        {% media p.image, 'logo' with {alt: p.name} %}
       {% endfor %}
     </div>
     {{ 'partnership.description' | trans }}
