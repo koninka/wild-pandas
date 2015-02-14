@@ -108,3 +108,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Meta
             - ~
+
+    sonata.admin.cheerleader_team:
+        class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "CheerleaderTeam" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\CheerleaderTeam
+            - ~

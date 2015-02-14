@@ -84,6 +84,10 @@
 
   <div>
     <h2><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans({}, 'navigation') }}</a></h2>
+    <div>
+      <h3>{{ cl_team.name }}</h3>
+      {% media cl_team.image, 'main' %}
+    </div>
   </div>
 
   <div>
