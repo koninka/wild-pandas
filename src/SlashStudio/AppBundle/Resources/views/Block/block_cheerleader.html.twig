@@ -3,8 +3,8 @@
 {% block block %}
 {# is_granted('ROLE_SUPER_ADMIN') #}
   {% if true and admins.team %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
+    <div class="box">
+      <div class="box-header">
         <h3 class="box-title">{{ admins.team.label|trans({}, admins.team.translationdomain) }}</h3>
       </div>
       <ul class="sonata-blog-post-container list-group">
@@ -15,8 +15,8 @@
     </div>
   {% endif %}
   {% if true and admins.cheerleaders %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
+    <div class="box">
+      <div class="box-header">
         <h3 class="box-title">{{ admins.cheerleaders.label|trans({}, admins.cheerleaders.translationdomain) }}</h3>
       </div>
       <div class="sonata-blog-post-container list-group">

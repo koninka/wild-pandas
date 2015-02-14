@@ -10,12 +10,41 @@ sonata_admin:
             - { position: left, type: sonata.block.service.team, settings: { amount: 7 } }
             - { position: center, type: sonata.block.service.cheerleader, settings: { amount: 5 } }
             - { position: right, type: sonata.block.service.simple_pages }
-            - { position: left, type: sonata.admin.block.admin_list }
-#         groups:
-#             acme.admin.group.content:
-#                 label: pidor
-#                 items:
-#                     - sonata.admin.player
+            - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.posts] } }
+            - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [content] } }
+        groups:
+            cheerleader:
+                items:
+                    - sonata.admin.cheerleader_team
+                    - sonata.admin.cheerleaders
+            team:
+                items:
+                    - sonata.admin.team
+                    - sonata.admin.achievement
+            pages:
+                items:
+                    - sonata.admin.simple_page
+
+            admin.posts:
+                items:
+                    - sonata.admin.post
+                    - sonata.admin.mediapost
+            content:
+                items:
+                    - sonata.admin.position
+                    - sonata.admin.nationality
+                    - sonata.admin.partnership
+                    - sonata.admin.slide
+                    - sonata.admin.player
+                    - sonata.admin.product
+
+            # sonata_page2:
+            #     items:
+            #         - sonata.page.admin.myitem2
+            #         - sonata.page.admin.myitem3
+            # sonata_page3:
+            #     items:
+            #         - sonata.page.admin.myitem4
 
 sonata_block:
     default_contexts: [cms]

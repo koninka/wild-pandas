@@ -2,7 +2,7 @@ services:
     sonata.admin.position:
         class: SlashStudio\AppBundle\Admin\PositionAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Positions" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.positions" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Position
@@ -13,7 +13,7 @@ services:
     sonata.admin.nationality:
         class: SlashStudio\AppBundle\Admin\NationalityAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Nationalities" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.nationalities" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Nationality
@@ -22,7 +22,7 @@ services:
     sonata.admin.partnership:
         class: SlashStudio\AppBundle\Admin\PartnershipAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Partnership" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.partnership" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Partnership
@@ -31,7 +31,7 @@ services:
     sonata.admin.simple_page:
         class: SlashStudio\AppBundle\Admin\SimplePageAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "pages", label: "admin.pages.simple" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.pages.simple" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\SimplePage
@@ -40,7 +40,7 @@ services:
     sonata.admin.slide:
         class: SlashStudio\AppBundle\Admin\SlideAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Slides" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.slides" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Slide
@@ -49,7 +49,7 @@ services:
     sonata.admin.team:
         class: SlashStudio\AppBundle\Admin\TeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "team", label: "admin.team.information" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.team.information" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Team
@@ -58,7 +58,7 @@ services:
     sonata.admin.player:
         class: SlashStudio\AppBundle\Admin\PlayerAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Team", label: "Players" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.players" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Player
@@ -67,7 +67,7 @@ services:
     sonata.admin.achievement:
         class: SlashStudio\AppBundle\Admin\AchievementAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "team", label: "admin.team.achievements" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.team.achievements" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Achievement
@@ -76,7 +76,7 @@ services:
     sonata.admin.post:
         class: SlashStudio\AppBundle\Admin\PostAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Posts" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.posts.media" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Post
@@ -85,7 +85,7 @@ services:
     sonata.admin.product:
         class: SlashStudio\AppBundle\Admin\ProductAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Products" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.products" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Product
@@ -94,7 +94,7 @@ services:
     sonata.admin.mediapost:
         class: SlashStudio\AppBundle\Admin\MediaPostAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "MediaPosts" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.posts.usual" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\MediaPost
@@ -103,7 +103,7 @@ services:
     sonata.admin.meta:
         class: SlashStudio\AppBundle\Admin\MetaAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Metas" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.meta" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Meta
@@ -112,7 +112,7 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "cheerleader", label: "admin.cheerleader.team" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.cheerleader.team" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam
@@ -121,7 +121,7 @@ services:
     sonata.admin.cheerleaders:
         class: SlashStudio\AppBundle\Admin\CheerleaderAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "cheerleader", label: "admin.cheerleader.cheerleaders" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.cheerleader.cheerleaders" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Cheerleader
