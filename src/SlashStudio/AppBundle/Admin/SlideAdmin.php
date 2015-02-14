@@ -19,7 +19,9 @@ class SlideAdmin extends BaseAdmin
     {
         $formMapper->add('title', 'text')
                    ->add('subtitle', 'text', ['required' => false])
-                   ->add('position', 'number');
+                   ->add('position', 'number')
+                   ->add('image', 'sonata_media_type', ['required' => false, 'provider' => 'sonata.media.provider.image', 'context' => 'sliders']);
+                   // ->add('image', 'sonata_type_model_list', [], ['link_parameters' => ['context' => 'default']]);
     }
 
     protected function configureListFields(ListMapper $listMapper)

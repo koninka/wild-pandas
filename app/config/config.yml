@@ -43,6 +43,7 @@ twig:
     form:
         resources:
             - 'SonataCoreBundle:Form:datepicker.html.twig'
+            - 'SonataMediaBundle:Form:media_widgets.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -92,14 +93,25 @@ swiftmailer:
 sonata_media:
     default_context: default
     db_driver: doctrine_orm
+    class:
+        media:              Application\Sonata\MediaBundle\Entity\Media
+        gallery:            Application\Sonata\MediaBundle\Entity\Gallery
+        gallery_has_media:  Application\Sonata\MediaBundle\Entity\GalleryHasMedia
     contexts:
         default:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 100 , quality: 70}
-                big:   { width: 500 , quality: 100}
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 100 }
+
+        sliders:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                big:   { width: 500, quality: 100 }
 
     cdn:
         server:

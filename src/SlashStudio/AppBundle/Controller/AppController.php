@@ -13,7 +13,7 @@ class AppController extends Controller
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
             'team'        => $manager->getRepository('SlashStudioAppBundle:Team')->getInfo(),
             'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
-            'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->findBy([], ['position' => 'ASC']),
+            'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
             'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->findAll(),
             'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
             'partnership' => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),

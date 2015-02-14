@@ -3,12 +3,13 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Slide
  *
  * @ORM\Table(name="slides")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="SlideRepository")
  */
 class Slide
 {
@@ -42,6 +43,12 @@ class Slide
      */
     private $position;
 
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $image;
 
     /**
      * Get id
@@ -121,4 +128,24 @@ class Slide
     {
         return $this->position;
     }
+
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param Media $image
+     * @return Slide
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }

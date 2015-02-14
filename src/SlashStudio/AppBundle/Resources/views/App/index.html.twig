@@ -10,6 +10,7 @@
       <div>
         {{ slide.title }}
         {{ slide.subtitle }}
+        {% media slide.image, 'big' %}
       </div>
     {% endfor %}
   </div>
