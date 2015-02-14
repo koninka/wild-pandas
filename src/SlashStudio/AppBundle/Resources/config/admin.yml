@@ -31,7 +31,7 @@ services:
     sonata.admin.simple_page:
         class: SlashStudio\AppBundle\Admin\SimplePageAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Team pages" }
+            - { name: sonata.admin, manager_type: orm, group: "pages", label: "admin.pages.simple" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\SimplePage
