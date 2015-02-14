@@ -2,7 +2,6 @@
 
 namespace SlashStudio\AppBundle\Entity;
 
-use Doctrine\ORM\Query;
 use Doctrine\ORM\EntityRepository;
 
 class TeamRepository extends EntityRepository
@@ -13,6 +12,6 @@ class TeamRepository extends EntityRepository
             ->createQuery(
                 'SELECT t, a, p, i FROM SlashStudioAppBundle:Team t JOIN t.achievements a LEFT JOIN t.captain p LEFT JOIN t.image i'
             )
-            ->getOneOrNullResult(Query::HYDRATE_ARRAY);
+            ->getOneOrNullResult();
     }
 }

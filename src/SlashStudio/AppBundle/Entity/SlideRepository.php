@@ -11,6 +11,6 @@ class SlideRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery('SELECT s, i FROM SlashStudioAppBundle:Slide s LEFT JOIN s.image i')
-            ->getArrayResult();
+            ->getResult();
     }
 }

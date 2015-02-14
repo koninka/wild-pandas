@@ -16,6 +16,6 @@ class PlayerRepository extends EntityRepository
                   ORDER BY p.name ASC'
             )
             ->setParameter('structure', $structure)
-            ->getArrayResult();
+            ->getResult();
     }
 }

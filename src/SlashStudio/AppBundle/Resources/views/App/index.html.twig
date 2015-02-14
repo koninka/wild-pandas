@@ -10,7 +10,7 @@
       <div>
         {{ slide.title }}
         {{ slide.subtitle }}
-        {% media slide.image ? slide.image.id : '', 'big' %}
+        {% media slide.image, 'big' %}
       </div>
     {% endfor %}
   </div>
@@ -19,7 +19,7 @@
     <h2>This is a Team Section!</h2>
     <h3>{{ 'title.team' | trans }}</h3>
     <p>{{ team.description }}</p>
-    <div>{% media team.image ? team.image.id : '', 'main' %}</div>
+    <div>{% media team.image, 'main' %}</div>
     <b>Achievements</b>
     <ul>
       {% for achievement in team.achievements %}
@@ -64,7 +64,7 @@
     <div>
       {{ 'player.name' | trans({}, 'player') }}: {{ player.name }}
       {{ 'player.surname' | trans({}, 'player') }}: {{ player.surname }}
-      <div>{% media player.photo ? player.photo.id : '', 'small' %}</div>
+      <div>{% media player.photo, 'small' %}</div>
     </div>
   {% endfor %}
   </div>
