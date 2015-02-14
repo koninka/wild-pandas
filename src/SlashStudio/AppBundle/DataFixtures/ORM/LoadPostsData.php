@@ -26,6 +26,7 @@ EOT;
             $post = new Post;
             $post->setTitle("Заголовок$i")
                 ->setSubtitle("Lorem ipsum dolor sit amet, consectetur adipisicing elit")
+                ->setShowOnTheMain(rand() % 2 == 0)
                 ->setText($this->loremIpsum)
                 ->setCreatedAt(new \DateTime());
             $mediaPost = new MediaPost;

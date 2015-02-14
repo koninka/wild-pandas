@@ -9,7 +9,7 @@ class BlogController extends Controller
     public function listAction()
     {
         return $this->render('SlashStudioAppBundle:Blog:list.html.twig', [
-            'posts' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->findBy([], ['createdAt' => 'DESC']),
+            'posts' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPosts(),
         ]);
     }
 

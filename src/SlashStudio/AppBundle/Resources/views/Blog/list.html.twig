@@ -7,6 +7,7 @@
       <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.title }}</b></a>
       <p>{{ post.subtitle }}</p>
       {{ post.createdAt.date }}
+      <div> {% media post.image, 'main' %}</div>
     </div>
   {% endfor %}
 {% endblock %}

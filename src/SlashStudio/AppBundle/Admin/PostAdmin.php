@@ -21,6 +21,7 @@ class PostAdmin extends BaseAdmin
                    ->add('subtitle')
                    ->add('text', 'textarea')
                    ->add('showOnTheMain', null, ['required' => false])
+                   ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'post']])
                    ->end()
                    ->with('Meta information')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])

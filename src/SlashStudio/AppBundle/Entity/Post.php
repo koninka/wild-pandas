@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Post
@@ -66,6 +67,13 @@ class Post
      * @ORM\JoinColumn(name="meta_id", referencedColumnName="id", nullable=true)
      */
     private $meta;
+
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $image;
 
 
     public function __construct()
@@ -213,5 +221,23 @@ class Post
         return $this->meta;
     }
 
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param Media $image
+     * @return Team
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 
 }
