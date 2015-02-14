@@ -2,16 +2,29 @@
 
 {% block block %}
 {# is_granted('ROLE_SUPER_ADMIN') #}
-  {% if true and admin %}
+  {% if true and admins.team %}
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="box-title">{{ admin.label|trans({}, admin.translationdomain) }}</h3>
+        <h3 class="box-title">{{ admins.team.label|trans({}, admins.team.translationdomain) }}</h3>
       </div>
       <ul class="sonata-blog-post-container list-group">
         <li class="list-group-item">{{ team.name }}</li>
         <li class="list-group-item">{{ team.description }}</li>
       </ul>
-      <a href="{{ admin.generateUrl('edit', {id: team.id}) }}" class="btn btn-primary btn-block"><i class="fa fa-edit"></i>{% trans from 'SonataAdminBundle' %}link_action_edit{% endtrans %}</a>
+      <a href="{{ admins.team.generateUrl('edit', {id: team.id}) }}" class="btn btn-primary btn-block"><i class="fa fa-edit"></i>{% trans from 'SonataAdminBundle' %}link_action_edit{% endtrans %}</a>
+    </div>
+  {% endif %}
+  {% if true and admins.achievement %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="box-title">{{ admins.achievement.label|trans({}, admins.achievement.translationdomain) }}</h3>
+      </div>
+      <div class="sonata-blog-post-container list-group">
+        {% for a in achievements %}
+          <a href="{{ admins.achievement.generateUrl('edit', {id: a.id}) }}" class="list-group-item">{{ a.name }}</a>
+        {% endfor %}
+      </div>
+      <a href="{{ admins.achievement.generateUrl('list') }}" class="btn btn-primary btn-block"><i class="fa fa-list"></i>{% trans from 'SonataAdminBundle' %}link_list{% endtrans %}</a>
     </div>
   {% endif %}
 {% endblock %}

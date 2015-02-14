@@ -29,8 +29,7 @@ class TeamBlockService extends AdminListBlockService
     public function setDefaultSettings(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'url'      => false,
-            'title'    => 'Insert the rss title',
+            'amount'   => 4,
             'template' => 'SlashStudioAppBundle:Block:block_team.html.twig',
         ));
     }
@@ -39,31 +38,26 @@ class TeamBlockService extends AdminListBlockService
     {
         $dashboardGroups = $this->pool->getDashboardGroups();
 
-        $admin = null;
+        $admins = ['team' => null, 'achievement' => null];
+        $codes = ['sonata.admin.achievement' => 'achievement', 'sonata.admin.team' => 'team'];
         if (!empty($dashboardGroups['team'])) {
             foreach ($dashboardGroups['team']['items'] as $item) {
-                if ($item->getCode() == 'sonata.admin.team') {
-                    $admin = $item;
-                    break;
+                foreach ($codes as $c => $admin) {
+                    if ($item->getCode() == $c) {
+                        $admins[$admin] = $item;
+                    }
                 }
             }
         }
 
-        $team = $this->manager->getRepository('SlashStudioAppBundle:Team')->findOneBy([]);
+        $settings = $blockContext->getSettings();
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), [
-            'admin'    => $admin,
-            'team'     => $team,
-            'block'    => $blockContext->getBlock(),
-            'settings' => $blockContext->getSettings(),
+            'admins'       => $admins,
+            'team'         => $this->manager->getRepository('SlashStudioAppBundle:Team')->findOneBy([]),
+            'block'        => $blockContext->getBlock(),
+            'settings'     => $settings,
+            'achievements' => $this->manager->getRepository('SlashStudioAppBundle:Achievement')->findBy([], ['name' => 'ASC'], $settings['amount']),
         ], $response);
     }
-
-//    public function execute(BlockContextInterface $blockContext, Response $response = null)
-//    {
-//        return $this->renderResponse($blockContext->getTemplate(), array(
-//            'block'     => $blockContext->getBlock(),
-//            'settings'  => $blockContext->getSettings(),
-//        ), $response);
-//    }
 }
