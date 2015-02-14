@@ -6,5 +6,12 @@
     {{ team.name }}
     <p>{{ team.description }}</p>
     {% media team.image, 'main' %}
+    <div>
+      {% for cl in cheerleaders %}
+        {{ cl.getFullname() }}
+        <p>{{ cl.about }}</p>
+        {% media cl.photo, 'small' %}
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}

@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class CheerleaderTeamAdmin extends BaseAdmin
 {
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->with('General')
@@ -16,21 +17,6 @@ class CheerleaderTeamAdmin extends BaseAdmin
                        ->add('description', 'textarea')
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
                     ->end();
-
-                   //  ->with('Achievements')
-                   //     ->add(
-                   //          'achievements',
-                   //          'sonata_type_collection',
-                   //          ['by_reference' => false, 'label' => false],
-                   //          [ 'edit' => 'inline', 'inline' => 'table']
-                   //      )
-                   // ->end()
-                   // ->with('Contacts', array('collapsed' => true))
-                   //     ->add('captain', 'sonata_type_model_list', ['btn_add' => false, 'required' => false])
-                   //     ->add('managerName', 'text', ['required' => false])
-                   //     ->add('managerPhone', 'text', ['required' => false])
-                   //     ->add('managerEmail', 'text', ['required' => false])
-                   //  ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)

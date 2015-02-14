@@ -10,15 +10,6 @@ services:
 #        calls:
 #            - [ setTranslationDomain, [AcmeDemoBundle]]
 
-    sonata.admin.player:
-        class: SlashStudio\AppBundle\Admin\PlayerAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Players" }
-        arguments:
-            - ~
-            - SlashStudio\AppBundle\Entity\Player
-            - ~
-
     sonata.admin.nationality:
         class: SlashStudio\AppBundle\Admin\NationalityAdmin
         tags:
@@ -58,16 +49,25 @@ services:
     sonata.admin.team:
         class: SlashStudio\AppBundle\Admin\TeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Team information" }
+            - { name: sonata.admin, manager_type: orm, group: "Team", label: "Information" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Team
             - ~
 
+    sonata.admin.player:
+        class: SlashStudio\AppBundle\Admin\PlayerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Team", label: "Players" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Player
+            - ~
+
     sonata.admin.achievement:
         class: SlashStudio\AppBundle\Admin\AchievementAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Achievements" }
+            - { name: sonata.admin, manager_type: orm, group: "Team", label: "Achievements" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Achievement
@@ -112,8 +112,17 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "CheerleaderTeam" }
+            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Team" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam
+            - ~
+
+    sonata.admin.cheerleaders:
+        class: SlashStudio\AppBundle\Admin\CheerleaderAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Cheerleaders" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\Cheerleader
             - ~

@@ -157,6 +157,14 @@ sonata_media:
             formats:
                 logo: { width: 100 , quality: 100 }
 
+        cheerleaders:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 100 }
+
     cdn:
         server:
             path: /uploads/media

@@ -8,8 +8,11 @@ class CheerleaderController extends Controller
 {
     public function listAction()
     {
+        $manager = $this->getDoctrine()->getManager();
+
         return $this->render('SlashStudioAppBundle:Cheerleader:list.html.twig', [
-            'team' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
+            'team' => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
+            'cheerleaders' => $manager->getRepository('SlashStudioAppBundle:Cheerleader')->getAll(),
         ]);
     }
 }
