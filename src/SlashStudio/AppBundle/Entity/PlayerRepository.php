@@ -6,10 +6,16 @@ use Doctrine\ORM\EntityRepository;
 
 class PlayerRepository extends EntityRepository
 {
-    public function getPlayers()
+    public function getPlayers($structure)
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p, a FROM SlashStudioAppBundle:Player p JOIN p.position a ORDER BY p.name ASC')
+            ->createQuery(
+                'SELECT p, a, ph FROM SlashStudioAppBundle:Player p
+                  JOIN p.position a LEFT JOIN p.photo ph
+                  WHERE p.structure = :structure
+                  ORDER BY p.name ASC'
+            )
+            ->setParameter('structure', $structure)
             ->getArrayResult();
     }
 }

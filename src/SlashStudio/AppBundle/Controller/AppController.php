@@ -2,6 +2,7 @@
 
 namespace SlashStudio\AppBundle\Controller;
 
+use SlashStudio\AppBundle\DBAL\StructureEnumType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AppController extends Controller
@@ -14,7 +15,7 @@ class AppController extends Controller
             'team'        => $manager->getRepository('SlashStudioAppBundle:Team')->getInfo(),
             'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
             'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
-            'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->findAll(),
+            'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
             'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
             'partnership' => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),
         ]);

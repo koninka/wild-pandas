@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Player
@@ -101,6 +102,13 @@ class Player
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $position;
+
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $photo;
 
     /**
      * Get id
@@ -369,5 +377,24 @@ class Player
     public function __toString()
     {
         return $this->getFullName();
+    }
+
+    /**
+     * @return Media
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param Media $photo
+     * @return Slide
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
     }
 }

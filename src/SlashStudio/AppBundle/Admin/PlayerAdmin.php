@@ -22,6 +22,7 @@ class PlayerAdmin extends BaseAdmin
             ->add('weight', 'decimal')
             ->add('height', 'decimal')
             ->add('number', 'number')
+            ->add('structure', 'choice', ['choices' => Type::getType('structureEnumType')->getChoices()])
             ->add('position.name');
         parent::configureListFields($listMapper);
     }
@@ -34,7 +35,8 @@ class PlayerAdmin extends BaseAdmin
                 ->add('surname', 'text')
                 ->add('birthday', 'sonata_type_date_picker', ['format' => 'dd/MM/yyyy'])
                 ->add('nationality', 'sonata_type_model_list', ['required' => false])
-                ->end()
+                ->add('photo', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'players']])
+            ->end()
             ->with('Contacts')
                 ->add('email', 'text', ['required' => false])
                 ->add('phone', 'text', ['required' => false])

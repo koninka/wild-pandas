@@ -62,8 +62,9 @@
     <h2><a href="#">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
   {% for player in players %}
     <div>
-      {{ 'player.name' | trans({}, 'player') }}: {{ player.getName() }}
-      {{ 'player.surname' | trans({}, 'player') }}: {{ player.getSurname() }}
+      {{ 'player.name' | trans({}, 'player') }}: {{ player.name }}
+      {{ 'player.surname' | trans({}, 'player') }}: {{ player.surname }}
+      <div>{% media player.photo ? player.photo.id : '', 'small' %}</div>
     </div>
   {% endfor %}
   </div>
