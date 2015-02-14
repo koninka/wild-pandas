@@ -8,8 +8,9 @@ sonata_admin:
     dashboard:
         blocks:
             - { position: left, type: sonata.block.service.team, settings: { amount: 7 } }
-            - { position: center, type: sonata.block.service.simple_pages }
-            - { position: right, type: sonata.admin.block.admin_list }
+            - { position: center, type: sonata.block.service.cheerleader, settings: { amount: 5 } }
+            - { position: right, type: sonata.block.service.simple_pages }
+            - { position: left, type: sonata.admin.block.admin_list }
 #         groups:
 #             acme.admin.group.content:
 #                 label: pidor
@@ -23,6 +24,7 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         sonata.block.service.team: ~
+        sonata.block.service.cheerleader: ~
         sonata.block.service.simple_pages: ~
 
 

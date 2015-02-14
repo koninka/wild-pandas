@@ -112,7 +112,7 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Information" }
+            - { name: sonata.admin, manager_type: orm, group: "cheerleader", label: "admin.cheerleader.team" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam
@@ -121,7 +121,7 @@ services:
     sonata.admin.cheerleaders:
         class: SlashStudio\AppBundle\Admin\CheerleaderAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Cheerleaders", label: "Cheerleaders" }
+            - { name: sonata.admin, manager_type: orm, group: "cheerleader", label: "admin.cheerleader.cheerleaders" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Cheerleader

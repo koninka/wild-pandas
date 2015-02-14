@@ -5,6 +5,12 @@ services:
         tags:
             - { name: sonata.block }
 
+    sonata.block.service.cheerleader:
+        class: SlashStudio\AppBundle\Block\CheerleaderBlock
+        arguments: [ "sonata.block.service.cheerleader", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
+        tags:
+            - { name: sonata.block }
+
     sonata.block.service.simple_pages:
         class: SlashStudio\AppBundle\Block\SimplePagesBlock
         arguments: [ "sonata.block.service.simple_pages", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]

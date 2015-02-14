@@ -37,7 +37,7 @@ class CheerleaderTeamAdmin extends BaseAdmin
 
     protected function configureRoutes(RouteCollection $collection)
     {
-        $collection->clearExcept(['show', 'list', 'edit']);
+        $collection->clearExcept(['show', 'edit']);
     }
 
 }
