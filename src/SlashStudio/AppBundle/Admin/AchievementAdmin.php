@@ -11,7 +11,9 @@ class AchievementAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text')->add('team', null, ['disabled' => true]);
+        $formMapper->add('name', 'text')
+                   ->add('team', null, ['disabled' => true])
+                   ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'achievements']]);
     }
 
     protected function configureListFields(ListMapper $listMapper)

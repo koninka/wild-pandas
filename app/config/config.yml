@@ -143,6 +143,13 @@ sonata_media:
                 small: { width: 150 , quality: 70 }
                 big:   { width: 300 , quality: 100 }
 
+        achievements:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                logo: { width: 90 , quality: 100 }
+
     cdn:
         server:
             path: /uploads/media
