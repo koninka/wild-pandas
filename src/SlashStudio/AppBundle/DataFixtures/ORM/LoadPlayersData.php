@@ -25,12 +25,12 @@ class LoadPlayersData implements FixtureInterface
     ];
 
     private $positionNames = [
-        'Квотербек',
-        'Раннинбек',
-        'Уайд ресивер',
-        'Тайт-энд',
-        'Оффенсив гард',
-        'Оффенсив тэкл',
+        ['Квотербек', 'Quarterback'],
+        ['Раннинбек', 'Ranninbek'],
+        ['Уайд ресивер', 'Wide Receiver'],
+        ['Тайт-энд', 'Tight End'],
+        ['Оффенсив гард', 'Guard'],
+        ['Оффенсив тэкл', 'Offensiv Tekle'],
     ];
 
     /**
@@ -40,7 +40,13 @@ class LoadPlayersData implements FixtureInterface
     {
         $positions = [];
         foreach ($this->positionNames as $positionName) {
-            $position = (new Position())->setName($positionName);
+            $position = new Position();
+
+            $position->translate('ru')->setName($positionName[0]);
+            $position->translate('en')->setName($positionName[1]);
+
+            $position->mergeNewTranslations();
+
             $manager->persist($position);
             $positions[] = $position;
         }

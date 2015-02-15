@@ -10,8 +10,10 @@ class PlayerRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT p, a, ph FROM SlashStudioAppBundle:Player p
+                'SELECT p, a, ph, pt, n FROM SlashStudioAppBundle:Player p
                   JOIN p.position a LEFT JOIN p.photo ph
+                  LEFT JOIN a.translations pt
+                  LEFT JOIN p.nationality n
                   WHERE p.structure = :structure
                   ORDER BY p.name ASC'
             )

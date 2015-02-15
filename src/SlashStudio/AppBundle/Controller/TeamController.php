@@ -3,13 +3,14 @@
 namespace SlashStudio\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use SlashStudio\AppBundle\DBAL\StructureEnumType;
 
 class TeamController extends Controller
 {
     public function playersAction()
     {
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
-            'players' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:Player')->getPlayers(),
+            'players' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
         ]);
     }
 

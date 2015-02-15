@@ -26,7 +26,11 @@ class LoadTeamData implements FixtureInterface
         $nationality->setName('США');
         $manager->persist($nationality);
         $position = new Position;
-        $position->setName('Kicker');
+
+        $position->translate('ru')->setName('Кикер');
+        $position->translate('en')->setName('Kicker');
+
+        $position->mergeNewTranslations();
         $manager->persist($position);
         $captain = new Player;
         $captain->setName('Роман')
