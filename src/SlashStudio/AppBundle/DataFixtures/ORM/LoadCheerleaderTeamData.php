@@ -13,7 +13,14 @@ class LoadCheerleaderTeamData implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $team = new CheerleaderTeam();
-        $team->setName('WakeUp')->setDescription('Славные девчонки, которые вдохновляют команду на победы!');
+        $team->translate('ru')->setName('WakeUp');
+        $team->translate('ru')->setDescription('Славные девчонки, которые вдохновляют команду на победы!');
+
+        $team->translate('en')->setName('WakeUp');
+        $team->translate('en')->setDescription('Nice girls who inspire the team to victory!');
+
+        $team->mergeNewTranslations();
+
         $manager->persist($team);
         $manager->flush();
     }

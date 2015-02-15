@@ -3,8 +3,8 @@
 {% block body %}
   <h1>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}</h1>
   <div>
-    {{ team.name }}
-    <p>{{ team.description }}</p>
+    {{ team.getName() }}
+    <p>{{ team.getDescription() }}</p>
     {% media team.image, 'main' %}
     <div>
       {% for cl in cheerleaders %}

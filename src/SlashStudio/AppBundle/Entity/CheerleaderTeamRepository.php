@@ -10,8 +10,7 @@ class CheerleaderTeamRepository extends EntityRepository
     public function getInfo()
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT cl, i FROM SlashStudioAppBundle:CheerleaderTeam cl LEFT JOIN cl.image i')
-            ->setMaxResults(1)
+            ->createQuery('SELECT cl, i, t FROM SlashStudioAppBundle:CheerleaderTeam cl LEFT JOIN cl.image i LEFT JOIN cl.translations t')
             ->getOneOrNullResult();
     }
 }

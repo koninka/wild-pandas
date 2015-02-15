@@ -20,7 +20,12 @@ class TeamRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT t, a, p, i, ai FROM SlashStudioAppBundle:Team t JOIN t.achievements a LEFT JOIN a.image ai LEFT JOIN t.captain p LEFT JOIN t.image i'
+                'SELECT t, a, p, i, ai, tr FROM SlashStudioAppBundle:Team t
+                    JOIN t.achievements a
+                    LEFT JOIN a.image ai
+                    LEFT JOIN t.captain p
+                    LEFT JOIN t.image i
+                    LEFT JOIN t.translations tr'
             )
             ->getOneOrNullResult();
     }

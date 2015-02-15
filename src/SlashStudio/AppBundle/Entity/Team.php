@@ -4,7 +4,9 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Team
@@ -12,8 +14,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="team")
  * @ORM\Entity(repositoryClass="TeamRepository")
  */
-class Team extends BaseTeam
+class Team extends TranslationEntity
 {
+    use ORMBehaviors\Translatable\Translatable;
+
     /**
      * @var integer
      *
@@ -32,13 +36,6 @@ class Team extends BaseTeam
     /**
      * @var string
      *
-     * @ORM\Column(name="manager_name", type="string", length=150, nullable=true)
-     */
-    private $managerName;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="manager_phone", type="string", length=30, nullable=true)
      */
     private $managerPhone;
@@ -50,6 +47,14 @@ class Team extends BaseTeam
      * @Assert\Email()
      */
     private $managerEmail;
+
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $image;
+
 
     public function __construct()
     {
@@ -116,25 +121,6 @@ class Team extends BaseTeam
     /**
      * @return string
      */
-    public function getManagerName()
-    {
-        return $this->managerName;
-    }
-
-    /**
-     * @param string $managerName
-     * @return Team
-     */
-    public function setManagerName($managerName)
-    {
-        $this->managerName = $managerName;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getManagerPhone()
     {
         return $this->managerPhone;
@@ -166,6 +152,25 @@ class Team extends BaseTeam
     public function setManagerEmail($managerEmail)
     {
         $this->managerEmail = $managerEmail;
+
+        return $this;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param Media $image
+     * @return Team
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }

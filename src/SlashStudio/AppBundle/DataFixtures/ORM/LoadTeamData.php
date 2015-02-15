@@ -39,20 +39,29 @@ class LoadTeamData implements FixtureInterface
                ->setNationality($nationality)
                ->setHeight(195);
         $manager->persist($captain);
-         $team = new Team();
-         $team->setName('Дикие панды')
-              ->setDescription('Команда по американскому футболу из Дальнего Востока')
-              ->setCaptain($captain)
-              ->setManagerName('Николай Стецко')
-              ->setManagerPhone('2-666-666')
-              ->setManagerEmail('some@example.com');
-         $manager->persist($team);
-         foreach ($this->names as $name) {
-             $a = new Achievement();
-             $a->setName($name);
-             $team->addAchievement($a);
-             $manager->persist($a);
-         }
+        $team = new Team();
+        $team->setCaptain($captain)
+             ->setManagerPhone('2-666-666')
+             ->setManagerEmail('some@example.com')
+        ;
+
+        $team->translate('ru')->setName('Дикие панды');
+        $team->translate('ru')->setManagerName('Николай Стецко');
+        $team->translate('ru')->setDescription('Команда по американскому футболу из Дальнего Востока');
+
+        $team->translate('en')->setName('Wild Pandas');
+        $team->translate('en')->setManagerName('Nicholas Stetsko');
+        $team->translate('en')->setDescription('American football team from the Far East');
+
+        $team->mergeNewTranslations();
+
+        foreach ($this->names as $name) {
+            $a = new Achievement();
+            $a->setName($name);
+            $team->addAchievement($a);
+        }
+
+        $manager->persist($team);
         $manager->flush();
     }
 }

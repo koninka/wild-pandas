@@ -18,7 +18,7 @@
   <div>
     <h2>This is a Team Section!</h2>
     <h3>{{ 'title.team' | trans }}</h3>
-    <p>{{ team.description }}</p>
+    <p>{{ team.getDescription() }}</p>
     <div>{% media team.image, 'main' %}</div>
     <b>Achievements</b>
     <ul>
@@ -38,9 +38,9 @@
         {% endif %}
       </div>
       <div>
-        {% if team.managerName %}
+        {% if team.getManagerName() %}
           <h4>{{ 'title.team.manager' | trans }}</h4>
-          {{ team.managerName }}
+          {{ team.getManagerName() }}
           {{ team.managerPhone }}
           {{ team.managerEmail }}
         {% endif %}
@@ -85,7 +85,7 @@
   <div>
     <h2><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans({}, 'navigation') }}</a></h2>
     <div>
-      <h3>{{ cl_team.name }}</h3>
+      <h3>{{ cl_team.getName() }}</h3>
       {% media cl_team.image, 'main' %}
     </div>
   </div>

@@ -192,7 +192,7 @@ class Player
     /**
      * Set position
      *
-     * @param integer $position
+     * @param Position $position
      * @return Player
      */
     public function setPosition($position)
