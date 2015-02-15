@@ -126,3 +126,12 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\Cheerleader
             - ~
+#
+#    sonata.admin.users:
+#        class: SlashStudio\AppBundle\Admin\UserAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, label: "admin.user.class" }
+#        arguments:
+#            - ~
+#            - Application\Sonata\UserBundle\Entity\User
+#            - ~

@@ -3,6 +3,16 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
 
+fos_user:
+    db_driver:      orm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+    service:
+        user_manager: sonata.user.orm.user_manager
+
 sonata_admin:
     title:      Wild Pandas Admin
     dashboard:
@@ -37,6 +47,8 @@ sonata_admin:
                     - sonata.admin.player
             content:
                 items:
+                    - sonata.user.admin.user
+#                    - sonata.admin.users
                     - sonata.admin.partnership
                     - sonata.admin.slide
                     - sonata.admin.product
