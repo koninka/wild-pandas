@@ -10,7 +10,7 @@ class PartnershipRepository extends EntityRepository
     public function getAll()
     {
         $partnerships = $this->getEntityManager()
-            ->createQuery('SELECT p FROM SlashStudioAppBundle:Partnership p ORDER BY p.name ASC')
+            ->createQuery('SELECT p, t FROM SlashStudioAppBundle:Partnership p LEFT JOIN p.translations t ORDER BY t.name ASC')
             ->getResult();
 
         $result = ['sponsors' => [], 'partners' => []];

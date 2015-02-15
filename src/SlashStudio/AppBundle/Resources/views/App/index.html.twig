@@ -95,13 +95,15 @@
     <div>
       <h4>{{ 'title.sponsors' | trans }}</h4>
       {% for s in partnership.sponsors %}
-        {% media s.image, 'logo' with {alt: s.name} %}
+        {% media s.image, 'logo' with {alt: s.getName()} %}
+        {{ s.getName() }}
       {% endfor %}
     </div>
     <div>
       <h4>{{ 'title.partners' | trans }}</h4>
       {% for p in partnership.partners %}
-        {% media p.image, 'logo' with {alt: p.name} %}
+        {{ p.getName() }}
+        {% media p.image, 'logo' with {alt: p.getName()} %}
       {% endfor %}
     </div>
     {{ 'partnership.description' | trans }}
