@@ -13,9 +13,17 @@ class LoadSlidesData implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         for ($i = 0; $i < 5; $i++) {
-            $slide = (new Slide)->setTitle('Заголовок' . ($i + 1))
-                ->setSubtitle('Подзаголовок' . ($i + 1))
-                ->setPosition(rand(0, 100));
+            $slide = new Slide();
+            $slide->setPosition(rand(0, 100));
+
+            $slide->translate('ru')->setTitle('Заголовок' . ($i + 1));
+            $slide->translate('ru')->setSubtitle('Подзаголовок' . ($i + 1));
+
+            $slide->translate('en')->setTitle('Title' . ($i + 1));
+            $slide->translate('en')->setSubtitle('Subtitle' . ($i + 1));
+
+            $slide->mergeNewTranslations();
+
             $manager->persist($slide);
         }
         $manager->flush();

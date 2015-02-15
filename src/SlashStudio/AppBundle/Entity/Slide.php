@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Application\Sonata\MediaBundle\Entity\Media;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Slide
@@ -11,30 +12,10 @@ use Application\Sonata\MediaBundle\Entity\Media;
  * @ORM\Table(name="slides")
  * @ORM\Entity(repositoryClass="SlideRepository")
  */
-class Slide
+class Slide extends TranslationEntity
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=100)
-     */
-    private $title;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="subtitle", type="string", length=100, nullable=true)
-     */
-    private $subtitle;
+    use ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var integer
@@ -49,62 +30,6 @@ class Slide
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
      */
     private $image;
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return Slide
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set subtitle
-     *
-     * @param string $subtitle
-     * @return Slide
-     */
-    public function setSubtitle($subtitle)
-    {
-        $this->subtitle = $subtitle;
-
-        return $this;
-    }
-
-    /**
-     * Get subtitle
-     *
-     * @return string
-     */
-    public function getSubtitle()
-    {
-        return $this->subtitle;
-    }
 
     /**
      * Set position

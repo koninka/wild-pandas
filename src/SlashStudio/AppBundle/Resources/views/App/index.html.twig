@@ -8,8 +8,8 @@
     <h2>This is slider!</h2>
     {% for slide in slides %}
       <div>
-        {{ slide.title }}
-        {{ slide.subtitle }}
+        {{ slide.getTitle() }}
+        {{ slide.getSubtitle() }}
         {% media slide.image, 'big' %}
       </div>
     {% endfor %}
