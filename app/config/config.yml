@@ -7,11 +7,12 @@ sonata_admin:
     title:      Wild Pandas Admin
     dashboard:
         blocks:
-            - { position: left, type: sonata.block.service.team, settings: { amount: 7 } }
+            - { position: left, type: sonata.block.service.team, settings: { amount: 5 } }
             - { position: center, type: sonata.block.service.cheerleader, settings: { amount: 5 } }
             - { position: right, type: sonata.block.service.simple_pages }
             - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.posts] } }
-            - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [content] } }
+            - { position: center, type: sonata.admin.block.admin_list, settings: { groups: [content] } }
+            - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [admin.player_group] } }
         groups:
             cheerleader:
                 items:
@@ -29,13 +30,15 @@ sonata_admin:
                 items:
                     - sonata.admin.post
                     - sonata.admin.mediapost
-            content:
+            admin.player_group:
                 items:
                     - sonata.admin.position
                     - sonata.admin.nationality
+                    - sonata.admin.player
+            content:
+                items:
                     - sonata.admin.partnership
                     - sonata.admin.slide
-                    - sonata.admin.player
                     - sonata.admin.product
 
             # sonata_page2:
