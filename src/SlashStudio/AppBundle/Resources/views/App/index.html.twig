@@ -23,7 +23,7 @@
     <b>Achievements</b>
     <ul>
       {% for achievement in team.achievements %}
-        <li>{{ achievement.name }}</li>
+        <li>{{ achievement.getName() }}</li>
         <div>{% media achievement.image, 'logo' %}</div>
       {% endfor %}
     </ul>

@@ -12,9 +12,9 @@ use SlashStudio\AppBundle\DBAL\StructureEnumType;
 
 class LoadTeamData implements FixtureInterface
 {
-    private $names = [
-        'Самая молодая команда на Дальнем Востоке!',
-        'Самая дорогая спортивная команда на Дальнем Востоке!',
+    private $achievements = [
+        ['ru' => 'Самая молодая команда на Дальнем Востоке!', 'en' => 'The youngest team in the Far East!'],
+        ['ru' => 'Самая дорогая спортивная команда на Дальнем Востоке!', 'en' => 'The most expensive sports team in the Far East!'],
     ];
 
     /**
@@ -55,10 +55,13 @@ class LoadTeamData implements FixtureInterface
 
         $team->mergeNewTranslations();
 
-        foreach ($this->names as $name) {
-            $a = new Achievement();
-            $a->setName($name);
-            $team->addAchievement($a);
+        foreach ($this->achievements as $a) {
+            $achievement = new Achievement();
+            foreach ($a as $locale => $name) {
+                $achievement->translate($locale)->setName($name);
+            }
+            $achievement->mergeNewTranslations();
+            $team->addAchievement($achievement);
         }
 
         $manager->persist($team);
