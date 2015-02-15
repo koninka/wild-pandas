@@ -16,19 +16,34 @@ class LoadProductsData implements FixtureInterface
         'Стакан' => 'дерьмо.',
     ];
 
+    private $enNames = [
+        'Кепка' => 'Cap',
+        'Бита' => 'Bit',
+        'Шарик' => 'Ball',
+        'Каска' => 'Helmet',
+        'Перчатки' => 'Gloves',
+        'Стакан' => 'Glass',
+    ];
+
     /**
      * {@inheritDoc}
      */
     public function load(ObjectManager $manager)
     {
         foreach ($this->names as $name => $description) {
-            $position = (new Product())
-                ->setName($name)
-                ->setPrice(rand(50, 500))
-                ->setDescription($description)
-                ->setShowOnTheMain(rand(0, count($this->names) - 1) % 2 == 0);
+            $product = new Product();
+            $product->setPrice(rand(50, 500))
+                ->setShowOnTheMain(rand(0, count($this->names) - 1) % 2 == 0)
+            ;
+            $product->translate('ru')->setName($name);
+            $product->translate('ru')->setDescription($description);
 
-            $manager->persist($position);
+            $product->translate('en')->setName($this->enNames[$name]);
+            $product->translate('en')->setDescription('Lorem ipsum dolor sit amet');
+
+            $product->mergeNewTranslations();
+
+            $manager->persist($product);
         }
         $manager->flush();
     }

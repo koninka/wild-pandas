@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function listAction()
     {
         return $this->render('SlashStudioAppBundle:Product:list.html.twig', [
-             'products' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product')->findBy([], ['name' => 'ASC']),
+             'products' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product')->getProducts(),
         ]);
     }
 

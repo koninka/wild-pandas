@@ -1,9 +1,9 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-  <h1>{{ product.name }}</h1>
+  <h1>{{ product.getName() }}</h1>
   {# TO DO: need to translate #}
-  <div>Описание: {{ product.description }}</div>
+  <div>Описание: {{ product.getDescription() }}</div>
   <div>Цена: {{ product.price }}</div>
   <div>{% media product.image, 'big' %}</div>
 {% endblock %}
