@@ -22,7 +22,7 @@
           <td>{{ p.position.getName() }}</td>
           <td>{{ p.weight }}</td>
           <td>{{ p.height }}</td>
-          <td>{{ p.birthday.date }}</td>
+          <td>{{ p.birthday.date | localizeddate('short', 'none') }}</td>
           <td>{{ p.nationality.getName() }}</td>
         </tr>
       {% endfor %}
