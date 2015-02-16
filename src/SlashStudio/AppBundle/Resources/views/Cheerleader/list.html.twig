@@ -9,7 +9,7 @@
     <div>
       {% for cl in cheerleaders %}
         {{ cl.getFullname() }}
-        <p>{{ cl.about }}</p>
+        <p>{{ cl.getAbout() }}</p>
         {% media cl.photo, 'small' %}
       {% endfor %}
     </div>

@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class CheerleaderRepository extends EntityRepository
 {
@@ -12,15 +13,12 @@ class CheerleaderRepository extends EntityRepository
     {
         $qb = $this->getEntityManager()
             ->createQueryBuilder()
-            ->select(['cl', 'p'])
+            ->select(['cl', 'p', 't'])
             ->from('SlashStudioAppBundle:Cheerleader', 'cl')
             ->leftJoin('cl.photo', 'p')
-            ->orderBy('cl.name', 'ASC');
-        if ($isMain) {
-            $qb->setMaxResults(static::AMOUNT_ON_MAIN_PAGE);
-        }
-        $r = $qb->getQuery()->getResult();
+            ->leftJoin('cl.translations', 't')
+            ->orderBy('t.name', 'ASC');
 
-        return $r;
+        return $isMain ? new Paginator($qb->setMaxResults(static::AMOUNT_ON_MAIN_PAGE)) : $qb->getQuery()->getResult();
     }
 }

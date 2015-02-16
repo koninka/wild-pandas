@@ -8,17 +8,17 @@ use SlashStudio\AppBundle\Entity\Cheerleader;
 class LoadCheerleaderData implements FixtureInterface
 {
     private $names = [
-        'Катя',
-        'Яна',
-        'Даша',
-        'Алена',
+        ['Катя', 'Katya'],
+        ['Яна', 'Yana'],
+        ['Даша', 'Darya'],
+        ['Алена', 'Alena'],
     ];
 
     private $surnames = [
-        'Маштакова',
-        'Иванова',
-        'Белявцева',
-        'Шумей',
+        ['Маштакова', 'Mashtakova'],
+        ['Иванова', 'Ivanova'],
+        ['Белявцева', 'Belyavtseva'],
+        ['Шумей', 'Shumey'],
     ];
 
     /**
@@ -29,9 +29,17 @@ class LoadCheerleaderData implements FixtureInterface
         foreach ($this->names as $key => $name) {
             foreach ($this->surnames as $surname) {
                 $cheerleader = new Cheerleader();
-                $cheerleader->setName($name)
-                       ->setSurname($surname)
-                       ->setAbout('Руководитль студии танца, участница проекта "Мисс Владивосток"');
+
+                $cheerleader->translate('ru')->setName($name[0]);
+                $cheerleader->translate('ru')->setSurname($surname[0]);
+                $cheerleader->translate('ru')->setAbout('Руководитль студии танца, участница проекта "Мисс Владивосток"');
+
+                $cheerleader->translate('en')->setName($name[1]);
+                $cheerleader->translate('en')->setSurname($surname[1]);
+                $cheerleader->translate('en')->setAbout('Very good girl!');
+
+                $cheerleader->mergeNewTranslations();
+
                 $manager->persist($cheerleader);
             }
         }
