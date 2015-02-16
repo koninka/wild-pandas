@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class PostRepository extends EntityRepository
 {
@@ -20,13 +21,14 @@ class PostRepository extends EntityRepository
     {
         $qb = $this->getEntityManager()
             ->createQueryBuilder()
-            ->select(['p', 'i'])
+            ->select(['p', 'i', 't'])
             ->from('SlashStudioAppBundle:Post', 'p')
-            ->leftJoin('p.image', 'i');
+            ->leftJoin('p.image', 'i')
+            ->leftJoin('p.translations', 't');
         if ($isMainPage) {
             $qb->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE);
         }
-
-        return $qb->getQuery()->getResult();
+        // return $qb->getQuery()->getResult();
+        return new Paginator($qb);
     }
 }

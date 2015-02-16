@@ -52,8 +52,8 @@
     <h2><a href="{{ path('slash_app_blog_list') }}">{{ 'title.official_blog' | trans }}</a></h2>
     {% for post in posts %}
       <div>
-        <b><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.title }}</a></b>
-        <p>{{ post.subtitle }}</p>
+        <b><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></b>
+        <p>{{ post.getSubtitle() }}</p>
         {{ post.createdAt.date }}
         <div> {% media post.image, 'main' %}</div>
       </div>

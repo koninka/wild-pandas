@@ -4,8 +4,8 @@
   <h1>{{ 'title.official_blog' | trans }}</h1>
   {% for post in posts %}
     <div>
-      <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.title }}</b></a>
-      <p>{{ post.subtitle }}</p>
+      <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.getTitle() }}</b></a>
+      <p>{{ post.getSubtitle() }}</p>
       {{ post.createdAt.date }}
       <div> {% media post.image, 'main' %}</div>
     </div>
