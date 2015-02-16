@@ -51,7 +51,12 @@ class LoadPlayersData implements FixtureInterface
             $positions[] = $position;
         }
         $nationality = new Nationality;
-        $nationality->setName('Россия');
+
+        $nationality->translate('ru')->setName('Россия');
+        $nationality->translate('en')->setName('Russia');
+
+        $nationality->mergeNewTranslations();
+
         $manager->persist($nationality);
         $number = 0;
         foreach ($this->names as $key => $name) {

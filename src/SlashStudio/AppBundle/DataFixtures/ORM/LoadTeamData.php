@@ -23,7 +23,12 @@ class LoadTeamData implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $nationality = new Nationality;
-        $nationality->setName('США');
+
+        $nationality->translate('ru')->setName('США');
+        $nationality->translate('en')->setName('USA');
+
+        $nationality->mergeNewTranslations();
+
         $manager->persist($nationality);
         $position = new Position;
 
