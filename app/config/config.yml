@@ -14,6 +14,14 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager
 
+a2lix_translation_form:
+    locale_provider: default
+    locales: [en, ru]
+    default_locale: ru
+    required_locales: [en]
+    manager_registry: doctrine
+    templating: "A2lixTranslationFormBundle::default.html.twig"
+
 sonata_admin:
     title:      Wild Pandas Admin
     dashboard:

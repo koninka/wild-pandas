@@ -24,7 +24,8 @@
         "gedmo/doctrine-extensions": "~2.3",
         "sonata-project/media-bundle": "~2.3",
         "sonata-project/user-bundle": "~2.2",
-        "knplabs/doctrine-behaviors": "~1.0"
+        "knplabs/doctrine-behaviors": "~1.0",
+        "a2lix/translation-form-bundle": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
