@@ -11,17 +11,17 @@ use SlashStudio\AppBundle\DBAL\StructureEnumType;
 class LoadPlayersData implements FixtureInterface
 {
     private $names = [
-        'Марк',
-        'Костя',
-        'Миша',
-        'Рыжий',
+        ['Марк', 'Mark'],
+        ['Костя', 'Kostya'],
+        ['Миша', 'Misha'],
+        ['Рыжий', 'Redhead'],
     ];
 
     private $surnames = [
-        'Тертышный',
-        'Ландышев',
-        'Злотников',
-        'Зинов',
+        ['Тертышный', 'Tertishniy'],
+        ['Ландышев', 'Landyshev'],
+        ['Злотников', 'Zlotnikov'],
+        ['Зинов', 'Zinov'],
     ];
 
     private $positionNames = [
@@ -62,15 +62,22 @@ class LoadPlayersData implements FixtureInterface
         foreach ($this->names as $key => $name) {
             foreach ($this->surnames as $surname) {
                 $player = new Player();
-                $player->setName($name)
-                       ->setSurname($surname)
-                       ->setNumber(++$number)
+                $player->setNumber(++$number)
                        ->setPosition($positions[rand(0, count($positions) - 1)])
-                       ->setStructure($key < 2 ? StructureEnumType::ST_BASIC : StructureEnumType::ST_ADDITIONAL)
+                       ->setStructure(rand() % 2 ? StructureEnumType::ST_BASIC : StructureEnumType::ST_ADDITIONAL)
                        ->setWeight(150)
                        ->setBirthday(new \DateTime('09.01.1993'))
                        ->setNationality($nationality)
                        ->setHeight(180);
+
+                $player->translate('ru')->setName($name[0]);
+                $player->translate('ru')->setSurname($surname[0]);
+
+                $player->translate('en')->setName($name[1]);
+                $player->translate('en')->setSurname($surname[1]);
+
+                $player->mergeNewTranslations();
+
                 $manager->persist($player);
             }
         }

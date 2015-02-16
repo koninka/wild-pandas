@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 use Application\Sonata\MediaBundle\Entity\Media;
 
@@ -12,30 +13,9 @@ use Application\Sonata\MediaBundle\Entity\Media;
  * @ORM\Table(name="players")
  * @ORM\Entity(repositoryClass="PlayerRepository")
  */
-class Player
+class Player extends TranslationEntity
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=100)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="surname", type="string", length=100)
-     */
-    private $surname;
+    use ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var integer
@@ -109,62 +89,6 @@ class Player
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
      */
     private $photo;
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Player
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set surname
-     *
-     * @param string $surname
-     * @return Player
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
-
-        return $this;
-    }
-
-    /**
-     * Get surname
-     *
-     * @return string
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
 
     /**
      * Set number
@@ -366,20 +290,6 @@ class Player
     }
 
     /**
-     *
-     * @return string
-     */
-    public function getFullName()
-    {
-        return sprintf('%s %s', $this->name, $this->surname);
-    }
-
-    public function __toString()
-    {
-        return $this->getFullName();
-    }
-
-    /**
      * @return Media
      */
     public function getPhoto()
@@ -396,5 +306,10 @@ class Player
         $this->photo = $photo;
 
         return $this;
+    }
+
+    public function getFullName()
+    {
+        return sprintf('%s %s', $this->getName(), $this->getSurname());
     }
 }

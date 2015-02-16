@@ -17,7 +17,7 @@
       {% for p in players %}
         <tr>
           <td></td>
-          <td>{{ p.name }} {{ p.surname }}</td>
+          <td>{{ p.getFullname() }}</td>
           <td>{{ p.number }}</td>
           <td>{{ p.position.getName() }}</td>
           <td>{{ p.weight }}</td>

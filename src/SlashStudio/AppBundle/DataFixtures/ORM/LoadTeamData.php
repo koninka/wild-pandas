@@ -38,16 +38,24 @@ class LoadTeamData implements FixtureInterface
         $position->mergeNewTranslations();
         $manager->persist($position);
         $captain = new Player;
-        $captain->setName('Роман')
-               ->setSurname('Фатьянов')
-               ->setNumber(50)
+        $captain->setNumber(50)
                ->setPosition($position)
                ->setStructure(StructureEnumType::ST_BASIC)
                ->setWeight(100)
                ->setBirthday(new \DateTime('09.01.1992'))
                ->setNationality($nationality)
                ->setHeight(195);
+
+        $captain->translate('ru')->setName('Рома');
+        $captain->translate('ru')->setSurname('Фатьянов');
+
+        $captain->translate('en')->setName('Roma');
+        $captain->translate('en')->setSurname('Fatyanov');
+
+        $captain->mergeNewTranslations();
+
         $manager->persist($captain);
+
         $team = new Team();
         $team->setCaptain($captain)
              ->setManagerPhone('2-666-666')

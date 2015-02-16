@@ -32,7 +32,7 @@
       <div>
         {% if team.captain %}
           <h4>{{ 'title.team.captain' | trans }}</h4>
-          {{ team.captain.name }} {{ team.captain.surname }}
+          {{ team.captain.getFullname() }}
           {{ team.captain.phone }}
           {{ team.captain.email }}
         {% endif %}
@@ -61,11 +61,11 @@
   </div>
 
   <div>
-    <h2><a href="#">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
+    <h2><a href="{{ path('slash_app_team_players') }}">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
   {% for player in players %}
     <div>
-      {{ 'player.name' | trans({}, 'player') }}: {{ player.name }}
-      {{ 'player.surname' | trans({}, 'player') }}: {{ player.surname }}
+      {{ 'player.name' | trans({}, 'player') }}: {{ player.getName() }}
+      {{ 'player.surname' | trans({}, 'player') }}: {{ player.getSurname() }}
       <div>{% media player.photo, 'small' %}</div>
     </div>
   {% endfor %}
