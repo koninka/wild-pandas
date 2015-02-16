@@ -9,10 +9,16 @@ class LoadSimplePagesData implements FixtureInterface
 {
     private $manager;
 
-    private function loadPage($name, $text)
+    private function loadPage($name, $ruText, $enText)
     {
         $page = new SimplePage;
-        $page->setName($name)->setText($text);
+        $page->setName($name);
+
+        $page->translate('ru')->setText($ruText);
+        $page->translate('en')->setText($enText);
+
+        $page->mergeNewTranslations();
+
         $this->manager->persist($page);
 
         return $this;
@@ -25,9 +31,9 @@ class LoadSimplePagesData implements FixtureInterface
     {
         $this->manager = $manager;
 
-        $this->loadPage('Тренировки', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.')
-             ->loadPage('История команды', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.')
-             ->loadPage('Детские команды', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.');
+        $this->loadPage('Тренировки', 'Тренировочки такие тренировочки', 'Lorem ipsum dolor sit amet TRAINIGNS, consectetur adipisicing elit.')
+             ->loadPage('История команды', 'Летопись ведется аж с 2012 года!', 'Lorem ipsum HISTORY dolor sit amet, consectetur adipisicing elit.')
+             ->loadPage('Детские команды', 'Детская команда-моманда', 'Lorem ipsum dolor sit amet, consectetur adipisicing CHILD TEAMM elit.');
 
         $this->manager->flush();
     }

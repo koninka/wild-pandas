@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * SimplePage
@@ -10,16 +11,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="simple_pages")
  * @ORM\Entity(repositoryClass="SimplePageRepository")
  */
-class SimplePage
+class SimplePage extends TranslationEntity
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+    use ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var string
@@ -29,30 +23,12 @@ class SimplePage
     private $name;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="text", type="text")
-     */
-    private $text;
-
-    /**
      * @var Meta
      *
      * @ORM\OneToOne(targetEntity="Meta", cascade={"persist"}, orphanRemoval=true)
      * @ORM\JoinColumn(name="meta_id", referencedColumnName="id", nullable=true)
      */
     private $meta;
-
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name
@@ -75,29 +51,6 @@ class SimplePage
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     * @return SimplePage
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
     }
 
     /**
