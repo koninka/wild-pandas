@@ -22,7 +22,7 @@ class MediaController extends Controller
     public function aboutAction()
     {
         return $this->render('SlashStudioAppBundle:Media:about.html.twig', [
-            'posts' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->findBy([], ['createdAt' => 'DESC'])
+            'posts' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getMedia()
         ]);
     }
 }

@@ -36,8 +36,15 @@ EOT;
 
             $post->mergeNewTranslations();
             $mediaPost = new MediaPost;
-            $mediaPost->setTitle("ЗаголокМедиа$i")
-                      ->setSubtitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
+
+            $mediaPost->translate('ru')->setTitle("ЗаголокМедиа$i");
+            $mediaPost->translate('ru')->setSubtitle("Это подзаголовок самой крутой новости$i.");
+
+            $mediaPost->translate('en')->setTitle("Media Head$i");
+            $mediaPost->translate('en')->setSubtitle("Lorem ipsum dolor sit amet for Post$i");
+
+            $mediaPost->mergeNewTranslations();
+
             $manager->persist($post);
             $manager->persist($mediaPost);
         }

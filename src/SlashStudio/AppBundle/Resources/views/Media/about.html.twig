@@ -4,8 +4,8 @@
   <h1>{{ 'navigation.media_about' | trans({}, 'navigation') }}</h1>
   {% for p in posts %}
     <div>
-      <b>{{ p.title }}</b>
-      <p>{{ p.subtitle }}</p>
+      <b>{{ p.getTitle() }}</b>
+      <p>{{ p.getSubtitle() }}</p>
     </div>
   {% endfor %}
 {% endblock %}

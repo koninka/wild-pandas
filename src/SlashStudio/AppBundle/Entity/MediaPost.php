@@ -3,6 +3,8 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * MediaPost
@@ -10,30 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="media_posts")
  * @ORM\Entity(repositoryClass="SlashStudio\AppBundle\Entity\MediaPostRepository")
  */
-class MediaPost
+class MediaPost extends TranslationEntity
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=60)
-     */
-    private $title;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="subtitle", type="string", length=100)
-     */
-    private $subtitle;
+    use ORMBehaviors\Translatable\Translatable;
 
     /**
      * @var \DateTime
@@ -50,65 +31,16 @@ class MediaPost
      */
     private $meta;
 
+    /**
+     * @var Media
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     * @return MediaPost
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Set subtitle
-     *
-     * @param string $subtitle
-     * @return MediaPost
-     */
-    public function setSubtitle($subtitle)
-    {
-        $this->subtitle = $subtitle;
-
-        return $this;
-    }
-
-    /**
-     * Get subtitle
-     *
-     * @return string 
-     */
-    public function getSubtitle()
-    {
-        return $this->subtitle;
     }
 
     /**
@@ -129,7 +61,7 @@ class MediaPost
 
         return $this;
     }
-    
+
     /**
      * Set meta
      *
@@ -151,5 +83,24 @@ class MediaPost
     public function getMeta()
     {
         return $this->meta;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param Media $image
+     * @return Team
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
     }
 }
