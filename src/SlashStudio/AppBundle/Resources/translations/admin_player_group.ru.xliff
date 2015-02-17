@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.player_group</source>
+                <target>Данные игроков</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.positions</source>
+                <target>Позиции игроков</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>admin.nationalities</source>
+                <target>Национальности</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>admin.players</source>
+                <target>Игроки</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>list.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>show.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>breadcrumb.link_nationality_list</source>
+                <target>Список национальностей</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>breadcrumb.link_position_list</source>
+                <target>Список позиций</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>breadcrumb.link_player_list</source>
+                <target>Список игроков</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>list.label_fullname</source>
+                <target>Полное имя</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>show.name</source>
+                <target>Полное имя</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>show.label_fullname</source>
+                <target>Полное имя</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class CheerleaderTeamAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_cheerleader_team';
 
     protected function configureFormFields(FormMapper $formMapper)
     {

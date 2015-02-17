@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>form.label_title</source>
+                <target>Заголовок</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>form.label_description</source>
+                <target>Мета description</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>form.label_keywords</source>
+                <target>Meta keywords</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

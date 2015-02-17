@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Type;
 
 class CheerleaderAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_cheerleader';
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -21,12 +22,24 @@ class CheerleaderAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('general')
                 ->add('translations', 'a2lix_translations', [
                     'fields' => [
-                        'name' => ['required' => true],
-                        'surname' => ['required' => true],
-                        'about' => ['required' => false],
+                        'name' => [
+                            'required' => true,
+                            'label' => 'show.label_name',
+                            'translation_domain' => 'admin_cheerleader',
+                        ],
+                        'surname' => [
+                            'required' => true,
+                            'label' => 'show.label_surname',
+                            'translation_domain' => 'admin_cheerleader',
+                        ],
+                        'about' => [
+                            'required' => false,
+                            'label' => 'show.label_about',
+                            'translation_domain' => 'admin_cheerleader',
+                        ],
                     ]
                 ])
                 ->add('photo', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'cheerleaders']])
@@ -35,7 +48,7 @@ class CheerleaderAdmin extends BaseAdmin
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->with('General')
+        $showMapper->with('general')
                         ->add('name')
                         ->add('surname')
                         ->add('about')

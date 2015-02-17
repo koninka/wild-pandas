@@ -8,9 +8,18 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class NationalityAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_player_group';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations');
+        $formMapper->add('translations', 'a2lix_translations', [
+            'fields' => [
+                'name' => [
+                    'label' => 'show.label_name',
+                    'translation_domain' => 'admin_player_group',
+                ],
+            ],
+        ]);
     }
 
     protected function configureListFields(ListMapper $listMapper)

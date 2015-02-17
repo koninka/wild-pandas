@@ -9,11 +9,20 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class SimplePageAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_pages';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations')
+        $formMapper->add('translations', 'a2lix_translations', [
+                        'fields' => [
+                            'text' => [
+                                'label' => 'show.label_text',
+                                'translation_domain' => $this->translationDomain,
+                            ]
+                        ],
+                    ])
                    ->end()
-                   ->with('Meta information')
+                   ->with('meta')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
                    ->end();
     }

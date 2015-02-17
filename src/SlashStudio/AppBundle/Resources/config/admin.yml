@@ -2,7 +2,7 @@ services:
     sonata.admin.position:
         class: SlashStudio\AppBundle\Admin\PositionAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.positions" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.positions", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Position
@@ -11,7 +11,7 @@ services:
     sonata.admin.nationality:
         class: SlashStudio\AppBundle\Admin\NationalityAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.nationalities" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.nationalities", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Nationality
@@ -20,7 +20,7 @@ services:
     sonata.admin.partnership:
         class: SlashStudio\AppBundle\Admin\PartnershipAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.partnership" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.partnership", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Partnership
@@ -29,7 +29,7 @@ services:
     sonata.admin.simple_page:
         class: SlashStudio\AppBundle\Admin\SimplePageAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.pages.simple" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.pages.simple", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\SimplePage
@@ -38,7 +38,7 @@ services:
     sonata.admin.slide:
         class: SlashStudio\AppBundle\Admin\SlideAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.slides" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.slides", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Slide
@@ -47,7 +47,7 @@ services:
     sonata.admin.team:
         class: SlashStudio\AppBundle\Admin\TeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.team.information" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.team.information", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Team
@@ -56,7 +56,7 @@ services:
     sonata.admin.player:
         class: SlashStudio\AppBundle\Admin\PlayerAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.players" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.players", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Player
@@ -65,7 +65,7 @@ services:
     sonata.admin.achievement:
         class: SlashStudio\AppBundle\Admin\AchievementAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.team.achievements" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.team.achievements", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Achievement
@@ -74,7 +74,7 @@ services:
     sonata.admin.post:
         class: SlashStudio\AppBundle\Admin\PostAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.posts.media" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.posts.usual", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Post
@@ -83,7 +83,7 @@ services:
     sonata.admin.product:
         class: SlashStudio\AppBundle\Admin\ProductAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.products" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.products", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Product
@@ -92,7 +92,7 @@ services:
     sonata.admin.mediapost:
         class: SlashStudio\AppBundle\Admin\MediaPostAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.posts.usual" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.posts.media", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\MediaPost
@@ -101,7 +101,7 @@ services:
     sonata.admin.meta:
         class: SlashStudio\AppBundle\Admin\MetaAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.meta" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.meta", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Meta
@@ -110,7 +110,7 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "admin.cheerleader.team" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.cheerleader.team", label_translator_strategy: "sonata.admin.label.strategy.form_component" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam
@@ -119,7 +119,7 @@ services:
     sonata.admin.cheerleaders:
         class: SlashStudio\AppBundle\Admin\CheerleaderAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, label: "admin.cheerleader.cheerleaders" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.cheerleader.cheerleaders", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\Cheerleader

@@ -9,13 +9,22 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class AchievementAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_team';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations')
+        $formMapper->add('translations', 'a2lix_translations', [
+                        'fields' => [
+                            'name' => [
+                                'label' => 'show.label_name',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                        ],
+                    ])
                    ->add('team', 'a2lix_translatedEntity', [
                         'class' => 'SlashStudio\AppBundle\Entity\Team',
                         'translation_property' => 'name',
-                        'disabled' => true
+                        'disabled' => true,
                     ])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'achievements']]);
     }

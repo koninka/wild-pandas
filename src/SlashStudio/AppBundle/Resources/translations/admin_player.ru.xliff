@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>breadcrumb.link_player_list</source>
+                <target>Список игроков</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>list.label_fullname</source>
+                <target>Полное имя</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>show.label_name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>show.label_surname</source>
+                <target>Фамилия</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>show.label_birthday</source>
+                <target>День рождения</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>list.label_birthday</source>
+                <target>День рождения</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.label_birthday</source>
+                <target>День рождения</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>show.label_nationality</source>
+                <target>Национальность</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>list.label_nationality</source>
+                <target>Национальность</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.label_nationality</source>
+                <target>Национальность</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>show.label_email</source>
+                <target>Электронная почта (email)</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>list.label_email</source>
+                <target>Электронная почта</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.label_email</source>
+                <target>Электронная почта (email)</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>show.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>list.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>form.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>show.label_weight</source>
+                <target>Вес</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>list.label_weight</source>
+                <target>Вес</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>form.label_weight</source>
+                <target>Вес</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>show.label_height</source>
+                <target>Рост</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>list.label_height</source>
+                <target>Рост</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>form.label_height</source>
+                <target>Рост</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>show.label_number</source>
+                <target>Номер</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>list.label_number</source>
+                <target>Номер</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>form.label_number</source>
+                <target>Номер</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>show.label_structure</source>
+                <target>Состав</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>list.label_structure</source>
+                <target>Состав</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>form.label_structure</source>
+                <target>Состав</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>show.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>list.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>form.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>general</source>
+                <target>Основная информация</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>contacts</source>
+                <target>Контактная информация</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>characteristics</source>
+                <target>Характеристики</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>form.label_photo</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>admin.players</source>
+                <target>Игроки</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>label.structure.basic</source>
+                <target>Основной</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>label.structure.additional</source>
+                <target>Дополнительный</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

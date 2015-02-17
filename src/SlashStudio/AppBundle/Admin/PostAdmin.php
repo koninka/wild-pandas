@@ -9,6 +9,8 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class PostAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_posts';
+
     protected $datagridValues = [
         '_page' => 1,
         '_sort_order' => 'DESC',
@@ -17,18 +19,33 @@ class PostAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations')
+        $formMapper->add('translations', 'a2lix_translations', [
+                        'fields' => [
+                            'title' => [
+                                'label' => 'show.label_title',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                            'subtitle' => [
+                                'label' => 'show.label_subtitle',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                            'text' => [
+                                'label' => 'show.label_text',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                        ],
+                    ])
                    ->add('showOnTheMain', null, ['required' => false])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'post']])
                    ->end()
-                   ->with('Meta information')
+                   ->with('meta')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
                    ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title')
+        $listMapper->addIdentifier('title', null, ['route' => ['name' => 'show']])
                    ->add('subtitle')
                    ->add('showOnTheMain', 'boolean', ['editable' => true]);
         parent::configureListFields($listMapper);

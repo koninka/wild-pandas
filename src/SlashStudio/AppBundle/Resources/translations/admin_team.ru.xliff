@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.team</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.team.information</source>
+                <target>Информация о команде</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>breadcrumb.link_team_list</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>show.label_description</source>
+                <target>Описание</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>show.label_achievements</source>
+                <target>Достижения</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>show.label_captain</source>
+                <target>Капитан</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.label_captain</source>
+                <target>Капитан</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>show.label_manager_name</source>
+                <target>Менеджер команды</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.label_manager_name</source>
+                <target>Менеджер команды</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>show.label_manager_phone</source>
+                <target>Телефон менеджера</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.label_manager_phone</source>
+                <target>Телефон менеджера</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>show.label_manager_email</source>
+                <target>Электронная почта менеджера</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.label_manager_email</source>
+                <target>Электронная почта менеджера</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>show.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>general</source>
+                <target>Основная информация</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>contacts</source>
+                <target>Контактная информация</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>form.label_image</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>admin.team.achievements</source>
+                <target>Достижения</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>breadcrumb.link_achievement_list</source>
+                <target>Достижения</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>form.label_team</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>list.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

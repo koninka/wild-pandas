@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.cheerleader.team</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.cheerleader.cheerleaders</source>
+                <target>Черлидеры</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>admin.cheerleader.team</source>
+                <target>Команда черлидеров</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>form.label_photo</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>form.label_name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>list.label_fullname</source>
+                <target>Полное имя</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>list.label_about</source>
+                <target>О себе</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>show.label_about</source>
+                <target>О себе</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>show.label_name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>show.label_surname</source>
+                <target>Фамилия</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>general</source>
+                <target>Основная информация</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>breadcrumb.link_cheerleader_list</source>
+                <target>Список черлидеров</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

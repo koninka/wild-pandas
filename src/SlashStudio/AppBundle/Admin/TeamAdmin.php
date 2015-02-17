@@ -9,14 +9,31 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class TeamAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_team';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->with('General')
-                       ->add('translations', 'a2lix_translations')
+        $formMapper->with('general')
+                       ->add('translations', 'a2lix_translations', [
+                           'fields' => [
+                               'name' => [
+                                   'label' => 'show.label_name',
+                                   'translation_domain' => $this->translationDomain,
+                               ],
+                               'description' => [
+                                   'label' => 'show.label_description',
+                                   'translation_domain' => $this->translationDomain,
+                               ],
+                               'managerName' => [
+                                   'required' => false,
+                                   'label' => 'show.label_manager_name',
+                                   'translation_domain' => $this->translationDomain,
+                               ],
+                           ],
+                       ])
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
                     ->end()
-                    ->with('Achievements')
-                      // ->add('locales', 'a2lix_translationsLocalesSelector')
+                    ->with('show.label_achievements')
                        ->add(
                             'achievements',
                             'sonata_type_collection',
@@ -24,34 +41,21 @@ class TeamAdmin extends BaseAdmin
                             [ 'edit' => 'inline', 'inline' => 'table']
                         )
                    ->end()
-                   ->with('Contacts', array('collapsed' => true))
+                   ->with('contacts', array('collapsed' => true))
                        ->add('captain', 'sonata_type_model_list', ['btn_add' => false, 'required' => false])
-                       ->add('translations', 'a2lix_translations')
                        ->add('managerPhone', 'text', ['required' => false])
                        ->add('managerEmail', 'text', ['required' => false])
                     ->end();
     }
 
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']])
-                   ->add('description', 'textarea')
-                   ->addIdentifier('captain', null, ['route' => ['name' => 'show']])
-                   ->add('managerName', 'text')
-                   ->add('managerPhone', 'text')
-                   ->add('managerEmail', 'text');
-        parent::configureListFields($listMapper);
-    }
-
-
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->with('General')
+        $showMapper->with('general')
                        ->add('name')
                        ->add('description', 'textarea')
                        ->add('achievements', 'sonata_type_model_list')
                    ->end()
-                   ->with('Contacts')
+                   ->with('contacts')
                        ->add('captain', null, ['route' => ['name' => 'show']])
                        ->add('managerName', 'text', ['required' => false])
                        ->add('managerPhone', 'text', ['required' => false])

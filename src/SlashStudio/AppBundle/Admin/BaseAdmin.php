@@ -16,6 +16,8 @@ class BaseAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->add('_action', 'actions', [
+            'label' => 'link_actions',
+            'translation_domain' => 'SonataAdminBundle',
             'actions' => [
                 'show' => [],
                 'edit' => [],

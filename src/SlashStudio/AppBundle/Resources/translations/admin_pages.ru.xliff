@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.pages.simple</source>
+                <target>Страницы раздела "Команда"</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>form.label_image</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>show.label_text</source>
+                <target>Текст</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>show.label_name</source>
+                <target>Название страницы</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>breadcrumb.link_simple_page_list</source>
+                <target>Страницы раздела "Команда"</target>
+            </trans-unit>
+            <trans-unit id="700">
+                <source>meta</source>
+                <target>Мета информация</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

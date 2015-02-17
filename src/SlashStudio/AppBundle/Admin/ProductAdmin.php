@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class ProductAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_content';
 
     protected $datagridValues = [
         '_page' => 1,
@@ -18,11 +19,22 @@ class ProductAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations')
+        $formMapper->add('translations', 'a2lix_translations', [
+                        'fields' => [
+                            'name' => [
+                                'label' => 'show.label_name',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                            'description' => [
+                                'label' => 'show.label_description',
+                                'translation_domain' => $this->translationDomain,
+                            ],
+                        ],
+                    ])
                    ->add('showOnTheMain', null, ['required' => false])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'product']])
                    ->end()
-                   ->with('Meta information')
+                   ->with('meta')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
                    ->end();
     }

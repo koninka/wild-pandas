@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.content</source>
+                <target>Содержимое</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.partnership</source>
+                <target>Партнерство</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>admin.slides</source>
+                <target>Слайдер</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>admin.products</source>
+                <target>Атрибутика</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>list.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>show.label_name</source>
+                <target>Название</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>breadcrumb.link_product_list</source>
+                <target>Список атрибутики</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>breadcrumb.link_slide_list</source>
+                <target>Список слайдов</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>breadcrumb.link_partnership_list</source>
+                <target>Список партнеров</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>list.label_type</source>
+                <target>Тип</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>show.label_type</source>
+                <target>Тип</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.label_type</source>
+                <target>Тип</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>label.partnership.sponsor</source>
+                <target>Спонсор</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>label.partnership.partner</source>
+                <target>Партнер</target>
+            </trans-unit>
+           <trans-unit id="15">
+                <source>form.label_translations</source>
+                <target>Переводы</target>
+            </trans-unit>
+           <trans-unit id="16">
+                <source>form.label_image</source>
+                <target>Картинка</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>list.label_title</source>
+                <target>Заголовок</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>show.label_title</source>
+                <target>Заголовок</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>list.label_subtitle</source>
+                <target>Подзаголовок</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>show.label_subtitle</source>
+                <target>Подзаголовок</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>list.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>show.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>form.label_position</source>
+                <target>Позиция</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>list.label_description</source>
+                <target>Описание</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>show.label_description</source>
+                <target>Описание</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>form.label_price</source>
+                <target>Цена</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>list.label_price</source>
+                <target>Цена</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>show.label_price</source>
+                <target>Цена</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>form.label_show_on_the_main</source>
+                <target>Показывать на главной</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>list.label_show_on_the_main</source>
+                <target>Показывать на главной</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>show.label_show_on_the_main</source>
+                <target>Показывать на главной</target>
+            </trans-unit>
+            <trans-unit id="700">
+                <source>meta</source>
+                <target>Мета информация</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

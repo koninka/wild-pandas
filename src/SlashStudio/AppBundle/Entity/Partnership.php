@@ -67,4 +67,9 @@ class Partnership extends TranslationEntity
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

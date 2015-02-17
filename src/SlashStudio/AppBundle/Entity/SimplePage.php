@@ -75,4 +75,9 @@ class SimplePage extends TranslationEntity
     {
         return $this->meta;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

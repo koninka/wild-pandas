@@ -9,6 +9,8 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class MetaAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_meta';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('title', 'text')
