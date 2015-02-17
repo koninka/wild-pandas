@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
+            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             // new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
         );
 
