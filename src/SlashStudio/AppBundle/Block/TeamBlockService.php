@@ -19,7 +19,7 @@ class TeamBlockService extends MyBaseAdminListBlock
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         $admins = $this->getAdmins(
-            'team',
+            'admin.team',
             ['team', 'achievement'],
             ['sonata.admin.achievement' => 'achievement', 'sonata.admin.team' => 'team']
         );
@@ -28,10 +28,10 @@ class TeamBlockService extends MyBaseAdminListBlock
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), [
             'admins'       => $admins,
-            'team'         => $this->manager->getRepository('SlashStudioAppBundle:Team')->findOneBy([]),
+            'team'         => $this->manager->getRepository('SlashStudioAppBundle:Team')->getShortInfo(),
             'block'        => $blockContext->getBlock(),
             'settings'     => $settings,
-            'achievements' => $this->manager->getRepository('SlashStudioAppBundle:Achievement')->findBy([], ['name' => 'ASC'], $settings['amount']),
+            'achievements' => $this->manager->getRepository('SlashStudioAppBundle:Achievement')->getAll($settings['amount']),
         ], $response);
     }
 }

@@ -28,6 +28,8 @@ class TranslationEntity
 
     public function __call($method, $arguments)
     {
-        return $this->proxyCurrentLocaleTranslation($method, $arguments);
+        $method = ('get' === substr($method, 0, 3)) ? $method : 'get'. ucfirst($method);
+
+        return method_exists($this, $method) ? $this->$method() : $this->proxyCurrentLocaleTranslation($method, $arguments);
     }
 }

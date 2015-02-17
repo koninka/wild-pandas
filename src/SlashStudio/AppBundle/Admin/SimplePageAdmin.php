@@ -11,12 +11,11 @@ class SimplePageAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text')
-                   ->add('text', 'textarea')
+        $formMapper->add('translations', 'a2lix_translations')
                    ->end()
                    ->with('Meta information')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
-                   ->end();;
+                   ->end();
     }
 
     protected function configureListFields(ListMapper $listMapper)

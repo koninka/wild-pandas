@@ -14,4 +14,9 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 class Position extends TranslationEntity
 {
     use ORMBehaviors\Translatable\Translatable;
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

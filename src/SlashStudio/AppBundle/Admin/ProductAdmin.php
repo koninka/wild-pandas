@@ -18,9 +18,7 @@ class ProductAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name')
-                   ->add('description', 'textarea')
-                   ->add('price', 'integer')
+        $formMapper->add('translations', 'a2lix_translations')
                    ->add('showOnTheMain', null, ['required' => false])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'product']])
                    ->end()
@@ -34,7 +32,7 @@ class ProductAdmin extends BaseAdmin
         $listMapper->addIdentifier('name', null, ['route' => ['name' => 'show']])
                    ->add('description')
                    ->add('price')
-                   ->add('showOnTheMain', 'boolean');
+                   ->add('showOnTheMain', 'boolean', ['editable' => true]);
         parent::configureListFields($listMapper);
     }
 

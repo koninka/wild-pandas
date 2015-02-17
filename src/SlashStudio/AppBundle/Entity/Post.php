@@ -75,7 +75,7 @@ class Post extends TranslationEntity
     /**
      * @return boolean
      */
-    public function isShowOnTheMain()
+    public function getShowOnTheMain()
     {
         return $this->showOnTheMain;
     }

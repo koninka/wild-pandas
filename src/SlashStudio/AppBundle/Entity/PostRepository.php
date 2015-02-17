@@ -24,7 +24,8 @@ class PostRepository extends EntityRepository
             ->select(['p', 'i', 't'])
             ->from('SlashStudioAppBundle:Post', 'p')
             ->leftJoin('p.image', 'i')
-            ->leftJoin('p.translations', 't');
+            ->leftJoin('p.translations', 't')
+            ->orderBy('p.createdAt', 'DESC');
         if ($isMainPage) {
             $qb->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE);
         }

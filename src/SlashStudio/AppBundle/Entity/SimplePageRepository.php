@@ -9,6 +9,13 @@ class SimplePageRepository extends EntityRepository
 {
     private $actions = ['training' => 1, 'history' => 2, 'baby_team' => 3];
 
+    public function getAll()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p, t FROM SlashStudioAppBundle:SimplePage p LEFT JOIN p.translations t')
+            ->getResult();
+    }
+
     public function getPage($action)
     {
         if (empty($this->actions[$action])) return null;

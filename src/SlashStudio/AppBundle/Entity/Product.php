@@ -95,7 +95,7 @@ class Product extends TranslationEntity
     /**
      * @return bool
      */
-    public function isShowOnTheMain()
+    public function getShowOnTheMain()
     {
         return $this->showOnTheMain;
     }

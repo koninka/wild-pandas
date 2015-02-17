@@ -21,7 +21,7 @@ class CheerleaderTranslation
      *
      * @ORM\Column(name="name", type="string", length=100)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
@@ -35,7 +35,7 @@ class CheerleaderTranslation
      *
      * @ORM\Column(name="about", type="text")
      */
-    private $about;
+    protected $about;
 
     /**
      * Set name

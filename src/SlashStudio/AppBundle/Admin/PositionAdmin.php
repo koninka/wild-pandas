@@ -10,7 +10,7 @@ class PositionAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text');
+        $formMapper->add('translations', 'a2lix_translations');
     }
 
     protected function configureListFields(ListMapper $listMapper)

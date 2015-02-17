@@ -18,7 +18,7 @@ a2lix_translation_form:
     locale_provider: default
     locales: [en, ru]
     default_locale: ru
-    required_locales: [en]
+    required_locales: [en, ru]
     manager_registry: doctrine
     templating: "A2lixTranslationFormBundle::default.html.twig"
 
@@ -30,18 +30,19 @@ sonata_admin:
             - { position: center, type: sonata.block.service.cheerleader, settings: { amount: 5 } }
             - { position: right, type: sonata.block.service.simple_pages }
             - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.posts] } }
-            - { position: center, type: sonata.admin.block.admin_list, settings: { groups: [content] } }
+            - { position: center, type: sonata.admin.block.admin_list, settings: { groups: [admin.content] } }
             - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [admin.player_group] } }
         groups:
-            cheerleader:
+            admin.cheerleader:
                 items:
                     - sonata.admin.cheerleader_team
                     - sonata.admin.cheerleaders
-            team:
+            admin.team:
                 items:
                     - sonata.admin.team
                     - sonata.admin.achievement
-            pages:
+
+            admin.pages:
                 items:
                     - sonata.admin.simple_page
 
@@ -49,26 +50,18 @@ sonata_admin:
                 items:
                     - sonata.admin.post
                     - sonata.admin.mediapost
+
             admin.player_group:
                 items:
                     - sonata.admin.position
                     - sonata.admin.nationality
                     - sonata.admin.player
-            content:
+
+            admin.content:
                 items:
-                    - sonata.user.admin.user
-#                    - sonata.admin.users
                     - sonata.admin.partnership
                     - sonata.admin.slide
                     - sonata.admin.product
-
-            # sonata_page2:
-            #     items:
-            #         - sonata.page.admin.myitem2
-            #         - sonata.page.admin.myitem3
-            # sonata_page3:
-            #     items:
-            #         - sonata.page.admin.myitem4
 
 sonata_block:
     default_contexts: [cms]

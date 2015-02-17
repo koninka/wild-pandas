@@ -7,14 +7,16 @@ use Doctrine\ORM\Query;
 
 class TeamRepository extends EntityRepository
 {
-//    public function getShortInfo()
-//    {
-//        return $this->getEntityManager()
-//            ->createQuery(
-//                'SELECT t, a FROM SlashStudioAppBundle:Team t JOIN t.achievements a'
-//            )
-//            ->getOneOrNullResult(QUERY::HYDRATE_ARRAY);
-//    }
+
+   public function getShortInfo()
+   {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT t, tr FROM SlashStudioAppBundle:Team t
+                    LEFT JOIN t.translations tr'
+            )
+            ->getOneOrNullResult();
+   }
 
     public function getInfo()
     {

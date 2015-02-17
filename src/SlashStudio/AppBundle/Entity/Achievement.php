@@ -11,7 +11,7 @@ use Application\Sonata\MediaBundle\Entity\Media;
  * Achievement
  *
  * @ORM\Table(name="achievements")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AchievementRepository")
  */
 class Achievement extends TranslationEntity
 {

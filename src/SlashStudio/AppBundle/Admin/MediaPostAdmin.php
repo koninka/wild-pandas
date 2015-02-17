@@ -17,8 +17,7 @@ class MediaPostAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title')
-                   ->add('subtitle')
+        $formMapper->add('translations', 'a2lix_translations')
                    ->end()
                    ->with('Meta information')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
@@ -27,14 +26,16 @@ class MediaPostAdmin extends BaseAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', 'text')->add('subtitle');
+        $listMapper->addIdentifier('title')
+                   ->add('subtitle');
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('title')->add('subtitle');
+        $showMapper->add('title')
+                   ->add('subtitle');
     }
 
 }

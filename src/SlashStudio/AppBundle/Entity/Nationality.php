@@ -14,4 +14,14 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 class Nationality extends TranslationEntity
 {
     use ORMBehaviors\Translatable\Translatable;
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    // public function getName()
+    // {
+    //     return $this->__call(__FUNCTION__);
+    // }
 }

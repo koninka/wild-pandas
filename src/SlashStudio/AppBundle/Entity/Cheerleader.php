@@ -46,7 +46,7 @@ class Cheerleader extends TranslationEntity
      *
      * @return string
      */
-    public function getFullName()
+    public function getFullname()
     {
         return sprintf('%s %s', $this->getName(), $this->getSurname());
     }

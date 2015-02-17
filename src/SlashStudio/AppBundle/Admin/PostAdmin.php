@@ -17,9 +17,7 @@ class PostAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title')
-                   ->add('subtitle')
-                   ->add('text', 'textarea')
+        $formMapper->add('translations', 'a2lix_translations')
                    ->add('showOnTheMain', null, ['required' => false])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'post']])
                    ->end()
@@ -30,14 +28,18 @@ class PostAdmin extends BaseAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', 'text')->add('subtitle')->add('showOnTheMain', 'boolean');
+        $listMapper->addIdentifier('title')
+                   ->add('subtitle')
+                   ->add('showOnTheMain', 'boolean', ['editable' => true]);
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('title')->add('subtitle')->add('showOnTheMain', 'boolean');
+        $showMapper->add('title')
+                   ->add('subtitle')
+                   ->add('showOnTheMain', 'boolean');
     }
 
 }

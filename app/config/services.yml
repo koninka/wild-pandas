@@ -10,6 +10,11 @@ services:
         class: Twig_Extensions_Extension_Intl
         tags:
             - { name: twig.extension }
+
+    my_model_manager:
+        class: SlashStudio\AppBundle\Admin\ModelManager
+        arguments: [@doctrine]
+
     # sonata.user.admin.group:
         # abstract: true
         # public: false

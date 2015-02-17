@@ -11,7 +11,7 @@ class MetaAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title', null)
+        $formMapper->add('title', 'text')
                    ->add('description', 'textarea', ['required' => false])
                    ->add('keywords', 'textarea', ['required' => false]);
     }

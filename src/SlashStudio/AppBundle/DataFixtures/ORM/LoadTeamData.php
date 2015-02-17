@@ -24,6 +24,9 @@ class LoadTeamData implements FixtureInterface
     {
         $nationality = new Nationality;
 
+
+        // $nationality->setName('США');
+
         $nationality->translate('ru')->setName('США');
         $nationality->translate('en')->setName('USA');
 

@@ -11,8 +11,12 @@ class AchievementAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text')
-                   ->add('team', null, ['disabled' => true])
+        $formMapper->add('translations', 'a2lix_translations')
+                   ->add('team', 'a2lix_translatedEntity', [
+                        'class' => 'SlashStudio\AppBundle\Entity\Team',
+                        'translation_property' => 'name',
+                        'disabled' => true
+                    ])
                    ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'achievements']]);
     }
 

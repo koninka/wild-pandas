@@ -19,7 +19,7 @@ class SimplePagesBlock extends MyBaseAdminListBlock
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         $admins = $this->getAdmins(
-            'pages',
+            'admin.pages',
             ['simple_pages'],
             ['sonata.admin.simple_page' => 'simple_pages']
         );
@@ -28,7 +28,7 @@ class SimplePagesBlock extends MyBaseAdminListBlock
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), [
             'admin'    => $admins['simple_pages'],
-            'pages'    => $this->manager->getRepository('SlashStudioAppBundle:SimplePage')->findAll(),
+            'pages'    => $this->manager->getRepository('SlashStudioAppBundle:SimplePage')->getAll(),
             'block'    => $blockContext->getBlock(),
             'settings' => $settings,
         ], $response);

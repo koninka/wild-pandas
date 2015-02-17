@@ -7,9 +7,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class CheerleaderRepository extends EntityRepository
 {
-    const AMOUNT_ON_MAIN_PAGE = 8;
-
-    public function getAll($isMain = false)
+    public function getAll($maxResult = null)
     {
         $qb = $this->getEntityManager()
             ->createQueryBuilder()
@@ -19,6 +17,6 @@ class CheerleaderRepository extends EntityRepository
             ->leftJoin('cl.translations', 't')
             ->orderBy('t.name', 'ASC');
 
-        return $isMain ? new Paginator($qb->setMaxResults(static::AMOUNT_ON_MAIN_PAGE)) : $qb->getQuery()->getResult();
+        return !empty($maxResult) ? new Paginator($qb->setMaxResults($maxResult)) : $qb->getQuery()->getResult();
     }
 }

@@ -6,12 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * Meta
- *
- * @ORM\Table(name="meta_translation")
- * @ORM\Entity
- */
+
 class MetaTranslation
 {
     use ORMBehaviors\Translatable\Translation;

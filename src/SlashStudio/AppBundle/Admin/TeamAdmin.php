@@ -12,11 +12,11 @@ class TeamAdmin extends BaseAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->with('General')
-                       ->add('name')
-                       ->add('description', 'textarea')
+                       ->add('translations', 'a2lix_translations')
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
                     ->end()
                     ->with('Achievements')
+                      // ->add('locales', 'a2lix_translationsLocalesSelector')
                        ->add(
                             'achievements',
                             'sonata_type_collection',
@@ -26,7 +26,7 @@ class TeamAdmin extends BaseAdmin
                    ->end()
                    ->with('Contacts', array('collapsed' => true))
                        ->add('captain', 'sonata_type_model_list', ['btn_add' => false, 'required' => false])
-                       ->add('managerName', 'text', ['required' => false])
+                       ->add('translations', 'a2lix_translations')
                        ->add('managerPhone', 'text', ['required' => false])
                        ->add('managerEmail', 'text', ['required' => false])
                     ->end();

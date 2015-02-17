@@ -22,20 +22,32 @@ class CheerleaderAdmin extends BaseAdmin
     {
         $formMapper
             ->with('General')
-                ->add('name', 'text')
-                ->add('surname', 'text')
-                ->add('about', 'textarea')
+                ->add('translations', 'a2lix_translations', [
+                    'fields' => [
+                        'name' => ['required' => true],
+                        'surname' => ['required' => true],
+                        'about' => ['required' => false],
+                    ]
+                ])
                 ->add('photo', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'cheerleaders']])
             ->end();
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper
-            ->with('General')
-                ->add('name', 'text')
-                ->add('surname', 'text')
-                ->add('about')
-            ->end();
+        $showMapper->with('General')
+                        ->add('name')
+                        ->add('surname')
+                        ->add('about')
+                  ->end();
+    }
+
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $a = $query->getRootAlias();
+        $query->addSelect('t')->leftJoin("$a.translations", 't');
+
+        return $query;
     }
 }

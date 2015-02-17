@@ -19,7 +19,7 @@ class CheerleaderBlock extends MyBaseAdminListBlock
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
         $admins = $this->getAdmins(
-            'cheerleader',
+            'admin.cheerleader',
             ['team', 'cheerleaders'],
             ['sonata.admin.cheerleader_team' => 'team', 'sonata.admin.cheerleaders' => 'cheerleaders']
         );
@@ -28,10 +28,10 @@ class CheerleaderBlock extends MyBaseAdminListBlock
 
         return $this->renderPrivateResponse($blockContext->getTemplate(), [
             'admins'       => $admins,
-            'team'         => $this->manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->findOneBy([]),
+            'team'         => $this->manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getShortInfo(),
             'block'        => $blockContext->getBlock(),
             'settings'     => $settings,
-            'cheerleaders' => $this->manager->getRepository('SlashStudioAppBundle:Cheerleader')->findBy([], ['name' => 'ASC'], $settings['amount']),
+            'cheerleaders' => $this->manager->getRepository('SlashStudioAppBundle:Cheerleader')->getAll($settings['amount']),
         ], $response);
     }
 }

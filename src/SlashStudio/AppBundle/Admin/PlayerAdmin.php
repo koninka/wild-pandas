@@ -24,18 +24,22 @@ class PlayerAdmin extends BaseAdmin
             ->add('number', 'number')
             ->add('structure', 'choice', ['choices' => Type::getType('structureEnumType')->getChoices()])
             ->add('position.name');
+            // ->add('position.name');
         parent::configureListFields($listMapper);
     }
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        // $mediaAdmin = $this->configurationPool->getAdminByClass("SlashStudio\\AppBundle\\Entity\\Nationality");
+        
         $formMapper
             ->with('General')
-                ->add('name', 'text')
-                ->add('surname', 'text')
+                ->add('translations', 'a2lix_translations')
                 ->add('birthday', 'sonata_type_date_picker', ['format' => 'dd/MM/yyyy'])
                 ->add('nationality', 'sonata_type_model_list', ['required' => false])
-                ->add('photo', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'players']])
+                ->add('photo', 'sonata_type_model_list', [
+                    'required' => false,
+                ], ['link_parameters' => ['context' => 'players']])
             ->end()
             ->with('Contacts')
                 ->add('email', 'text', ['required' => false])
@@ -46,6 +50,7 @@ class PlayerAdmin extends BaseAdmin
                 ->add('height', 'number')
                 ->add('number', 'number')
                 ->add('position', 'sonata_type_model_list')
+//                ->add('position', 'sonata_type_model_list')
                 ->add('structure', 'choice', ['choices' => Type::getType('structureEnumType')->getChoices()])
             ->end();
     }
@@ -54,7 +59,7 @@ class PlayerAdmin extends BaseAdmin
     {
         $showMapper
             ->with('General')
-                ->add('surname', 'text')
+                ->add('surname')
                 ->add('birthday', 'datetime', ['format' => static::BIRTHDAY_FORMAT])
                 ->add('nationality')
             ->end()
@@ -75,7 +80,7 @@ class PlayerAdmin extends BaseAdmin
     {
         $query = parent::createQuery($context);
         $a = $query->getRootAlias();
-        $query->addSelect(['p', 'n'])->join("$a.position", 'p')->leftJoin("$a.nationality", 'n');
+        $query->addSelect(['p', 'n', 't'])->join("$a.position", 'p')->leftJoin("$a.nationality", 'n')->leftJoin("$a.translations", 't');
 
         return $query;
     }

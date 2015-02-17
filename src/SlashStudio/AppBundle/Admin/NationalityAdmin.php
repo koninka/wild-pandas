@@ -10,18 +10,18 @@ class NationalityAdmin extends BaseAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text');
+        $formMapper->add('translations', 'a2lix_translations');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name', 'text', ['route' => ['name' => 'show']]);
+        $listMapper->addIdentifier('name', null, ['route' => ['name' => 'show']]);
         parent::configureListFields($listMapper);
     }
 
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('name', 'text');
+        $showMapper->add('name');
     }
 }
