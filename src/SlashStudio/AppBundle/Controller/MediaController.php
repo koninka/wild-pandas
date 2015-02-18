@@ -41,6 +41,7 @@ class MediaController extends Controller
         if (empty($post)) {
             throw $this->createNotFoundException();
         }
+        $this->container->get('my_seo')->addMeta($post);
 
         return $this->render('SlashStudioAppBundle:Media:show.html.twig', [
             'post' => $post,

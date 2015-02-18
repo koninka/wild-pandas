@@ -2,6 +2,10 @@
 
 {% block title %}{{ sonata_seo_title(false) }}{% endblock %}
 
+{% block head_bottom %}
+    {{ sonata_seo_metadatas() }}
+{% endblock head_bottom %}
+
 {% block navbar %}
     {% include '::header.html.twig' %}
 {% endblock navbar %}

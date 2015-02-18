@@ -32,6 +32,7 @@ class TeamController extends Controller
         if (empty($page)) {
             $this->createNotFoundException();
         }
+        $this->container->get('my_seo')->addMeta($page);
 
         return $this->render('SlashStudioAppBundle:Team:info.html.twig', [
             'page'   => $page,

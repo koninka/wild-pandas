@@ -16,6 +16,10 @@ services:
         class: SlashStudio\AppBundle\Admin\ModelManager
         arguments: [@doctrine]
 
+    my_seo:
+        class:        SlashStudio\AppBundle\Seo\Seo
+        arguments:  [ @sonata.seo.page.default ]
+
     # sonata.user.admin.group:
         # abstract: true
         # public: false

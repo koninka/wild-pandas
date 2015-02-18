@@ -28,6 +28,7 @@ class ProductController extends Controller
         if (empty($product)) {
             throw $this->createNotFoundException($this->get('translator')->trans('product.not_found'));
         }
+        $this->container->get('my_seo')->addMeta($product);
 
         return $this->render('SlashStudioAppBundle:Product:show.html.twig', [
             'product' => $product,
