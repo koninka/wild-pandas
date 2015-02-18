@@ -9,7 +9,9 @@
 {% endblock head_bottom %}
 
 {% block navbar %}
-    {% include '::header.html.twig' %}
+    <header>
+      {{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
+    </header>
 {% endblock navbar %}
 
 {% block headline %}{% endblock %}
