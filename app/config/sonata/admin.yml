@@ -1,0 +1,51 @@
+sonata_admin:
+    title:      Wild Pandas Admin
+    templates:
+        layout:  ApplicationSonataAdminBundle::standard_layout.html.twig
+
+    dashboard:
+        blocks:
+            - { position: left, type: sonata.block.service.team, settings: { amount: 5 } }
+            - { position: center, type: sonata.block.service.cheerleader, settings: { amount: 5 } }
+            - { position: right, type: sonata.block.service.simple_pages }
+            - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.posts] } }
+            - { position: center, type: sonata.admin.block.admin_list, settings: { groups: [admin.content] } }
+            - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [admin.player_group] } }
+
+        groups:
+            admin.cheerleader:
+                label_catalogue: admin_cheerleader
+                items:
+                    - sonata.admin.cheerleader_team
+                    - sonata.admin.cheerleaders
+
+            admin.team:
+                label_catalogue: admin_team
+                items:
+                    - sonata.admin.team
+                    - sonata.admin.achievement
+
+            admin.pages:
+                label_catalogue: admin_pages
+                items:
+                    - sonata.admin.simple_page
+
+            admin.posts:
+                label_catalogue: admin_posts
+                items:
+                    - sonata.admin.post
+                    - sonata.admin.mediapost
+
+            admin.player_group:
+                label_catalogue: admin_player_group
+                items:
+                    - sonata.admin.player
+                    - sonata.admin.position
+                    - sonata.admin.nationality
+
+            admin.content:
+                label_catalogue: admin_content
+                items:
+                    - sonata.admin.partnership
+                    - sonata.admin.slide
+                    - sonata.admin.product

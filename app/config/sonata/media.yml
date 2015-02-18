@@ -1,0 +1,84 @@
+sonata_media:
+    default_context: default
+    db_driver: doctrine_orm
+    class:
+        media:              Application\Sonata\MediaBundle\Entity\Media
+        gallery:            Application\Sonata\MediaBundle\Entity\Gallery
+        gallery_has_media:  Application\Sonata\MediaBundle\Entity\GalleryHasMedia
+
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 100 }
+
+        sliders:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                big:   { width: 500, quality: 100 }
+
+        team:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                main:   { width: 600, quality: 100 }
+
+        players:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 100 }
+
+        post:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                main: { width: 300 , quality: 100 }
+
+        product:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 150 , quality: 70 }
+                big:   { width: 300 , quality: 100 }
+
+        achievements:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                logo: { width: 90 , quality: 100 }
+
+        partnership:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                logo: { width: 100 , quality: 100 }
+
+        cheerleaders:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 100 }
+
+    cdn:
+        server:
+            path: /uploads/media
+
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     true

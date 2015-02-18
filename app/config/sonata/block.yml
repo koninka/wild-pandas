@@ -1,0 +1,10 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        sonata.block.service.team: ~
+        sonata.block.service.cheerleader: ~
+        sonata.block.service.simple_pages: ~
