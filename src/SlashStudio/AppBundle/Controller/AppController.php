@@ -14,7 +14,7 @@ class AppController extends Controller
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
             'team'        => $manager->getRepository('SlashStudioAppBundle:Team')->getInfo(),
             'cl_team'     => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
-            'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPosts(true),
+            'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
             'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
             'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
             'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProducts(true),

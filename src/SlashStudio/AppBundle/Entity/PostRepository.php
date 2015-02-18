@@ -17,19 +17,19 @@ class PostRepository extends EntityRepository
             ->getOneOrNullResult();
     }
 
-    public function getPosts($isMainPage = false)
+    public function getPostsQB()
     {
-        $qb = $this->getEntityManager()
-            ->createQueryBuilder()
-            ->select(['p', 'i', 't'])
-            ->from('SlashStudioAppBundle:Post', 'p')
-            ->leftJoin('p.image', 'i')
-            ->leftJoin('p.translations', 't')
-            ->orderBy('p.createdAt', 'DESC');
-        if ($isMainPage) {
-            $qb->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE);
-        }
-        // return $qb->getQuery()->getResult();
-        return new Paginator($qb);
+        return $this->getEntityManager()
+                   ->createQueryBuilder()
+                   ->select(['p', 'i', 't'])
+                   ->from('SlashStudioAppBundle:Post', 'p')
+                   ->leftJoin('p.image', 'i')
+                   ->leftJoin('p.translations', 't')
+                   ->orderBy('p.createdAt', 'DESC');
+    }
+
+    public function getPostsForMainPage()
+    {
+        return new Paginator($this->getPostsQB()->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE));
     }
 }

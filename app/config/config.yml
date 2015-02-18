@@ -4,6 +4,9 @@ imports:
     - { resource: services.yml }
     - { resource: ../../vendor/knplabs/doctrine-behaviors/config/orm-services.yml }
 
+    # knp
+    - { resource: knp/paginator.yml }
+
 fos_user:
     db_driver:      orm
     firewall_name:  main

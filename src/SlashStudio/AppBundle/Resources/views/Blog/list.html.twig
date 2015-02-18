@@ -2,7 +2,10 @@
 
 {%  block body %}
   <h1>{{ 'title.official_blog' | trans }}</h1>
-  {% for post in posts %}
+  <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div>
+  {% for post in pagination %}
     <div>
       <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.getTitle() }}</b></a>
       <p>{{ post.getSubtitle() }}</p>
@@ -10,4 +13,7 @@
       <div> {% media post.image, 'main' %}</div>
     </div>
   {% endfor %}
+  <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div>
 {% endblock %}
