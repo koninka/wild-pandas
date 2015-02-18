@@ -54,6 +54,22 @@
                 <source>form.label_translations</source>
                 <target>Переводы</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>form.label_image</source>
+                <target>Фото</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>show.label_team_name</source>
+                <target>Название команды</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>show.label_description</source>
+                <target>Описание</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>breadcrumb.link_cheerleader_team_list</source>
+                <target>Команда</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

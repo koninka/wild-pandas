@@ -13,24 +13,27 @@ class CheerleaderTeamAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->with('General')
-                       ->add('translations', 'a2lix_translations')
+        $formMapper->with('general')
+                       ->add('translations', 'a2lix_translations', [
+                            'fields' => [
+                                'name' => [
+                                    'label' => 'show.label_team_name',
+                                    'translation_domain' => $this->translationDomain,
+                                ],
+                                'description' => [
+                                    'label' => 'show.label_description',
+                                    'translation_domain' => $this->translationDomain,
+                                ],
+                            ],
+                        ])
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
                     ->end();
     }
 
-    protected function configureListFields(ListMapper $listMapper)
-    {
-         $listMapper->addIdentifier('name', null, ['route' => ['name' => 'show']])
-                    ->add('description', 'textarea');
-        parent::configureListFields($listMapper);
-    }
-
-
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->with('General')
-                       ->add('name')
+        $showMapper->with('general')
+                       ->add('name', null, ['label' => 'show.label_team_name'])
                        ->add('description')
                    ->end();
     }

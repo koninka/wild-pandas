@@ -110,7 +110,7 @@ services:
     sonata.admin.cheerleader_team:
         class: SlashStudio\AppBundle\Admin\CheerleaderTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.cheerleader.team", label_translator_strategy: "sonata.admin.label.strategy.form_component" }
+            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.cheerleader.team", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\CheerleaderTeam
