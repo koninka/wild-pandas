@@ -9,3 +9,9 @@ slash_app_media_video:
 slash_app_media_about:
     path:       /about/{_locale}
     defaults:   {_controller: SlashStudioAppBundle:Media:about, _locale: ru}
+
+slash_app_media_show:
+    path:       /show/{id}/{_locale}
+    defaults:   {_controller: SlashStudioAppBundle:Media:show, _locale: ru}
+    requirements:
+        id: \d+

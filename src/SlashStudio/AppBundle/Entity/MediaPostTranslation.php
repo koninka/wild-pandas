@@ -4,6 +4,7 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * MediaPost
@@ -19,6 +20,7 @@ class MediaPostTranslation
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=60)
+     * @Assert\NotBlank()
      */
     private $title;
 
@@ -26,8 +28,17 @@ class MediaPostTranslation
      * @var string
      *
      * @ORM\Column(name="subtitle", type="string", length=100)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=100)
      */
     private $subtitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text")
+     */
+    private $text;
 
     /**
      * Set title
@@ -73,5 +84,29 @@ class MediaPostTranslation
     public function getSubtitle()
     {
         return $this->subtitle;
+    }
+
+
+    /**
+     * Set text
+     *
+     * @param string $text
+     * @return Post
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
     }
 }

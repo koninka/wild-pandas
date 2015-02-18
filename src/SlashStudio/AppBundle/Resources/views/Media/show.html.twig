@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{%  block body %}
+  <h1>{{ post.getTitle() }}</h1>
+  <p>{{ post.getSubtitle() }}</p>
+  <p>{{ post.getText() }}</p>
+  {% media post.image, 'main' %}
+  {{ post.createdAt.date }}
+{% endblock %}

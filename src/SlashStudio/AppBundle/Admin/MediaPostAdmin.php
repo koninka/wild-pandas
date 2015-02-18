@@ -29,6 +29,10 @@ class MediaPostAdmin extends BaseAdmin
                                 'label' => 'show.label_subtitle',
                                 'translation_domain' => $this->translationDomain,
                             ],
+                            'text' => [
+                                'label' => 'show.label_text',
+                                'translation_domain' => $this->translationDomain,
+                            ],
                         ],
                     ])
                    ->end()

@@ -39,9 +39,11 @@ EOT;
 
             $mediaPost->translate('ru')->setTitle("ЗаголокМедиа$i");
             $mediaPost->translate('ru')->setSubtitle("Это подзаголовок самой крутой новости$i.");
+            $mediaPost->translate('ru')->setText("Это медиа-новость$i заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...");
 
             $mediaPost->translate('en')->setTitle("Media Head$i");
             $mediaPost->translate('en')->setSubtitle("Lorem ipsum dolor sit amet for Post$i");
+            $mediaPost->translate('en')->setText($this->loremIpsum);
 
             $mediaPost->mergeNewTranslations();
 

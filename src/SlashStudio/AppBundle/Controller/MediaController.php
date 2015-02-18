@@ -34,4 +34,16 @@ class MediaController extends Controller
             'pagination' => $pagination,
         ]);
     }
+
+    public function showAction($id)
+    {
+        $post = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getPostInfo($id);
+        if (empty($post)) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('SlashStudioAppBundle:Media:show.html.twig', [
+            'post' => $post,
+        ]);
+    }
 }
