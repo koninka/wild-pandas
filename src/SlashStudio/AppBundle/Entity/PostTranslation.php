@@ -29,6 +29,7 @@ class PostTranslation
      *
      * @ORM\Column(name="subtitle", type="string", length=150)
      * @Assert\NotBlank()
+     * @Assert\Length(max=100)
      */
     private $subtitle;
 
