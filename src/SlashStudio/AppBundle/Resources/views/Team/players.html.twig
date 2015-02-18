@@ -2,6 +2,11 @@
 
 {% block body %}
   <h1>{{ 'navigation.players' | trans({}, 'navigation') }}</h1>
+  <span>{{ 'player.structure' | trans({}, 'player') }}</span> :
+  <ul>
+    <li><a href="{{ path('slash_app_team_players', {s: 'basic'}) }}">{{ 'player.structure.basic' | trans({}, 'player') }}</a></li>
+    <li><a href="{{ path('slash_app_team_players', {s: 'additional'}) }}">{{ 'player.structure.additional' | trans({}, 'player') }}</a></li>
+  </ul>
   <table>
     <thead>
       <th></th>

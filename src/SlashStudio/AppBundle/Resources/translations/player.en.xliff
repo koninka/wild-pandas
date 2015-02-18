@@ -38,6 +38,18 @@
                 <source>player.nationality</source>
                 <target>Nationality</target>
             </trans-unit>
+            <trans-unit id="10">
+                <source>player.structure.basic</source>
+                <target>Basic</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>player.structure.additional</source>
+                <target>Additional</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>player.structure</source>
+                <target>Structure</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

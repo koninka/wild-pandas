@@ -4,13 +4,18 @@ namespace SlashStudio\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use SlashStudio\AppBundle\DBAL\StructureEnumType;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\DBAL\Types\Type;
 
 class TeamController extends Controller
 {
-    public function playersAction()
+    public function playersAction(Request $request)
     {
+        $structure = $request->query->get('s');
+        $structure = !empty(Type::getType('structureEnumType')->getChoices()[$structure]) ? $structure : StructureEnumType::ST_BASIC;
+
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
-            'players' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
+            'players' => $this->getDoctrine()->getRepository('SlashStudioAppBundle:Player')->getPlayers($structure),
         ]);
     }
 
