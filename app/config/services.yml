@@ -2,6 +2,7 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
     sonata.user.admin.user.class: SlashStudio\AppBundle\Admin\UserAdmin
+    sonata.seo.twig.extension.class: SlashStudio\AppBundle\Twig\Extensions\SeoExtension
 #    parameter_name: value
 
 

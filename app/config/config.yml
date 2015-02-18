@@ -17,6 +17,7 @@ imports:
     - { resource: a2lix/translations.yml }
 
     #sonata
+    - { resource: sonata/seo.yml }
     - { resource: sonata/admin.yml }
     - { resource: sonata/block.yml }
     - { resource: sonata/media.yml }

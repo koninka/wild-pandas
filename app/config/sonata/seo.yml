@@ -1,0 +1,24 @@
+sonata_seo:
+    default:          sonata.seo.page.default
+    encoding:         UTF-8
+    page:
+        title:            Wild-Pandas
+        metas:
+            name:
+                keywords:             foo bar
+                description:          The description
+                robots:               index, follow
+
+            property:
+                'og:site_name':       Wild Pandas Site
+                'og:description':     football team
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
