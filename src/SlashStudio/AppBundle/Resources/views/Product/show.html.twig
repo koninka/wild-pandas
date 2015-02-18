@@ -1,7 +1,11 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-  <h1>{{ product.getName() }}</h1>
+{% block headline %}
+  {{ product.getName() }}
+{% endblock %}
+
+{% block content %}
+  <h1></h1>
   {# TO DO: need to translate #}
   <div>Описание: {{ product.getDescription() }}</div>
   <div>Цена: {{ product.price }}</div>

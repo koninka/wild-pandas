@@ -1,7 +1,10 @@
 {% extends '::base.html.twig' %}
 
-{%  block body %}
-  <h1>{{ post.getTitle() }}</h1>
+{% block headline %}
+  {{ post.getTitle() }}
+{% endblock %}
+
+{% block content %}
   <p>{{ post.getSubtitle() }}</p>
   <p>{{ post.getText() }}</p>
   {% media post.image, 'main' %}

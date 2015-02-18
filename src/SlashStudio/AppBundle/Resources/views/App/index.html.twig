@@ -1,9 +1,10 @@
 {% extends '::base.html.twig' %}
 
+{% block headline %}
+  Wild Pandas Home Page!!
+{% endblock %}
 
-{% block body %}
-  <h1>Wild Pandas Home Page!!</h1>
-
+{% block content %}
   <div>
     <h2>This is slider!</h2>
     {% for slide in slides %}

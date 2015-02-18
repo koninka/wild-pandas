@@ -1,7 +1,10 @@
 {% extends '::base.html.twig' %}
 
-{%  block body %}
-  <h1>{{ 'title.official_blog' | trans }}</h1>
+{% block headline %}
+  {{ 'title.official_blog' | trans }}
+{% endblock %}
+
+{% block content %}
   <div class="count">
     {{ pagination.getTotalItemCount }}
   </div>

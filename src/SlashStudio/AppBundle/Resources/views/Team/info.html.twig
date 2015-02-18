@@ -1,6 +1,9 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-  <h1>{{ header }}</h1>
+{% block headline %}
+  {{ header }}
+{% endblock %}
+
+{% block content %}
   <p>{{ page.getText() }}</p>
 {% endblock %}

@@ -1,7 +1,10 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-  <h1>{{ 'navigation.players' | trans({}, 'navigation') }}</h1>
+{% block headline %}
+  {{ 'navigation.players' | trans({}, 'navigation') }}
+{% endblock %}
+
+{% block content %}
   <span>{{ 'player.structure' | trans({}, 'player') }}</span> :
   <ul>
     <li><a href="{{ path('slash_app_team_players', {s: 'basic'}) }}">{{ 'player.structure.basic' | trans({}, 'player') }}</a></li>

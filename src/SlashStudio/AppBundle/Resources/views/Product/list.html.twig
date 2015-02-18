@@ -1,7 +1,10 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-  <h1>{{ 'product.title' | trans }}</h1>
+{% block headline %}
+  {{ 'navigation.products' | trans({}, 'navigation') }}
+{% endblock %}
+
+{% block content %}
   <h3>{{ 'product.description' | trans }}</h3>
   <div class="count">
     {{ pagination.getTotalItemCount }}
