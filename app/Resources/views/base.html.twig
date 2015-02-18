@@ -3,7 +3,9 @@
 {% block title %}{{ sonata_seo_title(false) }}{% endblock %}
 
 {% block head_bottom %}
-    {{ sonata_seo_metadatas() }}
+    {% block meta %}
+        {{ sonata_seo_metadatas() }}
+    {% endblock %}
 {% endblock head_bottom %}
 
 {% block navbar %}
