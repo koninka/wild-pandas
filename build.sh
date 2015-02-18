@@ -33,6 +33,7 @@ else
 fi
 
 php app/console assets:install web --symlink
+php app/console mopa:bootstrap:symlink:less
 
 set_permissions
 

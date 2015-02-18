@@ -7,6 +7,9 @@ imports:
     # knp
     - { resource: knp/paginator.yml }
 
+    # knp
+    - { resource: mopa/bootstrap.yml }
+
     # fos
     - { resource: fos/user.yml }
 
@@ -56,9 +59,13 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ MopaBootstrapBundle ]
     filters:
         cssrewrite: ~
+        less:
+            node: "%node_bin%"
+            node_paths: "%node_paths%"
+            apply_to: "\.less$"
 
 # Doctrine Configuration
 doctrine:

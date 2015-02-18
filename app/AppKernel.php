@@ -35,7 +35,7 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
-            // new A2lix\I18nDoctrineBundle\A2lixI18nDoctrineBundle(),
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
