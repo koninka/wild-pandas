@@ -7,6 +7,9 @@
     <li><a href="{{ path('slash_app_team_players', {s: 'basic'}) }}">{{ 'player.structure.basic' | trans({}, 'player') }}</a></li>
     <li><a href="{{ path('slash_app_team_players', {s: 'additional'}) }}">{{ 'player.structure.additional' | trans({}, 'player') }}</a></li>
   </ul>
+  <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div>
   <table>
     <thead>
       <th></th>
@@ -19,7 +22,7 @@
       <th>{{ 'player.nationality'  | trans({}, 'player') }}</th>
     </thead>
     <tbody>
-      {% for p in players %}
+      {% for p in pagination %}
         <tr>
           <td></td>
           <td>{{ p.getFullname() }}</td>
@@ -33,4 +36,7 @@
       {% endfor %}
     </tbody>
   </table>
+  <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div>
 {% endblock %}
