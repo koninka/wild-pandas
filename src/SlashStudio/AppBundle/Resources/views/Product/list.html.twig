@@ -3,10 +3,16 @@
 {% block body %}
   <h1>{{ 'product.title' | trans }}</h1>
   <h3>{{ 'product.description' | trans }}</h3>
-  {% for product in products %}
+  <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div>
+  {% for product in pagination %}
     <div>
       {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
       {{ 'product.price' | trans }} : {{ product.price }}
     </div>
   {% endfor %}
+  <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div>
 {% endblock %}

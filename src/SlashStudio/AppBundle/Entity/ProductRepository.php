@@ -24,19 +24,18 @@ class ProductRepository extends EntityRepository
             ->getOneOrNullResult();
     }
 
-    public function getProducts($isMainPage = false)
+    public function getProductsQB()
     {
-        $qb = $this->getEntityManager()
+        return $this->getEntityManager()
                    ->createQueryBuilder()
                    ->select(['p', 'i', 't'])
                    ->from('SlashStudioAppBundle:Product', 'p')
                    ->leftJoin('p.image', 'i')
                    ->leftJoin('p.translations', 't');
-//                   ->orderBy('t.name', 'ASC');
-        if ($isMainPage) {
-            $qb->where('p.showOnTheMain = true');
-        }
+    }
 
-        return $qb->getQuery()->getResult();
+    public function getProductsForMainPage()
+    {
+        return $this->getProductsQB()->where('p.showOnTheMain = true')->getQuery()->getResult();
     }
 }
