@@ -2,10 +2,16 @@
 
 {% block body %}
   <h1>{{ 'navigation.media_about' | trans({}, 'navigation') }}</h1>
-  {% for p in posts %}
+  <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div>
+  {% for p in pagination %}
     <div>
       <b>{{ p.getTitle() }}</b>
       <p>{{ p.getSubtitle() }}</p>
     </div>
   {% endfor %}
+  <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div>
 {% endblock %}
