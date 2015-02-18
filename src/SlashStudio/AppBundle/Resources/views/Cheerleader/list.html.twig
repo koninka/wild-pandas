@@ -7,11 +7,17 @@
     <p>{{ team.getDescription() }}</p>
     {% media team.image, 'main' %}
     <div>
-      {% for cl in cheerleaders %}
+      <div class="count">
+        {{ pagination.getTotalItemCount }}
+      </div>
+      {% for cl in pagination %}
         {{ cl.getFullname() }}
         <p>{{ cl.getAbout() }}</p>
         {% media cl.photo, 'small' %}
       {% endfor %}
+      <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+      </div>
     </div>
   </div>
 {% endblock %}
