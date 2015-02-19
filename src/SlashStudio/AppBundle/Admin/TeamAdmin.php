@@ -35,8 +35,7 @@ class TeamAdmin extends BaseAdmin
                        ->add('gallery', 'sonata_type_model_list', ['required' => false], [
                            'link_parameters' => [
                                'context'  => 'photo',
-                               'filter'   => ['context' => ['value' => 'photo']],
-                               'provider' => ''
+                               'filter'   => ['context' => ['value' => 'photo']]
                            ]
                        ])
                        ->end()
