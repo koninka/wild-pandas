@@ -90,6 +90,10 @@
                 <source>list.label_name</source>
                 <target>Название</target>
             </trans-unit>
+            <trans-unit id="23">
+                <source>form.label_gallery</source>
+                <target>Галерея</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

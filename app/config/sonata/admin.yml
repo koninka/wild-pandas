@@ -49,3 +49,5 @@ sonata_admin:
                     - sonata.admin.partnership
                     - sonata.admin.slide
                     - sonata.admin.product
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery
