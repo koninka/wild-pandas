@@ -12,7 +12,7 @@
     <div>
       <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.getTitle() }}</b></a>
       <p>{{ post.getSubtitle() }}</p>
-      {{ post.createdAt.date }}
+      {{ post.createdAt.date | localizeddate('short', 'none') }}
       <div> {% media post.image, 'main' %}</div>
     </div>
   {% endfor %}

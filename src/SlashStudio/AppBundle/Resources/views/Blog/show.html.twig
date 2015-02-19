@@ -8,5 +8,5 @@
   <p>{{ post.getSubtitle() }}</p>
   <p>{{ post.getText() }}</p>
   {% media post.image, 'main' %}
-  {{ post.createdAt.date }}
+  {{ post.createdAt.date | localizeddate('short', 'none') }}
 {% endblock %}
