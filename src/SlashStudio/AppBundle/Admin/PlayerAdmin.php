@@ -51,11 +51,11 @@ class PlayerAdmin extends BaseAdmin
                     'fields' => [
                         'name' => [
                             'label' => 'show.label_name',
-                            'translation_domain' => 'admin_player',
+                            'translation_domain' => $this->translationDomain,
                         ],
                         'surname' => [
                             'label' => 'show.label_surname',
-                            'translation_domain' => 'admin_player',
+                            'translation_domain' => $this->translationDomain,
                         ],
                     ],
                 ])

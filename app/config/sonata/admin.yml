@@ -51,6 +51,7 @@ sonata_admin:
                     - sonata.admin.product
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery
+                    - sonata.user.admin.user
 
     assets:
         stylesheets:
