@@ -29,10 +29,14 @@ EOT;
             $post->translate('ru')->setTitle("Заголовок$i");
             $post->translate('ru')->setSubtitle('Это подзаголовок самой крутой новости.');
             $post->translate('ru')->setText('Это новость заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...');
+            $post->translate('ru')->setRawText('Это новость заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...');
+            $post->translate('ru')->setTextFormatter('richhtml');
 
             $post->translate('en')->setTitle("Head$i");
             $post->translate('en')->setSubtitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
             $post->translate('en')->setText($this->loremIpsum);
+            $post->translate('en')->setRawText($this->loremIpsum);
+            $post->translate('en')->setTextFormatter('richhtml');
 
             $post->mergeNewTranslations();
             $mediaPost = new MediaPost;
