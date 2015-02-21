@@ -51,3 +51,7 @@ sonata_admin:
                     - sonata.admin.product
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery
+
+    assets:
+        stylesheets:
+            - assetic/sonata_admin_css.css
