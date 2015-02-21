@@ -33,6 +33,19 @@ class TeamRepository extends EntityRepository
             ->getOneOrNullResult();
    }
 
+    public function getVideoForTeam($amount = 2)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT m FROM ApplicationSonataMediaBundle:Media m
+                  JOIN m.galleryHasMedias ghs
+                  JOIN ghs.gallery g JOIN SlashStudioAppBundle:Team t WHERE t.gallery = g'
+            )
+            ->setMaxResults($amount)
+            ->getResult();
+
+    }
+
     public function getInfo()
     {
         return $this->getEntityManager()
@@ -45,6 +58,6 @@ class TeamRepository extends EntityRepository
                     LEFT JOIN t.image i
                     LEFT JOIN t.translations tr'
             )
-            ->getOneOrNullResult();
+            ->getSingleResult();
     }
 }

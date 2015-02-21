@@ -56,6 +56,13 @@ class Team extends TranslationEntity
      */
     private $image;
 
+    /**
+     * @var Gallery
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", nullable=true)
+     */
+    private $gallery;
+
 
     public function __construct()
     {
@@ -179,5 +186,24 @@ class Team extends TranslationEntity
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
+    }
+
+    /**
+     * @param Gallery $gallery
+     * @return Team
+     */
+    public function setGallery($gallery)
+    {
+        $this->gallery = $gallery;
+
+        return $this;
     }
 }

@@ -5,4 +5,10 @@
 {% endblock %}
 
 {% block content %}
+  <div>
+    <h2>{{ 'navigation.video' | trans({}, 'navigation') }}</h2>
+    {% for video in videos %}
+      <div>{% media video, 'medium' %}</div>
+    {% endfor %}
+  </div>
 {% endblock %}

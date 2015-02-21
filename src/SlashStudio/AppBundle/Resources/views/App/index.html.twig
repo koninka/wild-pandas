@@ -73,6 +73,13 @@
   </div>
 
   <div>
+    <h2>{{ 'navigation.video' | trans({}, 'navigation') }}</h2>
+    {% for video in videos %}
+      <div>{% media video, 'medium' %}</div>
+    {% endfor %}
+  </div>
+
+  <div>
     <h2><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans({}, 'navigation') }}</a></h2>
     {% for product in products %}
       <div>
