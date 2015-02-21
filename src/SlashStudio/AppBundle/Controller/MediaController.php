@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 class MediaController extends Controller
 {
     const PHOTO_PER_PAGE       = 1;
+    const OTHER_POSTS_AMOUNT   = 2;
     const MEDIA_POSTS_PER_PAGE = 9;
 
     public function photoAction(Request $request)
@@ -32,7 +33,7 @@ class MediaController extends Controller
     public function aboutAction(Request $request)
     {
         $pagination = $this->get('knp_paginator')->paginate(
-            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getMediaQuery(),
+            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getMediaPostQB(),
             $request->query->get('page', 1),
             static::MEDIA_POSTS_PER_PAGE
         );
@@ -44,14 +45,16 @@ class MediaController extends Controller
 
     public function showAction($id)
     {
-        $post = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getPostInfo($id);
-        if (empty($post)) {
+        $repo = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost');
+        $post = $repo->getPostInfo($id);
+        if (null === $post) {
             throw $this->createNotFoundException();
         }
         $this->container->get('my_seo')->addMeta($post);
 
         return $this->render('SlashStudioAppBundle:Media:show.html.twig', [
             'post' => $post,
+            'other_posts' => $repo->getOtherPosts($post, static::OTHER_POSTS_AMOUNT),
         ]);
     }
 }

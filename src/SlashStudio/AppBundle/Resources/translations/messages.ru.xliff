@@ -58,6 +58,10 @@
                 <source>products.other</source>
                 <target>Другие товары</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>posts.other</source>
+                <target>Другие записи</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

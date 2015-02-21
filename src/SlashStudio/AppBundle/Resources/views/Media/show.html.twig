@@ -9,4 +9,14 @@
   <p>{{ post.getText() }}</p>
   {% media post.image, 'main' %}
   {{ post.createdAt.date | localizeddate('short', 'none') }}
+  <div>
+    <h3>{{ 'posts.other' | trans }}</h3>
+    {% for p in other_posts %}
+      <div>
+        <b><a href="{{ path('slash_app_media_show', {id: p.id}) }}">{{ p.getTitle() }}</a></b>
+        <p>{{ p.getSubtitle() }}</p>
+        {{ p.createdAt.date | localizeddate('short', 'none') }}
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

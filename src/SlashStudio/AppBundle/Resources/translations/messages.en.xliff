@@ -58,6 +58,10 @@
                 <source>products.other</source>
                 <target>Other products</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>posts.other</source>
+                <target>Other posts</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
