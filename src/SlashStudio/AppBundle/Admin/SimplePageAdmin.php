@@ -13,15 +13,7 @@ class SimplePageAdmin extends BaseAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('translations', 'a2lix_translations', [
-                        'fields' => [
-                            'text' => [
-                                'label' => 'show.label_text',
-                                'translation_domain' => $this->translationDomain,
-                            ]
-                        ],
-                    ])
-                   ->end()
+        $formMapper
                    ->with('meta')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
                    ->end();

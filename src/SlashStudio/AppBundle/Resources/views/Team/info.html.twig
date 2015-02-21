@@ -5,5 +5,5 @@
 {% endblock %}
 
 {% block content %}
-  <p>{{ page.getText() }}</p>
+  <p>{{ page.getText() | raw }}</p>
 {% endblock %}

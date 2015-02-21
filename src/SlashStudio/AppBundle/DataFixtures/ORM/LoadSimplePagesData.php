@@ -31,9 +31,9 @@ class LoadSimplePagesData implements FixtureInterface
     {
         $this->manager = $manager;
 
-        $this->loadPage('Тренировки', 'Тренировочки такие тренировочки', 'Lorem ipsum dolor sit amet TRAINIGNS, consectetur adipisicing elit.')
-             ->loadPage('История команды', 'Летопись ведется аж с 2012 года!', 'Lorem ipsum HISTORY dolor sit amet, consectetur adipisicing elit.')
-             ->loadPage('Детские команды', 'Детская команда-моманда', 'Lorem ipsum dolor sit amet, consectetur adipisicing CHILD TEAMM elit.');
+        $this->loadPage('Тренировки', 'Тренировочки такие <b>тренировочки</b>', 'Lorem ipsum dolor sit amet <b>TRAINIGNS</b>, consectetur adipisicing elit.')
+             ->loadPage('История команды', 'Летопись ведется <b>аж с 2012 года</b>!', 'Lorem ipsum <b>HISTORY</b> dolor sit amet, consectetur adipisicing elit.')
+             ->loadPage('Детские команды', 'Детская <b>команда-моманда</b>', 'Lorem ipsum dolor sit amet, consectetur adipisicing CHILD <b>TEAMM</b> elit.');
 
         $this->manager->flush();
     }
