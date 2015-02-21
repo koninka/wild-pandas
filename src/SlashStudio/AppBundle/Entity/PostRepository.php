@@ -12,7 +12,9 @@ class PostRepository extends EntityRepository
     public function getPostInfo($id)
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p, m, i FROM SlashStudioAppBundle:Post p LEFT JOIN p.meta m LEFT JOIN p.image i WHERE p.id = :id ')
+            ->createQuery(
+                'SELECT p, m, i, t FROM SlashStudioAppBundle:Post p LEFT JOIN p.meta m LEFT JOIN p.image i LEFT JOIN p.translations t WHERE p.id = :id '
+            )
             ->setParameter('id', $id)
             ->getOneOrNullResult();
     }
