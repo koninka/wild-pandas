@@ -5,16 +5,16 @@
 {% endblock %}
 
 {% block content %}
-  <div class="count">
+  {# <div class="count">
     {{ pagination.getTotalItemCount }}
-  </div>
+  </div> #}
   {% for photo in pagination %}
     <div>
         {% media photo, 'medium' %}
  {#     <div> {% media post.image, 'main' %}</div> #}
     </div>
   {% endfor %}
-  <div class="navigation">
+  {# <div class="navigation">
     {{ knp_pagination_render(pagination) }}
-  </div>
+  </div> #}
 {% endblock %}

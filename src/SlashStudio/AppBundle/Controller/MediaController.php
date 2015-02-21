@@ -12,14 +12,14 @@ class MediaController extends Controller
 
     public function photoAction(Request $request)
     {
-        $pagination = $this->get('knp_paginator')->paginate(
-            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Team')->getPhotoQuery(),
-            $request->query->get('page', 1),
-            static::PHOTO_PER_PAGE
-        );
+        // $pagination = $this->get('knp_paginator')->paginate(
+        //     $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Team')->getPhotoQuery(),
+        //     $request->query->get('page', 1),
+        //     static::PHOTO_PER_PAGE
+        // );
 
         return $this->render('SlashStudioAppBundle:Media:photo.html.twig', [
-            'pagination' => $pagination,
+            'pagination' => [],
         ]);
     }
 

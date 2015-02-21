@@ -50,4 +50,4 @@ sonata_admin:
                     - sonata.admin.slide
                     - sonata.admin.product
                     - sonata.media.admin.media
-                    - sonata.media.admin.gallery
+                    # - sonata.media.admin.gallery
