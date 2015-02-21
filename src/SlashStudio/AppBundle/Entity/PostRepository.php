@@ -28,10 +28,20 @@ class PostRepository extends EntityRepository
                    ->orderBy('p.createdAt', 'DESC');
     }
 
+    protected function getLimitedPostsQB($amount)
+    {
+        return $this->getPostsQB()->setMaxResults($amount);
+    }
+
+    public function getLimitedPosts($amount)
+    {
+        return new Paginator($this->getLimitedPostsQB($amount));
+    }
+
     public function getOtherPosts(Post $post, $amount)
     {
         return new Paginator(
-            $this->getPostsQB()->andWhere('p.id NOT IN (:id)')->setParameter('id', $post->getId())->setMaxResults($amount)
+            $this->getLimitedPostsQB($amount)->andWhere('p.id NOT IN (:id)')->setParameter('id', $post->getId())
         );
     }
 

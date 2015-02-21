@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AppController extends Controller
 {
+    const POSTS_ON_PARTNERSHIP_AMOUNT = 2;
+
     public function indexAction()
     {
         $manager = $this->getDoctrine()->getManager();
@@ -24,7 +26,10 @@ class AppController extends Controller
 
     public function partnershipAction()
     {
+        $repo = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post');
+
         return $this->render('SlashStudioAppBundle:App:partnership.html.twig', [
+            'posts' => $repo->getLimitedPosts(static::POSTS_ON_PARTNERSHIP_AMOUNT)
         ]);
     }
 }

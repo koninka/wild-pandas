@@ -62,6 +62,10 @@
                 <source>posts.other</source>
                 <target>Другие записи</target>
             </trans-unit>
+            <trans-unit id="16">
+                <source>team.blog</source>
+                <target>Блок команды</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
