@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends Controller
 {
-    const POSTS_PER_PAGE = 9;
+    const POSTS_PER_PAGE     = 9;
+    const OTHER_POSTS_AMOUNT = 2;
 
     public function listAction(Request $request)
     {
@@ -24,7 +25,8 @@ class BlogController extends Controller
 
     public function showAction($id)
     {
-        $post = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostInfo($id);
+        $repo = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post');
+        $post = $repo->getPostInfo($id);
         if (empty($post)) {
             throw $this->createNotFoundException();
         }
@@ -32,6 +34,7 @@ class BlogController extends Controller
 
         return $this->render('SlashStudioAppBundle:Blog:show.html.twig', [
             'post' => $post,
+            'other_posts' => $repo->getOtherPosts($post, static::OTHER_POSTS_AMOUNT),
         ]);
     }
 }

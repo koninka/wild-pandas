@@ -28,6 +28,13 @@ class PostRepository extends EntityRepository
                    ->orderBy('p.createdAt', 'DESC');
     }
 
+    public function getOtherPosts(Post $post, $amount)
+    {
+        return new Paginator(
+            $this->getPostsQB()->andWhere('p.id NOT IN (:id)')->setParameter('id', $post->getId())->setMaxResults($amount)
+        );
+    }
+
     public function getPostsForMainPage()
     {
         return new Paginator($this->getPostsQB()->where('p.showOnTheMain = true')->setMaxResults(static::POSTS_ON_MAIN_PAGE));
