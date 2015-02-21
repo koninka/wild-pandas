@@ -56,7 +56,7 @@
             </trans-unit>
             <trans-unit id="14">
                 <source>products.other</source>
-                <target>Другие товары</target>
+                <target>Other products</target>
             </trans-unit>
         </body>
     </file>
