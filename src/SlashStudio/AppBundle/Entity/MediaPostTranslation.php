@@ -41,6 +41,58 @@ class MediaPostTranslation
     private $text;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="raw_text", type="text")
+     */
+    private $rawText;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text_formatter", type="string", length=40)
+     */
+    private $textFormatter;
+
+    /**
+     * @return string
+     */
+    public function getTextFormatter()
+    {
+        return $this->textFormatter;
+    }
+
+    /**
+     * @param string $textFormatter
+     * @return MediaPostTranslation
+     */
+    public function setTextFormatter($textFormatter)
+    {
+        $this->textFormatter = $textFormatter;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawText()
+    {
+        return $this->rawText;
+    }
+
+    /**
+     * @param string $rawText
+     * @return MediaPostTranslation
+     */
+    public function setRawText($rawText)
+    {
+        $this->rawText = $rawText;
+
+        return $this;
+    }
+
+    /**
      * Set title
      *
      * @param string $title

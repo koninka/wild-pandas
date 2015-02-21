@@ -6,7 +6,7 @@
 
 {% block content %}
   <p>{{ post.getSubtitle() }}</p>
-  <p>{{ post.getText() }}</p>
+  <p>{{ post.getRawText() | raw }}</p>
   {% media post.image, 'main' %}
   {{ post.createdAt.date | localizeddate('short', 'none') }}
   <div>

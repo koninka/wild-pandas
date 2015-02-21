@@ -43,6 +43,27 @@ class MediaPost extends TranslationEntity
         $this->createdAt = new \DateTime('now');
     }
 
+    public function getTextFormatter()
+    {
+        return $this->proxyCurrentLocaleTranslation('getTextFormatter');
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawText()
+    {
+        return $this->proxyCurrentLocaleTranslation('getRawText');
+    }
+
+    /**
+     * @return string
+     */
+    public function setText($text)
+    {
+        return $this->proxyCurrentLocaleTranslation('setText', [$text]);
+    }
+
     /**
      * @return \DateTime
      */

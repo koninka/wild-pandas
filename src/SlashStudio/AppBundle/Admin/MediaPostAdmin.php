@@ -29,9 +29,17 @@ class MediaPostAdmin extends BaseAdmin
                                 'label' => 'show.label_subtitle',
                                 'translation_domain' => $this->translationDomain,
                             ],
+                            'rawText' => ['display' => false],
+                            'textFormatter' => ['display' => false],
                             'text' => [
                                 'label' => 'show.label_text',
                                 'translation_domain' => $this->translationDomain,
+                                'field_type' => 'sonata_formatter_type',
+                                'event_dispatcher' => $formMapper->getFormBuilder()->getEventDispatcher(),
+                                'format_field'   => 'textFormatter',
+                                'source_field'   => 'rawText',
+                                'ckeditor_context' => 'default',
+                                'target_field'   => 'text',
                             ],
                         ],
                     ])
