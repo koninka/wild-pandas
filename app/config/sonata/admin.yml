@@ -1,7 +1,7 @@
 sonata_admin:
     title:      Wild Pandas Admin
     templates:
-        layout:  ApplicationSonataAdminBundle::standard_layout.html.twig
+        layout:  ApplicationSonataAdminBundle::layout.html.twig
 
     dashboard:
         blocks:
