@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ProductController extends Controller
 {
     const PRODUCTS_PER_PAGE = 12;
+    const OTHER_PRODUCTS_COUNT = 4;
 
     public function listAction(Request $request)
     {
@@ -24,14 +25,15 @@ class ProductController extends Controller
 
     public function showAction($id)
     {
-        $product = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product')->getProductInfo($id);
+        $repo = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Product');
+        $product = $repo->getProductInfo($id);
         if (empty($product)) {
             throw $this->createNotFoundException($this->get('translator')->trans('product.not_found'));
         }
         $this->container->get('my_seo')->addMeta($product);
-
         return $this->render('SlashStudioAppBundle:Product:show.html.twig', [
             'product' => $product,
+            'other_products' => $repo->getOtherProducts($product, static::OTHER_PRODUCTS_COUNT),
         ]);
     }
 }

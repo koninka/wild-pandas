@@ -10,4 +10,11 @@
   <div>Описание: {{ product.getDescription() }}</div>
   <div>Цена: {{ product.price }}</div>
   <div>{% media product.image, 'big' %}</div>
+  <h1>{{ 'products.other' | trans }}</h1>
+  {% for product in other_products %}
+    <div>
+      {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
+      {{ 'product.price' | trans }} : {{ product.price }}
+    </div>
+  {% endfor %}
 {% endblock %}

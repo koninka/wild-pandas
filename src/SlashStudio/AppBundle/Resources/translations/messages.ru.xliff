@@ -54,6 +54,10 @@
                 <source>partnership.description</source>
                 <target>По вопросам сотрудничества обращайтесь к менеджеру</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>products.other</source>
+                <target>Другие товары</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

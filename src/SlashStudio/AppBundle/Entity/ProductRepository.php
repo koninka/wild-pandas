@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * ProductRepository
@@ -22,6 +23,13 @@ class ProductRepository extends EntityRepository
             )
             ->setParameter('id', $id)
             ->getOneOrNullResult();
+    }
+
+    public function getOtherProducts($product, $amount)
+    {
+        return new Paginator(
+            $this->getProductsQB()->andWhere('p.id NOT IN (:id)')->setParameter('id', $product->getId())->setMaxResults($amount)
+        );
     }
 
     public function getProductsQB()
