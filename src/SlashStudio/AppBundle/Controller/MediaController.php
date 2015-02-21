@@ -9,6 +9,7 @@ class MediaController extends Controller
 {
     const PHOTO_PER_PAGE       = 1;
     const OTHER_POSTS_AMOUNT   = 2;
+    const VIDEOS_PER_PAGE      = 2;
     const MEDIA_POSTS_PER_PAGE = 9;
 
     public function photoAction(Request $request)
@@ -24,9 +25,16 @@ class MediaController extends Controller
         ]);
     }
 
-    public function videoAction()
+    public function videoAction(Request $request)
     {
+        $pagination = $this->get('knp_paginator')->paginate(
+            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Team')->getVideosQBForPaginating(),
+            $request->query->get('page', 1)/*page number*/,
+            static::VIDEOS_PER_PAGE
+        );
+
         return $this->render('SlashStudioAppBundle:Media:video.html.twig', [
+            'pagination' => $pagination,
         ]);
     }
 

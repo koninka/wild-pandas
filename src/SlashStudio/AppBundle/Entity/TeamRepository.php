@@ -33,6 +33,18 @@ class TeamRepository extends EntityRepository
             ->getOneOrNullResult();
    }
 
+   public function getVideosQBForPaginating()
+   {
+        $manager = $this->getEntityManager();
+        $team = $manager->createQuery('SELECT PARTIAL t.{id}, g FROM SlashStudioAppBundle:Team t LEFT JOIN t.gallery g')->getSingleResult();
+
+        return $manager->createQuery(
+            'SELECT m FROM ApplicationSonataMediaBundle:Media m
+                JOIN m.galleryHasMedias ghs
+                JOIN ghs.gallery g WHERE g = :gallery'
+        )->setParameter('gallery', $team->getGallery());
+   }
+
     public function getVideoForTeam($amount = 2)
     {
         return $this->getEntityManager()
