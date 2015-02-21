@@ -7,7 +7,7 @@
 {% block content %}
   <h1></h1>
   {# TO DO: need to translate #}
-  <div>Описание: {{ product.getDescription() }}</div>
+  <div>Описание: {{ product.getRawDescription() | raw }}</div>
   <div>Цена: {{ product.price }}</div>
   <div>{% media product.image, 'big' %}</div>
   <h1>{{ 'products.other' | trans }}</h1>
