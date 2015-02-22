@@ -1,0 +1,7 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+  {% set format = field_description.options.format %}
+  {% set default_region = field_description.options.default_region|default('RU') %}
+  {{ phone_number_format(object.phone, format) }}
+{% endblock %}
