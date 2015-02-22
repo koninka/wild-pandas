@@ -9,13 +9,13 @@ use libphonenumber\PhoneNumberFormat;
 
 class BaseSimpleProposalAdmin extends BaseAdmin
 {
+    protected $translationDomain = 'admin_proposals';
+
     protected $datagridValues = [
         '_page' => 1,
         '_sort_order' => 'DESC',
         '_sort_by' => 'createdAt',
     ];
-
-    protected $translationDomain = 'admin_proposals';
 
     protected function configureFormFields(FormMapper $formMapper)
     {

@@ -3,7 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * CheerleaderTeamProposalMembership
  *
@@ -25,6 +25,7 @@ class CheerleaderTeamProposalMembership
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -32,13 +33,14 @@ class CheerleaderTeamProposalMembership
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $surname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="patronymic", type="string", length=150)
+     * @ORM\Column(name="patronymic", type="string", length=150, nullable=true)
      */
     private $patronymic;
 
@@ -46,13 +48,16 @@ class CheerleaderTeamProposalMembership
      * @var integer
      *
      * @ORM\Column(name="age", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Type(type="integer")
+     * @Assert\GreaterThan(value=0)
      */
     private $age;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="education", type="string", length=200)
+     * @ORM\Column(name="education", type="string", length=200, nullable=true)
      */
     private $education;
 
@@ -60,69 +65,81 @@ class CheerleaderTeamProposalMembership
      * @var phone_number
      *
      * @ORM\Column(name="phone", type="phone_number")
+     * @Assert\NotBlank()
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="choreographicEducation", type="string", length=255)
+     * @ORM\Column(name="choreographic_education", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $choreographicEducation;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="choreographicStyle", type="string", length=150)
+     * @ORM\Column(name="choreographic_style", type="string", length=150)
+     * @Assert\NotBlank()
      */
     private $choreographicStyle;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="choreographicExperience", type="integer")
+     * @ORM\Column(name="choreographic_experience", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Type(type="integer")
+     * @Assert\GreaterThanOrEqual(value=0)
      */
     private $choreographicExperience;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="choreographicExperiencePlaying", type="text")
+     * @ORM\Column(name="choreographic_experience_playing", type="text")
+     * @Assert\NotBlank()
      */
     private $choreographicExperiencePlaying;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="acrobaticEducation", type="string", length=200)
+     * @ORM\Column(name="acrobatic_education", type="string", length=200)
+     * @Assert\NotBlank()
      */
     private $acrobaticEducation;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="acrobaticExperience", type="integer")
+     * @ORM\Column(name="acrobatic_experience", type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Type(type="integer")
+     * @Assert\GreaterThanOrEqual(value=0)
      */
     private $acrobaticExperience;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="acrobaticElements", type="text")
+     * @ORM\Column(name="acrobatic_elements", type="text")
+     * @Assert\NotBlank()
      */
     private $acrobaticElements;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hobby", type="text")
+     * @ORM\Column(name="hobby", type="text", nullable=true)
      */
     private $hobby;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="about", type="text")
+     * @ORM\Column(name="about", type="text", nullable=true)
      */
     private $about;
 
@@ -130,7 +147,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -153,7 +170,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -176,7 +193,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -199,7 +216,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get patronymic
      *
-     * @return string 
+     * @return string
      */
     public function getPatronymic()
     {
@@ -222,7 +239,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get age
      *
-     * @return integer 
+     * @return integer
      */
     public function getAge()
     {
@@ -245,7 +262,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get education
      *
-     * @return string 
+     * @return string
      */
     public function getEducation()
     {
@@ -268,7 +285,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get phone
      *
-     * @return phone_number 
+     * @return phone_number
      */
     public function getPhone()
     {
@@ -291,7 +308,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get choreographicEducation
      *
-     * @return string 
+     * @return string
      */
     public function getChoreographicEducation()
     {
@@ -314,7 +331,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get choreographicStyle
      *
-     * @return string 
+     * @return string
      */
     public function getChoreographicStyle()
     {
@@ -337,7 +354,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get choreographicExperience
      *
-     * @return integer 
+     * @return integer
      */
     public function getChoreographicExperience()
     {
@@ -360,7 +377,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get choreographicExperiencePlaying
      *
-     * @return string 
+     * @return string
      */
     public function getChoreographicExperiencePlaying()
     {
@@ -383,7 +400,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get acrobaticEducation
      *
-     * @return string 
+     * @return string
      */
     public function getAcrobaticEducation()
     {
@@ -406,7 +423,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get acrobaticExperience
      *
-     * @return integer 
+     * @return integer
      */
     public function getAcrobaticExperience()
     {
@@ -429,7 +446,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get acrobaticElements
      *
-     * @return string 
+     * @return string
      */
     public function getAcrobaticElements()
     {
@@ -452,7 +469,7 @@ class CheerleaderTeamProposalMembership
     /**
      * Get hobby
      *
-     * @return string 
+     * @return string
      */
     public function getHobby()
     {
@@ -475,10 +492,27 @@ class CheerleaderTeamProposalMembership
     /**
      * Get about
      *
-     * @return string 
+     * @return string
      */
     public function getAbout()
     {
         return $this->about;
+    }
+
+    /**
+     * Get fullname
+     * @return string
+     */
+    public function getFullname()
+    {
+        return sprintf('%s %s %s', $this->getName(), $this->getSurname(), $this->getPatronymic());
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getFullname();
     }
 }
