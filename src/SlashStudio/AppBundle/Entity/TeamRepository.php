@@ -55,7 +55,6 @@ class TeamRepository extends EntityRepository
             )
             ->setMaxResults($amount)
             ->getResult();
-
     }
 
     public function getInfo()

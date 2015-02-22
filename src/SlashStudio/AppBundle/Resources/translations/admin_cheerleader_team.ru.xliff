@@ -70,6 +70,10 @@
                 <source>breadcrumb.link_cheerleader_team_list</source>
                 <target>Команда</target>
             </trans-unit>
+            <trans-unit id="18">
+                <source>form.label_gallery</source>
+                <target>Видео</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

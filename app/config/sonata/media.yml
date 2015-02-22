@@ -91,6 +91,15 @@ sonata_media:
                 medium: { width: 400 , quality: 80 }
                 big: { width: 800 , quality: 100 }
 
+        cheerleader_team_video:
+            providers:
+                - sonata.media.provider.vimeo
+                - sonata.media.provider.youtube
+
+            formats:
+                medium: { width: 400 , quality: 80 }
+                big: { width: 800 , quality: 100 }
+
     cdn:
         server:
             path: /uploads/media

@@ -27,6 +27,12 @@ class CheerleaderTeamAdmin extends BaseAdmin
                             ],
                         ])
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
+                       ->add('gallery', 'sonata_type_model_list', ['required' => false], [
+                            'link_parameters' => [
+                                'context'  => 'cheerleader_team_video',
+                                'filter'   => ['context' => ['value' => 'cheerleader_team_video']]
+                            ]
+                       ])
                     ->end();
     }
 

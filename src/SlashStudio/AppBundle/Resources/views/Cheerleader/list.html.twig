@@ -23,4 +23,10 @@
       </div>
     </div>
   </div>
+  <div>
+    {{ 'navigation.video' | trans({}, 'navigation') }}
+    {% for video in videos %}
+      {% media video,  'medium' %}
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CheerleaderController extends Controller
 {
     const CHEERLEADERS_PER_PAGE = 3;
+    const MAX_VIDEOS_ON_PAGE = 4;
 
     public function listAction(Request $request)
     {
@@ -17,9 +18,11 @@ class CheerleaderController extends Controller
             $request->query->get('page', 1),
             static::CHEERLEADERS_PER_PAGE
         );
+        $teamRepo = $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam');
 
         return $this->render('SlashStudioAppBundle:Cheerleader:list.html.twig', [
-            'team' => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
+            'team'       => $teamRepo->getInfo(),
+            'videos'     => $teamRepo->getVideoForTeam(static::MAX_VIDEOS_ON_PAGE),
             'pagination' => $pagination,
         ]);
     }
