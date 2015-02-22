@@ -143,6 +143,21 @@ class CheerleaderTeamProposalMembership
      */
     private $about;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     * @Assert\NotBlank()
+     */
+    private $createdAt;
+
+    /**
+     * Conctructor
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -497,6 +512,25 @@ class CheerleaderTeamProposalMembership
     public function getAbout()
     {
         return $this->about;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return CheerleaderTeamProposalMembership
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     /**

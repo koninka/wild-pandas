@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * ProposalPurchaseProduct
@@ -56,6 +57,22 @@ class ProposalPurchaseProduct
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
     private $product;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     * @Assert\NotBlank()
+     */
+    private $createdAt;
+
+    /**
+     * Conctructor
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -174,6 +191,25 @@ class ProposalPurchaseProduct
     public function setProduct($product)
     {
         $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return ProposalPurchaseProduct
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

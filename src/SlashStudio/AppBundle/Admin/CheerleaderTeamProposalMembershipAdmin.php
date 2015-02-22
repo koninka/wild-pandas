@@ -11,6 +11,12 @@ class CheerleaderTeamProposalMembershipAdmin extends BaseAdmin
 {
     protected $translationDomain = 'admin_proposals';
 
+    protected $datagridValues = [
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'createdAt',
+    ];
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->with('about')
