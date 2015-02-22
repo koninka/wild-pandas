@@ -26,6 +26,54 @@
                 <source>This is not a valid phone number.</source>
                 <target>Неправильно</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>form.patronymic</source>
+                <target>Отчество</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>form.age</source>
+                <target>Возраст</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.education</source>
+                <target>Специальность</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.choreographic_education</source>
+                <target>Место обучения (хореография)</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.choreographic_style</source>
+                <target>Стиль</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.choreographic_experience</source>
+                <target>Опыт хореографии (в годах)</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.choreographic_experience_playing</source>
+                <target>Опыт выступлений</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>form.acrobatic_education</source>
+                <target>Место обучения (акробатика)</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>form.acrobatic_experience</source>
+                <target>Опыт акробатики (в годах)</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>form.acrobatic_elements</source>
+                <target>Элементы</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>form.hobby</source>
+                <target>Хобби</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>form.about</source>
+                <target>О себе</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

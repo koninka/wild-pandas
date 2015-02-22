@@ -26,6 +26,7 @@ class CheerleaderTeamProposalMembershipAdmin extends BaseAdmin
                        ->add('age', 'integer', ['attr' => ['min' => 1]])
                        ->add('education', null, ['required' => false])
                        ->add('phone', 'tel', ['default_region' => 'RU', 'format' => PhoneNumberFormat::NATIONAL])
+                       ->add('email', 'email')
                    ->end()
                    ->with('choreographic')
                        ->add('choreographicEducation')
@@ -52,7 +53,8 @@ class CheerleaderTeamProposalMembershipAdmin extends BaseAdmin
                         'default_region' => 'RU',
                         'format' => PhoneNumberFormat::NATIONAL,
                         'template' => 'ApplicationSonataAdminBundle:CRUD:list_phone_field.html.twig',
-                    ])
+                   ])
+                   ->add('email')
                    ->add('education')
                    ->add('choreographicEducation')
                    ->add('acrobaticEducation');
@@ -72,7 +74,8 @@ class CheerleaderTeamProposalMembershipAdmin extends BaseAdmin
                             'default_region' => 'RU',
                             'format' => PhoneNumberFormat::NATIONAL,
                             'template' => 'ApplicationSonataAdminBundle:CRUD:list_phone_field.html.twig',
-                        ])
+                       ])
+                       ->add('email')
                    ->end()
                    ->with('choreographic')
                        ->add('choreographicEducation')

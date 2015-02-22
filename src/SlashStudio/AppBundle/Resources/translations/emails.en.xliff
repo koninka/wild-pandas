@@ -30,6 +30,20 @@
                 <source>email.product.purchase.subject</source>
                 <target>Order product</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>email.cheerleader_team.join.subject</source>
+                <target>Join the "Wild Pandas" cheerleaders</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>email.cheerleader_team.join.user.body</source>
+                <target>Thank you decided to join our cheerleaders. We will contact you and invite you for an interview</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>email.cheerleader_team.join.manager.body</source>
+                <target>
+                    %name% %surname% wants to join the cheerleaders. You can reach her at number %phone% or write to %email%.
+                </target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

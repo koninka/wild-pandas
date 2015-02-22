@@ -82,6 +82,14 @@
                 <source>product.order</source>
                 <target>Order</target>
             </trans-unit>
+            <trans-unit id="21">
+                <source>cheerleader_team.join</source>
+                <target>Join the cheerleaders</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>cheerleader_team.join.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

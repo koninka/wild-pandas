@@ -30,6 +30,20 @@
                 <source>email.product.purchase.subject</source>
                 <target>Заказ атрибутики</target>
             </trans-unit>
+            <trans-unit id="7">
+                <source>email.cheerleader_team.join.subject</source>
+                <target>Присоединиться к черлидерам "Диких Панд"</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>email.cheerleader_team.join.user.body</source>
+                <target>Спасибо, что решили присоединиться к нашим черлидерам. Мы свяжемся с вами и пригласим на собеседование</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>email.cheerleader_team.join.manager.body</source>
+                <target>
+                    %name% %surname% хочет присоединиться к черлидерам. Вы можете связаться с ней по номеру %phone% или написать на %email%.
+                </target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

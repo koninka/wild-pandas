@@ -72,6 +72,15 @@ class CheerleaderTeamProposalMembership
     /**
      * @var string
      *
+     * @ORM\Column(name="email", type="string", length=150)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="choreographic_education", type="string", length=255)
      * @Assert\NotBlank()
      */
@@ -305,6 +314,25 @@ class CheerleaderTeamProposalMembership
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return CheerleaderTeamProposalMembership
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
     }
 
     /**

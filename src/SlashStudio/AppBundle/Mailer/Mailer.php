@@ -5,6 +5,7 @@ namespace SlashStudio\AppBundle\Mailer;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 
+use SlashStudio\AppBundle\Entity\CheerleaderTeamProposalMembership;
 use SlashStudio\AppBundle\Entity\Product;
 use SlashStudio\AppBundle\Entity\ProposalPurchaseProduct;
 use SlashStudio\AppBundle\Entity\TeamProposalMembership;
@@ -82,6 +83,31 @@ class Mailer
                     '%phone%' => $this->phoneNumberUtil->format($purchaseProduct->getPhone(), PhoneNumberFormat::NATIONAL),
                     '%email%' => $purchaseProduct->getEmail(),
                     '%product%' => $purchaseProduct->getProduct()->getName(),
+                ],
+                'emails',
+                'ru'
+            )
+        );
+    }
+
+    public function sendCheerleaderTeamJoinEmails(CheerleaderTeamProposalMembership $proposalMembership, $managerEmail)
+    {
+        $this->send(
+            $this->translator->trans('email.cheerleader_team.join.subject', [], 'emails'),
+            $proposalMembership->getEmail(),
+            $this->translator->trans('email.cheerleader_team.join.user.body', [], 'emails')
+        );
+
+        $this->send(
+            $this->translator->trans('email.cheerleader_team.join.subject', [], 'emails', 'ru'),
+            $managerEmail,
+            $this->translator->trans(
+                'email.cheerleader_team.join.manager.body',
+                [
+                    '%name%' => $proposalMembership->getName(),
+                    '%surname%' => $proposalMembership->getSurname(),
+                    '%phone%' => $this->phoneNumberUtil->format($proposalMembership->getPhone(), PhoneNumberFormat::NATIONAL),
+                    '%email%' => $proposalMembership->getEmail(),
                 ],
                 'emails',
                 'ru'

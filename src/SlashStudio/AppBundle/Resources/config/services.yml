@@ -13,6 +13,11 @@ services:
         tags:
             - { name: form.type, alias: team_proposal_membership }
 
+    slash_studio_app.form.type.cheerleader_team_proposal_membership:
+        class: SlashStudio\AppBundle\Form\Type\CheerleaderTeamProposalMembershipType
+        tags:
+            - { name: form.type, alias: cheerleader_team_proposal_membership }
+
     sonata.block.service.team:
         class: SlashStudio\AppBundle\Block\TeamBlockService
         arguments: [ "sonata.block.service.team", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
@@ -30,7 +35,3 @@ services:
         arguments: [ "sonata.block.service.simple_pages", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
         tags:
             - { name: sonata.block }
-
-#    slash_studio_app.example:
-#        class: SlashStudio\AppBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
