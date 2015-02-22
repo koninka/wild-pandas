@@ -74,6 +74,14 @@
                 <source>team.join.success</source>
                 <target>Your request has been successfully sent!</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>product.order.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>product.order</source>
+                <target>Order</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

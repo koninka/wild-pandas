@@ -24,7 +24,7 @@ class AppController extends Controller
             $em->persist($membershipProposal);
             $em->flush();
 
-            $this->get('my_mailer')->sendJoinEmails($membershipProposal, $teamRepo->getManagerEmail());
+            $this->get('my_mailer')->sendTeamJoinEmails($membershipProposal, $teamRepo->getManagerEmail());
 
 
             $request->getSession()->getFlashBag()->add(

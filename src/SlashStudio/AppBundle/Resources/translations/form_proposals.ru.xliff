@@ -22,6 +22,10 @@
                 <source>form.send</source>
                 <target>Отправить</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>This is not a valid phone number.</source>
+                <target>Неправильно</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

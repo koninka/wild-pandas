@@ -16,6 +16,20 @@
                     %name% %surname% wants to join the "Wild Pandas." You can contact him at number %phone% or write to %email%.
                 </target>
             </trans-unit>
+            <trans-unit id="4">
+                <source>email.product.purchase.manager.body</source>
+                <target>
+                    %name% %surname% wants to order "%product%". You can contact him at number %phone% or write to %email%.
+                </target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>email.product.purchase.user.body</source>
+                <target>Thank you decide to order "%product%". We will contact you and arrange delivery.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>email.product.purchase.subject</source>
+                <target>Order product</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

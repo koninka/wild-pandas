@@ -133,6 +133,15 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\TeamProposalMembership
             - ~
+
+    sonata.admin.proposal.purchase_product:
+        class: SlashStudio\AppBundle\Admin\ProposalPurchaseProductAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "admin.proposal.purchase_product", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\ProposalPurchaseProduct
+            - ~
 #
 #    sonata.admin.users:
 #        class: SlashStudio\AppBundle\Admin\UserAdmin

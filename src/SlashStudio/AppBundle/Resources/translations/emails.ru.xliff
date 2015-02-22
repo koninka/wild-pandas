@@ -16,6 +16,20 @@
                     %name% %surname% хочет присоединиться к “Диким пандам”. Вы можете связаться с ним по номеру %phone% или написать на %email%.
                 </target>
             </trans-unit>
+            <trans-unit id="4">
+                <source>email.product.purchase.manager.body</source>
+                <target>
+                    %name% %surname% хочет заказать "%product%". Вы можете связаться с ним по номеру %phone% или написать на %email%.
+                </target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>email.product.purchase.user.body</source>
+                <target>Спасибо, что решили заказать "%product%". Мы свяжемся с вами и договоримся о доставке.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>email.product.purchase.subject</source>
+                <target>Заказ атрибутики</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -17,4 +17,15 @@
       {{ 'product.price' | trans }} : {{ product.price }}
     </div>
   {% endfor %}
+  <div>
+    <h2>{{ 'product.order' | trans }}</h2>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+      HUI
+      <div class="flash-notice">
+        {{ flashMessage }}
+      </div>
+    {% else %}
+      {{ form(order_form) }}
+    {% endfor %}
+  </div>
 {% endblock %}

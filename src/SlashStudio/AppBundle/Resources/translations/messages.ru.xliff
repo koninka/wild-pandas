@@ -74,6 +74,14 @@
                 <source>team.join.success</source>
                 <target>Ваша заявка успешно отправлена!</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>product.order.success</source>
+                <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>product.order</source>
+                <target>Заказать</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
