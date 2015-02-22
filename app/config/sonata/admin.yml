@@ -58,6 +58,7 @@ sonata_admin:
                 label_catalogue: admin_proposals
                 items:
                     - sonata.admin.proposal.team_membership
+                    - sonata.admin.proposal.cheerleader_team_membership
                     - sonata.admin.proposal.purchase_product
 
     assets:

@@ -142,6 +142,15 @@ services:
             - ~
             - SlashStudio\AppBundle\Entity\ProposalPurchaseProduct
             - ~
+
+    sonata.admin.proposal.cheerleader_team_membership:
+        class: SlashStudio\AppBundle\Admin\CheerleaderTeamProposalMembershipAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: "admin.proposal.cheerleader_team_membership", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - SlashStudio\AppBundle\Entity\CheerleaderTeamProposalMembership
+            - ~
 #
 #    sonata.admin.users:
 #        class: SlashStudio\AppBundle\Admin\UserAdmin
