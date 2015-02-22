@@ -66,6 +66,10 @@
                 <source>team.blog</source>
                 <target>Team blog</target>
             </trans-unit>
+            <trans-unit id="17">
+                <source>team.join</source>
+                <target>Join the "Wild Pandas"!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -4,7 +4,6 @@ namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
 /**
  * ProposalMembership
  *
@@ -55,6 +54,18 @@ class TeamProposalMembership
      */
     private $email;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     * @Assert\NotBlank()
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
 
     /**
      * Get id
@@ -70,7 +81,7 @@ class TeamProposalMembership
      * Set name
      *
      * @param string $name
-     * @return ProposalMembership
+     * @return TeamProposalMembership
      */
     public function setName($name)
     {
@@ -93,7 +104,7 @@ class TeamProposalMembership
      * Set surname
      *
      * @param string $surname
-     * @return ProposalMembership
+     * @return TeamProposalMembership
      */
     public function setSurname($surname)
     {
@@ -116,7 +127,7 @@ class TeamProposalMembership
      * Set phone
      *
      * @param string $phone
-     * @return ProposalMembership
+     * @return TeamProposalMembership
      */
     public function setPhone($phone)
     {
@@ -139,7 +150,7 @@ class TeamProposalMembership
      * Set email
      *
      * @param string $email
-     * @return ProposalMembership
+     * @return TeamProposalMembership
      */
     public function setEmail($email)
     {
@@ -159,6 +170,25 @@ class TeamProposalMembership
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return Post
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
      * Get concatenating of name and surname
      *
      * @return string
@@ -168,6 +198,9 @@ class TeamProposalMembership
         return sprintf('%s %s', $this->getName(), $this->getSurname());
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->getFullname();

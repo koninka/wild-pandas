@@ -66,6 +66,10 @@
                 <source>team.blog</source>
                 <target>Блок команды</target>
             </trans-unit>
+            <trans-unit id="17">
+                <source>team.join</source>
+                <target>Присоединяйся к "Диким Пандам"!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

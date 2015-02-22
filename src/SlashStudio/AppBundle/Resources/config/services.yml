@@ -1,4 +1,9 @@
 services:
+    slash_studio_app.form.type.team_proposal_membership:
+        class: SlashStudio\AppBundle\Form\Type\TeamProposalMembershipType
+        tags:
+            - { name: form.type, alias: team_proposal_membership }
+
     sonata.block.service.team:
         class: SlashStudio\AppBundle\Block\TeamBlockService
         arguments: [ "sonata.block.service.team", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
