@@ -70,6 +70,10 @@
                 <source>team.join</source>
                 <target>Join the "Wild Pandas"!</target>
             </trans-unit>
+            <trans-unit id="18">
+                <source>team.join.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

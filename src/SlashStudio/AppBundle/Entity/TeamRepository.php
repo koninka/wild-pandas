@@ -23,15 +23,25 @@ class TeamRepository extends EntityRepository
         )->setParameter('gallery', $team->getGallery());
     }
 
-   public function getShortInfo()
-   {
+    public function getManagerEmail()
+    {
+        return $this->getEntityManager()
+                    ->createQuery(
+                        'SELECT PARTIAL t.{id, managerEmail} FROM SlashStudioAppBundle:Team t'
+                    )
+                    ->getSingleResult()
+                    ->getManagerEmail();
+    }
+
+    public function getShortInfo()
+    {
         return $this->getEntityManager()
             ->createQuery(
                 'SELECT t, tr FROM SlashStudioAppBundle:Team t
                     LEFT JOIN t.translations tr'
             )
             ->getOneOrNullResult();
-   }
+    }
 
    public function getVideosQBForPaginating()
    {

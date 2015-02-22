@@ -7,7 +7,15 @@
 {% block content %}
   <div>
     <h2>{{ 'team.join' | trans }}</h2>
-    {{ form(join_form) }}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+      HUI
+      <div class="flash-notice">
+        {{ flashMessage }}
+      </div>
+    {% else %}
+      {{ form(join_form) }}
+    {% endfor %}
+
   </div>
   <div>
     <h2>This is slider!</h2>

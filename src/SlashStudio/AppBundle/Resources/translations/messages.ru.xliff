@@ -70,6 +70,10 @@
                 <source>team.join</source>
                 <target>Присоединяйся к "Диким Пандам"!</target>
             </trans-unit>
+            <trans-unit id="18">
+                <source>team.join.success</source>
+                <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

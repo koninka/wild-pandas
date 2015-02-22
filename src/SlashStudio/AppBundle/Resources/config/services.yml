@@ -1,4 +1,8 @@
 services:
+    my_mailer:
+        class: SlashStudio\AppBundle\Mailer\Mailer
+        arguments: [@mailer, @libphonenumber.phone_number_util, @translator, "%mailer_user%"]
+
     slash_studio_app.form.type.team_proposal_membership:
         class: SlashStudio\AppBundle\Form\Type\TeamProposalMembershipType
         tags:

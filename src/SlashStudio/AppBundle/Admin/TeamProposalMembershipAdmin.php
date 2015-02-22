@@ -9,6 +9,12 @@ use libphonenumber\PhoneNumberFormat;
 
 class TeamProposalMembershipAdmin extends BaseAdmin
 {
+    protected $datagridValues = [
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'createdAt',
+    ];
+
     protected $translationDomain = 'admin_proposals';
 
     protected function configureFormFields(FormMapper $formMapper)

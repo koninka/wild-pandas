@@ -3,7 +3,6 @@
 namespace SlashStudio\AppBundle\Controller;
 
 use SlashStudio\AppBundle\DBAL\StructureEnumType;
-use SlashStudio\AppBundle\Entity\TeamProposalMembership;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,11 +15,24 @@ class AppController extends Controller
     {
         $manager = $this->getDoctrine()->getManager();
         $teamRepo = $manager->getRepository('SlashStudioAppBundle:Team');
-        $membership = new TeamProposalMembership();
-        $joinForm = $this->createForm('team_proposal_membership', $membership);
+        $joinForm = $this->createForm('team_proposal_membership');
         $joinForm->handleRequest($request);
         if ($joinForm->isValid()) {
-            echo 'form is valid!';
+            $membershipProposal = $joinForm->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($membershipProposal);
+            $em->flush();
+
+            $this->get('my_mailer')->sendJoinEmails($membershipProposal, $teamRepo->getManagerEmail());
+
+
+            $request->getSession()->getFlashBag()->add(
+                'notice',
+                'team.join.success'
+            );
+
+            return $this->redirect($this->generateUrl('slash_app_mainpage'));
         }
 
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
