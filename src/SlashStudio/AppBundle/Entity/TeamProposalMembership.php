@@ -70,6 +70,15 @@ class TeamProposalMembership
     private $about;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="age", type="integer", nullable=true)
+     * @Assert\Type(type="integer")
+     * @Assert\GreaterThan(value=0)
+     */
+    private $age;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="sports_experience", type="text", nullable=true)
@@ -217,6 +226,25 @@ class TeamProposalMembership
     public function setAbout($about)
     {
         $this->about = $about;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * @param int $age
+     * @return TeamProposalMembership
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
 
         return $this;
     }

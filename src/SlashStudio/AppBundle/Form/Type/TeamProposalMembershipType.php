@@ -22,7 +22,8 @@ class TeamProposalMembershipType extends AbstractType
             ->add('email', 'email', ['label' => 'form.email',])
         ;
         if (!$options['main_page']) {
-            $builder->add('about', 'textarea', ['required' => false, 'label' => 'form.about'])
+            $builder->add('age', 'integer', ['label' => 'form.age', 'attr' => ['min' => 1]])
+                    ->add('about', 'textarea', ['required' => false, 'label' => 'form.about'])
                     ->add('sportsExperience', 'textarea', ['required' => false, 'label' => 'form.sports_experience']);
         }
         $builder->add('send', 'submit', ['label' => 'form.send']);

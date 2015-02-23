@@ -40,6 +40,7 @@ class ProposalPurchaseProduct
      * @var phone_number
      *
      * @ORM\Column(name="phone", type="phone_number")
+     *
      */
     private $phone;
 
@@ -67,7 +68,7 @@ class ProposalPurchaseProduct
     private $createdAt;
 
     /**
-     * Conctructor
+     * Constructor
      */
     public function __construct()
     {
@@ -224,6 +225,8 @@ class ProposalPurchaseProduct
 
     public function __toString()
     {
-        return sprintf('%s - %s', $this->getFullname(), $this->getProduct()->getName());
+        $productName = $this->getProduct() !== null ? $this->getProduct()->getName() : '';
+
+        return sprintf('%s - %s', $this->getFullname(), $productName);
     }
 }
