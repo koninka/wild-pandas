@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "754976908994b0eec9836f9196f956db",
+    "hash": "a148c89357af388d47fb1b83895cae29",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -2459,16 +2459,16 @@
         },
         {
             "name": "misd/phone-number-bundle",
-            "version": "v1.0.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/misd-service-development/phone-number-bundle.git",
-                "reference": "3a162109e959b696079ea1930698ea6db852c307"
+                "reference": "459e7362b727ea4013a27fe715559391246a71be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/misd-service-development/phone-number-bundle/zipball/3a162109e959b696079ea1930698ea6db852c307",
-                "reference": "3a162109e959b696079ea1930698ea6db852c307",
+                "url": "https://api.github.com/repos/misd-service-development/phone-number-bundle/zipball/459e7362b727ea4013a27fe715559391246a71be",
+                "reference": "459e7362b727ea4013a27fe715559391246a71be",
                 "shasum": ""
             },
             "require": {
@@ -2479,15 +2479,11 @@
             "require-dev": {
                 "doctrine/doctrine-bundle": "~1.0",
                 "jms/serializer-bundle": "~0.11",
-                "phpunit/phpunit": "~3.7",
-                "symfony/browser-kit": "~2.1",
-                "symfony/class-loader": "~2.1",
-                "symfony/finder": "~2.1",
+                "phpunit/phpunit": "~4.0",
                 "symfony/form": "~2.1",
                 "symfony/templating": "~2.1",
                 "symfony/twig-bundle": "~2.1",
-                "symfony/validator": "~2.1",
-                "symfony/yaml": "~2.1"
+                "symfony/validator": "~2.1"
             },
             "suggest": {
                 "doctrine/doctrine-bundle": "Add a DBAL mapping type",
@@ -2500,7 +2496,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -2527,7 +2523,7 @@
                 "phonenumber",
                 "telephone number"
             ],
-            "time": "2014-11-03 17:52:36"
+            "time": "2015-01-02 08:31:12"
         },
         {
             "name": "monolog/monolog",
@@ -4704,7 +4700,8 @@
     "stability-flags": {
         "mopa/bootstrap-bundle": 20,
         "twbs/bootstrap": 20,
-        "sonata-project/core-bundle": 20
+        "sonata-project/core-bundle": 20,
+        "misd/phone-number-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
