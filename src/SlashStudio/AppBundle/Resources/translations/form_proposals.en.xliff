@@ -48,7 +48,7 @@
             </trans-unit>
             <trans-unit id="13">
                 <source>form.choreographic_experience_playing</source>
-                <target>experience of playing</target>
+                <target>Experience of playing</target>
             </trans-unit>
             <trans-unit id="14">
                 <source>form.acrobatic_education</source>
@@ -60,7 +60,7 @@
             </trans-unit>
             <trans-unit id="16">
                 <source>form.acrobatic_elements</source>
-                <target>elements</target>
+                <target>Elements</target>
             </trans-unit>
             <trans-unit id="17">
                 <source>form.hobby</source>
