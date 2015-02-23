@@ -74,6 +74,10 @@
                 <source>form.about</source>
                 <target>О себе</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>form.sports_experience</source>
+                <target>Спортивный опыт</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

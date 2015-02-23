@@ -43,10 +43,34 @@ class TeamController extends Controller
         ]);
     }
 
-    public function joinAction()
+    public function joinAction(Request $request)
     {
+        $manager = $this->getDoctrine()->getManager();
+        $teamRepo = $manager->getRepository('SlashStudioAppBundle:Team');
+
+        $joinForm = $this->createForm('team_proposal_membership');
+        $joinForm->handleRequest($request);
+        if ($joinForm->isValid()) {
+            $membershipProposal = $joinForm->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($membershipProposal);
+            $em->flush();
+
+            $this->get('my_mailer')->sendTeamJoinEmails($membershipProposal, $teamRepo->getManagerEmail());
+
+
+            $request->getSession()->getFlashBag()->add(
+                'notice',
+                'team.join.success'
+            );
+
+            return $this->redirect($this->generateUrl('slash_app_team_join'));
+        }
+
         return $this->render('SlashStudioAppBundle:Team:join.html.twig', [
-            'videos' => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Team')->getVideoForTeam(static::VIDEOS_ON_INNER_PAGES_AMOUNT),
+            'videos' => $teamRepo->getVideoForTeam(static::VIDEOS_ON_INNER_PAGES_AMOUNT),
+            'join_form' => $joinForm->createView(),
         ]);
     }
 }

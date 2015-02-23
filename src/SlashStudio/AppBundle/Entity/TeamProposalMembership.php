@@ -62,6 +62,20 @@ class TeamProposalMembership
      */
     private $createdAt;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="about", type="text", nullable=true)
+     */
+    private $about;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sports_experience", type="text", nullable=true)
+     */
+    private $sportsExperience;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
@@ -184,6 +198,44 @@ class TeamProposalMembership
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAbout()
+    {
+        return $this->about;
+    }
+
+    /**
+     * @param string $about
+     * @return TeamProposalMembership
+     */
+    public function setAbout($about)
+    {
+        $this->about = $about;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSportsExperience()
+    {
+        return $this->sportsExperience;
+    }
+
+    /**
+     * @param string $sportsExperience
+     * @return TeamProposalMembership
+     */
+    public function setSportsExperience($sportsExperience)
+    {
+        $this->sportsExperience = $sportsExperience;
 
         return $this;
     }

@@ -70,6 +70,10 @@
                 <source>form.about</source>
                 <target>About</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>form.sports_experience</source>
+                <target>Sports experience</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -11,4 +11,15 @@
       <div>{% media video, 'medium' %}</div>
     {% endfor %}
   </div>
+  <div>
+    <h2>{{ 'team.join' | trans }}</h2>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+      HUI
+      <div class="flash-notice">
+        {{ flashMessage }}
+      </div>
+    {% else %}
+      {{ form(join_form) }}
+    {% endfor %}
+  </div>
 {% endblock %}

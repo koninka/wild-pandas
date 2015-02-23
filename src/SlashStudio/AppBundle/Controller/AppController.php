@@ -15,7 +15,7 @@ class AppController extends Controller
     {
         $manager = $this->getDoctrine()->getManager();
         $teamRepo = $manager->getRepository('SlashStudioAppBundle:Team');
-        $joinForm = $this->createForm('team_proposal_membership');
+        $joinForm = $this->createForm('team_proposal_membership', null, ['main_page' => true]);
         $joinForm->handleRequest($request);
         if ($joinForm->isValid()) {
             $membershipProposal = $joinForm->getData();
