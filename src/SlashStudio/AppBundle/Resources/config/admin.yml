@@ -128,7 +128,7 @@ services:
     sonata.admin.proposal.team_membership:
         class: SlashStudio\AppBundle\Admin\TeamProposalMembershipAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, model_manager: my_model_manager, label: "admin.proposal.team_membership", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, label: "admin.proposal.team_membership", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - SlashStudio\AppBundle\Entity\TeamProposalMembership

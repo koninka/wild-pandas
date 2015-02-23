@@ -73,7 +73,7 @@ class CheerleaderTeamProposalMembershipAdmin extends BaseAdmin
                        ->add('phone', 'string', [
                             'default_region' => 'RU',
                             'format' => PhoneNumberFormat::NATIONAL,
-                            'template' => 'ApplicationSonataAdminBundle:CRUD:list_phone_field.html.twig',
+                            'template' => 'ApplicationSonataAdminBundle:CRUD:show_phone_field.html.twig',
                        ])
                        ->add('email')
                    ->end()
