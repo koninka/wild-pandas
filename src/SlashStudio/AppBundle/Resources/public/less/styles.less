@@ -1,0 +1,179 @@
+@import '../../../../../../web/bundles/mopabootstrap/less/mopabootstrapbundle.less';
+@import 'variables.less';
+@import 'header.less';
+
+///////////////
+//header
+
+header {
+	width: 1200px;
+	margin: 140px auto 0;
+	background: black;
+	position: relative;
+
+	a.logo {
+		position: absolute;
+		top: -60px;
+		left: 20px;
+		z-index: 9999;
+
+		img {
+			width: 180px;
+		}
+	}
+
+	ul {
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	nav {
+		padding-left: 220px;
+		font-size: 140%;
+
+		ul li {
+			display: inline-block;
+			list-style: none;
+
+			a, >span {
+				color: white;
+				cursor: pointer;
+				padding: 20px 10px;
+				display: block;
+				-webkit-transition: all 0.2s ease-out;
+			    -moz-transition: all 0.2s ease-out;
+			    -o-transition: all 0.2s ease-out;
+			    transition: all 0.2s ease-out;
+			}
+
+			ul {
+				display: none;
+				position: absolute;
+				background: white;
+				padding: 6px 0;
+				min-width: 200px;
+
+				li {
+					display: block;
+				}
+
+				li a {
+					color: black;
+					padding: 10px 20px;
+				}
+
+
+				li:hover a {
+					background: black;
+					color: white;
+				}
+			}
+		}
+
+		li:hover a, li:hover > span {
+			text-decoration: none;
+			color: black;
+			background: white;
+		}
+
+		li:hover ul {
+			display: block;
+			z-index: 9999;
+		}
+	}
+}
+
+///////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+	background: url(http://www.dallascowboys.com/sites/all/themes/custom/cowboys_theme/images/background_reg-xl.jpg) no-repeat fixed 50% 0;
+
+	.row.without_margin {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	>.wrapper {
+		margin: 0 auto;
+		width: 1200px;
+	}
+
+	section.players {
+		text-align: center;
+
+		div.player {
+			width: 80px;
+			display: inline-block;
+			margin: 0 13px;
+
+			div.photo {
+				width: 80px;
+				height: 80px;
+				background-color: white;
+			}
+		}
+	}
+
+	section.attr {
+		article {
+			padding: 15px;
+			border: 1px white;
+			
+			div.photo {
+				width: 100%;
+				height: 160px;
+				background-color: white;
+			}
+		}
+	}
+
+	section.partners {
+		text-align: center;
+
+		div.block {
+			margin: 20px 0;
+		}
+
+		div.descr {
+		}
+	}
+
+	.slider {
+		padding: 45px;
+		border: 1px white solid;
+		background-color: black;
+
+		.slider img {
+			width: 100% !important;
+		}
+	}
+}
+
+
+
+
+
+/////////////////////////
+section.team div.team_photo img {
+	//width: 380px !important;
+	//height: 260px !important;
+}

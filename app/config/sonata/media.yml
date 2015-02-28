@@ -20,14 +20,14 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                big:   { width: 500, quality: 100 }
+                big:   { width: 810, quality: 100 }
 
         team:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                main:   { width: 600, quality: 100 }
+                main:   { width: 320, quality: 260 }
 
         players:
             providers:

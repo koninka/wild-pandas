@@ -2,6 +2,29 @@
 
 {% block title %}{{ sonata_seo_title(false) }}{% endblock %}
 
+
+{% block head_style %}
+    {% stylesheets
+        '@SlashStudioAppBundle/Resources/public/less/styles.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+	{% endstylesheets %}
+{% endblock head_style %}
+
+{% block head_script %}
+	{% javascripts
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script type="text/javascript">
+    	$(function(){
+    		$('li.dropdown span').wrap('<a class="dropdown-toggle" data-toggle="dropdown"></a>').after('<span class="caret"></span>');
+    		$('li.dropdown ul').addClass('dropdown-menu');
+    	});
+    </script>
+{% endblock head_script %}
+
 {% block head_bottom %}
     {% block meta %}
         {{ sonata_seo_metadatas() }}
@@ -10,8 +33,15 @@
 
 {% block navbar %}
     <header>
-      {{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
-    </header>
+		<a href="/" class="logo">
+            {% image '@SlashStudioAppBundle/Resources/public/images/logo.png' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+        </a>
+		<nav>
+			{{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
+		</nav>
+	</header>
 {% endblock navbar %}
 
 {% block headline %}{% endblock %}
