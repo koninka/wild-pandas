@@ -28,17 +28,17 @@ class CheerleaderAdmin extends BaseAdmin
                         'name' => [
                             'required' => true,
                             'label' => 'show.label_name',
-                            'translation_domain' => 'admin_cheerleader',
+                            'translation_domain' => $this->translationDomain,
                         ],
                         'surname' => [
                             'required' => true,
                             'label' => 'show.label_surname',
-                            'translation_domain' => 'admin_cheerleader',
+                            'translation_domain' => $this->translationDomain,
                         ],
                         'about' => [
                             'required' => false,
                             'label' => 'show.label_about',
-                            'translation_domain' => 'admin_cheerleader',
+                            'translation_domain' => $this->translationDomain,
                         ],
                     ]
                 ])

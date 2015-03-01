@@ -37,9 +37,13 @@ class LoadProductsData implements FixtureInterface
             ;
             $product->translate('ru')->setName($name);
             $product->translate('ru')->setDescription($description);
+            $product->translate('ru')->setRawDescription($description);
+            $product->translate('ru')->setDescriptionFormatter('richhtml');
 
             $product->translate('en')->setName($this->enNames[$name]);
             $product->translate('en')->setDescription('Lorem ipsum dolor sit amet');
+            $product->translate('en')->setRawDescription('Lorem ipsum dolor sit amet');
+            $product->translate('en')->setDescriptionFormatter('richhtml');
 
             $product->mergeNewTranslations();
 

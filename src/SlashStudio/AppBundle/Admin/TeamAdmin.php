@@ -32,7 +32,13 @@ class TeamAdmin extends BaseAdmin
                            ],
                        ])
                        ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'team']])
-                    ->end()
+                       ->add('gallery', 'sonata_type_model_list', ['required' => false], [
+                            'link_parameters' => [
+                                'context'  => 'team_video',
+                                'filter'   => ['context' => ['value' => 'team_video']]
+                            ]
+                       ])
+                       ->end()
                     ->with('show.label_achievements')
                        ->add(
                             'achievements',

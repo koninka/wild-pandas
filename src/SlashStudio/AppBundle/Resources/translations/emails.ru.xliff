@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>email.team.join.subject</source>
+                <target>Вступить к "Диким пандам"</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>email.team.join.user.body</source>
+                <target>Спасибо, что решили к нам присоединиться! Мы свяжемся с вами и пригласим на собеседование.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>email.team.join.manager.body</source>
+                <target>
+                    %name% %surname% хочет присоединиться к “Диким пандам”. Вы можете связаться с ним по номеру %phone% или написать на %email%.
+                </target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>email.product.purchase.manager.body</source>
+                <target>
+                    %name% %surname% хочет заказать "%product%". Вы можете связаться с ним по номеру %phone% или написать на %email%.
+                </target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>email.product.purchase.user.body</source>
+                <target>Спасибо, что решили заказать "%product%". Мы свяжемся с вами и договоримся о доставке.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>email.product.purchase.subject</source>
+                <target>Заказ атрибутики</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>email.cheerleader_team.join.subject</source>
+                <target>Присоединиться к черлидерам "Диких Панд"</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>email.cheerleader_team.join.user.body</source>
+                <target>Спасибо, что решили присоединиться к нашим черлидерам. Мы свяжемся с вами и пригласим на собеседование</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>email.cheerleader_team.join.manager.body</source>
+                <target>
+                    %name% %surname% хочет присоединиться к черлидерам. Вы можете связаться с ней по номеру %phone% или написать на %email%.
+                </target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

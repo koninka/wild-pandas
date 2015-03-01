@@ -29,10 +29,14 @@ EOT;
             $post->translate('ru')->setTitle("Заголовок$i");
             $post->translate('ru')->setSubtitle('Это подзаголовок самой крутой новости.');
             $post->translate('ru')->setText('Это новость заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...');
+            $post->translate('ru')->setRawText('Это новость заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...');
+            $post->translate('ru')->setTextFormatter('richhtml');
 
             $post->translate('en')->setTitle("Head$i");
             $post->translate('en')->setSubtitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
             $post->translate('en')->setText($this->loremIpsum);
+            $post->translate('en')->setRawText($this->loremIpsum);
+            $post->translate('en')->setTextFormatter('richhtml');
 
             $post->mergeNewTranslations();
             $mediaPost = new MediaPost;
@@ -40,10 +44,14 @@ EOT;
             $mediaPost->translate('ru')->setTitle("ЗаголокМедиа$i");
             $mediaPost->translate('ru')->setSubtitle("Это подзаголовок самой крутой новости$i.");
             $mediaPost->translate('ru')->setText("Это медиа-новость$i заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...");
+            $mediaPost->translate('ru')->setRawText("Это медиа-новость$i заслуживает того, чтобы находиться здесь. Все дело в том, что без нее здесь было бы пусто...");
+            $mediaPost->translate('ru')->setTextFormatter('richhtml');
 
             $mediaPost->translate('en')->setTitle("Media Head$i");
             $mediaPost->translate('en')->setSubtitle("Lorem ipsum dolor sit amet for Post$i");
             $mediaPost->translate('en')->setText($this->loremIpsum);
+            $mediaPost->translate('en')->setRawText($this->loremIpsum);
+            $mediaPost->translate('en')->setTextFormatter('richhtml');
 
             $mediaPost->mergeNewTranslations();
 

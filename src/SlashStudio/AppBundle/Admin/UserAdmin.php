@@ -30,6 +30,7 @@ class UserAdmin extends BaseUserAdmin
             ))
             ->end()
             ->with('Profile')
+                ->add('enabled', null, ['required' => false])
                 ->add('firstname', null, array('required' => false))
                 ->add('lastname', null, array('required' => false))
                 ->add('phone', null, array('required' => false))

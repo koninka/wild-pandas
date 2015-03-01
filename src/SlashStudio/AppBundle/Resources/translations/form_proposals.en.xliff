@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>form.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>form.surname</source>
+                <target>Surname</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>form.phone</source>
+                <target>Phone</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>form.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>form.send</source>
+                <target>Send</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>form.patronymic</source>
+                <target>Patronymic</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>form.age</source>
+                <target>Age</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>form.education</source>
+                <target>Education</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.choreographic_education</source>
+                <target>Place of training (choreography)</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>form.choreographic_style</source>
+                <target>Style</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.choreographic_experience</source>
+                <target>Choreography experience (years)</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>form.choreographic_experience_playing</source>
+                <target>Experience of playing</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>form.acrobatic_education</source>
+                <target>Location of study (acrobatics)</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>form.acrobatic_experience</source>
+                <target>Acrobatics experience (years)</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>form.acrobatic_elements</source>
+                <target>Elements</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>form.hobby</source>
+                <target>Hobby</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>form.about</source>
+                <target>About</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>form.sports_experience</source>
+                <target>Sports experience</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

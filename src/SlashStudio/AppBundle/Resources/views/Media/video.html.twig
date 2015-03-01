@@ -4,4 +4,16 @@
   {{ 'navigation.video' | trans({}, 'navigation') }}
 {% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+  <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div>
+  <div>
+    {% for video in pagination %}
+      {% media video, 'medium' %}
+    {% endfor %}
+  </div>
+  <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div>
+{% endblock %}

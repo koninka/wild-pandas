@@ -12,6 +12,8 @@
     <div>
       <b><a href="{{ path('slash_app_media_show', {id: p.id}) }}">{{ p.getTitle() }}</a></b>
       <p>{{ p.getSubtitle() }}</p>
+      {{ p.createdAt.date | localizeddate('short', 'none') }}
+      <div> {% media p.image, 'main' %}</div>
     </div>
   {% endfor %}
   <div class="navigation">

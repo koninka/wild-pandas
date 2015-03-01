@@ -13,7 +13,7 @@ class BaseAdmin extends Admin
         $collection->remove('export');
     }
 
-    protected function configureListFields(ListMapper $listMapper)
+    protected function addListActions(ListMapper $listMapper)
     {
         $listMapper->add('_action', 'actions', [
             'label' => 'link_actions',
@@ -24,5 +24,10 @@ class BaseAdmin extends Admin
                 'delete' => []
             ]
         ]);
+    }
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $this->addListActions($listMapper);
     }
 }

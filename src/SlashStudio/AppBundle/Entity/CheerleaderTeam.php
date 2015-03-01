@@ -5,6 +5,7 @@ namespace SlashStudio\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Application\Sonata\MediaBundle\Entity\Media;
+use Application\Sonata\MediaBundle\Entity\Gallery;
 
 /**
  * Cheerleader Team
@@ -24,6 +25,13 @@ class CheerleaderTeam extends TranslationEntity
     private $image;
 
     /**
+     * @var Gallery
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id", nullable=true)
+     */
+    private $gallery;
+
+    /**
      * @return Media
      */
     public function getImage()
@@ -41,6 +49,27 @@ class CheerleaderTeam extends TranslationEntity
 
         return $this;
     }
+
+    /**
+     * @return Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
+    }
+
+    /**
+     * @param Gallery $gallery
+     * @return CheerleaderTeam
+     */
+    public function setGallery($gallery)
+    {
+        $this->gallery = $gallery;
+
+        return $this;
+    }
+
+
 
     public function __toString()
     {

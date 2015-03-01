@@ -54,6 +54,42 @@
                 <source>partnership.description</source>
                 <target>Cooperation proposals to the manager</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>products.other</source>
+                <target>Other products</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>posts.other</source>
+                <target>Other posts</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>team.blog</source>
+                <target>Team blog</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>team.join</source>
+                <target>Join the "Wild Pandas"!</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>team.join.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>product.order.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>product.order</source>
+                <target>Order</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>cheerleader_team.join</source>
+                <target>Join the cheerleaders</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>cheerleader_team.join.success</source>
+                <target>Your request has been successfully sent!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

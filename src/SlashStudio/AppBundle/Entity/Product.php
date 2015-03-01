@@ -45,6 +45,29 @@ class Product extends TranslationEntity
      */
     private $image;
 
+    /**
+     * @return string
+     */
+    public function getDescriptionFormatter()
+    {
+        return $this->proxyCurrentLocaleTranslation('getDescriptionFormatter');
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawDescription()
+    {
+        return $this->proxyCurrentLocaleTranslation('getRawDescription');
+    }
+
+    /**
+     * @return string
+     */
+    public function setDescription($description)
+    {
+        return $this->proxyCurrentLocaleTranslation('setDescription', [$description]);
+    }
 
     /**
      * Set price

@@ -1,7 +1,7 @@
 sonata_admin:
     title:      Wild Pandas Admin
     templates:
-        layout:  ApplicationSonataAdminBundle::standard_layout.html.twig
+        layout:  ApplicationSonataAdminBundle::layout.html.twig
 
     dashboard:
         blocks:
@@ -11,6 +11,7 @@ sonata_admin:
             - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.posts] } }
             - { position: center, type: sonata.admin.block.admin_list, settings: { groups: [admin.content] } }
             - { position: right, type: sonata.admin.block.admin_list, settings: { groups: [admin.player_group] } }
+            - { position: left, type: sonata.admin.block.admin_list, settings: { groups: [admin.proposals] } }
 
         groups:
             admin.cheerleader:
@@ -49,3 +50,17 @@ sonata_admin:
                     - sonata.admin.partnership
                     - sonata.admin.slide
                     - sonata.admin.product
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery
+                    - sonata.user.admin.user
+
+            admin.proposals:
+                label_catalogue: admin_proposals
+                items:
+                    - sonata.admin.proposal.team_membership
+                    - sonata.admin.proposal.cheerleader_team_membership
+                    - sonata.admin.proposal.purchase_product
+
+    assets:
+        stylesheets:
+            - assetic/sonata_admin_css.css

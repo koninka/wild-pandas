@@ -7,7 +7,25 @@
 {% block content %}
   <h1></h1>
   {# TO DO: need to translate #}
-  <div>Описание: {{ product.getDescription() }}</div>
+  <div>Описание: {{ product.getRawDescription() | raw }}</div>
   <div>Цена: {{ product.price }}</div>
   <div>{% media product.image, 'big' %}</div>
+  <h1>{{ 'products.other' | trans }}</h1>
+  {% for product in other_products %}
+    <div>
+      {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
+      {{ 'product.price' | trans }} : {{ product.price }}
+    </div>
+  {% endfor %}
+  <div>
+    <h2>{{ 'product.order' | trans }}</h2>
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+      HUI
+      <div class="flash-notice">
+        {{ flashMessage }}
+      </div>
+    {% else %}
+      {{ form(order_form) }}
+    {% endfor %}
+  </div>
 {% endblock %}

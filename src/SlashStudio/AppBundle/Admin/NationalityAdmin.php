@@ -16,7 +16,7 @@ class NationalityAdmin extends BaseAdmin
             'fields' => [
                 'name' => [
                     'label' => 'show.label_name',
-                    'translation_domain' => 'admin_player_group',
+                    'translation_domain' => $this->translationDomain,
                 ],
             ],
         ]);

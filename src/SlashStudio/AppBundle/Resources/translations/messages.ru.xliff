@@ -54,6 +54,42 @@
                 <source>partnership.description</source>
                 <target>По вопросам сотрудничества обращайтесь к менеджеру</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>products.other</source>
+                <target>Другие товары</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>posts.other</source>
+                <target>Другие записи</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>team.blog</source>
+                <target>Блок команды</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>team.join</source>
+                <target>Присоединяйся к "Диким Пандам"!</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>team.join.success</source>
+                <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>product.order.success</source>
+                <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>product.order</source>
+                <target>Заказать</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>cheerleader_team.join</source>
+                <target>Присоединиться к черлидерам</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>cheerleader_team.join.success</source>
+                <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

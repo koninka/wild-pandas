@@ -16,11 +16,15 @@ imports:
     # a2lix
     - { resource: a2lix/translations.yml }
 
+    # ivory
+    - { resource: ivory/ck_editor.yml }
+
     #sonata
     - { resource: sonata/seo.yml }
     - { resource: sonata/admin.yml }
     - { resource: sonata/block.yml }
     - { resource: sonata/media.yml }
+    - { resource: sonata/formatter.yml }
 
 framework:
     #esi:             ~
@@ -53,6 +57,7 @@ twig:
     strict_variables: "%kernel.debug%"
     form:
         resources:
+            - 'SonataFormatterBundle:Form:formatter.html.twig'
             - 'SonataCoreBundle:Form:datepicker.html.twig'
             - 'SonataMediaBundle:Form:media_widgets.html.twig'
 
@@ -80,6 +85,7 @@ doctrine:
         charset:  UTF8
         types:
             json: Sonata\Doctrine\Types\JsonType
+            phone_number: Misd\PhoneNumberBundle\Doctrine\DBAL\Types\PhoneNumberType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -89,7 +95,6 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
-    host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }

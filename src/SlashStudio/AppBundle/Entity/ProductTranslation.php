@@ -31,6 +31,58 @@ class ProductTranslation
     private $description;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="raw_description", type="text")
+     */
+    private $rawDescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_formatter", type="string", length=40)
+     */
+    private $descriptionFormatter;
+
+    /**
+     * @return string
+     */
+    public function getDescriptionFormatter()
+    {
+        return $this->descriptionFormatter;
+    }
+
+    /**
+     * @param string $descriptionFormatter
+     * @return ProductTranslation
+     */
+    public function setDescriptionFormatter($descriptionFormatter)
+    {
+        $this->descriptionFormatter = $descriptionFormatter;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawDescription()
+    {
+        return $this->rawDescription;
+    }
+
+    /**
+     * @param string $rawDescription
+     * @return ProductTranslation
+     */
+    public function setRawDescription($rawDescription)
+    {
+        $this->rawDescription = $rawDescription;
+
+        return $this;
+    }
+
+    /**
      * Set name
      *
      * @param string $name

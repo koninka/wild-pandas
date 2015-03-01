@@ -3,6 +3,7 @@
 namespace SlashStudio\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class MediaPostRepository extends EntityRepository
 {
@@ -14,10 +15,21 @@ class MediaPostRepository extends EntityRepository
                     ->getOneOrNullResult();
     }
 
-    public function getMediaQuery()
+    public function getOtherPosts($post, $amount)
+    {
+        return new Paginator(
+            $this->getMediaPostQB()->andWhere('m.id NOT IN (:id)')->setParameter('id', $post->getId())->setMaxResults($amount)
+        );
+    }
+
+    public function getMediaPostQB()
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT m, i, t FROM SlashStudioAppBundle:MediaPost m LEFT JOIN m.image i LEFT JOIN m.translations t ORDER BY m.createdAt DESC');
-
+            ->createQueryBuilder()
+            ->select(['m', 'i', 't'])
+            ->from('SlashStudioAppBundle:MediaPost', 'm')
+            ->leftJoin('m.image', 'i')
+            ->leftJoin('m.translations', 't')
+            ->orderBy('m.createdAt', 'DESC');
     }
 }

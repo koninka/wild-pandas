@@ -47,6 +47,41 @@ class Post extends TranslationEntity
      */
     private $image;
 
+    /**
+     * @return string
+     */
+    public function getTextFormatter()
+    {
+        return $this->proxyCurrentLocaleTranslation('getTextFormatter');
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawText()
+    {
+        return $this->proxyCurrentLocaleTranslation('getRawText');
+    }
+
+    /**
+     * @return string
+     */
+    public function setText($text)
+    {
+        return $this->proxyCurrentLocaleTranslation('setText', [$text]);
+    }
+
+    // /**
+    //  * @param string $textFormatter
+    //  * @return PostTranslation
+    //  */
+    // public function setTextFormatter($textFormatter)
+    // {
+    //     $this->proxyCurrentLocaleTranslation($method, $arguments);
+
+    //     return $this;
+    // }
+
 
     public function __construct()
     {

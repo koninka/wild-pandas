@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>admin.proposal.team_membership</source>
+                <target>Команда</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>admin.proposals</source>
+                <target>Заявки</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>admin.proposal.cheerleader_team_membership</source>
+                <target>Команда черлидеров</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>admin.proposal.purchase_product</source>
+                <target>Атрибутика</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>breadcrumb.link_team_proposal_membership_list</source>
+                <target>Заявки на вступление в команду</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>list.label_fullname</source>
+                <target>Полное имя</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>list.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>list.label_email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>show.label_name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>form.label_name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>show.label_surname</source>
+                <target>Фамилия</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>form.label_surname</source>
+                <target>Фамилия</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>show.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>form.label_phone</source>
+                <target>Телефон</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>show.label_email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>form.label_email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>show.label_about</source>
+                <target>О себе</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>form.label_about</source>
+                <target>О себе</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>show.label_sports_experience</source>
+                <target>Спортивный опыт</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>form.label_sports_experience</source>
+                <target>Спортивный опыт</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>breadcrumb.link_cheerleader_team_proposal_membership_list</source>
+                <target>Заявки на вступление в команду черлидеров</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>list.label_age</source>
+                <target>Возраст</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>list.label_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>list.label_choreographic_education</source>
+                <target>Хореографическое образование</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>list.label_acrobatic_education</source>
+                <target>Акробатическое образование</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>show.label_patronymic</source>
+                <target>Отчество</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>form.label_patronymic</source>
+                <target>Отчество</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>show.label_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>form.label_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>show.label_choreographic_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>form.label_choreographic_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>show.label_choreographic_style</source>
+                <target>Стиль</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>form.label_choreographic_style</source>
+                <target>Стиль</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>show.label_choreographic_experience</source>
+                <target>Опыт(в годах)</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>form.label_choreographic_experience</source>
+                <target>Опыт(в годах)</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>show.label_age</source>
+                <target>Возраст</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>form.label_age</source>
+                <target>Возраст</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>show.label_choreographic_experience_playing</source>
+                <target>Опыт выступлений</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>form.label_choreographic_experience_playing</source>
+                <target>Опыт выступлений</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>show.label_acrobatic_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>form.label_acrobatic_education</source>
+                <target>Образование</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>show.label_acrobatic_experience</source>
+                <target>Опыт (в годах)</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>form.label_acrobatic_experience</source>
+                <target>Опыт (в годах)</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>show.label_acrobatic_elements</source>
+                <target>Элементы</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>form.label_acrobatic_elements</source>
+                <target>Элементы</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>show.label_hobby</source>
+                <target>Хобби</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>form.label_hobby</source>
+                <target>Хобби</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>about</source>
+                <target>Основная информация</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>choreographic</source>
+                <target>Хореография</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>acrobatic</source>
+                <target>Акробатика</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>additionally</source>
+                <target>Дополнительная информация</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>breadcrumb.link_proposal_purchase_product_list</source>
+                <target>Заявки на заказ атрибутики</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>list.label_product</source>
+                <target>Товар</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>show.label_product</source>
+                <target>Товар</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>form.label_product</source>
+                <target>Товар</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

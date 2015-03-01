@@ -4,4 +4,17 @@
   {{ 'navigation.photo' | trans({}, 'navigation') }}
 {% endblock %}
 
-{% block content %}{% endblock %}
+{% block content %}
+  {# <div class="count">
+    {{ pagination.getTotalItemCount }}
+  </div> #}
+  {% for photo in pagination %}
+    <div>
+        {% media photo, 'medium' %}
+ {#     <div> {% media post.image, 'main' %}</div> #}
+    </div>
+  {% endfor %}
+  {# <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+  </div> #}
+{% endblock %}

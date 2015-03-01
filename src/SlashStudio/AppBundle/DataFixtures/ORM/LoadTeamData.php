@@ -62,7 +62,7 @@ class LoadTeamData implements FixtureInterface
         $team = new Team();
         $team->setCaptain($captain)
              ->setManagerPhone('2-666-666')
-             ->setManagerEmail('some@example.com')
+             ->setManagerEmail('mtertishniy@gmail.com')
         ;
 
         $team->translate('ru')->setName('Дикие панды');

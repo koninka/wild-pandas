@@ -13,7 +13,6 @@
             <li data-target="#myCarousel" {% if loop.index == 1 %}class="active"{% endif %} data-slide-to="{{ loop.index - 1 }}"></li>
           {% endfor %}
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           {% for slide in slides %}
@@ -36,7 +35,15 @@
         </a>
       </div>
       <div class="joinus col-xs-3">
-        Форма
+        <h2>{{ 'team.join' | trans }}</h2>
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+          HUI
+          <div class="flash-notice">
+            {{ flashMessage }}
+          </div>
+        {% else %}
+          {{ form(join_form) }}
+        {% endfor %}
       </div>
     </div>
     <section class="team">
@@ -85,7 +92,7 @@
               <div class="photo">{% media post.image, 'main' %}</div>
               <h1><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></h1>
               <div class="descr">{{ post.getSubtitle() }}</div>
-              <time>{{ post.createdAt.date }}</time>
+              <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
             </article>
           {% endfor %}
         </div>
@@ -103,6 +110,13 @@
           {{ player.getSurname() }}
         </div>{% endfor %}
     </section>
+    
+    <section>
+      <h1>{{ 'navigation.video' | trans({}, 'navigation') }}</h1>
+      {% for video in videos %}
+        <div>{% media video, 'medium' %}</div>
+      {% endfor %}
+    </section>
 
     <section class="attr">
       <a href="{{ path('slash_app_products_list') }}"><h1>{{ 'navigation.products' | trans({}, 'navigation') }}</h1></a>
@@ -118,15 +132,6 @@
             <div class="price">{{ 'product.price' | trans }} : {{ product.price }}</div>
           </article>
         {% endfor %}
-         <article class="col-xs-3">
-            <a href="#">
-              <div class="photo"></div>
-            </a>
-            <a href="#">
-              v
-            </a>
-            <div class="price">444</div>
-          </article>
       </div>
     </section>
 
