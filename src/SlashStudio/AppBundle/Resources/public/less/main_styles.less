@@ -1,0 +1,57 @@
+@import '../../../../../../web/bundles/mopabootstrap/less/mopabootstrapbundle.less';
+@import 'variables.less';
+@import 'header.less';
+@import 'footer.less';
+
+body {
+
+	background: url(http://www.dallascowboys.com/sites/all/themes/custom/cowboys_theme/images/background_reg-xl.jpg) no-repeat fixed 50% 0;
+
+	a {
+		text-decoration: underline;
+	}
+
+	a.h1_a {
+		text-decoration: none !important;
+	}
+
+	h1.blue_h1 {
+		text-align: left;
+		font-size: 240%;
+		font-weight: bold;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		color: @blue-brand;
+	}
+
+	h1.blue_h1 span {
+		display: inline-block;
+
+		div.line {
+			margin-top: 5px;
+			height: 6px;
+			width: 130%;
+			-webkit-transition: all 0.2s ease-out;
+		    -moz-transition: all 0.2s ease-out;
+		    -o-transition: all 0.2s ease-out;
+		    transition: all 0.2s ease-out;
+
+			#gradient > .horizontal(@blue-brand; transparent);
+		}
+	}
+/*
+	a.h1_a > h1.blue_h1 span div.line {
+		width: 0%;
+	}
+
+	a.h1_a:hover > h1.blue_h1 span div.line {
+		width: 130%;
+	}
+*/
+	>.wrapper {
+		margin: 0 auto;
+		width: 1200px;
+		padding: 15px 15px 80px;
+		background-color: white;
+	}
+}

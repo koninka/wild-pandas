@@ -1,0 +1,67 @@
+section.blog {
+
+	article {
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		h1 {
+			font-size: 120%;
+			font-weight: bold; 
+		}
+
+		time {
+			color: #777;
+		}
+
+		div.descr {
+			margin-bottom: 10px;
+		}
+	}
+
+	div.calendar {
+
+		div.wrapper {
+			background: @gray-brand;
+			padding: 15px 15px 25px;
+			text-align: center;
+
+			div.day {
+				font-family: "Times New Roman", serif;
+				color: @blue-brand;  
+				font-size: 900%;
+				font-weight: bold;
+				line-height: 0.85;
+			}
+
+			div.month {
+				font-weight: bold;
+				color: @blue-brand;
+				font-size: 200%;
+				margin-bottom: 6px;
+			}
+
+			div.event {
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+
+			a.btn {
+				text-decoration: none;
+
+			}
+		}
+	}
+
+	div.calendar:before {
+		content: '';
+		height: 6px;
+		display: block;
+		background: @blue-brand;
+	}
+}

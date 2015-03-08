@@ -58,6 +58,10 @@
                 <source>navigation.blog</source>
                 <target>Blog</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>navigation.instagram</source>
+                <target>Pandas Instagram</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

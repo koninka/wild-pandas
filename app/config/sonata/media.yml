@@ -27,14 +27,15 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                main:   { width: 320, quality: 260 }
+                main:      { width: 370, quality: 100 }
+                cl_main:   { width: 840, quality: 100 }
 
         players:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 100 , quality: 70 }
+                small: { width: 80 , quality: 70 }
                 big:   { width: 500 , quality: 100 }
 
         post:
@@ -42,36 +43,35 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                main: { width: 300 , quality: 100 }
+                main: { width: 270 , quality: 100 }
 
         product:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 150 , quality: 70 }
-                big:   { width: 300 , quality: 100 }
+                small: { width: 238 , quality: 100 }
 
         achievements:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                logo: { width: 90 , quality: 100 }
+                logo: { width: 60 , quality: 100 }
 
         partnership:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                logo: { width: 100 , quality: 100 }
+                logo: { height: 60 , quality: 100 }
 
         cheerleaders:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 100 , quality: 70 }
+                small: { width: 80 , quality: 100 }
                 big:   { width: 500 , quality: 100 }
 
         photo:

@@ -1,10 +1,8 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'navigation.players' | trans({}, 'navigation') }}
-{% endblock %}
+{% block content_row %}
 
-{% block content %}
+  <h1 class="blue_h1"><span>{{ 'navigation.players' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
   <span>{{ 'player.structure' | trans({}, 'player') }}</span> :
   <ul>
     <li><a href="{{ path('slash_app_team_players', {s: 'basic'}) }}">{{ 'player.structure.basic' | trans({}, 'player') }}</a></li>
@@ -13,11 +11,10 @@
   <div class="count">
     {{ pagination.getTotalItemCount }}
   </div>
-  <table>
+  <table class="roster">
     <thead>
-      <th></th>
+      <th>#</th>
       <th>{{ 'player.fullname'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.number'  | trans({}, 'player') }}</th>
       <th>{{ 'player.position'  | trans({}, 'player') }}</th>
       <th>{{ 'player.weight'  | trans({}, 'player') }}</th>
       <th>{{ 'player.height'  | trans({}, 'player') }}</th>
@@ -27,9 +24,8 @@
     <tbody>
       {% for p in pagination %}
         <tr>
-          <td></td>
-          <td>{{ p.getFullname() }}</td>
           <td>{{ p.number }}</td>
+          <td>{{ p.getFullname() }}</td>
           <td>{{ p.position.getName() }}</td>
           <td>{{ p.weight }}</td>
           <td>{{ p.height }}</td>

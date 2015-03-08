@@ -68,7 +68,7 @@
             </trans-unit>
             <trans-unit id="17">
                 <source>team.join</source>
-                <target>Присоединяйся к "Диким Пандам"!</target>
+                <target>Присоединяйся к</target>
             </trans-unit>
             <trans-unit id="18">
                 <source>team.join.success</source>
@@ -89,6 +89,10 @@
             <trans-unit id="22">
                 <source>cheerleader_team.join.success</source>
                 <target>Ваша заявка успешно отправлена!</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>team.join.team_name</source>
+                <target>Диким Пандам</target>
             </trans-unit>
         </body>
     </file>

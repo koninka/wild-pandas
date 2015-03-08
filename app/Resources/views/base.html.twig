@@ -2,13 +2,12 @@
 
 {% block title %}{{ sonata_seo_title(false) }}{% endblock %}
 
-
 {% block head_style %}
     {% stylesheets
-        '@SlashStudioAppBundle/Resources/public/less/styles.less'
+        '@SlashStudioAppBundle/Resources/public/less/main_styles.less'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-	{% endstylesheets %}
+  {% endstylesheets %}
 {% endblock head_style %}
 
 {% block head_script %}
@@ -17,12 +16,6 @@
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
-    <script type="text/javascript">
-    	$(function(){
-    		$('li.dropdown span').wrap('<a class="dropdown-toggle" data-toggle="dropdown"></a>').after('<span class="caret"></span>');
-    		$('li.dropdown ul').addClass('dropdown-menu');
-    	});
-    </script>
 {% endblock head_script %}
 
 {% block head_bottom %}
@@ -45,6 +38,12 @@
 {% endblock navbar %}
 
 {% block headline %}{% endblock %}
+
+{% block container_div_start %}{% endblock %}
+{% block container_div_end %}{% endblock %}
+{% block page_header %}{% endblock %}
+{% block content_div_start %}<div class="wrapper">{% endblock %}
+{% block content_div_end %}</div>{% endblock %}
 
 {% block footer %}
     {% include '::footer.html.twig' %}

@@ -65,7 +65,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ MopaBootstrapBundle ]
+    bundles:        [ MopaBootstrapBundle, SlashStudioAppBundle ]
     filters:
         cssrewrite: ~
         less:
