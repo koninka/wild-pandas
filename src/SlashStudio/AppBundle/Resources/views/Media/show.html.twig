@@ -4,7 +4,7 @@
   {{ post.getTitle() }}
 {% endblock %}
 
-{% block content %}
+{% block content_row %}
   <p>{{ post.getSubtitle() }}</p>
   <p>{{ post.getRawText() | raw }}</p>
   {% media post.image, 'main' %}

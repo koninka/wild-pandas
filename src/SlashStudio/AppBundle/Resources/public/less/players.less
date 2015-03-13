@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 section.players {
 
 	div.players_row {
@@ -23,6 +25,40 @@ section.players {
 
 		div.player:last-child {
 			margin-right: 0;
+		}
+	}
+}
+
+section.players_in {
+
+	div.str_nav {
+		margin-bottom: 20px;
+
+		a {
+			margin-right: 10px;
+		}
+	}
+
+	table.roster {
+		width: 100%;
+
+		td, th {
+			padding: 10px;
+			border-collapse: collapse;
+		}
+
+		td.photo {
+			width: 80px;
+		}
+
+		tr:nth-child(odd) td {
+			background: @gray-brand;
+		}
+
+		th {
+			background: @blue-brand;
+			color: white;
+			font-weight: bold;
 		}
 	}
 }

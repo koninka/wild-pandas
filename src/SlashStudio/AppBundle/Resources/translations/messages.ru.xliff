@@ -94,6 +94,38 @@
                 <source>team.join.team_name</source>
                 <target>Диким Пандам</target>
             </trans-unit>
+            <trans-unit id="24">
+                <source>paginator.prev</source>
+                <target>Назад</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>paginator.next</source>
+                <target>Вперед</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>paginator.to_end</source>
+                <target>В конец</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>paginator.to_start</source>
+                <target>В начало</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>team.join_page_header</source>
+                <target>Как присоединиться к "Диким пандам"</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>team.join_form_header</source>
+                <target>Вступить в команду</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>team.join_form_header2</source>
+                <target>Заполните анкету и мы свяжемся с вами!</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>form.optional</source>
+                <target>(не обязательно)</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -43,7 +43,9 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                main: { width: 270 , quality: 100 }
+                main:  { width: 270 , quality: 100 }
+                big:   { width: 770 , quality: 100 }
+                small: { width: 133 , quality: 100 }
 
         product:
             providers:
@@ -51,6 +53,7 @@ sonata_media:
 
             formats:
                 small: { width: 238 , quality: 100 }
+                big:   { width: 600 , quality: 100 }
 
         achievements:
             providers:

@@ -1,41 +1,68 @@
 {% extends '::base.html.twig' %}
 
-{% block content_row %}
+{% block head_style %}
+    {{ parent() }}
+    {% stylesheets
+        '@SlashStudioAppBundle/Resources/public/less/players.less'
+        '@SlashStudioAppBundle/Resources/public/less/join_us.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-  <h1 class="blue_h1"><span>{{ 'navigation.players' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
-  <span>{{ 'player.structure' | trans({}, 'player') }}</span> :
-  <ul>
-    <li><a href="{{ path('slash_app_team_players', {s: 'basic'}) }}">{{ 'player.structure.basic' | trans({}, 'player') }}</a></li>
-    <li><a href="{{ path('slash_app_team_players', {s: 'additional'}) }}">{{ 'player.structure.additional' | trans({}, 'player') }}</a></li>
-  </ul>
-  <div class="count">
-    {{ pagination.getTotalItemCount }}
-  </div>
-  <table class="roster">
-    <thead>
-      <th>#</th>
-      <th>{{ 'player.fullname'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.position'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.weight'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.height'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.birthday'  | trans({}, 'player') }}</th>
-      <th>{{ 'player.nationality'  | trans({}, 'player') }}</th>
-    </thead>
-    <tbody>
-      {% for p in pagination %}
-        <tr>
-          <td>{{ p.number }}</td>
-          <td>{{ p.getFullname() }}</td>
-          <td>{{ p.position.getName() }}</td>
-          <td>{{ p.weight }}</td>
-          <td>{{ p.height }}</td>
-          <td>{{ p.birthday.date | localizeddate('short', 'none') }}</td>
-          <td>{{ p.nationality.getName() }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-  </div>
+{% block content_row %}
+  <section class="players_in">
+    <h1 class="blue_h1"><span>{{ 'navigation.players' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+    <div class="str_nav">
+      <a href="{{ path('slash_app_team_players', {s: 'basic'}) }}" class="btn btn-default">{{ 'player.structure.basic' | trans({}, 'player') }}</a>
+      <a href="{{ path('slash_app_team_players', {s: 'additional'}) }}" class="btn btn-default">{{ 'player.structure.additional' | trans({}, 'player') }}</a>
+    </div>
+    <div class="row">
+      <div class="col-sm-9">
+        <table class="roster">
+          <thead>
+            <th></th>
+            <th>{{ 'player.fullname'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.number'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.position'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.weight'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.height'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.birthday'  | trans({}, 'player') }}</th>
+            <th>{{ 'player.nationality'  | trans({}, 'player') }}</th>
+          </thead>
+          <tbody>
+            {% for p in pagination %}
+              <tr>
+                <td class="photo">{% media p.photo, 'small' %}</td>
+                <td>{{ p.getFullname() }}</td>
+                <td>{{ p.number }}</td>
+                <td>{{ p.position.getName() }}</td>
+                <td>{{ p.weight }}</td>
+                <td>{{ p.height }}</td>
+                <td>{{ p.birthday.date | localizeddate('short', 'none') }}</td>
+                <td>{{ p.nationality.getName() }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <section class="joinus col-xs-3">
+        <div class="wrapper">
+          <h1>{{ 'team.join' | trans }}<br /><b>{{ 'team.join.team_name' | trans }}</b>!</h1>
+          {% for flashMessage in app.session.flashbag.get('notice') %}
+            HUI
+            <div class="flash-notice">
+              {{ flashMessage }}
+            </div>
+          {% else %}
+            {% form_theme join_form 'SlashStudioAppBundle:Form:custom_form1.html.twig' %}
+            {{ form(join_form) }}
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+    <div class="navigation">
+      {{ knp_pagination_render(pagination) }}
+    </div>
+  </section>
 {% endblock %}

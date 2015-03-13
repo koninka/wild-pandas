@@ -1,3 +1,5 @@
+@import 'variables.less';
+
 section.joinus {
 	padding-left: 0;
 	
@@ -13,20 +15,6 @@ section.joinus {
 		text-align: center;
 		color: @blue-brand;
 	}
-
-	div.form_block {
-		margin-bottom: 10px;
-	}
-
-	div.form_buttons {
-		text-align: center;
-		padding: 10px 0 17px;
-		font-size: 110%;
-
-		button {
-			font-size: 110%;
-		}
-	}
 }
 
 section.joinus:before {
@@ -34,4 +22,52 @@ section.joinus:before {
 	height: 6px;
 	display: block;
 	background: @blue-brand;
+}
+
+section.join_full {
+	
+	div.photo {
+		padding: 15px;
+		background: @gray-brand;
+		margin-bottom: 20px;
+
+		img {
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
+
+	div.descr {
+		margin-bottom: 50px;
+	}
+
+	section.form {
+
+		h1 {
+			font-size: 220%; 
+			font-weight: bold;
+			margin-bottom: 10px;;
+		}
+
+		h2 {
+			margin-top: 0;
+			margin-bottom: 25px;
+			font-size: 180%;
+		}
+
+		textarea {
+			resize: none;
+			height: 100px;
+		}
+
+		div.form_buttons {
+			text-align: left;
+		}
+
+		span.light {
+			font-style: italic;
+			color: #777;
+			font-weight: normal;
+		} 
+	}
 }

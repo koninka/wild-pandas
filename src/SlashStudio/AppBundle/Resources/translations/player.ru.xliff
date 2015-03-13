@@ -40,15 +40,11 @@
             </trans-unit>
             <trans-unit id="10">
                 <source>player.structure.basic</source>
-                <target>Основной</target>
+                <target>Основной состав</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>player.structure.additional</source>
-                <target>Дополнительный</target>
-            </trans-unit>
-            <trans-unit id="13">
-                <source>player.structure</source>
-                <target>Состав</target>
+                <target>Запасной состав</target>
             </trans-unit>
         </body>
     </file>

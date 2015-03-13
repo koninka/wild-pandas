@@ -50,6 +50,9 @@ header {
 				background: white;
 				padding: 6px 0;
 				min-width: 200px;
+				-webkit-box-shadow: -5px 5px 15px -5px rgba(0,0,0,0.75);
+				-moz-box-shadow: -5px 5px 15px -5px rgba(0,0,0,0.75);
+				box-shadow: -5px 5px 15px -5px rgba(0,0,0,0.75);
 
 				li {
 					display: block;
@@ -60,18 +63,23 @@ header {
 					padding: 10px 20px;
 				}
 
-
-				li:hover a {
+				li:hover a, li.current a {
 					background: black;
-					color: white;
+					color: white !important;
 				}
 			}
 		}
 
-		li:hover a, li:hover > span {
+		li:hover > a, li:hover > span, li.current > a, li.current_ancestor > span  {
 			text-decoration: none;
-			color: black;
+			color: black !important;
 			background: white;
+		}
+
+		li > a:focus {
+			text-decoration: none;
+			outline: none;
+			color: white;
 		}
 
 		li:hover ul {

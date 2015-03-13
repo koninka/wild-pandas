@@ -1,4 +1,10 @@
+@import 'variables.less';
+
 section.blog {
+	
+	div.more_one {
+		margin-bottom: 30px;
+	}
 
 	article {
 
@@ -8,6 +14,16 @@ section.blog {
 
 		a:hover {
 			text-decoration: underline;
+		}
+
+		div.photo {
+			min-height: 158px;
+			background: white;
+
+			img {
+				width: 100% !important;
+				height: auto !important;
+			}
 		}
 
 		h1 {
@@ -50,11 +66,6 @@ section.blog {
 				font-weight: bold;
 				margin-bottom: 20px;
 			}
-
-			a.btn {
-				text-decoration: none;
-
-			}
 		}
 	}
 
@@ -63,5 +74,59 @@ section.blog {
 		height: 6px;
 		display: block;
 		background: @blue-brand;
+	}
+}
+
+article.post {
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 5px;
+		font-weight: bold;
+		font-size: 250%;
+	}
+
+	h2 {
+		font-size: 150%;
+		margin-bottom: 20px;
+	}
+
+	div.photo {
+
+		img {
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
+
+	time {
+		display: block;
+		color: #777;
+		margin-bottom: 18px;
+	}
+}
+
+section.other_posts {
+
+	article {
+		margin-bottom: 20px;
+
+		div.photo {
+
+			img {
+				width: 100% !important;
+				height: auto !important;
+			}
+		}
+
+		div.right {
+			padding-left: 0;
+
+			h1 {
+				font-size: 120%;
+				font-weight: bold; 
+				margin-top: 0;
+			}
+		}
 	}
 }

@@ -1,0 +1,40 @@
+{% if pageCount > 1 %}
+<table class="pagination">
+    <tr>
+    {% if first is defined and current != first %}
+        <td class="first">
+            <a href="{{ path(route, query|merge({(pageParameterName): first})) }}">{{ 'paginator.to_start' | trans }}</a>
+        </td>
+    {% endif %}
+
+    {% if previous is defined %}
+        <td class="previous">
+            <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">{{ 'paginator.prev' | trans }}</a>
+        </td>
+    {% endif %}
+
+    {% for page in pagesInRange %}
+        {% if page != current %}
+            <td class="page">
+                <a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+            </td>
+        {% else %}
+            <td class="current"><span>{{ page }}</span></td>
+        {% endif %}
+
+    {% endfor %}
+
+    {% if next is defined %}
+        <td class="next">
+            <a href="{{ path(route, query|merge({(pageParameterName): next})) }}">{{ 'paginator.next' | trans }}</a>
+        </td>
+    {% endif %}
+
+    {% if last is defined and current != last %}
+        <td class="last">
+            <a href="{{ path(route, query|merge({(pageParameterName): last})) }}">{{ 'paginator.to_end' | trans }}</a>
+        </td>
+    {% endif %}
+    </tr>
+</table>
+{% endif %}

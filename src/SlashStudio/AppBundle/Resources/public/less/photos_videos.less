@@ -1,10 +1,13 @@
+@import 'variables.less';
+
 section.instagram {
 
 	div.img {
 		padding-right: 0;
 
 		img {
-			width: 100%;
+			width: 100% !important;
+			height: auto !important;
 			margin-bottom: 15px; 
 		}
 	}
@@ -12,4 +15,18 @@ section.instagram {
 
 section.video {
 	padding-left: 25px;
+}
+
+aside {
+
+	section.instagram {
+	
+		div.gallery {
+			padding-right: 15px;
+		}
+	}
+
+	section.video {
+		padding-left: 0;
+	}
 }
