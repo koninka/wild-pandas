@@ -15,7 +15,12 @@ class LoadSimplePagesData implements FixtureInterface
         $page->setName($name);
 
         $page->translate('ru')->setText($ruText);
+        $page->translate('ru')->setRawText($ruText);
+        $page->translate('ru')->setTextFormatter('richhtml');
+
         $page->translate('en')->setText($enText);
+        $page->translate('en')->setRawText($enText);
+        $page->translate('en')->setTextFormatter('richhtml');
 
         $page->mergeNewTranslations();
 
