@@ -1,23 +1,45 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ post.getTitle() }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/blog.less'
+    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <p>{{ post.getSubtitle() }}</p>
-  <p>{{ post.getRawText() | raw }}</p>
-  {% media post.image, 'main' %}
-  {{ post.createdAt.date | localizeddate('short', 'none') }}
-  <div>
-    <h3>{{ 'posts.other' | trans }}</h3>
-    {% for p in other_posts %}
-      <div>
-        <b><a href="{{ path('slash_app_media_show', {id: p.id}) }}">{{ p.getTitle() }}</a></b>
-        <p>{{ p.getSubtitle() }}</p>
-        {{ p.createdAt.date | localizeddate('short', 'none') }}
-        <div> {% media p.image, 'main' %}</div>
-      </div>
-    {% endfor %}
+{% block content_row %}
+  <a href="{{ path('slash_app_blog_list') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.media_about' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+  <div class="row">
+    <article class="post col-xs-8">
+      <h1>{{ post.getTitle() }}</h1>
+      <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
+      <div class="photo">{% media post.image, 'big' %}</div>
+      <h2>{{ post.getSubtitle() }}</h2>
+      <div class="descr text">{{ post.getRawText() | raw }}</div>
+    </article>
+    <aside class="col-xs-4">
+      {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
+      <section class="other_posts">
+        <h1 class="aside_h1">{{ 'posts.other' | trans }}</h1>
+        {% for p in other_posts %}
+          <article>
+            <div class="row">
+              <div class="photo col-xs-4">
+                {% media p.image, 'small' %}  
+              </div>
+              <div class="right col-xs-8">
+                <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
+                <div class="descr text">
+                  {{ p.getSubtitle() }}
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+    </aside>
   </div>
 {% endblock %}

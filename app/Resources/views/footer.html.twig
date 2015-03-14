@@ -1,13 +1,13 @@
 {% trans_default_domain 'navigation' %}
 
-<footer>
-  <ul>
-    <li><a href="{{ path('slash_app_team_join') }}">{{ 'navigation.team' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_media_photo') }}">{{ 'navigation.photo' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_media_video') }}">{{ 'navigation.video' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_team_info', {action: 'training'}) }}">{{ 'navigation.training' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_blog_list') }}">{{ 'navigation.blog' | trans }}</a></li>
-    <li><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans }}</a></li>
-  </ul>
-</footer>
+<ul>
+	<li><a href="{{ path('slash_app_team_join') }}">{{ 'navigation.team' | trans }}</a></li><li><a href="{{ path('slash_app_media_photo') }}">{{ 'navigation.photo' | trans }}</a></li><li><a href="{{ path('slash_app_media_video') }}">{{ 'navigation.video' | trans }}</a></li><li><a href="{{ path('slash_app_team_info', {action: 'training'}) }}">{{ 'navigation.training' | trans }}</a></li><li><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans }}</a></li><li><a href="{{ path('slash_app_blog_list') }}">{{ 'navigation.blog' | trans }}</a></li><li><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans }}</a></li>
+</ul>
+<div class="bottom row">
+	<div class="left col-sm-6">
+		Команда "Дикие панды", 2015
+	</div>
+	<div class="right col-sm-6">
+		Создание сайта - <a href="#">Lab Digital</a>
+	</div>
+</div>

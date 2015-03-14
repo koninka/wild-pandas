@@ -1,0 +1,72 @@
+{% block form_row %}
+{% spaceless %}
+ 	<div class="form_block">
+    	{{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block form_label %}
+{% if 'checkbox' not in block_prefixes or widget_checkbox_label in ['label', 'both'] %}
+{% spaceless %}
+    {% if label is not sameas(false) %}
+        {% if label is empty %}
+            {%- if label_format is defined and label_format is not empty -%}
+                {% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+                }) %}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {% endif %}
+        {% if not compound %}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {% endif %}
+        <label{% for attrname,attrvalue in label_attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
+        {{ label|trans({}, translation_domain) }}
+        {{- block('label_asterisk') }}
+        {% if 'collection' in form.vars.block_prefixes and widget_add_btn|default(null) and form.vars.allow_add == true %}
+            &nbsp;{{ block('form_widget_add_btn') }}
+        {% endif %}
+        {% if help_label %}
+            {{ block('help_label') }}
+        {% endif %}
+        {% if help_label_tooltip.title %}
+            {{ block('help_label_tooltip') }}
+        {% endif %}
+        {% if help_label_popover.title %}
+            {{ block('help_label_popover') }}
+        {% endif %}
+        </label>
+    {% endif %}
+{% endspaceless %}
+{% endif %}
+{% endblock form_label %}
+
+{% block button_row %}
+    {% spaceless %}
+        {% if button_offset is defined and button_offset is not empty %}
+            {% set attr = attr|merge({'for': id, 'class': button_offset }) %}
+            <div class="form-group">
+                <div {% for attrname, attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
+                {{ form_widget(form) }}
+                </div>
+            </div>
+        {% else %}
+            <div class="form_buttons">
+                {{ form_widget(form) }}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock button_row %}
+
+{% block label_asterisk %}
+{% if required %}
+    {%- if render_required_asterisk %}&nbsp;<span class="asterisk">*</span>{% endif %}
+{% else %}
+    {%- if render_optional_text %}&nbsp;<span class="not_required">{{ "form.optional" | trans }}</span>{% endif %}
+{% endif %}
+{% endblock label_asterisk %}

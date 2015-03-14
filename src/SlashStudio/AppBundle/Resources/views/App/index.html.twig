@@ -1,131 +1,247 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  Wild Pandas Home Page!!
-{% endblock %}
+{% block head_style %}
+    {{ parent() }}
+    {% stylesheets
+        '@SlashStudioAppBundle/Resources/public/less/styles_index.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <div>
-    <h2>{{ 'team.join' | trans }}</h2>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-      HUI
-      <div class="flash-notice">
-        {{ flashMessage }}
-      </div>
-    {% else %}
-      {{ form(join_form) }}
-    {% endfor %}
-  </div>
-
-  <div>
-    <h2>This is slider!</h2>
-    {% for slide in slides %}
-      <div>
-        {{ slide.getTitle() }}
-        {{ slide.getSubtitle() }}
-        {% media slide.image, 'big' %}
-      </div>
-    {% endfor %}
-  </div>
-
-  <div>
-    <h2>This is a Team Section!</h2>
-    <h3>{{ 'title.team' | trans }}</h3>
-    <p>{{ team.getDescription() }}</p>
-    <div>{% media team.image, 'main' %}</div>
-    <b>Achievements</b>
-    <ul>
-      {% for achievement in team.achievements %}
-        <li>{{ achievement.getName() }}</li>
-        <div>{% media achievement.image, 'logo' %}</div>
-      {% endfor %}
-    </ul>
-    <div>
-      <h3>{{ 'title.contacts' | trans }}</h3>
-      <div>
-        {% if team.captain %}
-          <h4>{{ 'title.team.captain' | trans }}</h4>
-          {{ team.captain.getFullname() }}
-          {{ team.captain.phone }}
-          {{ team.captain.email }}
-        {% endif %}
-      </div>
-      <div>
-        {% if team.getManagerName() %}
-          <h4>{{ 'title.team.manager' | trans }}</h4>
-          {{ team.getManagerName() }}
-          {{ team.managerPhone }}
-          {{ team.managerEmail }}
-        {% endif %}
-      </div>
+{% block content_row %}
+  <div class="wrapper">
+    <div class="row">
+      <section id="myCarousel" class="carousel slide col-xs-9 slider" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          {% for slide in slides %}
+            <li data-target="#myCarousel" {% if loop.index == 1 %}class="active"{% endif %} data-slide-to="{{ loop.index - 1 }}"></li>
+          {% endfor %}
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          {% for slide in slides %}
+            <div class="item {% if loop.index == 1 %}active{% endif %}">
+              <!--
+              -->
+            {% media slide.image, 'big' %}
+            <div class="carousel-caption">
+              <h1>{{ slide.getTitle() }}</h1>
+              <h2>{{ slide.getSubtitle() }}</h2>
+            </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+      <section class="joinus col-xs-3">
+        <div class="wrapper">
+          <h1>{{ 'team.join' | trans }}<br /><b>{{ 'team.join.team_name' | trans }}</b>!</h1>
+          {% for flashMessage in app.session.flashbag.get('notice') %}
+            HUI
+            <div class="flash-notice">
+              {{ flashMessage }}
+            </div>
+          {% else %}
+            {% form_theme join_form 'SlashStudioAppBundle:Form:custom_form1.html.twig' %}
+            {{ form(join_form) }}
+          {% endfor %}
+        </div>
+      </section>
     </div>
-  </div>
+    <section class="team">
+      <h1 class="blue_h1"><span>{{ 'title.team' | trans }}<div class="line"></div></span></h1>
+      <div class="row">
+        <div class="photo col-xs-4">
+          {% media team.image, 'main' %}
+        </div>
+        <div class="team_info col-xs-5">
+          <div class="descr text">{{ team.getDescription() }}</div>
+          <div class="achivements">
+            <ul>
+              {% for achievement in team.achievements %}
+                <!--<li>{{ achievement.getName() }}</li>-->
+                <li>{% media achievement.image, 'logo' %}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="team_contact col-xs-3">
+          <div>
+            {% if team.captain %}
+              <h2>{{ 'title.team.captain' | trans }}</h2>
+              <span class="name">{{ team.captain.getFullname() }}</span>
+              <a href="#" class="tel">{{ team.captain.phone }}</a>
+              <a href="#" class="email">{{ team.captain.email }}</a>
+            {% endif %}
+          </div>
+          <div>
+            {% if team.getManagerName() %}
+              <h2>{{ 'title.team.manager' | trans }}</h2>
+              <span class="name">{{ team.getManagerName() }}</span>
+              <a href="#" class="tel">{{ team.managerPhone }}</a>
+              <a href="#" class="email">{{ team.managerEmail }}</a>
+            {% endif %}
+          </div>
+        </div>
+    </section>
 
-  <div>
-    <h2><a href="{{ path('slash_app_blog_list') }}">{{ 'title.official_blog' | trans }}</a></h2>
-    {% for post in posts %}
-      <div>
-        <b><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></b>
-        <p>{{ post.getSubtitle() }}</p>
-        {{ post.createdAt.date | localizeddate('short', 'none') }}
-        <div> {% media post.image, 'main' %}</div>
+    <section class="blog">
+      <a href="{{ path('slash_app_blog_list') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'title.official_blog' | trans }}<div class="line"></div></span></h1></a>
+      <div class="row">
+        <div class="posts col-xs-9">
+          <div class="row">
+            {% for post in posts %}
+              <article class="col-xs-4">
+                <div class="photo">
+                  <a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{% media post.image, 'main' %}</a>
+                </div>
+                <h1><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></h1>
+                <div class="descr text">{{ post.getSubtitle() }}</div>
+                <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="calendar col-xs-3">
+          <div class="wrapper">
+            <div class="day">19</div>
+            <div class="month">ноября</div>
+            <div class="event">Всеросийский чемпионат по американскому футболу</div>
+            <a href="#" class="btn btn-default">Все события</a>
+          </div>
+        </div>
       </div>
-    {% endfor %}
-  </div>
+    </section>
 
-  <div>
-    <h2><a href="{{ path('slash_app_team_players') }}">{{ 'navigation.players' | trans({}, 'navigation') }}</a></h2>
-  {% for player in players %}
-    <div>
-      {{ 'player.name' | trans({}, 'player') }}: {{ player.getName() }}
-      {{ 'player.surname' | trans({}, 'player') }}: {{ player.getSurname() }}
-      <div>{% media player.photo, 'small' %}</div>
-    </div>
-  {% endfor %}
-  </div>
-
-  <div>
-    <h2>{{ 'navigation.video' | trans({}, 'navigation') }}</h2>
-    {% for video in videos %}
-      <div>{% media video, 'medium' %}</div>
-    {% endfor %}
-  </div>
-
-  <div>
-    <h2><a href="{{ path('slash_app_products_list') }}">{{ 'navigation.products' | trans({}, 'navigation') }}</a></h2>
-    {% for product in products %}
-      <div>
-      <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
-        {{ 'product.price' | trans }} : {{ product.price }}
-        <div>{% media product.image, 'small' %}</div>
+    <section class="players">
+      <a href="{{ path('slash_app_team_players') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.players' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+      <div class="players_row">
+        {% for player in players %}<div class="player">
+            <div class="photo">{% media player.photo, 'small' %}</div>
+            {{ player.getName() }}<br />
+            {{ player.getSurname() }}
+          </div>{% endfor %}
       </div>
-    {% endfor %}
-  </div>
+    </section>
+    
+    <div class="row">
+      <section class="instagram col-xs-8">
+        <h1 class="blue_h1"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+        <div class="gallery row">
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+        </div>
+        <div class="gallery row">
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
+                <img src="{{ asset_url }}" alt="Дикие панды!" />
+            {% endimage %}
+          </div>
+        </div>
+      </section>
+      <section class="video col-xs-4">
+        <h1 class="blue_h1"><span>{{ 'navigation.video' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+        {% for video in videos %}
+          <div>{% media video, 'medium' %}</div>
+        {% endfor %}
+      </section>
+    </div>
 
-  <div>
-    <h2><a href="{{ path('slash_app_chearleaders') }}">{{ 'navigation.cheerleader' | trans({}, 'navigation') }}</a></h2>
-    <div>
-      <h3>{{ cl_team.getName() }}</h3>
-      {% media cl_team.image, 'main' %}
-    </div>
-  </div>
+    <section class="attr">
+      <a href="{{ path('slash_app_products_list') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.products' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+      <div class="row">
+        {% for product in products %}
+          <div class="col-xs-3">
+            <article>
+              <div class="photo">
+                <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' %}</a>
+              </div>
+              <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}
+              </a>
+              <div class="price">{{ 'product.price' | trans }}: {{ product.price }}</div>
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
 
-  <div>
-    <h2><a href="{{ path('slash_app_partnership') }}">{{ 'navigation.partnership' | trans({}, 'navigation') }}</a></h2>
-    <div>
-      <h4>{{ 'title.sponsors' | trans }}</h4>
-      {% for s in partnership.sponsors %}
-        {% media s.image, 'logo' with {alt: s.getName()} %}
-        {{ s.getName() }}
-      {% endfor %}
+    <section class="cheerleaders">
+      <a href="{{ path('slash_app_chearleaders') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+      <div class="row">
+        <div class="col-xs-9">
+          <div class="main_photo">
+            {% media cl_team.image, 'cl_main' %}
+          </div>
+          <div class="girls">
+            {% for girl in cheerleaders %}<div class="girl">
+                <div class="photo">{% media girl.photo, 'small' %}</div>
+                {{ girl.getName() }}<br />
+                {{ girl.getSurname() }}
+            </div>{% endfor %}
+          </div>
+        </div>
+        <aside class="col-xs-3">
+          <div class="ad_block">
+            1
+          </div>
+          <div class="ad_block">
+            2
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="partners">
+      <a href="{{ path('slash_app_partnership') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.partnership' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+      <div class="block">
+        <h2>{{ 'title.sponsors' | trans }}</h2>
+        {% for s in partnership.sponsors %}
+          {% media s.image, 'logo' with {alt: s.getName()} %}
+          <!--<span class="name">{{ s.getName() }}</span>-->
+        {% endfor %}
+      </div>
+      <div class="block">
+        <h2>{{ 'title.partners' | trans }}</h2>
+        {% for p in partnership.partners %}
+          {% media p.image, 'logo' with {alt: p.getName()} %}
+          <!--<span class="name">{{ p.getName() }}</span>-->
+        {% endfor %}
+      </div>
+      <div class="descr text">{{ 'partnership.description' | trans }}</div>
     </div>
-    <div>
-      <h4>{{ 'title.partners' | trans }}</h4>
-      {% for p in partnership.partners %}
-        {{ p.getName() }}
-        {% media p.image, 'logo' with {alt: p.getName()} %}
-      {% endfor %}
-    </div>
-    {{ 'partnership.description' | trans }}
-  </div>
+  </section>
 {% endblock %}

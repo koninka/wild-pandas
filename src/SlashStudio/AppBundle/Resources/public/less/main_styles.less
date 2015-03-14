@@ -1,0 +1,161 @@
+@import '../../../../../../web/bundles/mopabootstrap/less/mopabootstrapbundle.less';
+@import 'variables.less';
+@import 'header.less';
+@import 'footer.less';
+
+body {
+
+	background: url(http://www.dallascowboys.com/sites/all/themes/custom/cowboys_theme/images/background_reg-xl.jpg) no-repeat fixed 50% 0;
+
+	a {
+		text-decoration: underline;
+	}
+
+	a.h1_a {
+		text-decoration: none !important;
+	}
+
+	.alert-info {
+		font-weight: bold;
+		font-size: 170%;
+	}
+
+	a.btn {
+		text-decoration: none;
+	}
+
+	.btn-default {
+		border: 0 !important;
+	}
+
+	.btn {
+		padding: 8px 15px;
+	}
+
+	.btn {
+		outline: none !important;
+	}
+
+	div.ad_block {
+		margin-bottom: 20px;
+	}
+
+	aside h1.aside_h1, h2.sub, h1.sub {
+		margin-top: 0;
+		margin-bottom: 25px;
+		font-weight: bold;
+		font-size: 180%;
+		text-decoration: none !important;
+	}
+
+	aside > section {
+		margin-bottom: 20px;
+	}
+
+	table.pagination {
+		margin-top: 50px;
+
+		td {
+			text-align: center;
+			color: white;
+
+			a:hover {
+				background: @dark-blue-brand
+			}
+		}
+			
+		td a, td.current span {
+			background: @blue-brand;
+			text-decoration: none;
+			color: white;
+			padding: 14px 18px;
+			border: 1px white solid;
+			font-weight: bold;
+		}
+
+		td.current span {
+			background: @gray-brand;
+			color: #949494;
+		}
+	}
+
+	.red {
+		color: red;
+	}
+
+	h1.blue_h1 {
+		text-align: left;
+		font-size: 240%;
+		font-weight: bold;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		color: @blue-brand;
+	}
+
+	.alert-info {
+		color: white;
+	}
+
+	div.form_block {
+		margin-bottom: 10px;
+
+		.help-block {
+			color: red;
+		}
+	}
+
+	div.form_buttons {
+		text-align: center;
+		padding: 10px 0 17px;
+		font-size: 110%;
+
+		button {
+			font-size: 110%;
+		}
+	}
+
+	span.not_required {
+		font-style: italic;
+		color: @blue-brand;
+		font-weight: normal;
+	} 
+
+	textarea {
+		resize: none;
+	}
+
+	div.text {
+		line-height: 1.5;
+	}
+
+	h1.blue_h1 span {
+		display: inline-block;
+
+		div.line {
+			margin-top: 5px;
+			height: 6px;
+			width: 130%;
+			-webkit-transition: all 0.2s ease-out;
+		    -moz-transition: all 0.2s ease-out;
+		    -o-transition: all 0.2s ease-out;
+		    transition: all 0.2s ease-out;
+
+			#gradient > .horizontal(@blue-brand; transparent);
+		}
+	}
+/*
+	a.h1_a > h1.blue_h1 span div.line {
+		width: 0%;
+	}
+
+	a.h1_a:hover > h1.blue_h1 span div.line {
+		width: 130%;
+	}
+*/
+	>.wrapper {
+		margin: 0 auto;
+		width: 1200px;
+		padding: 15px 15px 80px;
+		background-color: white;
+	}
+}
