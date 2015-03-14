@@ -30,6 +30,7 @@ class SimplePageAdmin extends BaseAdmin
                                 ],
                             ],
                        ])
+                       ->add('image', 'sonata_type_model_list', ['required' => false,], ['link_parameters' => ['context' => 'default']])
                    ->end()
                    ->with('meta')
                        ->add('meta', 'sonata_type_admin', ['btn_add' => false, 'btn_delete' => false, 'label' => false, 'required' => true])
