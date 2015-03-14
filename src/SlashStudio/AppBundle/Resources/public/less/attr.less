@@ -84,13 +84,22 @@ article.product {
 	}
 }
 
+#order_form:before {
+	content: '';
+	height: 6px;
+	display: block;
+	background: @blue-brand;
+}
+
 div.order_form {
+	padding: 15px;
+	background: @gray-brand;
 
 	h1 {
-		font-size: 180%;
-		margin: 0 auto 30px;
-		padding-top: 20px;
+		margin: 0 auto 20px;
 		text-align: center;
+		font-size: 220%; 
+		font-weight: bold;
 		color: @blue-brand;
 	}
 }
