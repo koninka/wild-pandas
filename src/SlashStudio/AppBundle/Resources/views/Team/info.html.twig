@@ -13,7 +13,7 @@
 {% block content_row %}
 	<h1 class="blue_h1"><span>{{ header }}<div class="line"></div></span></h1>
   	<div class="row">
-		<section class="info col-sm-8">
+		<section class="info col-xs-8">
 			<div class="photo">
 				{% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
 					<img src="{{ asset_url }}" alt="Дикие панды!" />
@@ -21,7 +21,7 @@
 			</div>
 			<div class="descr text">{{ page.getText() | raw }}</div>
 		</section>
-		<aside class="col-sm-4">
+		<aside class="col-xs-4">
 			{% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
 			{% include 'SlashStudioAppBundle:Aside:video.aside.html.twig' %}
 		</aside>

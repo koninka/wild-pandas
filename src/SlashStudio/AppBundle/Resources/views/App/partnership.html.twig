@@ -14,7 +14,7 @@
 {% block content_row %}
   <h1 class="blue_h1"><span>{{ 'navigation.partnership' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
     <div class="row">
-      <section class="simple_block col-sm-8">
+      <section class="simple_block col-xs-8">
         <div class="photo">
           {% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
             <img src="{{ asset_url }}" alt="Дикие панды!" />
@@ -27,17 +27,17 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
       </section>
-      <aside class="col-sm-4">
+      <aside class="col-xs-4">
         {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
         <section class="other_posts">
           <h1 class="aside_h1">{{ 'team.blog' | trans }}</h1>
           {% for p in posts %}
             <article>
               <div class="row">
-                <div class="photo col-sm-4">
+                <div class="photo col-xs-4">
                   {% media p.image, 'small' %}  
                 </div>
-                <div class="right col-sm-8">
+                <div class="right col-xs-8">
                   <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
                   <div class="descr text">
                     {{ p.getSubtitle() }}

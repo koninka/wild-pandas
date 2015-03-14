@@ -18,7 +18,7 @@
       <div class="photos col-xs-8">
         <div class="row more_one">
           {% for photo in pagination %}
-            <div class="photo col-sm-6">
+            <div class="photo col-xs-6">
               <a href="#">{% media photo, 'medium' %}</a>
             </div>
             {% if loop.index % 2 == 0 and not loop.last %}
@@ -28,7 +28,7 @@
         </div>
         
       </div>
-      <aside class="col-sm-4">
+      <aside class="col-xs-4">
         {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
       </aside>
     </div>

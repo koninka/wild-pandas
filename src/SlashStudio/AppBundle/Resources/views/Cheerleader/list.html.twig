@@ -13,11 +13,11 @@
 {% block content_row %}
   <h1 class="blue_h1"><span>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
   <div class="row">
-    <div class="cheers_wrapper col-sm-8">
+    <div class="cheers_wrapper col-xs-8">
       <h2 class="sub">{{ team.getDescription() }}</h2>
       <div class="row more_one">
         {% for cl in pagination %}
-          <div class="wrap col-sm-4">
+          <div class="wrap col-xs-4">
             <div class="girl">
               {% media cl.photo, 'medium' %}
               <h3>{{ cl.getFullname() }}</h3>
@@ -33,7 +33,7 @@
         {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
       </div>
     </div>
-    <aside class="col-sm-4">
+    <aside class="col-xs-4">
       {% include 'SlashStudioAppBundle:Aside:video.aside.html.twig' %}
     </aside>
   </div>
@@ -50,7 +50,7 @@
         {{ form_start(join_form) }}
         {{ form_errors(join_form) }}
         <div class="row">
-          <section class="about col-sm-3">
+          <section class="about col-xs-3">
             <h1 class="sub">О себе</h1>
             <div class="form_block">
                 {{ form_label(join_form.surname) }}
@@ -88,7 +88,7 @@
                 {{ form_widget(join_form.email) }}
             </div>
           </section>
-          <section class="choreography col-sm-3">
+          <section class="choreography col-xs-3">
             <h1 class="sub">Хореография</h1>
             <div class="form_block">
                 {{ form_label(join_form.choreographicEducation) }}
@@ -111,7 +111,7 @@
                 {{ form_widget(join_form.choreographicExperiencePlaying) }}
             </div>
           </section>
-          <section class="acrobatic col-sm-3">
+          <section class="acrobatic col-xs-3">
             <h1 class="sub">Акробатика</h1>
             <div class="form_block">
                 {{ form_label(join_form.acrobaticEducation) }}
@@ -129,7 +129,7 @@
                 {{ form_widget(join_form.acrobaticElements) }}
             </div>
           </section>
-          <section class="additional col-sm-3">
+          <section class="additional col-xs-3">
             <h1 class="sub">Дополнительно</h1>
             <div class="form_block">
                 {{ form_label(join_form.hobby) }}

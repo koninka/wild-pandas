@@ -13,24 +13,24 @@
 {% block content_row %}
   <a href="{{ path('slash_app_blog_list') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.media_about' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
   <div class="row">
-    <article class="post col-sm-8">
+    <article class="post col-xs-8">
       <h1>{{ post.getTitle() }}</h1>
       <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
       <div class="photo">{% media post.image, 'big' %}</div>
       <h2>{{ post.getSubtitle() }}</h2>
       <div class="descr text">{{ post.getRawText() | raw }}</div>
     </article>
-    <aside class="col-sm-4">
+    <aside class="col-xs-4">
       {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
       <section class="other_posts">
         <h1 class="aside_h1">{{ 'posts.other' | trans }}</h1>
         {% for p in other_posts %}
           <article>
             <div class="row">
-              <div class="photo col-sm-4">
+              <div class="photo col-xs-4">
                 {% media p.image, 'small' %}  
               </div>
-              <div class="right col-sm-8">
+              <div class="right col-xs-8">
                 <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
                 <div class="descr text">
                   {{ p.getSubtitle() }}

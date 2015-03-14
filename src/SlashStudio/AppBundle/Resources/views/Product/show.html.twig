@@ -29,10 +29,10 @@
   <h1 class="blue_h1"><span>{{ 'navigation.products' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
   <article class="product">
     <div class="row">
-      <div class="photo col-sm-6">
+      <div class="photo col-xs-6">
         {% media product.image, 'big' %}
       </div>
-      <div class="info col-sm-6">
+      <div class="info col-xs-6">
         <h1>{{ product.getName() }}</h1>
         <div class="descr text">
           {{ product.getRawDescription() | raw }}
