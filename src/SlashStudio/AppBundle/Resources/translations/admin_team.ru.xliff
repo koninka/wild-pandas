@@ -72,7 +72,7 @@
             </trans-unit>
             <trans-unit id="18">
                 <source>form.label_image</source>
-                <target>Фото</target>
+                <target>Главное фото</target>
             </trans-unit>
             <trans-unit id="19">
                 <source>admin.team.achievements</source>
@@ -92,7 +92,11 @@
             </trans-unit>
             <trans-unit id="23">
                 <source>form.label_gallery</source>
-                <target>Видео</target>
+                <target>Медиа (видео)</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>form.label_photo_gallery</source>
+                <target>Медиа (фото)</target>
             </trans-unit>
         </body>
     </file>

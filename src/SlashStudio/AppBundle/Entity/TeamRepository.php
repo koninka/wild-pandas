@@ -11,16 +11,16 @@ class TeamRepository extends EntityRepository
     public function getPhotoQuery()
     {
         $manager = $this->getEntityManager();
-        $team = $manager->createQueryBuilder()
-            ->select('t, g')
-            ->from('SlashStudioAppBundle:Team', 't')
-            ->leftJoin('t.gallery', 'g')
-            ->getQuery()
-            ->getOneOrNullResult();
+        $team = $manager->createQuery(
+            'SELECT PARTIAL t.{id}, g FROM SlashStudioAppBundle:Team t LEFT JOIN t.gallery g'
+        )
+        ->getSingleResult();
 
         return $manager->createQuery(
-            'SELECT m FROM ApplicationSonataMediaBundle:Media m  JOIN m.galleryHasMedias ghs JOIN ghs.gallery g WHERE g = :gallery'
-        )->setParameter('gallery', $team->getGallery());
+            'SELECT m FROM ApplicationSonataMediaBundle:Media m
+                JOIN m.galleryHasMedias ghs
+                JOIN ghs.gallery g WHERE g = :gallery'
+        )->setParameter('gallery', $team->getPhotoGallery());
     }
 
     public function getManagerEmail()
@@ -43,16 +43,20 @@ class TeamRepository extends EntityRepository
             ->getOneOrNullResult();
     }
 
-   public function getVideosQBForPaginating()
+   public function getVideoQuery()
    {
         $manager = $this->getEntityManager();
-        $team = $manager->createQuery('SELECT PARTIAL t.{id}, g FROM SlashStudioAppBundle:Team t LEFT JOIN t.gallery g')->getSingleResult();
+        $team = $manager->createQuery(
+            'SELECT PARTIAL t.{id}, g FROM SlashStudioAppBundle:Team t LEFT JOIN t.gallery g'
+        )
+        ->getSingleResult();
 
         return $manager->createQuery(
             'SELECT m FROM ApplicationSonataMediaBundle:Media m
                 JOIN m.galleryHasMedias ghs
                 JOIN ghs.gallery g WHERE g = :gallery'
-        )->setParameter('gallery', $team->getGallery());
+        )
+        ->setParameter('gallery', $team->getGallery());
    }
 
     public function getVideoForTeam($amount = 2)

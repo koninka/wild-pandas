@@ -38,6 +38,12 @@ class TeamAdmin extends BaseAdmin
                                 'filter'   => ['context' => ['value' => 'team_video']]
                             ]
                        ])
+                       ->add('photoGallery', 'sonata_type_model_list', ['required' => false], [
+                            'link_parameters' => [
+                                'context'  => 'team_photo',
+                                'filter'   => ['context' => ['value' => 'team_photo']]
+                            ]
+                       ])
                        ->end()
                     ->with('show.label_achievements')
                        ->add(
