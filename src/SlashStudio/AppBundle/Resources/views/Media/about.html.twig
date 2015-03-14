@@ -1,22 +1,46 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'navigation.media' | trans({}, 'navigation') }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/blog.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
 {% block content_row %}
-  <div class="count">
-    {{ pagination.getTotalItemCount }}
-  </div>
-  {% for p in pagination %}
-    <div>
-      <b><a href="{{ path('slash_app_media_show', {id: p.id}) }}">{{ p.getTitle() }}</a></b>
-      <p>{{ p.getSubtitle() }}</p>
-      {{ p.createdAt.date | localizeddate('short', 'none') }}
-      <div> {% media p.image, 'main' %}</div>
-    </div>
-  {% endfor %}
-  <div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-  </div>
+  <section class="blog">
+    <h1 class="blue_h1"><span>{{ 'navigation.media_about' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+    <div class="row">
+      <div class="posts col-xs-9">
+        <div class="row more_one">
+          {% for p in pagination %}
+            <article class="col-xs-4">
+              <div class="photo">
+                <a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{% media p.image, 'main' %}</a>
+              </div>
+              <h1><a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{{ p.getTitle() }}</a></h1>
+              <div class="descr text">{{ p.getSubtitle() }}</div>
+              <time>{{ p.createdAt.date | localizeddate('short', 'none') }}</time>
+            </article>
+            {% if loop.index % 3 == 0 and not loop.last %}
+              </div><div class="row more_one">
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="navigation">
+          {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+        </div>
+      </div>
+      <aside class="col-sm-3">
+        <div class="ad_block">
+          1
+        </div>
+        <div class="ad_block">
+          2
+        </div>
+      </div>
+    </aside>
+  </section>
 {% endblock %}

@@ -1,43 +1,150 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'navigation.cheerleader' | trans({}, 'navigation') }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/cheers.less'
+    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
 {% block content_row %}
-  <div>
-    {{ team.getName() }}
-    <p>{{ team.getDescription() }}</p>
-    {% media team.image, 'main' %}
-    <div>
-      <div class="count">
-        {{ pagination.getTotalItemCount }}
+  <h1 class="blue_h1"><span>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+  <div class="row">
+    <div class="cheers_wrapper col-sm-8">
+      <h2 class="sub">{{ team.getDescription() }}</h2>
+      <div class="row more_one">
+        {% for cl in pagination %}
+          <div class="wrap col-sm-4">
+            <div class="girl">
+              {% media cl.photo, 'medium' %}
+              <h3>{{ cl.getFullname() }}</h3>
+              <div class="about">{{ cl.getAbout() }}</div>
+            </div>
+          </div>
+          {% if loop.index % 3 == 0 and not loop.last %}
+            </div><div class="row more_one">
+          {% endif %}
+        {% endfor %}
       </div>
-      {% for cl in pagination %}
-        {{ cl.getFullname() }}
-        <p>{{ cl.getAbout() }}</p>
-        {% media cl.photo, 'small' %}
-      {% endfor %}
       <div class="navigation">
-        {{ knp_pagination_render(pagination) }}
+        {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
       </div>
     </div>
+    <aside class="col-sm-4">
+      {% include 'SlashStudioAppBundle:Aside:video.aside.html.twig' %}
+    </aside>
   </div>
-  <div>
-    {{ 'navigation.video' | trans({}, 'navigation') }}
-    {% for video in videos %}
-      {% media video,  'medium' %}
-    {% endfor %}
-  </div>
-  <div>
-    <h2>{{ 'cheerleader_team.join' | trans }}</h2>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-      HUI
-      <div class="flash-notice">
-        {{ flashMessage }}
-      </div>
-    {% else %}
-      {{ form(join_form) }}
-    {% endfor %}
-  </div>
+  <div class="form_wrapper">
+    <section class="form">
+      <h1 class="blue_h1"><span>{{ 'cheerleader_team.join' | trans }}<div class="line"></div></span></h1>
+      {% for flashMessage in app.session.flashbag.get('notice') %}
+        HUI
+        <div class="flash-notice">
+          {{ flashMessage }}
+        </div>
+      {% else %}
+        {% form_theme join_form 'SlashStudioAppBundle:Form:custom_form1.html.twig' %}
+        {{ form_start(join_form) }}
+        {{ form_errors(join_form) }}
+        <div class="row">
+          <section class="about col-sm-3">
+            <h1 class="sub">О себе</h1>
+            <div class="form_block">
+                {{ form_label(join_form.surname) }}
+                {{ form_errors(join_form.surname) }}
+                {{ form_widget(join_form.surname) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.name) }}
+                {{ form_errors(join_form.name) }}
+                {{ form_widget(join_form.name) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.patronymic) }}
+                {{ form_errors(join_form.patronymic) }}
+                {{ form_widget(join_form.patronymic) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.age) }}
+                {{ form_errors(join_form.age) }}
+                {{ form_widget(join_form.age) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.education) }}
+                {{ form_errors(join_form.education) }}
+                {{ form_widget(join_form.education) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.phone) }}
+                {{ form_errors(join_form.phone) }}
+                {{ form_widget(join_form.phone) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.email) }}
+                {{ form_errors(join_form.email) }}
+                {{ form_widget(join_form.email) }}
+            </div>
+          </section>
+          <section class="choreography col-sm-3">
+            <h1 class="sub">Хореография</h1>
+            <div class="form_block">
+                {{ form_label(join_form.choreographicEducation) }}
+                {{ form_errors(join_form.choreographicEducation) }}
+                {{ form_widget(join_form.choreographicEducation) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.choreographicStyle) }}
+                {{ form_errors(join_form.choreographicStyle) }}
+                {{ form_widget(join_form.choreographicStyle) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.choreographicExperience) }}
+                {{ form_errors(join_form.choreographicExperience) }}
+                {{ form_widget(join_form.choreographicExperience) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.choreographicExperiencePlaying) }}
+                {{ form_errors(join_form.choreographicExperiencePlaying) }}
+                {{ form_widget(join_form.choreographicExperiencePlaying) }}
+            </div>
+          </section>
+          <section class="acrobatic col-sm-3">
+            <h1 class="sub">Акробатика</h1>
+            <div class="form_block">
+                {{ form_label(join_form.acrobaticEducation) }}
+                {{ form_errors(join_form.acrobaticEducation) }}
+                {{ form_widget(join_form.acrobaticEducation) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.acrobaticExperience) }}
+                {{ form_errors(join_form.acrobaticExperience) }}
+                {{ form_widget(join_form.acrobaticExperience) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.acrobaticElements) }}
+                {{ form_errors(join_form.acrobaticElements) }}
+                {{ form_widget(join_form.acrobaticElements) }}
+            </div>
+          </section>
+          <section class="additional col-sm-3">
+            <h1 class="sub">Дополнительно</h1>
+            <div class="form_block">
+                {{ form_label(join_form.hobby) }}
+                {{ form_errors(join_form.hobby) }}
+                {{ form_widget(join_form.hobby) }}
+            </div>
+            <div class="form_block">
+                {{ form_label(join_form.about) }}
+                {{ form_errors(join_form.about) }}
+                {{ form_widget(join_form.about) }}
+            </div>
+          </section>
+        </div>
+        {{ form_end(join_form) }}
+      </section>
+    </div>
+  {% endfor %}
 {% endblock %}

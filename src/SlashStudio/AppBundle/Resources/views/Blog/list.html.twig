@@ -29,18 +29,18 @@
             {% endif %}
           {% endfor %}
         </div>
+        <div class="navigation">
+          {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+        </div>
       </div>
-      <div class="right col-sm-3">
+      <aside class="col-sm-3">
         <div class="ad_block">
           1
         </div>
         <div class="ad_block">
           2
         </div>
-      </div>
-    </div>
-    <div class="navigation">
-      {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+      </aside>
     </div>
   </section>
 {% endblock %}

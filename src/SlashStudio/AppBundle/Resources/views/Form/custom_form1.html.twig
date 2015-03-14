@@ -67,6 +67,6 @@
 {% if required %}
     {%- if render_required_asterisk %}&nbsp;<span class="asterisk">*</span>{% endif %}
 {% else %}
-    {%- if render_optional_text %}&nbsp;<span class="light">{{ "form.optional" | trans }}</span>{% endif %}
+    {%- if render_optional_text %}&nbsp;<span class="not_required">{{ "form.optional" | trans }}</span>{% endif %}
 {% endif %}
 {% endblock label_asterisk %}

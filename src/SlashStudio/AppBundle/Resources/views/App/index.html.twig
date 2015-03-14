@@ -202,7 +202,7 @@
     <section class="cheerleaders">
       <a href="{{ path('slash_app_chearleaders') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
       <div class="row">
-        <div class="left col-sm-9">
+        <div class="col-sm-9">
           <div class="main_photo">
             {% media cl_team.image, 'cl_main' %}
           </div>
@@ -214,14 +214,14 @@
             </div>{% endfor %}
           </div>
         </div>
-        <div class="right col-sm-3">
+        <aside class="col-sm-3">
           <div class="ad_block">
             1
           </div>
           <div class="ad_block">
             2
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 

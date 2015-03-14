@@ -75,14 +75,14 @@ sonata_media:
 
             formats:
                 small: { width: 80 , quality: 100 }
-                big:   { width: 500 , quality: 100 }
+                medium:   { width: 250 , quality: 100 }
 
         photo:
             providers:
                 - sonata.media.provider.image
 
             formats:
-                medium: { width: 400 , quality: 80 }
+                medium: { width: 350 , quality: 80 }
                 big: { width: 800 , quality: 100 }
 
         team_video:

@@ -1,19 +1,52 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-    {{ 'navigation.partnership' | trans({}, 'navigation') }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/simple_page.less'
+    '@SlashStudioAppBundle/Resources/public/less/blog.less'
+    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
 {% block content_row %}
-  <div>
-    <h3>{{ 'team.blog' | trans }}</h3>
-    {% for p in posts %}
-      <div>
-        <b><a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{{ p.getTitle() }}</a></b>
-        <p>{{ p.getSubtitle() }}</p>
-        {{ p.createdAt.date | localizeddate('short', 'none') }}
-        <div> {% media p.image, 'main' %}</div>
-      </div>
-    {% endfor %}
-  </div>
+  <h1 class="blue_h1"><span>{{ 'navigation.partnership' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+    <div class="row">
+      <section class="simple_block col-sm-8">
+        <div class="photo">
+          {% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
+            <img src="{{ asset_url }}" alt="Дикие панды!" />
+          {% endimage %}
+        </div>
+        <div class="descr text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      </section>
+      <aside class="col-sm-4">
+        {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
+        <section class="other_posts">
+          <h1 class="aside_h1">{{ 'team.blog' | trans }}</h1>
+          {% for p in posts %}
+            <article>
+              <div class="row">
+                <div class="photo col-sm-4">
+                  {% media p.image, 'small' %}  
+                </div>
+                <div class="right col-sm-8">
+                  <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
+                  <div class="descr text">
+                    {{ p.getSubtitle() }}
+                  </div>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </section>
+      </aside>
+    </div>
 {% endblock %}

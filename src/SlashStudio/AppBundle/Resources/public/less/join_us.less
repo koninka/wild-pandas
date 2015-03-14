@@ -17,36 +17,28 @@ section.joinus {
 	}
 }
 
-section.joinus:before {
+section.joinus:before, #full_form div.form_wrapper:before {
 	content: '';
 	height: 6px;
 	display: block;
 	background: @blue-brand;
 }
 
-section.join_full {
-	
-	div.photo {
-		padding: 15px;
-		background: @gray-brand;
-		margin-bottom: 20px;
+#full_form {
 
-		img {
-			width: 100% !important;
-			height: auto !important;
-		}
-	}
-
-	div.descr {
-		margin-bottom: 50px;
+	div.form_wrapper {
+		margin-top: 50px;
 	}
 
 	section.form {
-
+		background: @gray-brand;
+		padding: 15px;
+		
 		h1 {
 			font-size: 220%; 
 			font-weight: bold;
-			margin-bottom: 10px;;
+			margin-bottom: 10px;
+			color: @blue-brand;
 		}
 
 		h2 {
@@ -55,19 +47,8 @@ section.join_full {
 			font-size: 180%;
 		}
 
-		textarea {
-			resize: none;
-			height: 100px;
-		}
-
 		div.form_buttons {
 			text-align: left;
 		}
-
-		span.light {
-			font-style: italic;
-			color: #777;
-			font-weight: normal;
-		} 
 	}
 }
