@@ -36,15 +36,16 @@ class AppController extends Controller
         }
 
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
-            'join_form'   => $joinForm->createView(),
-            'team'        => $teamRepo->getInfo(),
-            'videos'      => $teamRepo->getVideoForTeam(static::VIDEOS_ON_MAIN_AMOUNT),
-            'cl_team'     => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
-            'posts'       => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
-            'slides'      => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
-            'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
-            'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
-            'partnership' => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),
+            'join_form'    => $joinForm->createView(),
+            'team'         => $teamRepo->getInfo(),
+            'videos'       => $teamRepo->getVideoForTeam(static::VIDEOS_ON_MAIN_AMOUNT),
+            'cl_team'      => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
+            'posts'        => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
+            'slides'       => $manager->getRepository('SlashStudioAppBundle:Slide')->getSlides(),
+            'cheerleaders' => $manager->getRepository('SlashStudioAppBundle:Cheerleader')->getAll(8),
+            'players'      => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
+            'products'     => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
+            'partnership'  => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),
             'instagram'   => $manager->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8),
         ]);
     }

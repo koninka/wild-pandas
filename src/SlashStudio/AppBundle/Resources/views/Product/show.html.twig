@@ -1,31 +1,86 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ product.getName() }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/attr.less'
+    '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <h1></h1>
-  {# TO DO: need to translate #}
-  <div>Описание: {{ product.getRawDescription() | raw }}</div>
-  <div>Цена: {{ product.price }}</div>
-  <div>{% media product.image, 'big' %}</div>
-  <h1>{{ 'products.other' | trans }}</h1>
-  {% for product in other_products %}
-    <div>
-      {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
-      {{ 'product.price' | trans }} : {{ product.price }}
-    </div>
-  {% endfor %}
-  <div>
-    <h2>{{ 'product.order' | trans }}</h2>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-      HUI
-      <div class="flash-notice">
-        {{ flashMessage }}
+{% block head_script %}
+  {{ parent() }}
+  {% javascripts
+    '@SlashStudioAppBundle/Resources/public/colorbox/jquery.colorbox-min.js'
+  %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  <script type="text/javascript">
+    $(function() {
+      $("#inline").colorbox({inline: "true", transition: "none", width: "450px"});
+
+      if ($('#form_valid').attr('data') == 'error') {
+        $.colorbox({href:"#order_form", inline: "true", transition: "none", width: "450px"});
+      }
+    });
+  </script>
+{% endblock head_script %}
+
+{% block content_row %}
+  <div id="form_valid" data="{{ valid }}"></div>
+  <h1 class="blue_h1"><span>{{ 'navigation.products' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+  <article class="product">
+    <div class="row">
+      <div class="photo col-xs-6">
+        {% media product.image, 'big' %}
       </div>
-    {% else %}
-      {{ form(order_form) }}
-    {% endfor %}
+      <div class="info col-xs-6">
+        <h1>{{ product.getName() }}</h1>
+        <div class="descr text">
+          {{ product.getRawDescription() | raw }}
+        </div>
+        <div class="price">
+          <div>{{ 'product.price' | trans }}: {{ product.price }}</div>
+        </div>
+        <a id="inline" href="#order_form" class="btn btn-default">Заказать</a>
+      </div>
+    </div>
+  </article>
+  <section class="attr">
+    <a href="{{ path('slash_app_products_list') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'products.other' | trans }}<div class="line"></div></span></h1></a>
+    <div class="row">
+      {% for product in other_products %}
+        <div class="col-xs-3">
+          <article>
+            <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
+              <div class="photo">{% media product.image, 'small' %}</div>
+            </a>
+            <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
+              {{ product.getName() }}
+            </a>
+            <div class="price">{{ 'product.price' | trans }}: {{ product.price }}</div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  <div style="display: none">
+    <div id="order_form">
+      <div class="order_form">
+        <h1>{{ 'product.order' | trans }}</h1>
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+          HUI
+          <div class="flash-notice">
+            {{ flashMessage }}
+          </div>
+        {% else %}
+          {% form_theme order_form 'SlashStudioAppBundle:Form:custom_form1.html.twig' %}
+          {{ form(order_form) }}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 {% endblock %}

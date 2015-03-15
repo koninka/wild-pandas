@@ -22,7 +22,31 @@ class TeamController extends Controller
             static::PLAYERS_PER_PAGE
         );
 
+        $manager = $this->getDoctrine()->getManager();
+        $teamRepo = $manager->getRepository('SlashStudioAppBundle:Team');
+        $joinForm = $this->createForm('team_proposal_membership', null, ['main_page' => true]);
+        $joinForm->handleRequest($request);
+        if ($joinForm->isValid()) {
+            $membershipProposal = $joinForm->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($membershipProposal);
+            $em->flush();
+
+            $this->get('my_mailer')->sendTeamJoinEmails($membershipProposal, $teamRepo->getManagerEmail());
+
+
+            $request->getSession()->getFlashBag()->add(
+                'notice',
+                'team.join.success'
+            );
+
+            return $this->redirect($this->generateUrl('slash_app_mainpage'));
+        }
+
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
+            'structure' => $structure,
+            'join_form'    => $joinForm->createView(),
             'pagination' => $pagination,
         ]);
     }

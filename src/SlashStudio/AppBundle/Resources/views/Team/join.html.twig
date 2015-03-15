@@ -1,25 +1,93 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'navigation.join_team' | trans({}, 'navigation') }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/join_us.less'
+    '@SlashStudioAppBundle/Resources/public/less/simple_page.less'
+    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <div>
-    <h2>{{ 'navigation.video' | trans({}, 'navigation') }}</h2>
-    {% for video in videos %}
-      <div>{% media video, 'medium' %}</div>
-    {% endfor %}
-  </div>
-  <div>
-    <h2>{{ 'team.join' | trans }}</h2>
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-      HUI
-      <div class="flash-notice">
-        {{ flashMessage }}
+{% block content_row %}
+  <h1 class="blue_h1"><span>{{ 'team.join_page_header' | trans }}<div class="line"></div></span></h1>
+  <div class="row">
+    <section id="full_form" class="simple_block col-xs-8">
+      <div class="photo">
+        {% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
+          <img src="{{ asset_url }}" alt="Дикие панды!" />
+        {% endimage %}
       </div>
-    {% else %}
-      {{ form(join_form) }}
-    {% endfor %}
-  </div>
+      <div class="descr text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      <div class="form_wrapper">
+        <section class="form">
+          <h1>{{ 'team.join_form_header' | trans }}</h1>
+          <h2>{{ 'team.join_form_header2' | trans }}</h2>
+          {% for flashMessage in app.session.flashbag.get('notice') %}
+            HUI
+            <div class="flash-notice">
+              {{ flashMessage }}
+            </div>
+          {% else %}
+            {% form_theme join_form 'SlashStudioAppBundle:Form:custom_form1.html.twig' %}
+            {{ form_start(join_form) }}
+            {{ form_errors(join_form) }}
+            <div class="row">
+              <div class="inputs col-xs-5">
+                <div class="form_block">
+                    {{ form_label(join_form.name) }}
+                    {{ form_errors(join_form.name) }}
+                    {{ form_widget(join_form.name) }}
+                </div>
+                <div class="form_block">
+                    {{ form_label(join_form.surname) }}
+                    {{ form_errors(join_form.surname) }}
+                    {{ form_widget(join_form.surname) }}
+                </div>
+                <div class="form_block">
+                    {{ form_label(join_form.email) }}
+                    {{ form_errors(join_form.email) }}
+                    {{ form_widget(join_form.email) }}
+                </div>
+                <div class="form_block">
+                    {{ form_label(join_form.age) }}
+                    {{ form_errors(join_form.age) }}
+                    {{ form_widget(join_form.age) }}
+                </div>
+                <div class="form_block">
+                    {{ form_label(join_form.phone) }}
+                    {{ form_errors(join_form.phone) }}
+                    {{ form_widget(join_form.phone) }}
+                </div>
+              </div>
+              <div class="textarea col-xs-7">
+                <div class="form_block">
+                  {{ form_label(join_form.about) }}
+                  {{ form_errors(join_form.about) }}
+                  {{ form_widget(join_form.about) }}
+                </div>
+                <div class="form_block">
+                  {{ form_label(join_form.sportsExperience) }}
+                  {{ form_errors(join_form.sportsExperience) }}
+                  {{ form_widget(join_form.sportsExperience) }}
+                </div>
+              </div>
+            </div>
+            {{ form_end(join_form) }}
+          {% endfor %}
+        </section>
+      </div>
+    </section>
+    <aside class="col-xs-4">
+      {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
+      {% include 'SlashStudioAppBundle:Aside:video.aside.html.twig' %}
+    </aside>
+</div>
 {% endblock %}

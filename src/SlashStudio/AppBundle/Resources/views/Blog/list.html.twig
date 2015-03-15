@@ -1,22 +1,46 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'title.official_blog' | trans }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/blog.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <div class="count">
-    {{ pagination.getTotalItemCount }}
-  </div>
-  {% for post in pagination %}
-    <div>
-      <a href="{{ path('slash_app_blog_show', {id: post.id}) }}"><b>{{ post.getTitle() }}</b></a>
-      <p>{{ post.getSubtitle() }}</p>
-      {{ post.createdAt.date | localizeddate('short', 'none') }}
-      <div> {% media post.image, 'main' %}</div>
+{% block content_row %}
+  <section class="blog">
+    <h1 class="blue_h1"><span>{{ 'title.official_blog' | trans }}<div class="line"></div></span></h1>
+    <div class="row">
+      <div class="posts col-xs-9">
+        <div class="row more_one">
+          {% for post in pagination %}
+            <article class="col-xs-4">
+              <div class="photo">
+                <a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{% media post.image, 'main' %}</a>
+              </div>
+              <h1><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></h1>
+              <div class="descr text">{{ post.getSubtitle() }}</div>
+              <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
+            </article>
+            {% if loop.index % 3 == 0 and not loop.last %}
+              </div><div class="row more_one">
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="navigation">
+          {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+        </div>
+      </div>
+      <aside class="col-xs-3">
+        <div class="ad_block">
+          1
+        </div>
+        <div class="ad_block">
+          2
+        </div>
+      </aside>
     </div>
-  {% endfor %}
-  <div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-  </div>
+  </section>
 {% endblock %}

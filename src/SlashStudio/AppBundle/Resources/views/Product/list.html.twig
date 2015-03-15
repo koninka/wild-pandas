@@ -1,21 +1,36 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ 'navigation.products' | trans({}, 'navigation') }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/attr.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <h3>{{ 'product.description' | trans }}</h3>
-  <div class="count">
-    {{ pagination.getTotalItemCount }}
-  </div>
-  {% for product in pagination %}
-    <div>
-      {{ 'product.name' | trans }} : <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
-      {{ 'product.price' | trans }} : {{ product.price }}
+{% block content_row %}
+  <section class="attr">
+    <h1 class="blue_h1"><span>{{ 'navigation.products' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+    <h2 class="description">{{ 'product.description' | trans }}</h2>
+    <div class="row more_one">
+      {% for product in pagination %}
+        <div class="col-xs-3">
+          <article>
+            <div class="photo">
+              <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' %}</a>
+            </div>
+            <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
+            <div class="price">{{ 'product.price' | trans }}: {{ product.price }}</div>
+          </article>
+        </div>
+        {% if loop.index % 4 == 0 and not loop.last %}
+          </div><div class="row more_one">
+        {% endif %}
+      {% endfor %}
     </div>
-  {% endfor %}
-  <div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-  </div>
+    <div class="navigation">
+      {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+    </div>
+  </section>
 {% endblock %}

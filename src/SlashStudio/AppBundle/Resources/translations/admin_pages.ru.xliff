@@ -12,7 +12,7 @@
             </trans-unit>
             <trans-unit id="3">
                 <source>form.label_image</source>
-                <target>Фото</target>
+                <target>Главное фото</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>show.label_text</source>

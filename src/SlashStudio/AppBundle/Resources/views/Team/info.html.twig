@@ -1,15 +1,29 @@
 {% extends '::base.html.twig' %}
 
-{% block headline %}
-  {{ header }}
-{% endblock %}
+{% block head_style %}
+  {{ parent() }}
+  {% stylesheets
+    '@SlashStudioAppBundle/Resources/public/less/simple_page.less'
+    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
+  %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+  {% endstylesheets %}
+{% endblock head_style %}
 
-{% block content %}
-  <p>{{ page.getText() | raw }}</p>
-  <div>
-    <h2>{{ 'navigation.video' | trans({}, 'navigation') }}</h2>
-    {% for video in videos %}
-      <div>{% media video, 'medium' %}</div>
-    {% endfor %}
-  </div>
+{% block content_row %}
+	<h1 class="blue_h1"><span>{{ header }}<div class="line"></div></span></h1>
+  	<div class="row">
+		<section class="simple_block col-xs-8">
+			<div class="photo">
+				{% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
+					<img src="{{ asset_url }}" alt="Дикие панды!" />
+				{% endimage %}
+			</div>
+			<div class="descr text">{{ page.getText() | raw }}</div>
+		</section>
+		<aside class="col-xs-4">
+			{% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
+			{% include 'SlashStudioAppBundle:Aside:video.aside.html.twig' %}
+		</aside>
+	</div>
 {% endblock %}

@@ -1,0 +1,70 @@
+@import 'variables.less';
+
+section.players {
+
+	div.players_row {
+		background-color: @gray-brand;
+		padding: 20px 0;
+		text-align: center;
+
+		div.player {
+			display: inline-block;
+			margin: 0 11px;
+			vertical-align: top;
+			font-size: 80%;
+			font-weight: bold;
+
+			div.photo {
+				margin-bottom: 5px;
+			}
+		}
+
+		div.player:first-child {
+			margin-left: 0;
+		}
+
+		div.player:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+section.players_in {
+
+	div.str_nav {
+		margin-bottom: 20px;
+
+		a {
+			margin-right: 10px;
+		}
+
+		a.active {
+			background: @gray-brand;
+			color: #949494;
+			cursor: default;
+		}
+	}
+
+	table.roster {
+		width: 100%;
+
+		td, th {
+			padding: 10px;
+			border-collapse: collapse;
+		}
+
+		td.photo {
+			width: 80px;
+		}
+
+		tr:nth-child(odd) td {
+			background: @gray-brand;
+		}
+
+		th {
+			background: @blue-brand;
+			color: white;
+			font-weight: bold;
+		}
+	}
+}

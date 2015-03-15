@@ -63,6 +63,13 @@ class Team extends TranslationEntity
      */
     private $gallery;
 
+    /**
+     * @var Gallery
+     * @ORM\OneToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Gallery", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\JoinColumn(name="photo_gallery_id", referencedColumnName="id", nullable=true)
+     */
+    private $photoGallery;
+
 
     public function __construct()
     {
@@ -203,6 +210,25 @@ class Team extends TranslationEntity
     public function setGallery($gallery)
     {
         $this->gallery = $gallery;
+
+        return $this;
+    }
+
+    /**
+     * @return Gallery
+     */
+    public function getPhotoGallery()
+    {
+        return $this->photoGallery;
+    }
+
+    /**
+     * @param Gallery $photoGallery
+     * @return Team
+     */
+    public function setPhotoGallery($photoGallery)
+    {
+        $this->photoGallery = $photoGallery;
 
         return $this;
     }

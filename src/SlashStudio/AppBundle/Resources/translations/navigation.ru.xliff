@@ -58,6 +58,10 @@
                 <source>navigation.blog</source>
                 <target>Блог</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>navigation.instagram</source>
+                <target>Панды в Instagram</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

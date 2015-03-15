@@ -68,7 +68,7 @@
             </trans-unit>
             <trans-unit id="17">
                 <source>team.join</source>
-                <target>Join the "Wild Pandas"!</target>
+                <target>Join the</target>
             </trans-unit>
             <trans-unit id="18">
                 <source>team.join.success</source>
@@ -89,6 +89,42 @@
             <trans-unit id="22">
                 <source>cheerleader_team.join.success</source>
                 <target>Your request has been successfully sent!</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>team.join.team_name</source>
+                <target>Wild Pandas</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>paginator.prev</source>
+                <target>Prev</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>paginator.next</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>paginator.to_end</source>
+                <target>First</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>paginator.to_start</source>
+                <target>Last</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>team.join_page_header</source>
+                <target>How to join "Wild Pandas"</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>team.join_form_header</source>
+                <target>Join the team</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>team.join_form_header2</source>
+                <target>Fill in the form and we contact you soon!</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>form.optional</source>
+                <target>(optional)</target>
             </trans-unit>
         </body>
     </file>

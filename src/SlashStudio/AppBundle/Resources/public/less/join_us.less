@@ -1,0 +1,54 @@
+@import 'variables.less';
+
+section.joinus {
+	padding-left: 0;
+	
+	div.wrapper {
+		background: @gray-brand;
+		padding: 15px;
+	}
+
+	h1 {
+		font-size: 180%;
+		margin: 0 auto 30px;
+		padding-top: 20px;
+		text-align: center;
+		color: @blue-brand;
+	}
+}
+
+section.joinus:before, #full_form div.form_wrapper:before {
+	content: '';
+	height: 6px;
+	display: block;
+	background: @blue-brand;
+}
+
+#full_form {
+
+	div.form_wrapper {
+		margin-top: 50px;
+	}
+
+	section.form {
+		background: @gray-brand;
+		padding: 15px;
+		
+		h1 {
+			font-size: 220%; 
+			font-weight: bold;
+			margin-bottom: 10px;
+			color: @blue-brand;
+		}
+
+		h2 {
+			margin-top: 0;
+			margin-bottom: 25px;
+			font-size: 180%;
+		}
+
+		div.form_buttons {
+			text-align: left;
+		}
+	}
+}
