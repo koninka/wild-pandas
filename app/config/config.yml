@@ -26,6 +26,9 @@ imports:
     - { resource: sonata/media.yml }
     - { resource: sonata/formatter.yml }
 
+    #instagram
+    - { resource: @OhInstagramBundle/Resources/config/services.yml }
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }

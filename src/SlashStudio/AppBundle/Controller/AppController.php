@@ -45,6 +45,7 @@ class AppController extends Controller
             'players'     => $manager->getRepository('SlashStudioAppBundle:Player')->getPlayers(StructureEnumType::ST_BASIC),
             'products'    => $manager->getRepository('SlashStudioAppBundle:Product')->getProductsForMainPage(),
             'partnership' => $manager->getRepository('SlashStudioAppBundle:Partnership')->getAll(),
+            'instagram'   => $manager->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8),
         ]);
     }
 

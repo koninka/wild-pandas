@@ -28,11 +28,12 @@
         "a2lix/translation-form-bundle": "~2.0",
         "knplabs/knp-paginator-bundle": "~2.4",
         "mopa/bootstrap-bundle": "dev-master",
-        "twbs/bootstrap": "dev-master",
+        "twbs/bootstrap": "~3.3",
         "sonata-project/seo-bundle": "~1.1",
         "sonata-project/core-bundle": "dev-master",
         "sonata-project/formatter-bundle": "~2.3",
-        "misd/phone-number-bundle": "dev-master"
+        "misd/phone-number-bundle": "dev-master",
+        "oh/instagram-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

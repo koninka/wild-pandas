@@ -21,3 +21,11 @@ parameters:
 
     node_bin:   /usr/local/bin/node
     node_paths: [ /usr/local/lib/node_modules/ ]
+
+    #params for instagram api bundle
+    instagram_api_client_id: f0adfa7702894bba818ede92e8efbd60
+    instagram_api_client_secret: 9502736140ef4a7c9dbd07644a351b78
+    instagram_timeout: 30
+    instagram_connect_timeout: 8
+    #access token for wildpandas account
+    instagram_api_access_token: WILDPANDAS ACCESS TOKEN
