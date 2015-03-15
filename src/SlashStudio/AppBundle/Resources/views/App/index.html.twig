@@ -12,13 +12,6 @@
 {% block content_row %}
   <div class="wrapper">
     <div class="row">
-      <!-- example for instagram helper usage -->
-      {% for photo in instagram %}
-        <div style="width: 1000px; margin: 30px auto;">
-          <img src={{ photo.lr_url }} style="width:{{ photo.lr_width }}px; height:{{ photo.lr_height }}px">
-          <img src={{ photo.sr_url }} style="width:{{ photo.sr_width }}px; height:{{ photo.sr_height }}px">
-        </div>
-      {% endfor %}
       <section id="myCarousel" class="carousel slide col-xs-9 slider" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -131,54 +124,49 @@
           </div>{% endfor %}
       </div>
     </section>
-    
+
     <div class="row">
+      <!-- example for instagram helper usage
+      instagram = [
+        {
+          link => link to instagram post
+          sr_url => standard resolution image url
+          sr_width => standard resolution image width
+          sr_height => standard resolution image height
+          lr_url => low resolution image url
+          lr_width => low resolution image width
+          lr_height => low resolution image height
+          postTime => time of instagram post
+          id => post id
+        },
+        {
+          ...
+        }
+      ]
+      {% for photo in instagram %}
+        <div style="width: 1000px; margin: 30px auto;">
+          <img src={{ photo.lr_url }} style="width:{{ photo.lr_width }}px; height:{{ photo.lr_height }}px">
+          <img src={{ photo.sr_url }} style="width:{{ photo.sr_width }}px; height:{{ photo.sr_height }}px">
+        </div>
+      {% endfor %} -->
       <section class="instagram col-xs-8">
         <h1 class="blue_h1"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
-        <div class="gallery row">
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
+        {% for i in 0..7 %}
+          {% if instagram|length > i %}
+            {% if i is divisible by(4) %}
+              {% if i > 0 %}
+                </div>
+              {% endif %}
+              <div class="gallery row">
+            {% endif %}
+            <div class="img col-xs-3">
+              <a href="{{ instagram[i].link }}"><img src="{{ instagram[i].lr_url }}" alt="Дикие панды!" /></a>
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% if instagram|length > 0 %}
           </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-        </div>
-        <div class="gallery row">
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-          <div class="img col-xs-3">
-            {% image '@SlashStudioAppBundle/Resources/public/images/g1.jpg' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
-          </div>
-        </div>
+        {% endif %}
       </section>
       <section class="video col-xs-4">
         <h1 class="blue_h1"><span>{{ 'navigation.video' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
