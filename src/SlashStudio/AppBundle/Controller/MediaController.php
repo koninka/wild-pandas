@@ -22,6 +22,7 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:photo.html.twig', [
             'pagination' => $pagination,
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8),
         ]);
     }
 
@@ -35,6 +36,7 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:video.html.twig', [
             'pagination' => $pagination,
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
         ]);
     }
 
@@ -48,6 +50,7 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:about.html.twig', [
             'pagination' => $pagination,
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
         ]);
     }
 
@@ -63,6 +66,7 @@ class MediaController extends Controller
         return $this->render('SlashStudioAppBundle:Media:show.html.twig', [
             'post' => $post,
             'other_posts' => $repo->getOtherPosts($post, static::OTHER_POSTS_AMOUNT),
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
         ]);
     }
 }

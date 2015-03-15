@@ -52,10 +52,12 @@ class AppController extends Controller
 
     public function partnershipAction()
     {
+        $manager = $this->getDoctrine()->getManager();
         $repo = $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post');
 
         return $this->render('SlashStudioAppBundle:App:partnership.html.twig', [
-            'posts' => $repo->getLimitedPosts(static::POSTS_ON_PARTNERSHIP_AMOUNT)
+            'posts'     => $manager->getRepository('SlashStudioAppBundle:Post')->getLimitedPosts(static::POSTS_ON_PARTNERSHIP_AMOUNT),
+            'instagram' => $manager->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
         ]);
     }
 }
