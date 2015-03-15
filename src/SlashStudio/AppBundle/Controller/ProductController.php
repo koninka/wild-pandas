@@ -36,6 +36,7 @@ class ProductController extends Controller
 //        $orderForm->get('product')->setData($product);
 
         $orderForm->handleRequest($request);
+
         if ($orderForm->isValid()) {
             $productProposal = $orderForm->getData();
             $productProposal->setProduct($product);
@@ -53,11 +54,18 @@ class ProductController extends Controller
             );
 
             return $this->redirect($this->generateUrl('slash_app_product_show', ['id' => $id]));
+        } 
+
+        $valid = 'valid';
+
+        if ($orderForm->isSubmitted() && !$orderForm->isValid()) {
+            $valid = 'error';
         }
 
         $this->container->get('my_seo')->addMeta($product);
 
         return $this->render('SlashStudioAppBundle:Product:show.html.twig', [
+            'valid' => $valid,
             'product' => $product,
             'order_form' => $orderForm->createView(),
             'other_products' => $productRepo->getOtherProducts($product, static::OTHER_PRODUCTS_COUNT),

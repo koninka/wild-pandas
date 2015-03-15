@@ -18,9 +18,9 @@
           {% for p in pagination %}
             <article class="col-xs-4">
               <div class="photo">
-                <a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{% media p.image, 'main' %}</a>
+                <a href="{{ path('slash_app_media_show', {id: p.id}) }}">{% media p.image, 'main' %}</a>
               </div>
-              <h1><a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{{ p.getTitle() }}</a></h1>
+              <h1><a href="{{ path('slash_app_media_show', {id: p.id}) }}">{{ p.getTitle() }}</a></h1>
               <div class="descr text">{{ p.getSubtitle() }}</div>
               <time>{{ p.createdAt.date | localizeddate('short', 'none') }}</time>
             </article>

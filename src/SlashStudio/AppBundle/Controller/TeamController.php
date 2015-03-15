@@ -44,8 +44,8 @@ class TeamController extends Controller
             return $this->redirect($this->generateUrl('slash_app_mainpage'));
         }
 
-
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
+            'structure' => $structure,
             'join_form'    => $joinForm->createView(),
             'pagination' => $pagination,
         ]);
