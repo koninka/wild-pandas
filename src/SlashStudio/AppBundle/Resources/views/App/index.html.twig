@@ -73,7 +73,7 @@
           {% media team.image, 'main' with {alt: team.getName(), title: team.getName()} %}
         </div>
         <div class="team_info col-xs-5">
-          <div class="descr text">{{ team.getDescription() }}</div>
+          <div class="descr text">{{ team.getRawDescription() | raw }}</div>
           <div class="achivements">
             <ul>
               {% for achievement in team.achievements %}

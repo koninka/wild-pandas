@@ -67,11 +67,15 @@ class LoadTeamData implements FixtureInterface
 
         $team->translate('ru')->setName('Дикие панды');
         $team->translate('ru')->setManagerName('Николай Стецко');
-        $team->translate('ru')->setDescription('Команда по американскому футболу из Дальнего Востока');
+        $team->translate('ru')->setDescription('Команда по <b>американскому футболу</b> из Дальнего Востока');
+        $team->translate('ru')->setRawDescription('Команда по <b>американскому футболу</b> из Дальнего Востока');
+        $team->translate('ru')->setDescriptionFormatter('richhtml');
 
         $team->translate('en')->setName('Wild Pandas');
         $team->translate('en')->setManagerName('Nicholas Stetsko');
         $team->translate('en')->setDescription('American football team from the Far East');
+        $team->translate('en')->setRawDescription('<b>American football</b> team from the Far East');
+        $team->translate('en')->setDescriptionFormatter('richhtml');
 
         $team->mergeNewTranslations();
 

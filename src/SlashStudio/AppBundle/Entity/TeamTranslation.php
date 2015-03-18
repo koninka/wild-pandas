@@ -23,9 +23,24 @@ class TeamTranslation
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
-    protected $description;
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="raw_description", type="text")
+     */
+    private $rawDescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_formatter", type="string", length=40)
+     */
+    private $descriptionFormatter;
+
 
     /**
      * @var string
@@ -55,13 +70,54 @@ class TeamTranslation
     }
 
     /**
+     * @return string
+     */
+    public function getDescriptionFormatter()
+    {
+        return $this->descriptionFormatter;
+    }
+
+    /**
+     * @param string $descriptionFormatter
+     * @return TeamTranslation
+     */
+    public function setDescriptionFormatter($descriptionFormatter)
+    {
+        $this->descriptionFormatter = $descriptionFormatter;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRawDescription()
+    {
+        return $this->rawDescription;
+    }
+
+    /**
+     * @param string $rawDescription
+     * @return TeamTranslationTranslation
+     */
+    public function setRawDescription($rawDescription)
+    {
+        $this->rawDescription = $rawDescription;
+
+        return $this;
+    }
+
+    /**
      * Set description
      *
      * @param string $description
+     * @return TeamTranslation
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
+        return $this;
     }
 
     /**

@@ -19,10 +19,19 @@ class TeamAdmin extends BaseAdmin
                                'name' => [
                                    'label' => 'show.label_name',
                                    'translation_domain' => $this->translationDomain,
+
                                ],
+                               'rawDescription' => ['display' => false],
+                               'descriptionFormatter' => ['display' => false],
                                'description' => [
-                                   'label' => 'show.label_description',
-                                   'translation_domain' => $this->translationDomain,
+                                  'label' => 'show.label_description',
+                                  'translation_domain' => $this->translationDomain,
+                                  'field_type' => 'sonata_formatter_type',
+                                  'event_dispatcher' => $formMapper->getFormBuilder()->getEventDispatcher(),
+                                  'format_field'   => 'descriptionFormatter',
+                                  'source_field'   => 'rawDescription',
+                                  'ckeditor_context' => 'default',
+                                  'target_field'   => 'description',
                                ],
                                'managerName' => [
                                    'required' => false,
