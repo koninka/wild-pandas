@@ -12,13 +12,15 @@ class BlogController extends Controller
 
     public function listAction(Request $request)
     {
+        $manager = $this->getDoctrine()->getManager();
         $pagination = $this->get('knp_paginator')->paginate(
-            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostsQB(),
+            $manager->getRepository('SlashStudioAppBundle:Post')->getPostsQB(),
             $request->query->get('page', 1)/*page number*/,
             static::POSTS_PER_PAGE
         );
 
         return $this->render('SlashStudioAppBundle:Blog:list.html.twig', [
+            'ads' => $manager->getRepository('SlashStudioAppBundle:Ad')->getAll(),
             'pagination' => $pagination,
         ]);
     }

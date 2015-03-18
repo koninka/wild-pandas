@@ -53,6 +53,7 @@ sonata_admin:
                     - sonata.media.admin.media
                     - sonata.media.admin.gallery
                     - sonata.user.admin.user
+                    - sonata.admin.ad
 
             admin.proposals:
                 label_catalogue: admin_proposals

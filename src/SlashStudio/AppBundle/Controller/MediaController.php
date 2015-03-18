@@ -46,13 +46,15 @@ class MediaController extends Controller
 
     public function aboutAction(Request $request)
     {
+        $manager = $this->getDoctrine()->getManager();
         $pagination = $this->get('knp_paginator')->paginate(
-            $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:MediaPost')->getMediaPostQB(),
+            $manager->getRepository('SlashStudioAppBundle:MediaPost')->getMediaPostQB(),
             $request->query->get('page', 1),
             static::MEDIA_POSTS_PER_PAGE
         );
 
         return $this->render('SlashStudioAppBundle:Media:about.html.twig', [
+            'ads' => $manager->getRepository('SlashStudioAppBundle:Ad')->getAll(),
             'pagination' => $pagination
         ]);
     }

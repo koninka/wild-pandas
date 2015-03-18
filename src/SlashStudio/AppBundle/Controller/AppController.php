@@ -38,6 +38,7 @@ class AppController extends Controller
         return $this->render('SlashStudioAppBundle:App:index.html.twig', [
             'join_form'    => $joinForm->createView(),
             'team'         => $teamRepo->getInfo(),
+            'ads'          => $manager->getRepository('SlashStudioAppBundle:Ad')->getAll(),
             'videos'       => $teamRepo->getVideoForTeam(static::VIDEOS_ON_MAIN_AMOUNT),
             'cl_team'      => $manager->getRepository('SlashStudioAppBundle:CheerleaderTeam')->getInfo(),
             'posts'        => $manager->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),

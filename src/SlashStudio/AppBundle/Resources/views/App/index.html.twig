@@ -214,12 +214,9 @@
           </div>
         </div>
         <aside class="col-xs-3">
-          <div class="ad_block">
-            1
-          </div>
-          <div class="ad_block">
-            2
-          </div>
+          {% for ad in ads %}
+            <div class="ad_block">{{ ad.html | raw }}</div>
+          {% endfor %}
         </aside>
       </div>
     </section>
