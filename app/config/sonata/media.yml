@@ -12,7 +12,6 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 100 , quality: 70 }
                 big:   { width: 740 , quality: 100 }
 
         sliders:
@@ -35,17 +34,16 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 80 , quality: 70 }
-                big:   { width: 500 , quality: 100 }
+                small: { width: 80 , quality: 100 }
 
         post:
             providers:
                 - sonata.media.provider.image
 
             formats:
+                small: { width: 133 , quality: 100 }
                 main:  { width: 270 , quality: 100 }
                 big:   { width: 770 , quality: 100 }
-                small: { width: 133 , quality: 100 }
 
         product:
             providers:
@@ -77,14 +75,6 @@ sonata_media:
                 small: { width: 80 , quality: 100 }
                 medium:   { width: 250 , quality: 100 }
 
-        photo:
-            providers:
-                - sonata.media.provider.image
-
-            formats:
-                medium: { width: 350 , quality: 80 }
-                big: { width: 800 , quality: 100 }
-
         team_video:
             providers:
                 - sonata.media.provider.vimeo
@@ -109,8 +99,7 @@ sonata_media:
                 - sonata.media.provider.youtube
 
             formats:
-                medium: { width: 400 , quality: 80 }
-                big: { width: 800 , quality: 100 }
+                medium: { width: 400 , quality: 100 }
 
     cdn:
         server:

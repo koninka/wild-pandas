@@ -138,6 +138,14 @@
                 <source>photo.of</source>
                 <target>из</target>
             </trans-unit>
+            <trans-unit id="35">
+                <source>footer.team_name</source>
+                <target>Команда "Дикие панды"</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>footer.site_design</source>
+                <target>Создание сайта</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

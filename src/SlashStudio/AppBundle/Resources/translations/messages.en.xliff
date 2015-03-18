@@ -138,6 +138,14 @@
                 <source>photo.of</source>
                 <target>of</target>
             </trans-unit>
+            <trans-unit id="35">
+                <source>footer.team_name</source>
+                <target>The "Wild Pandas"</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>footer.site_design</source>
+                <target>Site design</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
