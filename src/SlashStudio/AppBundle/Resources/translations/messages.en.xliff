@@ -126,6 +126,10 @@
                 <source>form.optional</source>
                 <target>(optional)</target>
             </trans-unit>
+            <trans-unit id="32">
+                <source>team.blog</source>
+                <target>Team blog</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

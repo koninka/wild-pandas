@@ -38,7 +38,7 @@
           <tbody>
             {% for p in pagination %}
               <tr>
-                <td class="photo">{% media p.photo, 'small' %}</td>
+                <td class="photo">{% media p.photo, 'small' with {alt: p.getFullname(), title: p.getFullname()} %}</td>
                 <td>{{ p.getFullname() }}</td>
                 <td>{{ p.number }}</td>
                 <td>{{ p.position.getName() }}</td>

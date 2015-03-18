@@ -47,8 +47,7 @@ class TeamController extends Controller
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
             'structure' => $structure,
             'join_form'    => $joinForm->createView(),
-            'pagination' => $pagination,
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'pagination' => $pagination
         ]);
     }
 
@@ -65,7 +64,7 @@ class TeamController extends Controller
             'page'   => $page,
             'videos' => $manager->getRepository('SlashStudioAppBundle:Team')->getVideoForTeam(static::VIDEOS_ON_INNER_PAGES_AMOUNT),
             'header' => $this->get('translator')->trans('navigation.' . $action, [], 'navigation'),
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }
 
@@ -97,7 +96,7 @@ class TeamController extends Controller
         return $this->render('SlashStudioAppBundle:Team:join.html.twig', [
             'videos' => $teamRepo->getVideoForTeam(static::VIDEOS_ON_INNER_PAGES_AMOUNT),
             'join_form' => $joinForm->createView(),
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }
 }

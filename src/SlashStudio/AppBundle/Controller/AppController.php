@@ -57,7 +57,7 @@ class AppController extends Controller
 
         return $this->render('SlashStudioAppBundle:App:partnership.html.twig', [
             'posts'     => $manager->getRepository('SlashStudioAppBundle:Post')->getLimitedPosts(static::POSTS_ON_PARTNERSHIP_AMOUNT),
-            'instagram' => $manager->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'instagram' => $manager->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }
 }

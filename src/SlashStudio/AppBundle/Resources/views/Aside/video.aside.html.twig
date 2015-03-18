@@ -1,6 +1,6 @@
 <section class="video">
   <h1 class="aside_h1">{{ 'navigation.video' | trans({}, 'navigation') }}</h1>
   {% for video in videos %}
-    <div>{% media video, 'medium' %}</div>
+    <div class="obj">{% media video, 'medium' %}</div>
   {% endfor %}
 </section>

@@ -15,9 +15,7 @@
   	<div class="row">
 		<section class="simple_block col-xs-8">
 			<div class="photo">
-				{% image '@SlashStudioAppBundle/Resources/public/images/h2.jpg' %}
-					<img src="{{ asset_url }}" alt="Дикие панды!" />
-				{% endimage %}
+				{% media page.getImage(), 'big' with {alt: header, title: header} %}
 			</div>
 			<div class="descr text">{{ page.getText() | raw }}</div>
 		</section>

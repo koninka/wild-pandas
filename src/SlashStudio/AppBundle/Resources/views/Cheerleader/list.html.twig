@@ -19,7 +19,7 @@
         {% for cl in pagination %}
           <div class="wrap col-xs-4">
             <div class="girl">
-              {% media cl.photo, 'medium' %}
+              {% media cl.photo, 'medium' with {alt: cl.getFullname(), title: cl.getFullname()} %}
               <h3>{{ cl.getFullname() }}</h3>
               <div class="about">{{ cl.getAbout() }}</div>
             </div>

@@ -35,6 +35,7 @@ class BlogController extends Controller
         return $this->render('SlashStudioAppBundle:Blog:show.html.twig', [
             'post' => $post,
             'other_posts' => $repo->getOtherPosts($post, static::OTHER_POSTS_AMOUNT),
+            'instagram'  => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4),
         ]);
     }
 }

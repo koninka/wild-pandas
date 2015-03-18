@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MediaController extends Controller
 {
-    const PHOTO_PER_PAGE       = 1;
+    const PHOTO_PER_PAGE       = 4;
     const OTHER_POSTS_AMOUNT   = 2;
-    const VIDEOS_PER_PAGE      = 1;
+    const VIDEOS_PER_PAGE      = 4;
     const MEDIA_POSTS_PER_PAGE = 9;
 
     public function photoAction(Request $request)
@@ -22,7 +22,8 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:photo.html.twig', [
             'pagination' => $pagination,
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8),
+            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
+            'instagram'  => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4),
         ]);
     }
 
@@ -36,7 +37,8 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:video.html.twig', [
             'pagination' => $pagination,
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
+            'instagram'  => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }
 
@@ -49,8 +51,7 @@ class MediaController extends Controller
         );
 
         return $this->render('SlashStudioAppBundle:Media:about.html.twig', [
-            'pagination' => $pagination,
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'pagination' => $pagination
         ]);
     }
 
@@ -66,7 +67,7 @@ class MediaController extends Controller
         return $this->render('SlashStudioAppBundle:Media:show.html.twig', [
             'post' => $post,
             'other_posts' => $repo->getOtherPosts($post, static::OTHER_POSTS_AMOUNT),
-            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(8)
+            'instagram'   => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }
 }

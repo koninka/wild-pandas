@@ -16,7 +16,7 @@
     <article class="post col-xs-8">
       <h1>{{ post.getTitle() }}</h1>
       <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
-      <div class="photo">{% media post.image, 'big' %}</div>
+      <div class="photo">{% media post.image, 'big' with {alt: post.getTitle(), title: post.getTitle()} %}</div>
       <h2>{{ post.getSubtitle() }}</h2>
       <div class="descr text">{{ post.getRawText() | raw }}</div>
     </article>

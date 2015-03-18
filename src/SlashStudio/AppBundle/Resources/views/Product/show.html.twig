@@ -35,7 +35,7 @@
   <article class="product">
     <div class="row">
       <div class="photo col-xs-6">
-        {% media product.image, 'big' %}
+        {% media product.image, 'big' with {alt: product.getName(), title: product.getName()} %}
       </div>
       <div class="info col-xs-6">
         <h1>{{ product.getName() }}</h1>
@@ -56,7 +56,7 @@
         <div class="col-xs-3">
           <article>
             <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
-              <div class="photo">{% media product.image, 'small' %}</div>
+              <div class="photo">{% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}</div>
             </a>
             <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
               {{ product.getName() }}

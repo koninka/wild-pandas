@@ -4,15 +4,31 @@
     {{ parent() }}
     {% stylesheets
         '@SlashStudioAppBundle/Resources/public/less/styles_index.less'
+        '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}
 
+{% block head_script %}
+  {{ parent() }}
+  {% javascripts
+    '@SlashStudioAppBundle/Resources/public/colorbox/jquery.colorbox-min.js'
+  %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  <script type="text/javascript">
+    $(function() {
+      $("#all_events").colorbox({iframe: "true", transition: "none", width: "800px", height: "600px"});
+    });
+  </script>
+{% endblock head_script %}
+
 {% block content_row %}
   <div class="wrapper">
     <div class="row">
-      <iframe src="https://www.google.com/calendar/embed?src=wildpandas.vl%40gmail.com&ctz=Asia/Vladivostok" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <!--<iframe src="https://www.google.com/calendar/embed?src=wildpandas.vl%40gmail.com&ctz=Asia/Vladivostok" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>-->
       <section id="myCarousel" class="carousel slide col-xs-9 slider" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -26,7 +42,7 @@
             <div class="item {% if loop.index == 1 %}active{% endif %}">
               <!--
               -->
-            {% media slide.image, 'big' %}
+            {% media slide.image, 'big' with {alt: slide.getTitle(), title: slide.getTitle()} %}
             <div class="carousel-caption">
               <h1>{{ slide.getTitle() }}</h1>
               <h2>{{ slide.getSubtitle() }}</h2>
@@ -54,15 +70,14 @@
       <h1 class="blue_h1"><span>{{ 'title.team' | trans }}<div class="line"></div></span></h1>
       <div class="row">
         <div class="photo col-xs-4">
-          {% media team.image, 'main' %}
+          {% media team.image, 'main' with {alt: team.getName(), title: team.getName()} %}
         </div>
         <div class="team_info col-xs-5">
           <div class="descr text">{{ team.getDescription() }}</div>
           <div class="achivements">
             <ul>
               {% for achievement in team.achievements %}
-                <!--<li>{{ achievement.getName() }}</li>-->
-                <li>{% media achievement.image, 'logo' %}</li>
+                <li>{% media achievement.image, 'logo' with {alt: achievement.getName(), title: achievement.getName()} %}</li>
               {% endfor %}
             </ul>
           </div>
@@ -95,7 +110,7 @@
             {% for post in posts %}
               <article class="col-xs-4">
                 <div class="photo">
-                  <a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{% media post.image, 'main' %}</a>
+                  <a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{% media post.image, 'main' with {alt: post.getTitle(), title: post.getTitle()} %}</a>
                 </div>
                 <h1><a href="{{ path('slash_app_blog_show', {id: post.id}) }}">{{ post.getTitle() }}</a></h1>
                 <div class="descr text">{{ post.getSubtitle() }}</div>
@@ -109,7 +124,7 @@
             <div class="day">19</div>
             <div class="month">ноября</div>
             <div class="event">Всеросийский чемпионат по американскому футболу</div>
-            <a href="#" class="btn btn-default">Все события</a>
+            <a href="https://www.google.com/calendar/embed?src=wildpandas.vl%40gmail.com&ctz=Asia/Vladivostok" id="all_events" class="btn btn-default">Все события</a>
           </div>
         </div>
       </div>
@@ -119,7 +134,7 @@
       <a href="{{ path('slash_app_team_players') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.players' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
       <div class="players_row">
         {% for player in players %}<div class="player">
-            <div class="photo">{% media player.photo, 'small' %}</div>
+            <div class="photo">{% media player.photo, 'small' with {alt: player.getName() ~ ' ' ~ player.getSurname(), title: player.getName() ~ ' ' ~ player.getSurname()} %}</div>
             {{ player.getName() }}<br />
             {{ player.getSurname() }}
           </div>{% endfor %}
@@ -143,36 +158,24 @@
         {
           ...
         }
-      ]
-      {% for photo in instagram %}
-        <div style="width: 1000px; margin: 30px auto;">
-          <img src={{ photo.lr_url }} style="width:{{ photo.lr_width }}px; height:{{ photo.lr_height }}px">
-          <img src={{ photo.sr_url }} style="width:{{ photo.sr_width }}px; height:{{ photo.sr_height }}px">
-        </div>
-      {% endfor %} -->
+      ]-->
       <section class="instagram col-xs-8">
         <h1 class="blue_h1"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
-        {% for i in 0..7 %}
-          {% if instagram|length > i %}
-            {% if i is divisible by(4) %}
-              {% if i > 0 %}
-                </div>
-              {% endif %}
-              <div class="gallery row">
-            {% endif %}
-            <div class="img col-xs-3">
-              <a href="{{ instagram[i].link }}"><img src="{{ instagram[i].lr_url }}" alt="Дикие панды!" /></a>
-            </div>
+        <div class="gallery row">
+        {% for image in instagram %}
+          <div class="img col-xs-3">
+            <a href="{{ image.link }}"><img src="{{ image.lr_url }}" alt="Дикие панды!" /></a>
+          </div>
+          {% if loop.index % 4 == 0 and not loop.last %}
+            </div><div class="gallery row">
           {% endif %}
         {% endfor %}
-        {% if instagram|length > 0 %}
-          </div>
-        {% endif %}
+        </div>
       </section>
       <section class="video col-xs-4">
         <h1 class="blue_h1"><span>{{ 'navigation.video' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
         {% for video in videos %}
-          <div>{% media video, 'medium' %}</div>
+          <div class="obj">{% media video, 'medium' %}</div>
         {% endfor %}
       </section>
     </div>
@@ -184,7 +187,7 @@
           <div class="col-xs-3">
             <article>
               <div class="photo">
-                <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' %}</a>
+                <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}</a>
               </div>
               <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}
               </a>
@@ -200,11 +203,11 @@
       <div class="row">
         <div class="col-xs-9">
           <div class="main_photo">
-            {% media cl_team.image, 'cl_main' %}
+            {% media cl_team.image, 'cl_main' with {alt: cl_team.getName(), title: cl_team.getName()} %}
           </div>
           <div class="girls">
             {% for girl in cheerleaders %}<div class="girl">
-                <div class="photo">{% media girl.photo, 'small' %}</div>
+                <div class="photo">{% media girl.photo, 'small' with {alt: girl.getName() ~ ' ' ~ girl.getSurname(), title: girl.getName() ~ ' ' ~ girl.getSurname()} %}</div>
                 {{ girl.getName() }}<br />
                 {{ girl.getSurname() }}
             </div>{% endfor %}
@@ -226,14 +229,14 @@
       <div class="block">
         <h2>{{ 'title.sponsors' | trans }}</h2>
         {% for s in partnership.sponsors %}
-          {% media s.image, 'logo' with {alt: s.getName()} %}
+          {% media s.image, 'logo' with {alt: s.getName(), title: s.getName()} %}
           <!--<span class="name">{{ s.getName() }}</span>-->
         {% endfor %}
       </div>
       <div class="block">
         <h2>{{ 'title.partners' | trans }}</h2>
         {% for p in partnership.partners %}
-          {% media p.image, 'logo' with {alt: p.getName()} %}
+          {% media p.image, 'logo' with {alt: p.getName(), title: p.getName()} %}
           <!--<span class="name">{{ p.getName() }}</span>-->
         {% endfor %}
       </div>

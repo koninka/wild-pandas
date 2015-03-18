@@ -12,24 +12,44 @@
 
 {% block content_row %}
   <section class="media_photo">
-    <h1 class="blue_h1"><span>{{ 'navigation.media_about' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+    <h1 class="blue_h1"><span>{{ 'navigation.photo' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
     <h2 class="sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
     <div class="row">
       <div class="photos col-xs-8">
         <div class="row more_one">
           {% for photo in pagination %}
             <div class="photo col-xs-6">
-              <a href="#">{% media photo, 'medium' %}</a>
+              <a href="#">{% media photo, 'main' with {alt: "", title: ""} %}</a>
             </div>
             {% if loop.index % 2 == 0 and not loop.last %}
               </div><div class="row more_one">
             {% endif %}
           {% endfor %}
         </div>
-        
+        <div class="navigation">
+          {{ knp_pagination_render(pagination, 'SlashStudioAppBundle:Pagination:pagination.html.twig') }}
+        </div>
       </div>
       <aside class="col-xs-4">
         {% include 'SlashStudioAppBundle:Aside:instagram.aside.html.twig' %}
+        <section class="other_posts">
+          <h1 class="aside_h1">{{ 'team.blog' | trans }}</h1>
+          {% for p in posts %}
+            <article>
+              <div class="row">
+                <div class="photo col-xs-4">
+                  {% media p.image, 'small' %}  
+                </div>
+                <div class="right col-xs-8">
+                  <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
+                  <div class="descr text">
+                    {{ p.getSubtitle() }}
+                  </div>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </section>
       </aside>
     </div>
   </section>
