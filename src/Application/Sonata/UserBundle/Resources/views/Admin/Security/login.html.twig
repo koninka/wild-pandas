@@ -1,7 +1,40 @@
-{% extends base_template %}
+{% extends 'MopaBootstrapBundle::base_less.html.twig' %}
 
-{% block content %}
-    <p><b>TO DO:</b>Необходимо написать норм верстку для этой формы. Файл находится в /src/Application/Sonata/UserBundle/Resources/views/Admin/Security/login.html.twig</p>
+
+{% block title %}Login{% endblock %}
+
+{% block head_style %}
+    {{ parent() }}
+    <style>
+        div.connection {
+            width: 250px;
+            margin: 300px auto 0;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+        }
+
+        input {
+            margin-bottom: 7px;
+        }
+
+    </style>
+{% endblock head_style %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block headline %}{% endblock %}
+
+{% block container_div_start %}{% endblock %}
+{% block container_div_end %}{% endblock %}
+{% block page_header %}{% endblock %}
+{% block content_div_start %}<div class="wrapper">{% endblock %}
+{% block content_div_end %}</div>{% endblock %}
+
+{% block footer %}{% endblock footer %}
+
+{% block content_row %}
     <div class="connection">
         <form action="{{ path("sonata_user_admin_security_check") }}" method="post">
 
@@ -39,4 +72,4 @@
             </div>
         </form>
     </div>
-{% endblock content %}
+{% endblock %}
