@@ -76,6 +76,12 @@ assetic:
             node_paths: "%node_paths%"
             apply_to: "\.less$"
 
+        uglifyjs2:
+            bin: "%uglifyjs_bin%"
+
+        uglifycss:
+            bin: "%uglifycss_bin%"
+
 # Doctrine Configuration
 doctrine:
     dbal:

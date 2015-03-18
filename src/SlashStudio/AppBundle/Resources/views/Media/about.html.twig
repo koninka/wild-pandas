@@ -2,9 +2,7 @@
 
 {% block head_style %}
   {{ parent() }}
-  {% stylesheets
-    '@SlashStudioAppBundle/Resources/public/less/blog.less'
-  %}
+  {% stylesheets '@SlashStudioAppBundle/Resources/public/less/blog.less' filter='?uglifycss' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}

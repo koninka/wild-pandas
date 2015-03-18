@@ -4,8 +4,7 @@
     {{ parent() }}
     {% stylesheets
         '@SlashStudioAppBundle/Resources/public/less/styles_index.less'
-        '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css'
-    %}
+        '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css' filter='?uglifycss' filter='cssrewrite' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}

@@ -5,9 +5,7 @@
   {% stylesheets
     '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
     '@SlashStudioAppBundle/Resources/public/less/blog.less'
-    '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css'
-     filter='cssrewrite'
-  %}
+    '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css' filter='?uglifycss' filter='cssrewrite' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}

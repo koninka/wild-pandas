@@ -4,8 +4,7 @@
 
 {% block head_style %}
     {% stylesheets
-        '@SlashStudioAppBundle/Resources/public/less/main_styles.less'
-    %}
+        '@SlashStudioAppBundle/Resources/public/less/main_styles.less' filter='?uglifycss' filter='cssrewrite' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}

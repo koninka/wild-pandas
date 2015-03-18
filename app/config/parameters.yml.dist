@@ -22,6 +22,9 @@ parameters:
     node_bin:   /usr/local/bin/node
     node_paths: [ /usr/local/lib/node_modules/ ]
 
+    uglifyjs_bin: /usr/local/bin/uglifyjs
+    uglifycss_bin: /usr/local/bin/uglifycss
+
     #params for instagram api bundle
     instagram_api_client_id: f0adfa7702894bba818ede92e8efbd60
     instagram_api_client_secret: 9502736140ef4a7c9dbd07644a351b78
