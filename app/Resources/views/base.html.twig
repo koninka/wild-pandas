@@ -34,7 +34,9 @@
 		<nav>
 			{{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
             <ul class="language">
-                <li><a href="#">En</a></li>
+            {% set new_locale = app.request.locale == 'en' ? 'ru' : 'en' %}
+
+                <li><a href="{{ path(app.request.get('_route'), {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
             </ul>
 		</nav>
 	</header>
