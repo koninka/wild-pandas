@@ -35,7 +35,7 @@
         #cboxError{padding:50px; border:1px solid #ccc;}
         #cboxLoadedContent{margin-bottom:20px;}
         #cboxTitle{position:absolute; bottom:0px; left:0; text-align:center; width:100%; color:#999;}
-        #cboxCurrent{position:absolute; bottom:0px; left:100px; color:#999;}
+        #cboxCurrent{position:absolute; bottom:0px; right:0; color:#999;}
         #cboxLoadingOverlay{background:#fff url(images/loading.gif) no-repeat 5px 5px;}
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
@@ -45,8 +45,8 @@
         #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 
         #cboxSlideshow{position:absolute; bottom:0px; right:42px; color:#444;}
-        #cboxPrevious{position:absolute; bottom:0px; left:0; color:#444;}
-        #cboxNext{position:absolute; bottom:0px; left:63px; color:#444;}
+        #cboxPrevious{position:absolute; bottom:0px; left:0; color:#2063b6; font-weight: bold;}
+        #cboxNext{position:absolute; bottom:0px; left:63px; color:#2063b6; font-weight: bold;}
         #cboxClose{position:absolute; top:0; right:0; display:block; color:#fff;font-size: 120%;background: #2063b6;padding: 5px 12px;}
 
 /*

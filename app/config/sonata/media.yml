@@ -100,6 +100,7 @@ sonata_media:
 
             formats:
                 main:   { width: 600, quality: 100 }
+                big:    { width: 700, quality: 100 }
                 medium: { width: 370, quality: 100 }
 
         cheerleader_team_video:

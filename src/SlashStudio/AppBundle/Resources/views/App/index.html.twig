@@ -87,16 +87,16 @@
             {% if team.captain %}
               <h2>{{ 'title.team.captain' | trans }}</h2>
               <span class="name">{{ team.captain.getFullname() }}</span>
-              <a href="#" class="tel">{{ team.captain.phone }}</a>
-              <a href="#" class="email">{{ team.captain.email }}</a>
+              <a href="tel:{{ team.captain.phone }}" class="tel">{{ team.captain.phone }}</a>
+              <a href="mailto:{{ team.captain.email }}" class="email">{{ team.captain.email }}</a>
             {% endif %}
           </div>
           <div>
             {% if team.getManagerName() %}
               <h2>{{ 'title.team.manager' | trans }}</h2>
               <span class="name">{{ team.getManagerName() }}</span>
-              <a href="#" class="tel">{{ team.managerPhone }}</a>
-              <a href="#" class="email">{{ team.managerEmail }}</a>
+              <a href="tel:{{ team.managerPhone }}" class="tel">{{ team.managerPhone }}</a>
+              <a href="mailto:{{ team.managerEmail }}" class="email">{{ team.managerEmail }}</a>
             {% endif %}
           </div>
         </div>

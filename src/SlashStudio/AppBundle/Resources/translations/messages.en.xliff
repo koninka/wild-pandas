@@ -130,6 +130,14 @@
                 <source>team.blog</source>
                 <target>Team blog</target>
             </trans-unit>
+            <trans-unit id="33">
+                <source>photo.image</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>photo.of</source>
+                <target>of</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

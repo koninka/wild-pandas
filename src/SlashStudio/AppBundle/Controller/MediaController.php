@@ -11,6 +11,8 @@ class MediaController extends Controller
     const OTHER_POSTS_AMOUNT   = 2;
     const VIDEOS_PER_PAGE      = 4;
     const MEDIA_POSTS_PER_PAGE = 9;
+    const POSTS_ON_MEDIA_PHOTO_AMOUNT = 2;
+    const POSTS_ON_MEDIA_VIDEO_AMOUNT = 2;
 
     public function photoAction(Request $request)
     {
@@ -22,7 +24,7 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:photo.html.twig', [
             'pagination' => $pagination,
-            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
+            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getLimitedPosts(static::POSTS_ON_MEDIA_PHOTO_AMOUNT),
             'instagram'  => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4),
         ]);
     }
@@ -37,7 +39,7 @@ class MediaController extends Controller
 
         return $this->render('SlashStudioAppBundle:Media:video.html.twig', [
             'pagination' => $pagination,
-            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getPostsForMainPage(),
+            'posts'      => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:Post')->getLimitedPosts(static::POSTS_ON_MEDIA_VIDEO_AMOUNT),
             'instagram'  => $this->getDoctrine()->getManager()->getRepository('SlashStudioAppBundle:InstagramPost')->getLast(4)
         ]);
     }

@@ -5,10 +5,27 @@
   {% stylesheets
     '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
     '@SlashStudioAppBundle/Resources/public/less/blog.less'
+    '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css'
+     filter='cssrewrite'
   %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}
+
+{% block head_script %}
+  {{ parent() }}
+  {% javascripts
+    '@SlashStudioAppBundle/Resources/public/colorbox/jquery.colorbox-min.js'
+  %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  <script type="text/javascript">
+    $(function() {
+      $(".photos div.photo a").colorbox({transition: 'none', rel: 'gal', previous: '{{ 'paginator.prev' | trans() }}', next: '{{ 'paginator.next' | trans() }}', current: '{{ 'photo.image' | trans() }} {current} {{ 'photo.of' | trans() }} {total}'});
+    });
+  </script>
+{% endblock head_script %}
 
 {% block content_row %}
   <section class="media_photo">
@@ -19,7 +36,7 @@
         <div class="row more_one">
           {% for photo in pagination %}
             <div class="photo col-xs-6">
-              <a href="#">{% media photo, 'main' with {alt: "", title: ""} %}</a>
+              <a href="{% path photo, 'big' %}">{% media photo, 'medium' with {alt: "", title: ""} %}</a>
             </div>
             {% if loop.index % 2 == 0 and not loop.last %}
               </div><div class="row more_one">
@@ -38,7 +55,7 @@
             <article>
               <div class="row">
                 <div class="photo col-xs-4">
-                  {% media p.image, 'small' %}  
+                  <a href="{{ path('slash_app_blog_show', {id: p.id}) }}">{% media p.image, 'small' with {alt: p.getTitle(), title: p.getTitle()} %}</a>  
                 </div>
                 <div class="right col-xs-8">
                   <a href="{{ path('slash_app_blog_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
