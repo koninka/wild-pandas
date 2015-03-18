@@ -24,6 +24,8 @@ if [[ ! -z "$PANDA_PROD" && $PANDA_PROD -eq 1 ]]; then
       sed -i '' 's/app_dev/app/g' web/.htaccess
    fi
    php app/console doctrine:schema:update --force
+   composer dump-autoload --optimize
+   php app/console assetic:dump --env=prod --no-debug
 else
    php app/console cache:clear --env=dev
    php app/console doctrine:database:drop --force
