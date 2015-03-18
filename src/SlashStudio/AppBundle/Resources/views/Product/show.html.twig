@@ -43,7 +43,7 @@
           {{ product.getRawDescription() | raw }}
         </div>
         <div class="price">
-          <div>{{ 'product.price' | trans }}: {{ product.price }}</div>
+          <div>{{ 'product.price' | trans }}: {{ product.price }} ₽</div>
         </div>
         <a id="inline" href="#order_form" class="btn btn-default">Заказать</a>
       </div>
@@ -61,7 +61,7 @@
             <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
               {{ product.getName() }}
             </a>
-            <div class="price">{{ 'product.price' | trans }}: {{ product.price }}</div>
+            <div class="price">{{ 'product.price' | trans }}: {{ product.price }} ₽</div>
           </article>
         </div>
       {% endfor %}

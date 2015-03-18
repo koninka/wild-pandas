@@ -21,7 +21,7 @@
               <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}</a>
             </div>
             <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}</a>
-            <div class="price">{{ 'product.price' | trans }}: {{ product.price }}</div>
+            <div class="price">{{ 'product.price' | trans }}: {{ product.price }} ₽</div>
           </article>
         </div>
         {% if loop.index % 4 == 0 and not loop.last %}
