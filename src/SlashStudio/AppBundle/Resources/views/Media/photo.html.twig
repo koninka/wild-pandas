@@ -3,9 +3,9 @@
 {% block head_style %}
   {{ parent() }}
   {% stylesheets
-    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less'
-    '@SlashStudioAppBundle/Resources/public/less/blog.less'
-    '@SlashStudioAppBundle/Resources/public/colorbox/colorbox.css' filter='?uglifycss' filter='cssrewrite' %}
+    'bundles/slashstudioapp/less/photos_videos.less'
+    'bundles/slashstudioapp/less/blog.less'
+    'bundles/slashstudioapp/colorbox/colorbox.css' filter='?uglifycss' filter='cssrewrite' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}
@@ -13,7 +13,7 @@
 {% block head_script %}
   {{ parent() }}
   {% javascripts
-    '@SlashStudioAppBundle/Resources/public/colorbox/jquery.colorbox-min.js'
+    'bundles/slashstudioapp/colorbox/jquery.colorbox-min.js'
   %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
   {% endjavascripts %}

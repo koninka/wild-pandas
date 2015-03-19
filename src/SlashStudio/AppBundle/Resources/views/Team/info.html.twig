@@ -3,8 +3,8 @@
 {% block head_style %}
   {{ parent() }}
   {% stylesheets
-    '@SlashStudioAppBundle/Resources/public/less/simple_page.less'
-    '@SlashStudioAppBundle/Resources/public/less/photos_videos.less' filter='?uglifycss' %}
+    'bundles/slashstudioapp/less/simple_page.less'
+    'bundles/slashstudioapp/less/photos_videos.less' filter='?uglifycss' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}
