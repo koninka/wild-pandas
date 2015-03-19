@@ -69,10 +69,10 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        [ MopaBootstrapBundle, SlashStudioAppBundle ]
+    node: "%node_bin%"
     filters:
         cssrewrite: ~
         less:
-            node: "%node_bin%"
             node_paths: "%node_paths%"
             apply_to: "\.less$"
 
