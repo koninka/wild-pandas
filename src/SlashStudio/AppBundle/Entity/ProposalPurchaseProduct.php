@@ -26,6 +26,7 @@ class ProposalPurchaseProduct
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -33,6 +34,7 @@ class ProposalPurchaseProduct
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $surname;
 
@@ -40,7 +42,7 @@ class ProposalPurchaseProduct
      * @var phone_number
      *
      * @ORM\Column(name="phone", type="phone_number")
-     *
+     * @Assert\NotBlank()
      */
     private $phone;
 
@@ -48,6 +50,7 @@ class ProposalPurchaseProduct
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=150)
+     * @Assert\NotBlank()
      */
     private $email;
 
