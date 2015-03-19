@@ -10,7 +10,7 @@ use SlashStudio\AppBundle\Entity\Product;
 use SlashStudio\AppBundle\Entity\ProposalPurchaseProduct;
 use SlashStudio\AppBundle\Entity\TeamProposalMembership;
 
-use Symfony\Component\Translation\LoggingTranslator;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class Mailer
 {
@@ -37,10 +37,10 @@ class Mailer
     /**
      * @param \Swift_Mailer $mailer
      * @param PhoneNumberUtil $phoneNumberUtil
-     * @param LoggingTranslator $translator
+     * @param TranslatorInterface $translator
      * @param string $fromEmail
      */
-    public function __construct(\Swift_Mailer $mailer, PhoneNumberUtil $phoneNumberUtil, LoggingTranslator $translator, $fromEmail)
+    public function __construct(\Swift_Mailer $mailer, PhoneNumberUtil $phoneNumberUtil, TranslatorInterface $translator, $fromEmail)
     {
         $this->mailer = $mailer;
         $this->translator = $translator;

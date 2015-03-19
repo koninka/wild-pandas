@@ -35,7 +35,7 @@
             <ul class="language">
             {% set new_locale = app.request.locale == 'en' ? 'ru' : 'en' %}
 
-                <li><a href="{{ path(app.request.get('_route'), {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
+                <li><a href="{{ path('slash_app_mainpage', {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
             </ul>
 		</nav>
 	</header>
