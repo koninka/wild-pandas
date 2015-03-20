@@ -92,11 +92,11 @@
             </trans-unit>
             <trans-unit id="23">
                 <source>form.label_gallery</source>
-                <target>Медиа (видео)</target>
+                <target>Видео галерея</target>
             </trans-unit>
             <trans-unit id="24">
                 <source>form.label_photo_gallery</source>
-                <target>Медиа (фото)</target>
+                <target>Фото галерея</target>
             </trans-unit>
         </body>
     </file>
