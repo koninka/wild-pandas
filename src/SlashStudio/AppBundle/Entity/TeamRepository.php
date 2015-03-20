@@ -54,7 +54,8 @@ class TeamRepository extends EntityRepository
         return $manager->createQuery(
             'SELECT m FROM ApplicationSonataMediaBundle:Media m
                 JOIN m.galleryHasMedias ghs
-                JOIN ghs.gallery g WHERE g = :gallery'
+                JOIN ghs.gallery g WHERE g = :gallery
+                ORDER BY m.createdAt DESC'
         )
         ->setParameter('gallery', $team->getGallery());
    }
@@ -65,7 +66,8 @@ class TeamRepository extends EntityRepository
             ->createQuery(
                 'SELECT m FROM ApplicationSonataMediaBundle:Media m
                   JOIN m.galleryHasMedias ghs
-                  JOIN ghs.gallery g JOIN SlashStudioAppBundle:Team t WHERE t.gallery = g'
+                  JOIN ghs.gallery g JOIN SlashStudioAppBundle:Team t WHERE t.gallery = g
+                  ORDER BY m.createdAt DESC'
             )
             ->setMaxResults($amount)
             ->getResult();
