@@ -41,7 +41,7 @@ class TeamController extends Controller
                 'team.join.success'
             );
 
-            return $this->redirect($this->generateUrl('slash_app_mainpage'));
+            return $this->redirect($this->generateUrl('slash_app_team_players'));
         }
 
         return $this->render('SlashStudioAppBundle:Team:players.html.twig', [
