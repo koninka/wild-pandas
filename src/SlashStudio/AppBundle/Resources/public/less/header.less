@@ -89,26 +89,48 @@ header {
 		}
 	}
 
-	ul.language {
+	ul.right_menu {
 		position: absolute;
 		top: 0;
 		right: 14px;
 
-		li a {
+		li.vk a {
 			width: 50px;
 			height: 50px;
-			padding: 0;
-			text-align: center;
-			padding-top: 14px;
-			border-radius: 50px;
 			margin-top: 9px;
-			background: @blue-brand;
-			color: white !important;
-			font-size: 90%;
+			margin-right: 5px;
+			border-radius: 50px;
+			background: @blue-brand url('../bundles/slashstudioapp/images/vk.png') no-repeat;
+		}
+
+		li.in a {
+			width: 50px;
+			height: 50px;
+			margin-top: 9px;
+			border-radius: 50px;
+			background: @blue-brand url('../bundles/slashstudioapp/images/in.png') no-repeat;
+		}
+
+		li.language {
+			margin-left: 33px;
+			vertical-align: top;
+
+			a {
+				width: 50px;
+				height: 50px;
+				padding: 0;
+				text-align: center;
+				padding-top: 14px;
+				border-radius: 50px;
+				margin-top: 9px;
+				background: @blue-brand;
+				color: white !important;
+				font-size: 90%;
+			}
 		}
 
 		li a:hover {
-			background: @dark-blue-brand;
+			background-color: @dark-blue-brand;
 			color: white !important;
 		}
 	}

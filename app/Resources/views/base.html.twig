@@ -32,10 +32,11 @@
         </a>
 		<nav>
 			{{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
-            <ul class="language">
+            <ul class="right_menu">
             {% set new_locale = app.request.locale == 'en' ? 'ru' : 'en' %}
-
-                <li><a href="{{ path('slash_app_mainpage', {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
+                <li class="vk"><a href="#"></a></li>
+                <li class="in"><a href="#"></a></li>
+                <li class="language"><a href="{{ path('slash_app_mainpage', {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
             </ul>
 		</nav>
 	</header>
