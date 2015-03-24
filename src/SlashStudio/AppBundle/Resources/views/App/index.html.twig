@@ -143,7 +143,7 @@
 
     <div class="row">
       <section class="instagram col-xs-8">
-        <h1 class="blue_h1"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
+        <h1 class="blue_h1" id="insta_icon"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
         <div class="gallery row">
         {% for image in instagram %}
           <div class="img col-xs-3">
@@ -156,7 +156,7 @@
         </div>
       </section>
       <section class="video col-xs-4">
-        <a href="{{ path('slash_app_media_video') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.video' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+        <a href="{{ path('slash_app_media_video') }}" class="h1_a"><h1 class="blue_h1" id="video_icon"><span>{{ 'navigation.video' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
         {% for video in videos %}
           <div class="obj">{% media video, 'medium' %}</div>
         {% endfor %}
