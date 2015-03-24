@@ -72,8 +72,9 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 80 , quality: 100 }
-                medium:   { width: 250 , quality: 100 }
+                small:  { width: 80 , quality: 100 }
+                medium: { width: 250 , quality: 100 }
+                big:    { width: 428 , quality: 100 }
 
         team_video:
             providers:

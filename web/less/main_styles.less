@@ -147,16 +147,31 @@ body {
 
 			#gradient > .horizontal(@blue-brand; transparent);
 		}
-	}
-/*
-	a.h1_a > h1.blue_h1 span div.line {
-		width: 0%;
+
+		div.line_center {
+			margin-top: 5px;
+			height: 6px;
+			position: relative;
+
+			div {
+				display: inline-block;
+				height: 6px;
+				width: 70%;
+				position: absolute;
+			}
+
+			div.line_l {
+				left: -20%;
+				#gradient > .horizontal(transparent; @blue-brand);
+			}
+
+			div.line_r {
+				right: -20%;
+				#gradient > .horizontal(@blue-brand; transparent);
+			}
+		}
 	}
 
-	a.h1_a:hover > h1.blue_h1 span div.line {
-		width: 130%;
-	}
-*/
 	>.wrapper {
 		margin: 0 auto;
 		width: 1200px;

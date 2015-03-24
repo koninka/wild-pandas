@@ -7,9 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MediaController extends Controller
 {
-    const PHOTO_PER_PAGE       = 4;
+    const PHOTO_PER_PAGE       = 6;
     const OTHER_POSTS_AMOUNT   = 2;
-    const VIDEOS_PER_PAGE      = 4;
+    const VIDEOS_PER_PAGE      = 6;
     const MEDIA_POSTS_PER_PAGE = 9;
     const POSTS_ON_MEDIA_PHOTO_AMOUNT = 2;
     const POSTS_ON_MEDIA_VIDEO_AMOUNT = 2;

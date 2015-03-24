@@ -7,8 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CheerleaderController extends Controller
 {
-    const CHEERLEADERS_PER_PAGE = 3;
-    const MAX_VIDEOS_ON_PAGE = 4;
+    const CHEERLEADERS_PER_PAGE = 9;
+    const MAX_VIDEOS_ON_PAGE = 3;
 
     public function listAction(Request $request)
     {

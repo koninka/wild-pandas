@@ -2,13 +2,14 @@ footer {
 	width: 1200px;
 	margin: 0 auto 22px;
 	background: black;
-	padding: 15px;
+	padding: 15px 0;
 
 	ul {
 		margin-left: 0;
-		padding-left: 0;
+		padding-left: 15px;
 		margin-bottom: 0;
 		font-size: 140%;
+		box-shadow: 0 0 70px rgb(70, 65, 65) inset;
 
 		li {
 			display: inline-block;
@@ -23,14 +24,17 @@ footer {
 			    -moz-transition: all 0.2s ease-out;
 			    -o-transition: all 0.2s ease-out;
 			    transition: all 0.2s ease-out;
-			    text-decoration: none;
+			    text-decoration: none !important;
 			}
 		}
 
 		li:hover a {
-			text-decoration: none;
-			color: black;
-			background: white;
+			color: black !important;
+			background: white !important;
+		}
+
+		li:focus a, li a:focus {
+			color: white;
 		}
 	}
 

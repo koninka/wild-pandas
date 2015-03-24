@@ -146,6 +146,14 @@
                 <source>footer.site_design</source>
                 <target>Создание сайта</target>
             </trans-unit>
+            <trans-unit id="37">
+                <source>cheerleader_team.all</source>
+                <target>Все черлидеры</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>products.all</source>
+                <target>Вся атрибутика</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -146,6 +146,14 @@
                 <source>footer.site_design</source>
                 <target>Site design</target>
             </trans-unit>
+            <trans-unit id="37">
+                <source>cheerleader_team.all</source>
+                <target>All cheerleaders</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>products.all</source>
+                <target>All products</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

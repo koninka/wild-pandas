@@ -65,6 +65,7 @@
         </div>
       </section>
     </div>
+    <a name="team"></a>
     <section class="team">
       <h1 class="blue_h1"><span>{{ 'title.team' | trans }}<div class="line"></div></span></h1>
       <div class="row">
@@ -146,7 +147,7 @@
         <div class="gallery row">
         {% for image in instagram %}
           <div class="img col-xs-3">
-            <a href="{{ image.link }}"><img src="{{ image.lr_url }}" alt="Дикие панды!" /></a>
+            <a href="{{ image.link }}" target="_blank"><img src="{{ image.lr_url }}" alt="Дикие панды!" /></a>
           </div>
           {% if loop.index % 4 == 0 and not loop.last %}
             </div><div class="gallery row">
@@ -169,7 +170,15 @@
           <div class="col-xs-3">
             <article>
               <div class="photo">
-                <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}</a>
+                <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
+                  {% if product.image %}
+                    {% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}
+                  {% else %}
+                    {% image 'bundles/slashstudioapp/images/attr_240x160.jpg' %}
+                      <img src="{{ asset_url }}" alt="{{ product.getName() }}" />
+                    {% endimage %}
+                  {% endif %}
+                </a>
               </div>
               <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{{ product.getName() }}
               </a>
@@ -178,6 +187,7 @@
           </div>
         {% endfor %}
       </div>
+      <a href="{{ path('slash_app_products_list') }}" class="btn btn-default bottom_button">{{ 'products.all' | trans() }}</a>
     </section>
 
     <section class="cheerleaders">
@@ -194,6 +204,7 @@
                 {{ girl.getSurname() }}
             </div>{% endfor %}
           </div>
+          <a href="{{ path('slash_app_chearleaders') }}" class="btn btn-default bottom_button">{{ 'cheerleader_team.all' | trans() }}</a>
         </div>
         <aside class="col-xs-3">
           {% for ad in ads %}
@@ -204,7 +215,7 @@
     </section>
 
     <section class="partners">
-      <a href="{{ path('slash_app_partnership') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.partnership' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+      <a href="{{ path('slash_app_partnership') }}" class="h1_a"><h1 class="blue_h1"><span>{{ 'navigation.partnership' | trans({}, 'navigation') }}<div class="line_center"><div class="line_l"></div><div class="line_r"></div></div></span></h1></a>
       <div class="block">
         <h2>{{ 'title.sponsors' | trans }}</h2>
         {% for s in partnership.sponsors %}
@@ -219,7 +230,7 @@
           <!--<span class="name">{{ p.getName() }}</span>-->
         {% endfor %}
       </div>
-      <div class="descr text">{{ 'partnership.description' | trans }}</div>
+      <a href="#team" class="manager">{{ 'partnership.description' | trans }}</a>
     </div>
   </section>
 {% endblock %}

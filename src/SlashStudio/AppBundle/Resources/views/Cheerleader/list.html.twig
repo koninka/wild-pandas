@@ -4,10 +4,29 @@
   {{ parent() }}
   {% stylesheets
     'bundles/slashstudioapp/less/cheers.less'
-    'bundles/slashstudioapp/less/photos_videos.less' filter='?uglifycss' %}
+    'bundles/slashstudioapp/less/photos_videos.less' 
+    'bundles/slashstudioapp/colorbox/colorbox.css' filter='?uglifycss' filter='cssrewrite' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
   {% endstylesheets %}
 {% endblock head_style %}
+
+{% block head_script %}
+  {{ parent() }}
+  {% javascripts
+    'bundles/slashstudioapp/colorbox/jquery.colorbox-min.js'
+  %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  <script type="text/javascript">
+    $(function() {
+      $("div.girl a").colorbox({transition: 'none', rel: 'gal', previous: '{{ 'paginator.prev' | trans() }}', next: '{{ 'paginator.next' | trans() }}', current: '{{ 'photo.image' | trans() }} {current} {{ 'photo.of' | trans() }} {total}'});
+    });
+  </script>
+{% endblock head_script %}
+
+
+
 
 {% block content_row %}
   <h1 class="blue_h1"><span>{{ 'navigation.cheerleader' | trans({}, 'navigation') }}<div class="line"></div></span></h1>
@@ -18,7 +37,7 @@
         {% for cl in pagination %}
           <div class="wrap col-xs-4">
             <div class="girl">
-              {% media cl.photo, 'medium' with {alt: cl.getFullname(), title: cl.getFullname()} %}
+              <a href="{% path cl.photo, 'big' %}" title="{{ cl.getFullname() }}">{% media cl.photo, 'medium' with {alt: cl.getFullname(), title: cl.getFullname()} %}</a>
               <h3>{{ cl.getFullname() }}</h3>
               <div class="about">{{ cl.getAbout() }}</div>
             </div>

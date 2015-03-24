@@ -34,7 +34,13 @@
   <article class="product">
     <div class="row">
       <div class="photo col-xs-6">
-        {% media product.image, 'big' with {alt: product.getName(), title: product.getName()} %}
+        {% if product.image %}
+          {% media product.image, 'big' with {alt: product.getName(), title: product.getName()} %}
+        {% else %}
+          {% image 'bundles/slashstudioapp/images/attr_600x400.jpg' %}
+            <img src="{{ asset_url }}" alt="{{ product.getName() }}" />
+          {% endimage %}
+        {% endif %}
       </div>
       <div class="info col-xs-6">
         <h1>{{ product.getName() }}</h1>
@@ -55,7 +61,15 @@
         <div class="col-xs-3">
           <article>
             <div class="photo">
-              <a href="{{ path('slash_app_product_show', {id: product.id}) }}">{% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}</a>
+              <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
+                {% if product.image %}
+                  {% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}
+                {% else %}
+                  {% image 'bundles/slashstudioapp/images/attr_240x160.jpg' %}
+                    <img src="{{ asset_url }}" alt="{{ product.getName() }}" />
+                  {% endimage %}
+                {% endif %}
+              </a>
             </div>
             <a href="{{ path('slash_app_product_show', {id: product.id}) }}">
               {{ product.getName() }}
