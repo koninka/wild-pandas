@@ -12,7 +12,7 @@
             </trans-unit>
             <trans-unit id="3">
                 <source>admin.cheerleader.team</source>
-                <target>Команда черлидеров</target>
+                <target>Черлидеры</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>form.label_photo</source>

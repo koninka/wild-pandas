@@ -40,7 +40,7 @@
             </trans-unit>
             <trans-unit id="10">
                 <source>admin.posts</source>
-                <target>Новостной раздел</target>
+                <target>Блог и СМИ</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>form.label_translations</source>

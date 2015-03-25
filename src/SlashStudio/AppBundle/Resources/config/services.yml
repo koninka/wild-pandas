@@ -1,4 +1,10 @@
 services:
+    app.twig_extension:
+        class: SlashStudio\AppBundle\Twig\AppExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+
     my_mailer:
         class: SlashStudio\AppBundle\Mailer\Mailer
         arguments: [@mailer, @libphonenumber.phone_number_util, @translator, "%mailer_user%"]
