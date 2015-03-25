@@ -43,7 +43,7 @@
                 <td>{{ p.position.getName() }}</td>
                 <td>{{ p.weight }}</td>
                 <td>{{ p.height }}</td>
-                <td>{{ p.birthday | age }}</td>
+                <td>{{ p.birthday.date | age }}</td>
                 <td>{{ p.nationality.getName() }}</td>
               </tr>
             {% endfor %}

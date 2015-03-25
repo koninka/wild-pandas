@@ -230,7 +230,7 @@
           <!--<span class="name">{{ p.getName() }}</span>-->
         {% endfor %}
       </div>
-      <a href="#team" class="manager">{{ 'partnership.description' | trans }}</a>
+      <a href="#team" class="manager">{{ 'partnership.description' | trans({'%manager%' : team.getManagerName(), '%phone%': team.managerPhone }) }}</a>
     </div>
   </section>
 {% endblock %}

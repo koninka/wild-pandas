@@ -52,7 +52,7 @@
             </trans-unit>
             <trans-unit id="13">
                 <source>partnership.description</source>
-                <target>По вопросам сотрудничества обращайтесь к менеджеру</target>
+                <target>На вопросы о сотрудничестве вам ответит %manager% (%phone%)</target>
             </trans-unit>
             <trans-unit id="14">
                 <source>products.other</source>
