@@ -46,6 +46,10 @@
                 <source>player.structure.additional</source>
                 <target>Additional</target>
             </trans-unit>
+            <trans-unit id="12">
+                <source>player.age</source>
+                <target>Age</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

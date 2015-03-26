@@ -46,6 +46,10 @@
                 <source>player.structure.additional</source>
                 <target>Запасной состав</target>
             </trans-unit>
+            <trans-unit id="12">
+                <source>player.age</source>
+                <target>Возраст</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
