@@ -38,7 +38,7 @@
           {% media product.image, 'big' with {alt: product.getName(), title: product.getName()} %}
         {% else %}
           {% image 'bundles/slashstudioapp/images/attr_600x400.jpg' %}
-            <img src="{{ asset_url }}" alt="{{ product.getName() }}" />
+            <img src="{{ asset_url }}" alt="{{ product.getName() }}" title="{{ product.getName() }}" />
           {% endimage %}
         {% endif %}
       </div>
@@ -66,7 +66,7 @@
                   {% media product.image, 'small' with {alt: product.getName(), title: product.getName()} %}
                 {% else %}
                   {% image 'bundles/slashstudioapp/images/attr_240x160.jpg' %}
-                    <img src="{{ asset_url }}" alt="{{ product.getName() }}" />
+                    <img src="{{ asset_url }}" alt="{{ product.getName() }}" title="{{ product.getName() }}" />
                   {% endimage %}
                 {% endif %}
               </a>

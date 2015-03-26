@@ -15,7 +15,15 @@
     <article class="post col-xs-8">
       <h1>{{ post.getTitle() }}</h1>
       <time>{{ post.createdAt.date | localizeddate('short', 'none') }}</time>
-      <div class="photo">{% media post.image, 'big' with {alt: post.getTitle(), title: post.getTitle()} %}</div>
+      <div class="photo">
+        {% if post.image %}
+          {% media post.image, 'big' with {alt: post.getTitle(), title: post.getTitle()} %}
+        {% else %}
+          {% image 'bundles/slashstudioapp/images/blog_770x434.jpg' %}
+            <img src="{{ asset_url }}" alt="{{ post.getTitle() }}" title="{{ post.getTitle() }}" />
+          {% endimage %}
+        {% endif %}
+      </div>
       <h2>{{ post.getSubtitle() }}</h2>
       <div class="descr text">{{ post.getRawText() | raw }}</div>
     </article>
@@ -27,7 +35,15 @@
           <article>
             <div class="row">
               <div class="photo col-xs-4">
-                <a href="{{ path('slash_app_media_show', {id: p.id}) }}">{% media p.image, 'small' with {alt: p.getTitle(), title: p.getTitle()} %}</a>
+                <a href="{{ path('slash_app_media_show', {id: p.id}) }}">
+                  {% if p.image %}
+                    {% media p.image, 'small' with {alt: p.getTitle(), title: p.getTitle()} %}
+                  {% else %}
+                    {% image 'bundles/slashstudioapp/images/blog_133x75.jpg' %}
+                      <img src="{{ asset_url }}" alt="{{ p.getTitle() }}" title="{{ p.getTitle() }}" />
+                    {% endimage %}
+                  {% endif %}
+                </a>
               </div>
               <div class="right col-xs-8">
                 <a href="{{ path('slash_app_media_show', {id: p.id}) }}"><h1>{{ p.getTitle() }}</h1></a>
