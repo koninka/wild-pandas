@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>months.m1</source>
+                <target>Января</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>months.m2</source>
+                <target>Февраля</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>months.m3</source>
+                <target>Марта</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>months.m4</source>
+                <target>Апреля</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>months.m5</source>
+                <target>Мая</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>months.m6</source>
+                <target>Июня</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>months.m7</source>
+                <target>Июля</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>months.m8</source>
+                <target>Августа</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>months.m9</source>
+                <target>Сентября</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>months.m10</source>
+                <target>Октября</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>months.m11</source>
+                <target>Ноября</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>months.m12</source>
+                <target>Декабря</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

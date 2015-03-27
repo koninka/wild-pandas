@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1cf98feb83e141249dde1e6f66216f39",
+    "hash": "7ebc1fbe8cd1f2ae4afdd1621b9d0ec6",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -1447,6 +1447,48 @@
                 "validation"
             ],
             "time": "2015-03-03 12:48:31"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/google-api-php-client.git",
+                "reference": "5d379890f63c1427bb5222f596886b9e0225511a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/5d379890f63c1427bb5222f596886b9e0225511a",
+                "reference": "5d379890f63c1427bb5222f596886b9e0225511a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2015-03-26 12:19:00"
         },
         {
             "name": "imagine/imagine",
@@ -4755,12 +4797,13 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "mopa/bootstrap-bundle": 20,
         "sonata-project/core-bundle": 20,
         "misd/phone-number-bundle": 20,
-        "oh/instagram-bundle": 20
+        "oh/instagram-bundle": 20,
+        "google/apiclient": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

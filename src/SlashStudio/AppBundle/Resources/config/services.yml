@@ -1,3 +1,7 @@
+parameters:
+    google.calendar.id: 'wildpandas.vl@gmail.com'
+    google.calendar.email: '278578328761-m1crt0t3n7q6hlv2nvlqqjjtlujico4o@developer.gserviceaccount.com'
+
 services:
     app.twig_extension:
         class: SlashStudio\AppBundle\Twig\AppExtension
@@ -41,3 +45,7 @@ services:
         arguments: [ "sonata.block.service.simple_pages", @templating, @sonata.admin.pool, @doctrine.orm.entity_manager ]
         tags:
             - { name: sonata.block }
+
+    google.helper:
+        class: SlashStudio\AppBundle\GoogleHelper\GoogleHelper
+        arguments: [@translator, %google.calendar.email%, %google.calendar.id% ]
