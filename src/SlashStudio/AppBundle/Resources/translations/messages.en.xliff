@@ -154,6 +154,10 @@
                 <source>products.all</source>
                 <target>All products</target>
             </trans-unit>
+            <trans-unit id="39">
+                <source>event.all</source>
+                <target>All events</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
