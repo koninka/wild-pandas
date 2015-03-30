@@ -50,6 +50,10 @@
                 <source>months.m12</source>
                 <target>December</target>
             </trans-unit>
+            <trans-unit id="13">
+                <source>months.noevents</source>
+                <target>No scheduled events</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

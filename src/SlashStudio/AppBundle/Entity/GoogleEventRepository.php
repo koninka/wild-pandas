@@ -14,6 +14,7 @@ class GoogleEventRepository extends EntityRepository
             return null;
         }
         return [
+            "date" => $items[0]->getExecDate(),
             "summary" => $items[0]->getSummary(),
             "day" => $items[0]->getDay(),
             "month" => $items[0]->getMonth()

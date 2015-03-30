@@ -78,15 +78,13 @@ class GoogleHelper extends ContainerAware
 
     public function simplifyEvent($event)
     {
-        if ($event === null) {
-            $date = new \DateTime();
+        if ($event === null || $event['date']->getTimestamp() < (new \DateTime)->getTimestamp()) {
             $event = [
-                'day'     => intval($date->format('d')),
-                'month'   => intval($date->format('m')),
-                'summary' => ''
+                'summary' => $this->translator->trans('months.noevents', [], 'months')
             ];
+        } else {
+            $event['month'] = $this->translator->trans("months.m$event[month]", [], 'months');
         }
-        $event['month'] = $this->translator->trans("months.m$event[month]", [], 'months');
         return $event;
     }
 }

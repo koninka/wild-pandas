@@ -50,6 +50,10 @@
                 <source>months.m12</source>
                 <target>Декабря</target>
             </trans-unit>
+            <trans-unit id="13">
+                <source>months.noevents</source>
+                <target>Нет запланированных событий</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
