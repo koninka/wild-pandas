@@ -34,8 +34,8 @@
 			{{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}
             <ul class="right_menu">
             {% set new_locale = app.request.locale == 'en' ? 'ru' : 'en' %}
-                <li class="vk"><a href="https://vk.com/amfvl"></a></li>
-                <li class="in"><a href="https://instagram.com/vladivostokwildpandas/"></a></li>
+                <li class="vk"><a href="https://vk.com/amfvl" target="_blank"></a></li>
+                <li class="in"><a href="https://instagram.com/vladivostokwildpandas/" target="_blank"></a></li>
                 <li class="language"><a href="{{ path('slash_app_mainpage', {_locale: new_locale}) }}">{{ new_locale | capitalize }}</a></li>
             </ul>
 		</nav>
