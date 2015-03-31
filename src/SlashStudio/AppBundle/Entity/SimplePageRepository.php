@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityRepository;
 
 class SimplePageRepository extends EntityRepository
 {
-    private $actions = ['training' => 1, 'history' => 2, 'baby_team' => 3];
+    private $actions = ['training' => 1, 'history' => 2, 'women_team' => 3];
 
     public function getAll()
     {

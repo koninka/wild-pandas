@@ -6,7 +6,7 @@ slash_app_team_info:
     path:       /{action}/{_locale}
     defaults:   {_controller: SlashStudioAppBundle:Team:info, _locale: ru}
     requirements:
-        action: training|history|baby_team
+        action: training|history|women_team
 
 slash_app_team_join:
     path:       /join/{_locale}

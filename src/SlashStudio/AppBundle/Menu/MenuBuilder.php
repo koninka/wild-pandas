@@ -25,7 +25,7 @@ class MenuBuilder
         $menu['navigation.team']->addChild('navigation.players', ['route' => 'slash_app_team_players']);
         $menu['navigation.team']->addChild('navigation.training', ['route' => 'slash_app_team_info', 'routeParameters' => ['action' => 'training']]);
         $menu['navigation.team']->addChild('navigation.history', ['route' => 'slash_app_team_info', 'routeParameters' => ['action' => 'history']]);
-        $menu['navigation.team']->addChild('navigation.baby_team', ['route' => 'slash_app_team_info', 'routeParameters' => ['action' => 'baby_team']]);
+        $menu['navigation.team']->addChild('navigation.women_team', ['route' => 'slash_app_team_info', 'routeParameters' => ['action' => 'women_team']]);
         $menu['navigation.team']->addChild('navigation.join_team', ['route' => 'slash_app_team_join']);
 
         $menu->addChild('navigation.media');

@@ -19,8 +19,8 @@
                 <target>History</target>
             </trans-unit>
             <trans-unit id="5">
-                <source>navigation.baby_team</source>
-                <target>Сhildren's team</target>
+                <source>navigation.women_team</source>
+                <target>Women's team</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>navigation.join_team</source>
