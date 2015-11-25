@@ -16,7 +16,7 @@
             </trans-unit>
             <trans-unit id="4">
                 <source>product.description</source>
-                <target>Support the "Wild Pandas" purchase merchandise and show everyone on the field as you love your team</target>
+                <target>Support the "Legio XXVII" purchase merchandise and show everyone on the field as you love your team</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>product.not_found</source>
@@ -92,7 +92,7 @@
             </trans-unit>
             <trans-unit id="23">
                 <source>team.join.team_name</source>
-                <target>Wild Pandas</target>
+                <target>Legio XXVII</target>
             </trans-unit>
             <trans-unit id="24">
                 <source>paginator.prev</source>
@@ -112,7 +112,7 @@
             </trans-unit>
             <trans-unit id="28">
                 <source>team.join_page_header</source>
-                <target>How to join "Wild Pandas"</target>
+                <target>How to join "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="29">
                 <source>team.join_form_header</source>
@@ -140,7 +140,7 @@
             </trans-unit>
             <trans-unit id="35">
                 <source>footer.team_name</source>
-                <target>The "Wild Pandas"</target>
+                <target>The "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="36">
                 <source>footer.site_design</source>

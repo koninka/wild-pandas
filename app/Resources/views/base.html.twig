@@ -26,9 +26,7 @@
 {% block navbar %}
     <header>
 		<a href="{{ path('slash_app_mainpage') }}" class="logo">
-            {% image '@SlashStudioAppBundle/Resources/public/images/logo.png' %}
-                <img src="{{ asset_url }}" alt="Дикие панды!" />
-            {% endimage %}
+            
         </a>
 		<nav>
 			{{ knp_menu_render('main', {'template': 'SlashStudioAppBundle:Default:knp_menu.html.twig'}) }}

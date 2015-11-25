@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="1">
                 <source>email.team.join.subject</source>
-                <target>Вступить к "Диким пандам"</target>
+                <target>Вступить в "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>email.team.join.user.body</source>
@@ -13,7 +13,7 @@
             <trans-unit id="3">
                 <source>email.team.join.manager.body</source>
                 <target>
-                    %name% %surname% хочет присоединиться к “Диким пандам”. Вы можете связаться с ним по номеру %phone% или написать на %email%.
+                    %name% %surname% хочет присоединиться к “Legio XXVII”. Вы можете связаться с ним по номеру %phone% или написать на %email%.
                 </target>
             </trans-unit>
             <trans-unit id="4">
@@ -32,7 +32,7 @@
             </trans-unit>
             <trans-unit id="7">
                 <source>email.cheerleader_team.join.subject</source>
-                <target>Присоединиться к черлидерам "Диких Панд"</target>
+                <target>Присоединиться к черлидерам "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>email.cheerleader_team.join.user.body</source>
