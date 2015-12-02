@@ -153,16 +153,57 @@
 
     <div class="row">
       <section class="instagram col-xs-8">
-        <a href="https://instagram.com/vladivostokwildpandas/" target="_blank" class="h1_a"><h1 class="blue_h1" id="insta_icon"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
+        <a href="https://instagram.com/" target="_blank" class="h1_a"><h1 class="blue_h1" id="insta_icon"><span>{{ 'navigation.instagram' | trans({}, 'navigation') }}<div class="line"></div></span></h1></a>
         <div class="gallery row">
-        {% for image in instagram %}
+        {#{% for image in instagram %}
           <div class="img col-xs-3">
-            <a href="{{ image.link }}" target="_blank"><img src="{{ image.lr_url }}" alt="Дикие панды!" /></a>
+            <a href="{{ image.link }}" target="_blank"><img src="/{{ image.lr_url }}" alt="" /></a>
           </div>
           {% if loop.index % 4 == 0 and not loop.last %}
             </div><div class="gallery row">
           {% endif %}
-        {% endfor %}
+        {% endfor %}#}
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst1.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst2.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst3.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst4.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+        </div><div class="gallery row">
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst5.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst6.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst7.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
+          <div class="img col-xs-3">
+            {% image 'bundles/slashstudioapp/images/inst8.jpg' %}
+              <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+            {% endimage %}
+          </div>
         </div>
       </section>
       <section class="video col-xs-4">
