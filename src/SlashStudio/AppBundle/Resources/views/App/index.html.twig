@@ -129,12 +129,15 @@
         </div>
         <div class="calendar col-xs-3">
           <div class="wrapper">
-            {% if googleevent.day is defined %}
-              <div class="day">{{ googleevent.day }}</div>
-              <div class="month">{{ googleevent.month }}</div>
-            {% endif %}
-            <div class="event">{{ googleevent.summary }}</div>
-            <a href="https://www.google.com/calendar/embed?src=wildpandas.vl%40gmail.com&ctz=Asia/Vladivostok" id="all_events" class="btn btn-default">{{ 'event.all' | trans }}</a>
+            {# {% if googleevent.day is defined %} #}
+              {#<div class="day">{{ googleevent.day }}</div>#}
+              {#<div class="month">{{ googleevent.month }}</div>#}
+              <div class="day">27</div>
+              <div class="month">декабря</div>
+            {# {% endif %} #}
+            {# <div class="event">{{ googleevent.summary }}</div> #}
+            <div class="event">Дружественная встреча с командой "Свирепые орлы"</div>
+            <a href="https://calendar.google.com/calendar/embed?src=slashwebstudio%40gmail.com&ctz=Asia/Vladivostok" id="all_events" class="btn btn-default">{{ 'event.all' | trans }}</a>
           </div>
         </div>
       </div>
