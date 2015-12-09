@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="1">
                 <source>email.team.join.subject</source>
-                <target>Become a "wild pandas"</target>
+                <target>Become a "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>email.team.join.user.body</source>
@@ -13,7 +13,7 @@
             <trans-unit id="3">
                 <source>email.team.join.manager.body</source>
                 <target>
-                    %name% %surname% wants to join the "Wild Pandas." You can contact him at number %phone% or write to %email%.
+                    %name% %surname% wants to join the "Legio XXVII". You can contact him at number %phone% or write to %email%.
                 </target>
             </trans-unit>
             <trans-unit id="4">
@@ -32,7 +32,7 @@
             </trans-unit>
             <trans-unit id="7">
                 <source>email.cheerleader_team.join.subject</source>
-                <target>Join the "Wild Pandas" cheerleaders</target>
+                <target>Join the "Legio XXVII" cheerleaders</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>email.cheerleader_team.join.user.body</source>

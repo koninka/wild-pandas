@@ -1,14 +1,35 @@
 <section class="instagram">
   <h1 class="aside_h1">{{ 'navigation.instagram' | trans({}, 'navigation') }}</h1>
   <div class="gallery row">
-    {% for image in instagram %}
+    {#{% for image in instagram %}
       <div class="img col-xs-6">
         <a href="{{ image.link }}"><img src="{{ image.lr_url }}" alt="Дикие панды!" /></a>
       </div>
       {% if loop.index % 2 == 0 and not loop.last %}
         </div><div class="gallery row">
       {% endif %}
-    {% endfor %}
+    {% endfor %}#}
+    <div class="img col-xs-6">
+      {% image 'bundles/slashstudioapp/images/inst1.jpg' %}
+        <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+      {% endimage %}
+    </div>
+    <div class="img col-xs-6">
+      {% image 'bundles/slashstudioapp/images/inst2.jpg' %}
+        <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+      {% endimage %}
+    </div>
+  </div><div class="gallery row">
+    <div class="img col-xs-6">
+      {% image 'bundles/slashstudioapp/images/inst3.jpg' %}
+        <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+      {% endimage %}
+    </div>
+    <div class="img col-xs-6">
+      {% image 'bundles/slashstudioapp/images/inst4.jpg' %}
+        <a href="#" target="_blank"><img src="{{ asset_url }}" alt="" /></a>
+      {% endimage %}
+    </div>
   </div>
 </section>
 

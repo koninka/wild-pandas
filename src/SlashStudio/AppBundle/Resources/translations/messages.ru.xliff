@@ -16,7 +16,7 @@
             </trans-unit>
             <trans-unit id="4">
                 <source>product.description</source>
-                <target>Поддержи "Диких панд" покупкой атрибутики и покажи всем на поле, как любишь свою команду</target>
+                <target>Поддержи "Legio XXVII" покупкой атрибутики и покажи всем на поле, как любишь свою команду</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>product.not_found</source>
@@ -92,7 +92,7 @@
             </trans-unit>
             <trans-unit id="23">
                 <source>team.join.team_name</source>
-                <target>Диким Пандам</target>
+                <target>Legio XXVII</target>
             </trans-unit>
             <trans-unit id="24">
                 <source>paginator.prev</source>
@@ -112,7 +112,7 @@
             </trans-unit>
             <trans-unit id="28">
                 <source>team.join_page_header</source>
-                <target>Как присоединиться к "Диким пандам"</target>
+                <target>Как присоединиться к "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="29">
                 <source>team.join_form_header</source>
@@ -140,7 +140,7 @@
             </trans-unit>
             <trans-unit id="35">
                 <source>footer.team_name</source>
-                <target>Команда "Дикие панды"</target>
+                <target>Команда "Legio XXVII"</target>
             </trans-unit>
             <trans-unit id="36">
                 <source>footer.site_design</source>
